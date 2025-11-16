@@ -8,7 +8,7 @@
 
 /* 기본 1400이상 max-width: 1400px */
 body{
-  // overflow: hidden;
+  overflow: hidden;
   scroll-behavior: auto;
   font-size: clamp(1.2rem, 1.4vw, 2rem);
 
@@ -25,6 +25,12 @@ body{
 
   }
 
+  img{
+    // width: 100%;
+    // height: auto;
+    @include fill-parent;
+  }
+
   // 헤더 따로 떼기
   // header{
   //   position: fixed;
@@ -33,6 +39,9 @@ body{
   //   background-color: royalblue;
   //   z-index: $z-header;
   // }
+
+
+
   section{
     height: 100vh;
     position: relative;
@@ -49,22 +58,37 @@ body{
     }
   }
 
+  /*  ~ Common _______________________ */
+
   #load{
-    padding: 0;
+    position: fixed;
+    @include fill-parent;
+    z-index: $z-s1;
 
     .background-gradient{
       position: absolute;
       @include fill-parent;
-      background: linear-gradient(to bottom, #F2BA52 27%, #F2A766 47%, #F2784B 55%, #D95E52 59%, #7A9FBF 100%);
+      background: var(--bg-grad);
       z-index: -1; 
+
+      &::before{
+        content: '';
+        position: absolute;
+        @include fill-parent;
+        background-color: rgba(255, 255, 255, 0.2);
+      }
     }
 
     .container{
+      // width: 50%;
+      // border-radius: 2rem;
+      // @include glass;
       background: none;
-      position: relative;
+      // position: relative;
+      @include flex(column, 2rem);
       
       .logo {
-        position: absolute;
+        // position: absolute;
         max-height: 50%;
         // max-width: 90%;
       }
@@ -109,6 +133,14 @@ body{
           fill: white;
         }
       }
+
+
+      h2{
+        font-family: 'SUITE', sans-serif;
+        font-weight: 800;
+        color: #fff;
+      }
+        
     }
   }
 

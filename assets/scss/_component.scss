@@ -1,11 +1,14 @@
 @charset "utf-8"; 
 
+@use './variable' as *;
+
+
 .navigation{
   position: absolute;
   left: 5vw;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 9999;
+  z-index: $z-float;
   /* display: none; */
   /* mix-blend-mode: difference; */
 

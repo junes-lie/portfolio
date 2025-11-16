@@ -6,16 +6,17 @@
   <title>Jisun's Portfolio</title>
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Observer.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Observer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 
   <!-- <script src="assets/js/scroll.js" defer></script> -->
   <script src="assets/js/logo.js" defer></script>
-  <!-- <script src="assets/js/publish.js" defer></script> -->
+  <script src="assets/js/publish.js" defer></script>
   <!-- <script src="assets/js/navigation.js" defer></script> -->
 
 </head>
@@ -56,7 +57,7 @@
   <section id="load">
     <div class="background-gradient"></div>
     <div class="container">
-      <svg id="logo-colored" class="logo" viewBox="0 0 270 225" xmlns="http://www.w3.org/2000/svg">
+      <!-- <svg id="logo-colored" class="logo" viewBox="0 0 270 225" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="grad"  x1="0" y1="0" x2="0" y2="150" gradientUnits="userSpaceOnUse">
             <stop offset="6%" stop-color="#F2BA52"></stop>
@@ -85,7 +86,7 @@
         <path class="wave1 wave stroke" d="M10 162H260" />
         <path class="wave2 wave stroke" d="M27.5 187H242.5" />
         <path class="wave3 wave stroke" d="M57.5 212H212.5" />
-      </svg>
+      </svg> -->
 
       <svg id="logo-white" class="logo" viewBox="0 0 270 225" xmlns="http://www.w3.org/2000/svg">
         <defs></defs>
@@ -98,6 +99,7 @@
         <path class="wave2 wave stroke" d="M27.5 187H242.5" />
         <path class="wave3 wave stroke" d="M57.5 212H212.5" />
       </svg>
+      <h2 class="loader-text">0%</h2>
     </div>
   </section>
   <div id="layout">
@@ -106,13 +108,15 @@
       <div class="container">
         <h1>portfolio</h1>
         <h2>븻 븼 븾 븿 빀 빁 빂 빃 빆 빇</h2>
-        <h2>몼 몾 몿 웄 옻 웈 웉 웊 헂 헁</h2>
+        <h2>몼 몾 몿 웄 웆 웈 웉 웊 헂 헁</h2>
         <h2>핱 웑 탘 짂 짃 뮺 뮻 윿 읁 읂</h2>
         <h2>맠 흞 굷 빟 눉 벊 빞 밠 앆 닰</h2>
       </div>
     </section>
     <section id="profile">
-      <div class="container"></div>
+      <div class="container">
+
+      </div>
   
     </section>
     <section id="publishing">
@@ -124,15 +128,21 @@
       
     </section>
     <section id="uxui">
-      <div class="container"></div>
+      <div class="container">
+        <img src="https://picsum.photos/1240/874?random=1" alt="" >
+      </div>
       
     </section>
     <section id="graphic">
-      <div class="container"></div>
+      <div class="container">
+        <img src="https://picsum.photos/1240/874?random=2" alt="">
+      </div>
       
     </section>
     <section id="planning">
-      <div class="container"></div>
+      <div class="container">
+        <img src="https://picsum.photos/1240/874?random=3" alt="">
+      </div>
   
     </section>
   </div>

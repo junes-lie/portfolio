@@ -42,23 +42,29 @@ const LogoMove = () =>{
     ease: "elastic.out(1,0.1)"
   },'<');
   
-  tl.to('#logo-white', {
-    autoAlpha: 0,
-    duration: 1,
-  }, 2);
+  // tl.to('#logo-white', {
+  //   autoAlpha: 0,
+  //   duration: 1,
+  // }, 2);
   
-  tl.to('#logo-colored', {
-    autoAlpha: 1,
-    duration: 1,
-  }, '<');
+  // tl.to('#logo-colored', {
+  //   autoAlpha: 1,
+  //   duration: 1,
+  // }, '<');
   
-  tl.to('.background-gradient', {
-    opacity: 0,
-    duration: 1,
-  }, '<');
+  // tl.to('.background-gradient', {
+  //   opacity: 0,
+  //   duration: 1,
+  // }, '<');
   
 }
-  
+
+
+
+
+
+
+
 // const LogoExpand = () =>{
 
 //   // document.body.style.overflow = 'auto';
@@ -74,15 +80,31 @@ const LogoMove = () =>{
 //     pin: true,
 //     scrub: 1,
 //   })
-
 // }
+
+function init(){
+  document.scrollingElement.scrollTo(0,0);
+  document.body.style.overflow = 'auto';
+  gsap.to('#load',{autoAlpha:0});
+};
+
+function Loading() {
+  LogoMove();
   
+  const img = gsap.utils.toArray('img');
+  const loader = document.querySelector('.loader-text');
 
-LogoMove();
+  const updateProgress = (instance)=>{
+    loader.textContent = `${Math.round(instance.progressedCount * 100 / img.length)}%`
+  };
 
-// function init(){
-//   LogoMove()
-//   LogoExpand()
-// }
+  imagesLoaded(img)
+  .on('progress', updateProgress)
+  .on('always', init);
+};
 
-// init();
+Loading();
+// window.addEventListener('DOMContentLoaded', Loading);
+
+
+  

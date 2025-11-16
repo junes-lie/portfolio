@@ -77,13 +77,7 @@ html body input, html body button, html body textarea {
   --bg-color-rgb: 255, 255, 255;
   --text-color: #333;
   --text-color-rgb: 51, 51, 51;
-}
-
-[data-theme=dark] {
-  --bg-color: #0a0a0a;
-  --bg-color-rgb: 10, 10, 10;
-  --text-color: #fff;
-  --text-color-rgb: 255, 255, 255;
+  --bg-grad: linear-gradient(to bottom, #F2BA52 27%, #F2A766 47%, #F2784B 55%, #D95E52 59%, #7A9FBF 100%);
 }
 
 .navigation {
@@ -91,7 +85,7 @@ html body input, html body button, html body textarea {
   left: 5vw;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 9999;
+  z-index: 900;
   /* display: none; */
   /* mix-blend-mode: difference; */
 }
@@ -140,8 +134,10 @@ html body input, html body button, html body textarea {
 /* 재활용가능한 것들 */
 /* 기본 1400이상 max-width: 1400px */
 body {
+  overflow: hidden;
   scroll-behavior: auto;
   font-size: clamp(1.2rem, 1.4vw, 2rem);
+  /*  ~ Common _______________________ */
 }
 body h1 {
   font-family: "YUniverse-B";
@@ -152,6 +148,11 @@ body h1 {
 }
 body h2 {
   font-family: "YUniverse-B";
+}
+body img {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
 }
 body section {
   height: 100vh;
@@ -172,22 +173,35 @@ body section .container {
   align-items: center;
 }
 body #load {
-  padding: 0;
+  position: fixed;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
 }
 body #load .background-gradient {
   position: absolute;
   margin: 0 auto;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, #F2BA52 27%, #F2A766 47%, #F2784B 55%, #D95E52 59%, #7A9FBF 100%);
+  background: var(--bg-grad);
   z-index: -1;
+}
+body #load .background-gradient::before {
+  content: "";
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 body #load .container {
   background: none;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 body #load .container .logo {
-  position: absolute;
   max-height: 50%;
 }
 body #load .container #logo-colored {
@@ -243,6 +257,11 @@ body #load .container #logo-white .brush-body {
 }
 body #load .container #logo-white .search {
   fill: white;
+}
+body #load .container h2 {
+  font-family: "SUITE", sans-serif;
+  font-weight: 800;
+  color: #fff;
 }
 body #layout {
   height: 100vh;
