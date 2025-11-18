@@ -2,7 +2,7 @@
 
 
 
-const LogoMove = () =>{
+const LogoDraw = () =>{
 
   // 선 그릴 준비
   gsap.utils.toArray('#logo-white .stroke').forEach(path => {
@@ -60,11 +60,6 @@ const LogoMove = () =>{
 }
 
 
-
-
-
-
-
 // const LogoExpand = () =>{
 
 //   // document.body.style.overflow = 'auto';
@@ -85,11 +80,47 @@ const LogoMove = () =>{
 function init(){
   document.scrollingElement.scrollTo(0,0);
   document.body.style.overflow = 'auto';
-  gsap.to('#load',{autoAlpha:0});
+
+  const minScreenWidth = 360;
+  const maxScreenWidth = 1400;
+  const clampedWidth = gsap.utils.clamp(minScreenWidth, maxScreenWidth, window.innerWidth);
+
+  const getScale = gsap.utils.mapRange(
+    minScreenWidth,
+    maxScreenWidth,
+    0.9, //모바일
+    0.7 //데탑
+  );
+
+  const getYPercent = gsap.utils.mapRange(
+    minScreenWidth,
+    maxScreenWidth,
+    -60, //모바일
+    -40 //데탑
+  );
+
+  const scaleValue = getScale(clampedWidth);
+  const yPercentValue = getYPercent(clampedWidth);
+  const dimColor = 'rgba(255, 255, 255, 0.5)';
+
+
+  const tl = gsap.timeline();
+  
+  tl.set('#load',{zIndex: -1});
+  tl.set('.possessive h2', { display:'block', opacity: 0});
+  
+  tl.to('.loader-text',{autoAlpha: 0});
+  tl.to('.background-gradient',{borderRadius: 1400, filter: 'blur(20rem)'}, "<");
+  tl.to('.logo .half-circle, .logo .wave',{stroke: dimColor}, "<");
+  tl.to('.logo .brush-head, .brush-body',{fill: dimColor, stroke:'none'}, "<");
+  tl.to('.logo .search',{fill: dimColor}, "<");
+  tl.to('.possessive',{scale: scaleValue, yPercent: yPercentValue}, "<")
+  .to('.possessive h2',{opacity: 1})
+
 };
 
 function Loading() {
-  LogoMove();
+  LogoDraw();
   
   const img = gsap.utils.toArray('img');
   const loader = document.querySelector('.loader-text');

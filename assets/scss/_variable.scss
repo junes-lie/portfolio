@@ -10,6 +10,8 @@
 
   --bg-grad: linear-gradient(to bottom, #F2BA52 27%, #F2A766 47%, #F2784B 55%, #D95E52 59%, #7A9FBF 100%);
 
+  --opacity: rgba(255, 255, 255, 0.5);
+
 }
 // [data-theme="dark"] {
 //   --bg-color: #0a0a0a;
@@ -41,4 +43,6 @@ $ani-du: 1s;
 $size-2rem: clamp(1.2rem, 1.4vw, 2rem);
 $size-3rem: clamp(1.4rem, 2.1vw, 3rem);
 $size-5rem: clamp(2rem, 3.5vw, 5rem);
+$size-15rem: clamp(4rem , 10vw, 15rem);
 $size-20rem: clamp(5rem, 14vw, 20rem);
+$size-40rem: clamp(10rem , 28vw, 40rem);

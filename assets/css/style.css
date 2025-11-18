@@ -50,7 +50,7 @@ html body {
   overflow-x: hidden;
   word-break: keep-all;
 }
-html body article, html body aside, html body details, html body figcaption, html body figure, html body footer, html body hgroup, html body menu, html body nav {
+html body article, html body aside, html body details, html body figcaption, html body figure, html body footer, html body hgroup, html body menu, html body nav, html body svg {
   display: block;
 }
 html body ol, html body ul, html body li {
@@ -78,6 +78,7 @@ html body input, html body button, html body textarea {
   --text-color: #333;
   --text-color-rgb: 51, 51, 51;
   --bg-grad: linear-gradient(to bottom, #F2BA52 27%, #F2A766 47%, #F2784B 55%, #D95E52 59%, #7A9FBF 100%);
+  --opacity: rgba(255, 255, 255, 0.5);
 }
 
 .navigation {
@@ -131,6 +132,58 @@ html body input, html body button, html body textarea {
   font-weight: bold;
 }
 
+#logo-white .half-circle,
+#logo-white .wave {
+  fill: none;
+  stroke: white;
+  stroke-width: 10;
+  stroke-linecap: round;
+}
+#logo-white .brush-head {
+  fill: white;
+  stroke: white;
+}
+#logo-white .brush-body {
+  fill: white;
+  stroke: white;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+#logo-white .search {
+  fill: white;
+}
+
+#logo-colored .half-circle {
+  stroke: url(#grad);
+  fill: url(#grad);
+}
+#logo-colored .brush-head,
+#logo-colored .brush-body,
+#logo-colored .search {
+  fill: url(#grad);
+  stroke: url(#grad);
+}
+#logo-colored .wave1 {
+  stroke: url(#wave-1);
+}
+#logo-colored .wave2 {
+  stroke: url(#wave-2);
+}
+#logo-colored .wave3 {
+  stroke: url(#wave-3);
+}
+#logo-colored .wave,
+#logo-colored .half-circle {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+}
+#logo-colored .brush-body {
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+
 /* 재활용가능한 것들 */
 /* 기본 1400이상 max-width: 1400px */
 body {
@@ -141,22 +194,15 @@ body {
 }
 body h1 {
   font-family: "YUniverse-B";
-  font-size: clamp(5rem, 14vw, 20rem);
-  font-weight: 500;
-  text-transform: uppercase;
-  color: rgba(var(--text-color-rgb), 0.8);
+  font-size: clamp(10rem, 28vw, 40rem);
+  text-transform: capitalize;
+  color: var(--opacity);
 }
 body h2 {
   font-family: "YUniverse-B";
 }
-body img {
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
-}
 body section {
   height: 100vh;
-  position: relative;
   padding: 10vh 0;
   display: flex;
   justify-content: center;
@@ -166,28 +212,38 @@ body section .container {
   width: 100%;
   height: 100%;
   margin: 0 5vw;
-  background-color: gray;
   max-width: 1400px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid red;
 }
-body #load {
+body section .container img {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+body #layout {
+  height: 100vh;
+}
+body #layout #load {
   position: fixed;
   margin: 0 auto;
   width: 100%;
   height: 100%;
   z-index: 1000;
 }
-body #load .background-gradient {
+body #layout #load .background-gradient {
   position: absolute;
   margin: 0 auto;
   width: 100%;
   height: 100%;
   background: var(--bg-grad);
+  filter: blur(0rem);
   z-index: -1;
 }
-body #load .background-gradient::before {
+body #layout #load .background-gradient::before {
   content: "";
   position: absolute;
   margin: 0 auto;
@@ -195,82 +251,46 @@ body #load .background-gradient::before {
   height: 100%;
   background-color: rgba(255, 255, 255, 0.2);
 }
-body #load .container {
-  background: none;
+body #layout #load .container {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
-body #load .container .logo {
-  max-height: 50%;
+body #layout #load .container .possessive {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0 25vw;
 }
-body #load .container #logo-colored {
-  opacity: 0;
-  visibility: hidden;
+body #layout #load .container .possessive .logo {
+  max-height: 50vh;
 }
-body #load .container #logo-colored .half-circle {
-  stroke: url(#grad);
-  fill: url(#grad);
+body #layout #load .container .possessive h2 {
+  position: absolute;
+  display: none;
+  color: #fff;
+  font-size: clamp(10rem, 28vw, 40rem);
+  left: calc(50% + 15vw);
+  color: var(--opacity);
+  /* 별모양 */
 }
-body #load .container #logo-colored .brush-head,
-body #load .container #logo-colored .brush-body,
-body #load .container #logo-colored .search {
-  fill: url(#grad);
-  stroke: url(#grad);
+body #layout #load .container .possessive h2 span {
+  vertical-align: top;
+  font-size: clamp(4rem, 10vw, 15rem);
 }
-body #load .container #logo-colored .wave1 {
-  stroke: url(#wave-1);
-}
-body #load .container #logo-colored .wave2 {
-  stroke: url(#wave-2);
-}
-body #load .container #logo-colored .wave3 {
-  stroke: url(#wave-3);
-}
-body #load .container #logo-colored .wave,
-body #load .container #logo-colored .half-circle {
-  fill: none;
-  stroke-width: 10;
-  stroke-linecap: round;
-}
-body #load .container #logo-colored .brush-body {
-  stroke-width: 1.5;
-  stroke-linejoin: round;
-}
-body #load .container #logo-white .half-circle,
-body #load .container #logo-white .wave {
-  fill: none;
-  stroke: white;
-  stroke-width: 10;
-  stroke-linecap: round;
-}
-body #load .container #logo-white .brush-head {
-  fill: white;
-  stroke: white;
-}
-body #load .container #logo-white .brush-body {
-  fill: white;
-  stroke: white;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-body #load .container #logo-white .search {
-  fill: white;
-}
-body #load .container h2 {
+body #layout #load .container h3 {
   font-family: "SUITE", sans-serif;
   font-weight: 800;
   color: #fff;
-}
-body #layout {
-  height: 100vh;
 }
 body #layout #intro .container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background: none;
+  justify-content: end;
+  border: 1px solid #000;
 }
 body #layout #publishing .carousel {
   width: 100%;

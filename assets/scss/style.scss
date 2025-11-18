@@ -14,10 +14,11 @@ body{
 
   h1{
     font-family: 'YUniverse-B';
-    font-size: $size-20rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: rgba(var(--text-color-rgb), 0.8);
+    font-size: $size-40rem;
+    // text-transform: uppercase;
+    text-transform: capitalize;
+    // color: rgba(var(--text-color-rgb), 0.8);
+    color: var(--opacity);
   }
 
   h2{
@@ -25,26 +26,12 @@ body{
 
   }
 
-  img{
-    // width: 100%;
-    // height: auto;
-    @include fill-parent;
-  }
-
-  // 헤더 따로 떼기
-  // header{
-  //   position: fixed;
-  //   inset: 0;
-  //   height: $h-header;
-  //   background-color: royalblue;
-  //   z-index: $z-header;
-  // }
 
 
 
   section{
     height: 100vh;
-    position: relative;
+    // position: relative;
     padding: $h-header 0;
     @include center-flex;
     
@@ -52,108 +39,130 @@ body{
       width: 100%;
       height: 100%;
       margin: 0 $p-section;
-      background-color: gray;
       max-width: $pc;
       @include center-flex;
+      // position: relative;
+      border: 1px solid red;
+
+      img{
+        @include fill-parent;
+        object-fit: cover;
+      }
     }
   }
 
   /*  ~ Common _______________________ */
 
-  #load{
-    position: fixed;
-    @include fill-parent;
-    z-index: $z-s1;
-
-    .background-gradient{
-      position: absolute;
-      @include fill-parent;
-      background: var(--bg-grad);
-      z-index: -1; 
-
-      &::before{
-        content: '';
-        position: absolute;
-        @include fill-parent;
-        background-color: rgba(255, 255, 255, 0.2);
-      }
-    }
-
-    .container{
-      // width: 50%;
-      // border-radius: 2rem;
-      // @include glass;
-      background: none;
-      // position: relative;
-      @include flex(column, 2rem);
-      
-      .logo {
-        // position: absolute;
-        max-height: 50%;
-        // max-width: 90%;
-      }
-      
-      #logo-colored {
-        opacity: 0;
-        visibility: hidden;
-        
-        .half-circle { stroke: url(#grad); fill: url(#grad); }
-        .brush-head,
-        .brush-body,
-        .search { fill: url(#grad); stroke: url(#grad); }
-        .wave1 { stroke: url(#wave-1); }
-        .wave2 { stroke: url(#wave-2); }
-        .wave3 { stroke: url(#wave-3); }
-        .wave,
-        .half-circle { fill: none; stroke-width: 10; stroke-linecap: round; }
-        .brush-body { stroke-width: 1.5; stroke-linejoin: round; }
-      }
-      
-      #logo-white {
-        
-        .half-circle, 
-        .wave {
-          fill: none;
-          stroke: white;
-          stroke-width: 10;
-          stroke-linecap: round;
-        }
-        .brush-head {
-          fill: white;
-          stroke: white;
-        }
-        .brush-body {
-          fill: white;
-          stroke: white;
-          stroke-width: 1.5;
-          stroke-linecap: round;
-          stroke-linejoin: round;
-        }
-        .search {
-          fill: white;
-        }
-      }
-
-
-      h2{
-        font-family: 'SUITE', sans-serif;
-        font-weight: 800;
-        color: #fff;
-      }
-        
-    }
-  }
-
-
+  
+  
   #layout{
     height: 100vh;
+    
+    #load{
+      position: fixed;
+      @include fill-parent;
+      z-index: $z-s1;
+  
+      .background-gradient{
+        position: absolute;
+        @include fill-parent;
+        background: var(--bg-grad);
+        filter: blur(0rem);
+
+        z-index: -1; 
+  
+        &::before{
+          content: '';
+          position: absolute;
+          @include fill-parent;
+          background-color: rgba(255, 255, 255, 0.2);
+        }
+      }
+  
+      .container{
+        // border-radius: 2rem;
+        // @include glass;
+  
+        @include flex(column, 2rem);
+
+        .possessive{
+          width: 100%;
+          @include center-flex;
+          position: relative;
+          // border: 1px solid red;
+          padding: 0 25vw;
+          
+
+          .logo {
+            // position: absolute;
+            max-height: 50vh;
+            // border: 1px solid #000;
+            // @include glass;
+
+          }
+
+          h2{
+            position: absolute;
+            display: none;
+            color: #fff;
+            // font-size: 40rem;
+            font-size: $size-40rem;
+            left: calc(50% + 15vw);
+            // border: 1px solid #000;
+            color: var(--opacity);
+
+            /* 별모양 */
+            span{
+              vertical-align: top;
+              // font-size: 15rem;
+              font-size: $size-15rem;
+            }
+          }
+        }
+
+        
+
+
+        // .possessive{
+          
+        //   width: 100%;
+        //   // height: auto;
+        //   // height: min-content;
+        //   // height: fit-content;
+        //   @include center-flex;
+        //   // @include flex(row, -10rem);
+        //   border: 1px solid #000;
+  
+          
+          
+          
+          
+            
+          
+            
+        // }
+  
+        h3{
+          font-family: 'SUITE', sans-serif;
+          font-weight: 800;
+          color: #fff;
+          // margin-left: -10rem;
+          // padding-left: -10rem;
+        }
+          
+      }
+    }
+
+
     
     #intro{
 
       .container{
 
         @include flex(column,1rem);
-        background: none;
+
+        justify-content: end;
+        border: 1px solid #000;
       }
     }
     

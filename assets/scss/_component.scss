@@ -59,3 +59,41 @@
     }
   }
 }
+
+#logo-white {
+  .half-circle, 
+  .wave {
+    fill: none;
+    stroke: white;
+    stroke-width: 10;
+    stroke-linecap: round;
+  }
+  .brush-head {
+    fill: white;
+    stroke: white;
+  }
+  .brush-body {
+    fill: white;
+    stroke: white;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .search {
+    fill: white;
+  }
+}
+
+#logo-colored {
+  .half-circle { stroke: url(#grad); fill: url(#grad); }
+  .brush-head,
+  .brush-body,
+  .search { fill: url(#grad); stroke: url(#grad); }
+  .wave1 { stroke: url(#wave-1); }
+  .wave2 { stroke: url(#wave-2); }
+  .wave3 { stroke: url(#wave-3); }
+  .wave,
+  .half-circle { fill: none; stroke-width: 10; stroke-linecap: round; }
+  .brush-body { stroke-width: 1.5; stroke-linejoin: round; }
+}
+
