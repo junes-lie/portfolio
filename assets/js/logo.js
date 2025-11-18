@@ -99,23 +99,31 @@ function init(){
     -40 //데탑
   );
 
+  const getBlurValue = gsap.utils.mapRange(
+    minScreenWidth,
+    maxScreenWidth,
+    10, //모바일
+    15 //데탑
+  );
+
   const scaleValue = getScale(clampedWidth);
   const yPercentValue = getYPercent(clampedWidth);
+  const blurValue = getBlurValue(clampedWidth);
   const dimColor = 'rgba(255, 255, 255, 0.5)';
 
 
   const tl = gsap.timeline();
   
   tl.set('#load',{zIndex: -1});
-  tl.set('.possessive h2', { display:'block', opacity: 0});
+  tl.set('.possessive h1', { display:'block', opacity: 0});
   
   tl.to('.loader-text',{autoAlpha: 0});
-  tl.to('.background-gradient',{borderRadius: 1400, filter: 'blur(20rem)'}, "<");
+  tl.to('.background-gradient',{borderRadius: 1400, filter: `blur(${blurValue}rem)`}, "<");
   tl.to('.logo .half-circle, .logo .wave',{stroke: dimColor}, "<");
   tl.to('.logo .brush-head, .brush-body',{fill: dimColor, stroke:'none'}, "<");
   tl.to('.logo .search',{fill: dimColor}, "<");
   tl.to('.possessive',{scale: scaleValue, yPercent: yPercentValue}, "<")
-  .to('.possessive h2',{opacity: 1})
+  .to('.possessive h1',{opacity: 1})
 
 };
 
