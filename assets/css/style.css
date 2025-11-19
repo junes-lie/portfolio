@@ -251,6 +251,7 @@ body #layout #load .container {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  max-width: none;
 }
 body #layout #load .container .possessive {
   width: 100%;
@@ -280,14 +281,15 @@ body #layout #load .container h3 {
   font-weight: 800;
   color: #fff;
 }
-body #layout #intro .container {
-  align-items: end;
+body #layout #intro {
+  position: relative;
 }
 body #layout #intro .container h1 {
-  line-height: 40rem;
+  position: absolute;
+  width: 100%;
+  top: 50vh;
   text-transform: capitalize;
-  text-indent: clamp(1.6rem, 3.5vw, 5rem);
-  letter-spacing: clamp(1.6rem, 3.5vw, 5rem);
+  letter-spacing: clamp(1.4rem, 2.1vw, 3rem);
   color: var(--opacity);
 }
 body #layout #publishing .carousel {

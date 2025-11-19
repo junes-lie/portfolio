@@ -74,6 +74,7 @@ body{
       .container{
   
         @include flex(column, 2rem);
+        max-width: none;
 
         .possessive{
           // border: 1px solid #000;
@@ -118,27 +119,28 @@ body{
 
     #intro{
 
-      // position: relative;
+      position: relative;
 
 
       .container{
 
         // @include flex(column,1rem);
-        align-items: end;
+        // align-items: end;
         // justify-content: end;
 
         h1{
-          // position: absolute;
-          // bottom: 0;
-          
-          line-height: 40rem;
+          position: absolute;
+          width: 100%;
+          // bottom: 15vh;
+          top: 50vh;
+
+          // line-height: 40rem;
           // border: 1px solid #000;
 
           text-transform: capitalize;
           // text-indent: 5rem;
-          text-indent: $size-5rem;
-          // letter-spacing: 4.2rem;
-          letter-spacing: $size-5rem;
+          // text-indent: $size-5rem;
+          letter-spacing: $size-3rem;
 
           color: var(--opacity);
         }
