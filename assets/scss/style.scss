@@ -9,8 +9,10 @@
 /* 기본 1400이상 max-width: 1400px */
 body{
   overflow: hidden;
-  scroll-behavior: auto;
-  font-size: clamp(1.2rem, 1.4vw, 2rem);
+  // scroll-behavior: auto;
+  font-size: $size-2rem;
+  color: var(--text-color);
+
 
   h1{
     font-family: 'YUniverse-B';
@@ -18,13 +20,17 @@ body{
 
   }
 
+  // button{
+  //   color: var(--text-color);
+  // }
 
 
 
 
   section{
-    overflow-x: hidden;
+    // overflow-x: hidden;
     height: 100vh;
+    width: 100vw;
     padding: $h-header 0;
     @include center-flex;
     
@@ -49,10 +55,12 @@ body{
   
   #layout{
     height: 100vh;
+    // width: 100vw;
+    // overflow-x: hidden;
     
     #load{
       position: fixed;
-      @include fill-parent;
+      // overflow: hidden;
       z-index: $z-s1;
   
       .background-gradient{
@@ -124,21 +132,16 @@ body{
 
       .container{
 
-        // @include flex(column,1rem);
-        // align-items: end;
-        // justify-content: end;
 
         h1{
           position: absolute;
           width: 100%;
-          // bottom: 15vh;
           top: 50vh;
 
           // line-height: 40rem;
           // border: 1px solid #000;
 
           text-transform: capitalize;
-          // text-indent: 5rem;
           // text-indent: $size-5rem;
           letter-spacing: $size-3rem;
 
@@ -209,7 +212,7 @@ body{
 }
 // tablet 768px 반응형
 @include tablet{
-
+  
 }
 
 //mobile 360px 반응형

@@ -78,8 +78,8 @@ const LogoDraw = () =>{
 // }
 
 function init(){
-  document.scrollingElement.scrollTo(0,0);
   document.body.style.overflow = 'auto';
+  document.scrollingElement.scrollTo(0,0);
 
   const minScreenWidth = 360;
   const maxScreenWidth = 1400;
@@ -109,7 +109,7 @@ function init(){
   const scaleValue = getScale(clampedWidth);
   const yPercentValue = getYPercent(clampedWidth);
   const blurValue = getBlurValue(clampedWidth);
-  const dimColor = 'rgba(255, 255, 255, 0.5)';
+  const dimColor = 'var(--opacity)';
 
 
   const tl = gsap.timeline();
@@ -118,10 +118,10 @@ function init(){
   tl.set('.possessive h1', { display:'block', opacity: 0});
   
   tl.to('.loader-text',{autoAlpha: 0});
-  tl.to('.background-gradient',{borderRadius: 1400, filter: `blur(${blurValue}rem)`}, "<");
-  tl.to('.logo .half-circle, .logo .wave',{stroke: dimColor}, "<");
-  tl.to('.logo .brush-head, .brush-body',{fill: dimColor, stroke:'none'}, "<");
-  tl.to('.logo .search',{fill: dimColor}, "<");
+  tl.to('.background-gradient',{borderRadius: '100%', filter: `blur(${blurValue}rem)`}, "<");
+  tl.to('#load .logo .half-circle, #load .logo .wave',{stroke: dimColor}, "<");
+  tl.to('#load .logo .brush-head, #load .logo .brush-body',{fill: dimColor, stroke:'none'}, "<");
+  tl.to('#load .logo .search',{fill: dimColor}, "<");
   tl.to('.possessive',{scale: scaleValue, yPercent: yPercentValue}, "<")
   .to('.possessive h1',{opacity: 1})
 

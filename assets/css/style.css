@@ -78,7 +78,82 @@ html body input, html body button, html body textarea {
   --text-color: #333;
   --text-color-rgb: 51, 51, 51;
   --bg-grad: linear-gradient(to bottom, #F2BA52 27%, #F2A766 47%, #F2784B 55%, #D95E52 59%, #7A9FBF 100%);
-  --opacity: rgba(255, 255, 255, 0.5);
+  --opacity: rgba(255, 255, 255, 0.7);
+}
+
+.quick-btns {
+  position: absolute;
+  right: 5vw;
+  bottom: 10vh;
+  z-index: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.quick-btns .btn {
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(1rem) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+@media (hover: hover) {
+  .quick-btns .btn:hover {
+    transform: scale(0.95);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  }
+}
+@media (hover: none) {
+  .quick-btns .btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  }
+}
+.quick-btns i, .quick-btns iconify-icon {
+  font-size: clamp(1.2rem, 1.4vw, 2rem);
+}
+.quick-btns button {
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+}
+.quick-btns .logo-btn {
+  position: relative;
+}
+.quick-btns .logo-btn svg {
+  position: absolute;
+  width: 80%;
+  top: 15%;
+}
+.quick-btns .top-btn {
+  margin-top: 1rem;
+  color: #fff;
+}
+.quick-btns a {
+  width: 3rem;
+  height: 3rem;
+  margin: 0.5rem 0;
+}
+.quick-btns .link-btns {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(1rem);
+  transition: all 0.3s ease;
+}
+.quick-btns .link-btns.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.quick-btns .link-btns .resume-btn {
+  color: #2c76b6;
+}
+.quick-btns .link-btns .pdf-btn {
+  color: #EF5350;
 }
 
 .navigation {
@@ -184,12 +259,76 @@ html body input, html body button, html body textarea {
   stroke-linejoin: round;
 }
 
+@keyframes mouse-wheel-ani {
+  /* 0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-10px);
+  }
+  100%{
+    transform: translateY(0);
+  } */
+  0% {
+    margin-top: 0;
+  }
+  50% {
+    margin-top: 10px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+.mouse-scroll {
+  height: 100vh;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  background-color: #333;
+  position: relative;
+}
+
+.mouse {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mouse .mouse-wheel { /* 마우스모양 */
+  border: 2px solid #fff;
+  position: relative;
+  width: 32px;
+  height: 45px;
+  border-radius: 30px;
+  margin: auto;
+}
+
+.mouse .mouse-wheel::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -90%); */
+  width: 4px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  animation: mouse-wheel-ani 3s linear infinite alternate;
+}
+
+.mouse span {
+  color: #fff;
+  font-size: 12px;
+}
+
 /* 재활용가능한 것들 */
 /* 기본 1400이상 max-width: 1400px */
 body {
   overflow: hidden;
-  scroll-behavior: auto;
   font-size: clamp(1.2rem, 1.4vw, 2rem);
+  color: var(--text-color);
   /*  ~ Common _______________________ */
 }
 body h1 {
@@ -197,8 +336,8 @@ body h1 {
   font-size: clamp(6rem, 22vw - 2rem, 40rem);
 }
 body section {
-  overflow-x: hidden;
   height: 100vh;
+  width: 100vw;
   padding: 10vh 0;
   display: flex;
   justify-content: center;
@@ -225,9 +364,6 @@ body #layout {
 }
 body #layout #load {
   position: fixed;
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
   z-index: 1000;
 }
 body #layout #load .background-gradient {

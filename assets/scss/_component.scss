@@ -1,11 +1,90 @@
 @charset "utf-8"; 
 
 @use './variable' as *;
+@use './mixin' as *;
 
+
+.quick-btns{
+  position: absolute;
+  right: $p-section;
+  bottom: $h-header;
+  z-index: $z-float;
+  @include center-flex;
+  flex-direction: column;
+
+  .btn{
+    border-radius: 100%;
+    @include glass;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    @include center-flex;
+    transition: all 0.3s ease;
+
+    @include hover-effect {
+      transform: scale(0.95);
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    }
+
+  }
+
+  i, iconify-icon{
+    font-size: $size-2rem;
+  }
+
+  button{
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+  }
+
+  .logo-btn{
+    position: relative;
+    
+    svg{
+      position: absolute;
+      width: 80%;
+      top: 15%;
+    }
+  }
+
+  .top-btn{
+    margin-top: 1rem;
+    color: #fff;
+  }
+
+  a{
+    width: 3rem;
+    height: 3rem;
+    margin: 0.5rem 0;
+  }
+
+  .link-btns{
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(1rem);
+    transition: all 0.3s ease;
+
+    &.active{
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .resume-btn{
+      color: #2c76b6;
+    }
+    
+    .pdf-btn{
+      color: #EF5350;
+    }
+  }
+
+
+}
 
 .navigation{
   position: absolute;
-  left: 5vw;
+  left: $p-section;
   top: 50%;
   transform: translateY(-50%);
   z-index: $z-float;
@@ -95,5 +174,67 @@
   .wave,
   .half-circle { fill: none; stroke-width: 10; stroke-linecap: round; }
   .brush-body { stroke-width: 1.5; stroke-linejoin: round; }
+}
+
+
+
+
+@keyframes mouse-wheel-ani{
+  /* 0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-10px);
+  }
+  100%{
+    transform: translateY(0);
+  } */
+  0% {margin-top: 0;}
+	50% {margin-top: 10px;}
+	100% {margin-top: 0;}
+}
+
+.mouse-scroll{
+  height: 100vh;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  background-color: #333;
+  position: relative;
+
+}
+.mouse{
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+}
+.mouse .mouse-wheel{ /* 마우스모양 */
+  border: 2px solid #fff;
+  position: relative;
+  width: 32px;
+  height: 45px;
+  border-radius: 30px;
+  margin: auto;
+}
+
+.mouse .mouse-wheel::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -90%); */
+  width: 4px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  animation: mouse-wheel-ani 3s linear infinite alternate;
+}
+
+.mouse span{
+  color: #fff;
+  font-size: 12px;
 }
 

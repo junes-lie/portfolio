@@ -20,6 +20,21 @@
 //   }
 // }
 
+@mixin hover-effect {
+  // 마우스가 있는 환경 (PC 등) -> 호버 시 적용
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+  // 터치만 가능한 환경 (모바일/태블릿) -> 누를 때(Active) 적용
+  @media (hover: none) {
+    &:active {
+      @content;
+    }
+  }
+}
+
 
 @mixin center-absolute {
   position: absolute;
@@ -48,6 +63,6 @@
 
 @mixin glass{
   background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(20px) saturate(130%);
+  backdrop-filter: blur(1rem) saturate(120%);
 
 }
