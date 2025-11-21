@@ -1,5 +1,6 @@
 @charset "utf-8"; 
 
+@use "sass:math"; 
 
 :root{
   --bg-color: #fff;
@@ -40,9 +41,89 @@ $z-float: 900;
 $trans-du: 0.3s;
 $ani-du: 1s;
 
-$size-2rem: clamp(1.2rem, 1.4vw, 2rem);
-$size-3rem: clamp(1.4rem, 2.1vw, 3rem);
-$size-5rem: clamp(1.6rem, 3.5vw, 5rem);
-$size-15rem: clamp(4rem , 10vw, 15rem);
-$size-20rem: clamp(5rem, 14vw, 20rem);
-$size-40rem: clamp(6rem , 22vw - 2rem, 40rem);
+
+@function clamp-calc($min, $max) {
+  $min-w: math.div($mobile, 1px);
+  $max-w: math.div($pc, 1px);
+
+  $min-rem: math.div($min, 10);
+  $max-rem: math.div($max, 10);
+
+  $slope: math.div($max - $min, $max-w - $min-w);
+  $y-axis: $min-rem - (math.div($min-w, 10) * $slope);
+
+  $slope-vw: math.round($slope * 100 * 1000) * 0.001;
+  $y-rem: math.round($y-axis * 1000) * 0.001;
+
+  @return clamp(#{$min-rem}rem, #{$y-rem}rem + #{$slope-vw}vw, #{$max-rem}rem);
+}
+
+
+
+// $type-system: (
+//   'display': (m: 40, p: 80), // 초대형 타이틀 (인트로 등)
+//   'h1':      (m: 32, p: 64), // 섹션 제목
+//   'h2':      (m: 24, p: 40), // 서브 제목
+//   'h3':      (m: 20, p: 28), // 소제목
+//   'body-l':  (m: 16, p: 20), // 본문 강조
+//   'body':    (m: 14, p: 16), // 일반 본문
+//   'caption': (m: 12, p: 14)  // 캡션, 설명
+// );
+
+
+// // =================================================================
+// // [3. 디자인 시스템 - 타이포그래피]
+// // =================================================================
+// $font-display: clamp-calc(40, 120);
+// $font-h1: clamp-calc(32, 64);
+// $font-h2: clamp-calc(24, 48);
+// $font-h3: clamp-calc(20, 32);
+// $font-body-l: clamp-calc(16, 20);
+// $font-body:   clamp-calc(14, 16);
+
+
+$font-h1: clamp-calc(64, 420);
+$font-h3: clamp-calc(24, 36);
+$font-body: clamp-calc(18, 24);
+$font-icon: clamp-calc(16, 20);
+$font-caption: clamp-calc(10, 16);
+
+
+// $size-12rem: clamp(2.4rem , 7vw, 12.8rem); /* ' */
+
+
+// // =================================================================
+// // [4. 디자인 시스템 - UI 컴포넌트 (추가됨)]
+// // 폰트처럼 모바일/PC 비율에 맞춰 자동 조절됩니다.
+// // =================================================================
+
+// // (1) 간격 (Spacing / Gap)
+// // 섹션 간격, 그리드 갭 등에 사용
+// $space-xs: clamp-calc(4, 8);    // 아주 좁음
+// $space-sm: clamp-calc(8, 16);   // 좁음
+// $space-md: clamp-calc(16, 32);  // 기본 (가장 많이 씀)
+// $space-lg: clamp-calc(32, 64);  // 넓음
+// $space-xl: clamp-calc(60, 120); // 섹션 간 여백
+
+// // (2) 버튼 사이즈 (Button Sizes)
+// // 높이(Height) 기준
+// $btn-h-sm: clamp-calc(32, 40);  // 작은 버튼 높이
+// $btn-h-md: clamp-calc(44, 56);  // 기본 버튼 높이 (모바일 터치 최적 44px -> PC 56px)
+// $btn-h-lg: clamp-calc(56, 72);  // 큰 버튼 높이
+$btn-m: clamp-calc(40, 50);
+$btn-s: clamp-calc(30, 35);
+
+// // 버튼 패딩 (가로 여백)
+// $btn-pad-sm: clamp-calc(12, 20);
+// $btn-pad-md: clamp-calc(20, 32);
+// $btn-pad-lg: clamp-calc(32, 48);
+
+// // (3) 카드 & 컨테이너 (Card & Container)
+// // 카드 내부 패딩
+// $card-pad: clamp-calc(20, 40); // 모바일 20px -> PC 40px
+// // 모서리 둥글기 (Border Radius)
+// $radius-sm: clamp-calc(4, 8);
+// $radius-md: clamp-calc(12, 24); // 카드 기본 둥글기
+// $radius-lg: clamp-calc(20, 40); // 큰 컨테이너 둥글기
+// $radius-full: 9999px;           // 완전 원형 (pill shape)
+

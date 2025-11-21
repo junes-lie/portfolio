@@ -118,7 +118,7 @@ function init(){
   tl.set('.possessive h1', { display:'block', opacity: 0});
   
   tl.to('.loader-text',{autoAlpha: 0});
-  tl.to('.background-gradient',{borderRadius: '100%', filter: `blur(${blurValue}rem)`}, "<");
+  tl.to('.background-gradient',{borderRadius: '50%', filter: `blur(${blurValue}rem)`}, "<");
   tl.to('#load .logo .half-circle, #load .logo .wave',{stroke: dimColor}, "<");
   tl.to('#load .logo .brush-head, #load .logo .brush-body',{fill: dimColor, stroke:'none'}, "<");
   tl.to('#load .logo .search',{fill: dimColor}, "<");

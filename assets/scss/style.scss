@@ -10,13 +10,13 @@
 body{
   overflow: hidden;
   // scroll-behavior: auto;
-  font-size: $size-2rem;
+  font-size: $font-body;
   color: var(--text-color);
 
 
   h1{
     font-family: 'YUniverse-B';
-    font-size: $size-40rem;
+    font-size: $font-h1;
 
   }
 
@@ -109,7 +109,7 @@ body{
             span{
               // border: 1px solid #000;
               vertical-align: top;
-              font-size: $size-15rem;
+              font-size: clamp-calc(24, 128);
             }
           }
         }
@@ -119,6 +119,7 @@ body{
           font-family: 'SUITE', sans-serif;
           font-weight: 800;
           color: #fff;
+          font-size: $font-h3;
         }
           
       }
@@ -128,22 +129,21 @@ body{
     #intro{
 
       position: relative;
+      overflow: hidden;
 
 
       .container{
 
-
         h1{
           position: absolute;
-          width: 100%;
+          // width: 100%;
           top: 50vh;
 
           // line-height: 40rem;
           // border: 1px solid #000;
 
           text-transform: capitalize;
-          // text-indent: $size-5rem;
-          letter-spacing: $size-3rem;
+          letter-spacing: 0.08em;
 
           color: var(--opacity);
         }
@@ -212,7 +212,7 @@ body{
 }
 // tablet 768px 반응형
 @include tablet{
-  
+
 }
 
 //mobile 360px 반응형
