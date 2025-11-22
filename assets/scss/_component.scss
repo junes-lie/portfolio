@@ -43,6 +43,8 @@
       position: absolute;
       width: 80%;
       top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 
@@ -54,7 +56,7 @@
   a{
     width: $btn-s;
     height: $btn-s;
-    margin: 0.5rem 0;
+    margin: 0.8rem 0;
   }
 
   .link-btns{
@@ -92,13 +94,10 @@
   /* mix-blend-mode: difference; */
 
   .progress{
-    position: absolute;
+    @include center-absolute;
     width: 0.1rem;
-    height: 100%;
+    height: 95%;
     background: #fff;
-    left:50%;
-    transform: translateX(-50%);
-    top: 0;
   }
 
   ul{
@@ -118,16 +117,17 @@
         height: 3rem;
         border-radius: 50%;
         background: #fff;
+        filter: blur(0.3rem);
       }
 
       span{
-        white-space: nowrap;
         position: absolute;
         left: 0;
         top: 50%;
         transform: translateY(-50%);
+        white-space: nowrap;
         font-size: $font-caption;
-        // opacity: 0;
+        opacity: 0;
       }
     }
   }
@@ -173,62 +173,7 @@
 
 
 
-@keyframes mouse-wheel-ani{
-  /* 0%{
-    transform: translateY(0);
-  }
-  50%{
-    transform: translateY(-10px);
-  }
-  100%{
-    transform: translateY(0);
-  } */
-  0% {margin-top: 0;}
-	50% {margin-top: 10px;}
-	100% {margin-top: 0;}
-}
 
-.mouse-scroll{
-  height: 100vh;
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  background-color: #333;
-  position: relative;
 
-}
-.mouse{
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  
-}
-.mouse .mouse-wheel{ /* 마우스모양 */
-  border: 2px solid #fff;
-  position: relative;
-  width: 32px;
-  height: 45px;
-  border-radius: 30px;
-  margin: auto;
-}
 
-.mouse .mouse-wheel::before{
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* transform: translate(-50%, -90%); */
-  width: 4px;
-  height: 10px;
-  background-color: #fff;
-  border-radius: 5px;
-  animation: mouse-wheel-ani 3s linear infinite alternate;
-}
-
-.mouse span{
-  color: #fff;
-  font-size: 12px;
-}
 

@@ -1,0 +1,12 @@
+@charset "utf-8"; 
+
+@keyframes mouse-wheel-ani{
+  0% {top: 30%;}
+	100% {top: 50%;}
+}
+
+@keyframes rotate-y-180 {
+  0% { transform: rotateY(0deg); }
+  10% { transform: rotateY(180deg); }
+  100% { transform: rotateY(180deg); }
+}

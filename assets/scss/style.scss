@@ -3,6 +3,7 @@
 @use './variable' as *;
 @use './mixin' as *;
 @use './component' as *; /* 재활용가능한 것들 */
+@use './animation' as *;
 // @use './header' as *;
 
 
@@ -17,7 +18,6 @@ body{
   h1{
     font-family: 'YUniverse-B';
     font-size: $font-h1;
-
   }
 
   // button{
@@ -68,8 +68,6 @@ body{
         @include fill-parent;
         background: var(--bg-grad);
         filter: blur(0rem);
-
-        z-index: -1; 
   
         &::before{
           content: '';
@@ -91,63 +89,88 @@ body{
           position: relative;
           padding: 0 28vw;
           
-
           .logo {
             max-height: 50vh;
-
           }
 
           h1{
             // border: 1px solid #000;
             position: absolute;
             display: none;
-            color: #fff;
             left: calc(50% + 15vw);
             color: var(--opacity);
 
             /* 별모양 */
             span{
+              display: inline-block;
               // border: 1px solid #000;
               vertical-align: top;
               font-size: clamp-calc(24, 128);
+              animation: rotate-y-180 5s infinite ease-in-out;
+              transform-origin: center center;
             }
           }
         }
 
-  
         h3{
           font-family: 'SUITE', sans-serif;
           font-weight: 800;
           color: #fff;
           font-size: $font-h3;
         }
-          
       }
     }
 
 
     #intro{
-
       position: relative;
       overflow: hidden;
-
 
       .container{
 
         h1{
           position: absolute;
-          // width: 100%;
           top: 50vh;
-
-          // line-height: 40rem;
-          // border: 1px solid #000;
-
+          line-height: $font-h1;
           text-transform: capitalize;
           letter-spacing: 0.08em;
-
           color: var(--opacity);
         }
       }
+
+      .mouse-wrap{
+        position: absolute;
+        top: calc(100vh - $h-header);
+        @include flex(column, $space-xs);
+        
+        .mouse{
+          position: relative;
+          border: 0.2rem solid #fff;
+          width: 3.2rem;
+          height: 4.5rem;
+          border-radius: 3rem;
+          margin: 0 auto;
+          
+          &::before{
+            content: '';
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0.4rem;
+            height: 1rem;
+            background-color: #fff;
+            border-radius: 0.5rem;
+            animation: mouse-wheel-ani 1s linear infinite alternate;
+          }
+        }
+        
+        span{
+          color: #fff;
+          font-size: $font-caption;
+        }
+
+      }      
     }
     
     

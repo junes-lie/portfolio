@@ -3,11 +3,11 @@
 @use "sass:math"; 
 
 :root{
-  --bg-color: #fff;
-  --bg-color-rgb: 255, 255, 255;
+  // --bg-color: #fff;
+  // --bg-color-rgb: 255, 255, 255;
   // --text-color: rgba(51, 51, 51, 0.8);
   --text-color: #333;
-  --text-color-rgb: 51, 51, 51;
+  // --text-color-rgb: 51, 51, 51;
 
   --bg-grad: linear-gradient(to bottom, #F2BA52 27%, #F2A766 47%, #F2784B 55%, #D95E52 59%, #7A9FBF 100%);
 
@@ -85,9 +85,13 @@ $ani-du: 1s;
 $font-h1: clamp-calc(64, 420);
 $font-h3: clamp-calc(24, 36);
 $font-body: clamp-calc(18, 24);
-$font-icon: clamp-calc(16, 20);
+$font-icon: clamp-calc(16, 18);
 $font-caption: clamp-calc(10, 16);
 
+$btn-m: clamp-calc(40, 50);
+$btn-s: clamp-calc(30, 35);
+
+$space-xs: clamp-calc(5, 10);
 
 // $size-12rem: clamp(2.4rem , 7vw, 12.8rem); /* ' */
 
@@ -110,8 +114,7 @@ $font-caption: clamp-calc(10, 16);
 // $btn-h-sm: clamp-calc(32, 40);  // 작은 버튼 높이
 // $btn-h-md: clamp-calc(44, 56);  // 기본 버튼 높이 (모바일 터치 최적 44px -> PC 56px)
 // $btn-h-lg: clamp-calc(56, 72);  // 큰 버튼 높이
-$btn-m: clamp-calc(40, 50);
-$btn-s: clamp-calc(30, 35);
+
 
 // // 버튼 패딩 (가로 여백)
 // $btn-pad-sm: clamp-calc(12, 20);
