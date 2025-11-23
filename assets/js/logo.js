@@ -78,7 +78,7 @@ const LogoDraw = () =>{
 // }
 
 function init(){
-  document.body.style.overflow = 'auto';
+  document.body.style.overflowY = 'auto';
   document.scrollingElement.scrollTo(0,0);
 
   const minScreenWidth = 360;

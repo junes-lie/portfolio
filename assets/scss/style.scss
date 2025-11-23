@@ -32,6 +32,7 @@ body{
     height: 100vh;
     width: 100vw;
     padding: $h-header 0;
+    position: relative;
     @include center-flex;
     
     .container{
@@ -40,6 +41,7 @@ body{
       margin: 0 $p-section;
       max-width: $pc;
       @include center-flex;
+      overflow-x: hidden;
       border: 1px solid red;
 
       img{
@@ -51,75 +53,76 @@ body{
 
   /*  ~ Common _______________________ */
 
-  
+  #load{
+    position: fixed;
+    // overflow: hidden;
+    z-index: $z-s1;
+
+    .background-gradient{
+      position: absolute;
+      @include fill-parent;
+      background: var(--bg-grad);
+      filter: blur(0rem);
+
+      &::before{
+        content: '';
+        position: absolute;
+        @include fill-parent;
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+
+    .container{
+
+      @include flex(column, 2rem);
+      max-width: none;
+
+      .possessive{
+        // border: 1px solid #000;
+        width: 100%;
+        @include center-flex;
+        position: relative;
+        padding: 0 28vw;
+        
+        .logo {
+          max-height: 50vh;
+        }
+
+        h1{
+          // border: 1px solid #000;
+          position: absolute;
+          display: none;
+          left: calc(50% + 15vw);
+          color: var(--opacity);
+
+          /* 별모양 */
+          span{
+            display: inline-block;
+            // border: 1px solid #000;
+            vertical-align: top;
+            font-size: clamp-calc(24, 128);
+            animation: rotate-y-180 5s infinite ease-in-out;
+            transform-origin: center center;
+          }
+        }
+      }
+
+      h3{
+        font-family: 'SUITE', sans-serif;
+        font-weight: 800;
+        color: #fff;
+        font-size: $font-h3;
+        z-index: 0;
+      }
+    }
+  }
   
   #layout{
     height: 100vh;
-    // width: 100vw;
-    // overflow-x: hidden;
+    width: 100vw;
+    overflow-x: hidden;
     
-    #load{
-      position: fixed;
-      // overflow: hidden;
-      z-index: $z-s1;
-  
-      .background-gradient{
-        position: absolute;
-        @include fill-parent;
-        background: var(--bg-grad);
-        filter: blur(0rem);
-  
-        &::before{
-          content: '';
-          position: absolute;
-          @include fill-parent;
-          background-color: rgba(255, 255, 255, 0.2);
-        }
-      }
-  
-      .container{
-  
-        @include flex(column, 2rem);
-        max-width: none;
-
-        .possessive{
-          // border: 1px solid #000;
-          width: 100%;
-          @include center-flex;
-          position: relative;
-          padding: 0 28vw;
-          
-          .logo {
-            max-height: 50vh;
-          }
-
-          h1{
-            // border: 1px solid #000;
-            position: absolute;
-            display: none;
-            left: calc(50% + 15vw);
-            color: var(--opacity);
-
-            /* 별모양 */
-            span{
-              display: inline-block;
-              // border: 1px solid #000;
-              vertical-align: top;
-              font-size: clamp-calc(24, 128);
-              animation: rotate-y-180 5s infinite ease-in-out;
-              transform-origin: center center;
-            }
-          }
-        }
-
-        h3{
-          font-family: 'SUITE', sans-serif;
-          font-weight: 800;
-          color: #fff;
-          font-size: $font-h3;
-        }
-      }
-    }
+    
 
 
     #intro{

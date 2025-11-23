@@ -6,6 +6,11 @@ const linkBtns = document.querySelector('.link-btns');
 topBtn.addEventListener('click', () => {
   gsap.to(document.body, {scrollTo: 0, ease: "power1.inOut"});
   // smoother.scrollTo(0, true);
+  // document.scrollingElement.scrollTo(0,0);
+  // document.scrollingElement.scrollTo({
+  // top: 0,
+  // behavior: 'smooth'
+// });
 });
 
 logoBtn.addEventListener('click', () => {

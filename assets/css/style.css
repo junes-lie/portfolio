@@ -74,6 +74,7 @@ html body input, html body button, html body textarea {
 
 :root {
   --text-color: #333;
+  --text-color-rgb: 51, 51, 51;
   --bg-grad: linear-gradient(to bottom, #F2BA52 27%, #F2A766 47%, #F2784B 55%, #D95E52 59%, #7A9FBF 100%);
   --opacity: rgba(255, 255, 255, 0.7);
 }
@@ -130,7 +131,7 @@ html body input, html body button, html body textarea {
 }
 .quick-btns .top-btn {
   margin-top: 1rem;
-  color: #fff;
+  color: var(--opacity);
 }
 .quick-btns a {
   width: clamp(3rem, 2.827rem + 0.481vw, 3.5rem);
@@ -285,6 +286,7 @@ body section {
   height: 100vh;
   width: 100vw;
   padding: 10vh 0;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -297,6 +299,7 @@ body section .container {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
   border: 1px solid red;
 }
 body section .container img {
@@ -305,14 +308,11 @@ body section .container img {
   height: 100%;
   object-fit: cover;
 }
-body #layout {
-  height: 100vh;
-}
-body #layout #load {
+body #load {
   position: fixed;
   z-index: 1000;
 }
-body #layout #load .background-gradient {
+body #load .background-gradient {
   position: absolute;
   margin: 0 auto;
   width: 100%;
@@ -320,7 +320,7 @@ body #layout #load .background-gradient {
   background: var(--bg-grad);
   filter: blur(0rem);
 }
-body #layout #load .background-gradient::before {
+body #load .background-gradient::before {
   content: "";
   position: absolute;
   margin: 0 auto;
@@ -328,13 +328,13 @@ body #layout #load .background-gradient::before {
   height: 100%;
   background-color: rgba(255, 255, 255, 0.2);
 }
-body #layout #load .container {
+body #load .container {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   max-width: none;
 }
-body #layout #load .container .possessive {
+body #load .container .possessive {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -342,28 +342,34 @@ body #layout #load .container .possessive {
   position: relative;
   padding: 0 28vw;
 }
-body #layout #load .container .possessive .logo {
+body #load .container .possessive .logo {
   max-height: 50vh;
 }
-body #layout #load .container .possessive h1 {
+body #load .container .possessive h1 {
   position: absolute;
   display: none;
   left: calc(50% + 15vw);
   color: var(--opacity);
   /* 별모양 */
 }
-body #layout #load .container .possessive h1 span {
+body #load .container .possessive h1 span {
   display: inline-block;
   vertical-align: top;
   font-size: clamp(2.4rem, -1.2rem + 10vw, 12.8rem);
   animation: rotate-y-180 5s infinite ease-in-out;
   transform-origin: center center;
 }
-body #layout #load .container h3 {
+body #load .container h3 {
   font-family: "SUITE", sans-serif;
   font-weight: 800;
   color: #fff;
   font-size: clamp(2.4rem, 1.985rem + 1.154vw, 3.6rem);
+  z-index: 0;
+}
+body #layout {
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
 }
 body #layout #intro {
   position: relative;

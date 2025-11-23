@@ -9,13 +9,15 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.8.4/smooth-scrollbar.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Observer.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
   <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js"></script>
 
   <!-- <script src="assets/js/scroll.js" defer></script> -->
+  <script src="assets/js/scrollbar.js" defer></script>
   <script src="assets/js/logo.js" defer></script>
   <script src="assets/js/quick.js" defer></script>
   <script src="assets/js/publish.js" defer></script>
@@ -110,30 +112,29 @@
       </li>
     </ul>
   </nav>
-  
-  <div id="layout">
-    <section id="load">
-      <div class="background-gradient"></div>
-      <div class="container">
-        
-        
-        <div class="possessive">
-          <svg id="logo-white" class="logo" viewBox="0 0 270 225" xmlns="http://www.w3.org/2000/svg">
-            <defs></defs>
-  
-            <path class="half-circle stroke" d="M39.8944 145.902C35.0177 130.893 33.7625 114.943 36.2312 99.3566C38.6999 83.7698 44.8224 68.9886 54.0983 56.2215C63.3741 43.4544 75.5399 33.0638 89.6009 25.8994C103.662 18.7349 119.219 15 135 15C150.781 15 166.338 18.7349 180.399 25.8993C194.46 33.0638 206.626 43.4543 215.902 56.2214C225.178 68.9886 231.3 83.7698 233.769 99.3565C236.238 114.943 234.982 130.893 230.106 145.902" />
-            <path class="brush-head up" d="M96.7408 124.032C91.1369 129.123 95.8715 134.351 88.4293 142.093C85.0708 145.594 102.256 144.526 110.767 136.787C114.381 133.499 113.36 128.715 109.487 125.191C105.614 121.674 100.351 120.744 96.7408 124.032Z"/>
-            <path class="brush-body up" d="M123.404 71.9544C125.087 83.7112 122.983 102.229 118.671 113.304L116.041 120.059C115.678 120.866 115.286 121.622 114.748 122.298C114.489 121.85 114.177 121.367 113.83 120.938C112.351 119.008 110.287 117.614 107.659 116.91C104.993 116.195 102.355 116.392 100.084 117.339C99.5726 117.601 99.0467 117.838 98.5782 118.175C98.4067 117.247 98.4131 116.282 98.5907 115.384L99.6413 108.247C101.419 96.5138 108.877 79.3468 116.203 70.0459C117.354 68.6521 119 68.2317 120.426 68.6349C121.902 69.0093 123.168 70.168 123.404 71.9544Z" />
-            <path class="search up" d="M157 44C170.807 44 182 55.1929 182 69C182 81.0947 173.411 91.1826 162 93.499V139C162 141.761 159.761 144 157 144C154.239 144 152 141.761 152 139V93.499C140.589 91.1826 132 81.0947 132 69C132 55.1929 143.193 44 157 44ZM157 52.333C147.795 52.333 140.333 59.7953 140.333 69C140.333 78.2047 147.795 85.667 157 85.667C166.205 85.667 173.667 78.2047 173.667 69C173.667 59.7953 166.205 52.333 157 52.333Z" />
-            <path class="wave1 wave stroke" d="M10 162H260" />
-            <path class="wave2 wave stroke" d="M27.5 187H242.5" />
-            <path class="wave3 wave stroke" d="M57.5 212H212.5" />
-          </svg>
-          <h1><span>븿</span>s</h1>
-        </div>
-        <h3 class="loader-text">0%</h3>
+
+  <section id="load">
+    <div class="background-gradient"></div>
+    <div class="container">
+      <div class="possessive">
+        <svg id="logo-white" class="logo" viewBox="0 0 270 225" xmlns="http://www.w3.org/2000/svg">
+          <defs></defs>
+
+          <path class="half-circle stroke" d="M39.8944 145.902C35.0177 130.893 33.7625 114.943 36.2312 99.3566C38.6999 83.7698 44.8224 68.9886 54.0983 56.2215C63.3741 43.4544 75.5399 33.0638 89.6009 25.8994C103.662 18.7349 119.219 15 135 15C150.781 15 166.338 18.7349 180.399 25.8993C194.46 33.0638 206.626 43.4543 215.902 56.2214C225.178 68.9886 231.3 83.7698 233.769 99.3565C236.238 114.943 234.982 130.893 230.106 145.902" />
+          <path class="brush-head up" d="M96.7408 124.032C91.1369 129.123 95.8715 134.351 88.4293 142.093C85.0708 145.594 102.256 144.526 110.767 136.787C114.381 133.499 113.36 128.715 109.487 125.191C105.614 121.674 100.351 120.744 96.7408 124.032Z"/>
+          <path class="brush-body up" d="M123.404 71.9544C125.087 83.7112 122.983 102.229 118.671 113.304L116.041 120.059C115.678 120.866 115.286 121.622 114.748 122.298C114.489 121.85 114.177 121.367 113.83 120.938C112.351 119.008 110.287 117.614 107.659 116.91C104.993 116.195 102.355 116.392 100.084 117.339C99.5726 117.601 99.0467 117.838 98.5782 118.175C98.4067 117.247 98.4131 116.282 98.5907 115.384L99.6413 108.247C101.419 96.5138 108.877 79.3468 116.203 70.0459C117.354 68.6521 119 68.2317 120.426 68.6349C121.902 69.0093 123.168 70.168 123.404 71.9544Z" />
+          <path class="search up" d="M157 44C170.807 44 182 55.1929 182 69C182 81.0947 173.411 91.1826 162 93.499V139C162 141.761 159.761 144 157 144C154.239 144 152 141.761 152 139V93.499C140.589 91.1826 132 81.0947 132 69C132 55.1929 143.193 44 157 44ZM157 52.333C147.795 52.333 140.333 59.7953 140.333 69C140.333 78.2047 147.795 85.667 157 85.667C166.205 85.667 173.667 78.2047 173.667 69C173.667 59.7953 166.205 52.333 157 52.333Z" />
+          <path class="wave1 wave stroke" d="M10 162H260" />
+          <path class="wave2 wave stroke" d="M27.5 187H242.5" />
+          <path class="wave3 wave stroke" d="M57.5 212H212.5" />
+        </svg>
+        <h1><span>븿</span>s</h1>
       </div>
-    </section>
+      <h3 class="loader-text">0%</h3>
+    </div>
+  </section>
+  <div id="layout">
+    
     <section id="intro">
       <div class="container">
         <h1>portfolio</h1>
@@ -149,9 +150,7 @@
     </section>
     <section id="profile">
       <div class="container">
-        
       </div>
-  
     </section>
     <section id="publishing">
       <div class="carousel">
