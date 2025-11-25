@@ -81,49 +81,30 @@ function init(){
   document.body.style.overflowY = 'auto';
   document.scrollingElement.scrollTo(0,0);
 
-  const minScreenWidth = 360;
-  const maxScreenWidth = 1400;
-  const clampedWidth = gsap.utils.clamp(minScreenWidth, maxScreenWidth, window.innerWidth);
+  const minW = CONFIG.vp.mobile;
+  const maxW = CONFIG.vp.pc;
+  const clampedWidth = gsap.utils.clamp(minW, maxW, window.innerWidth);
+  const remap = (min, max) => gsap.utils.mapRange(minW, maxW, min, max, clampedWidth);
 
-  const getScale = gsap.utils.mapRange(
-    minScreenWidth,
-    maxScreenWidth,
-    0.9, //모바일
-    0.7 //데탑
-  );
+  const scaleValue = remap(0.9, 0.7);
+  const yPercentValue = remap(-60, -40);
+  const blurValue = remap(10, 15);
 
-  const getYPercent = gsap.utils.mapRange(
-    minScreenWidth,
-    maxScreenWidth,
-    -60, //모바일
-    -40 //데탑
-  );
-
-  const getBlurValue = gsap.utils.mapRange(
-    minScreenWidth,
-    maxScreenWidth,
-    10, //모바일
-    15 //데탑
-  );
-
-  const scaleValue = getScale(clampedWidth);
-  const yPercentValue = getYPercent(clampedWidth);
-  const blurValue = getBlurValue(clampedWidth);
   const dimColor = 'var(--opacity)';
 
 
   const tl = gsap.timeline();
   
-  tl.set('#load',{zIndex: -1});
-  tl.set('.possessive h1', { display:'block', opacity: 0});
+  tl.set('#load',{zIndex: -1})
+    .set('.possessive h1', { display:'block', opacity: 0})
   
-  tl.to('.loader-text',{autoAlpha: 0});
-  tl.to('.background-gradient',{borderRadius: '50%', filter: `blur(${blurValue}rem)`}, "<");
-  tl.to('#load .logo .half-circle, #load .logo .wave',{stroke: dimColor}, "<");
-  tl.to('#load .logo .brush-head, #load .logo .brush-body',{fill: dimColor, stroke:'none'}, "<");
-  tl.to('#load .logo .search',{fill: dimColor}, "<");
-  tl.to('.possessive',{scale: scaleValue, yPercent: yPercentValue}, "<")
-  .to('.possessive h1',{opacity: 1})
+    .to('.loader-text',{autoAlpha: 0})
+    .to('.background-gradient',{borderRadius: '50%', filter: `blur(${blurValue}rem)`}, "<")
+    .to('#load .logo .half-circle, #load .logo .wave',{stroke: dimColor}, "<")
+    .to('#load .logo .brush-head, #load .logo .brush-body',{fill: dimColor, stroke:'none'}, "<")
+    .to('#load .logo .search',{fill: dimColor}, "<")
+    .to('.possessive',{scale: scaleValue, yPercent: yPercentValue}, "<")
+    .to('.possessive h1',{opacity: 1})
 
 };
 
@@ -143,7 +124,3 @@ function Loading() {
 };
 
 Loading();
-// window.addEventListener('DOMContentLoaded', Loading);
-
-
-  
