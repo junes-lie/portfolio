@@ -10,6 +10,11 @@
   // --text-color-rgb: 51, 51, 51;
 
   --bg-grad: linear-gradient(to bottom, #F2BA52 27%, #F2A766 47%, #F2784B 55%, #D95E52 59%, #7A9FBF 100%);
+  --bg-s2: linear-gradient(108deg, #fff 0% #F2BA52 100%);
+  --bg-s3: linear-gradient(108deg, #F2BA52 0% #F2A766 100%);
+  --bg-s4: linear-gradient(108deg, #F2A766 0% #F2784B 100%);
+  --bg-s5: linear-gradient(108deg, #F2784B 0% #D95E52 100%);
+  --bg-s6: linear-gradient(108deg, #D95E52 0% #7A9FBF 100%);
 
   --opacity: rgba(255, 255, 255, 0.7);
 
