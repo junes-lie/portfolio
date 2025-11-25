@@ -15,7 +15,7 @@
   .btn{
     border-radius: 100%;
     @include glass;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 0.1em solid rgba(255, 255, 255, 0.5);
     @include center-flex;
     transition: all $trans-du ease;
 
@@ -28,12 +28,12 @@
 
   i, iconify-icon{
     font-size: $font-icon;
+    // font-size: 1.8em;
   }
 
   button{
     width: $btn-m;
     height: $btn-m;
-    cursor: pointer;
   }
 
   .logo-btn{
@@ -49,21 +49,21 @@
   }
 
   .top-btn{
-    margin-top: 1rem;
+    margin-top: 1em;
     color: var(--opacity);
   }
 
   a{
     width: $btn-s;
     height: $btn-s;
-    margin: 0.8rem 0;
+    margin: 0.8em 0;
   }
 
   .link-btns{
 
     opacity: 0;
     visibility: hidden;
-    transform: translateY(1rem);
+    transform: translateY(1em);
     transition: all $trans-du ease;
 
     &.active{
@@ -72,13 +72,8 @@
       transform: translateY(0);
     }
 
-    .resume-btn{
-      color: #2c76b6;
-    }
-    
-    .pdf-btn{
-      color: #EF5350;
-    }
+    .resume-btn{ color: #2c76b6; }
+    .pdf-btn{ color: #EF5350; }
   }
 
 

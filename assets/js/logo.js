@@ -88,7 +88,7 @@ function init(){
 
   const scaleValue = remap(0.9, 0.7);
   const yPercentValue = remap(-60, -40);
-  const blurValue = remap(10, 15);
+  const blurValue = remap(8, 15);
 
   const dimColor = 'var(--opacity)';
 

@@ -22,6 +22,9 @@
 //   --text-color-rgb: 255, 255, 255;
 // }
 
+// $text-color: #333;
+// $bg-grad: linear-gradient(to bottom, #F2BA52 27%, #F2A766 47%, #F2784B 55%, #D95E52 59%, #7A9FBF 100%);
+// $opacity: rgba(255, 255, 255, 0.7);
 
 
 
@@ -41,9 +44,9 @@ $trans-du: 0.3s;
 $ani-du: 1s;
 
 
-@function clamp-calc($min, $max) {
-  $min-w: math.div($mobile, 1px);
-  $max-w: math.div($pc, 1px);
+@function clamp-calc($min, $max, $vp-min: $mobile, $vp-max: $pc) {
+  $min-w: math.div($vp-min, 1px);
+  $max-w: math.div($vp-max, 1px);
 
   $min-rem: math.div($min, 10);
   $max-rem: math.div($max, 10);
@@ -81,16 +84,17 @@ $ani-du: 1s;
 // $font-body:   clamp-calc(14, 16);
 
 
-$font-h1: clamp-calc(64, 420);
+$font-h1: clamp-calc(64, 420, $mobile, 1920px);
 $font-h3: clamp-calc(24, 36);
-$font-body: clamp-calc(18, 24);
-$font-icon: clamp-calc(16, 18);
-$font-caption: clamp-calc(10, 16);
+// $font-body: clamp-calc(18, 24);
+$font-caption: clamp-calc(12, 16);
+$font-icon: 1.8em;
 
-$btn-m: clamp-calc(40, 50);
-$btn-s: clamp-calc(30, 35);
+$btn-m: 5em;
+$btn-s: 3.5em;
 
-$space-xs: clamp-calc(5, 10);
+$space-sm: 1em;
+$space-md: 2em;
 
 // $size-12rem: clamp(2.4rem , 7vw, 12.8rem); /* ' */
 

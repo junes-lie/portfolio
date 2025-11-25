@@ -11,8 +11,8 @@
 body{
   overflow: hidden;
   // scroll-behavior: auto;
-  font-size: $font-body;
   color: var(--text-color);
+  font-size: clamp-calc(8, 10); //em 쓰면 모바일이 0.8배율
 
 
   h1{
@@ -20,9 +20,10 @@ body{
     font-size: $font-h1;
   }
 
-  // button{
-  //   color: var(--text-color);
-  // }
+  button{
+    font-size: inherit;
+    cursor: pointer;
+  }
 
 
 
@@ -41,7 +42,6 @@ body{
       margin: 0 $p-section;
       max-width: $pc;
       @include center-flex;
-      overflow-x: hidden;
       border: 1px solid red;
 
       img{
@@ -74,7 +74,7 @@ body{
 
     .container{
 
-      @include flex(column, 2rem);
+      @include flex(column, $space-md);
       max-width: none;
 
       .possessive{
@@ -129,29 +129,26 @@ body{
       position: relative;
       overflow: hidden;
 
-      .container{
-
-        h1{
-          position: absolute;
-          top: 50vh;
-          line-height: $font-h1;
-          text-transform: capitalize;
-          letter-spacing: 0.08em;
-          color: var(--opacity);
-        }
+      h1{
+        position: absolute;
+        top: 50vh;
+        line-height: $font-h1;
+        text-transform: capitalize;
+        letter-spacing: 0.08em;
+        color: var(--opacity);
       }
 
       .mouse-wrap{
         position: absolute;
         top: calc(100vh - $h-header);
-        @include flex(column, $space-xs);
+        @include flex(column, $space-sm);
         
         .mouse{
           position: relative;
-          border: 0.2rem solid #fff;
-          width: 3.2rem;
-          height: 4.5rem;
-          border-radius: 3rem;
+          border: 0.2em solid #fff;
+          width: 3.2em;
+          height: 4.5em;
+          border-radius: 3em;
           margin: 0 auto;
           
           &::before{
@@ -160,10 +157,10 @@ body{
             top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 0.4rem;
-            height: 1rem;
+            width: 0.4em;
+            height: 1em;
             background-color: #fff;
-            border-radius: 0.5rem;
+            border-radius: 0.5em;
             animation: mouse-wheel-ani 1s linear infinite alternate;
           }
         }
@@ -171,6 +168,7 @@ body{
         span{
           color: #fff;
           font-size: $font-caption;
+          text-transform: capitalize;
         }
 
       }      
