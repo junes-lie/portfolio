@@ -9,7 +9,7 @@
 
 /* 기본 1400이상 max-width: 1400px */
 body{
-  overflow: hidden;
+  overflow-y: auto;
   // scroll-behavior: auto;
   color: var(--text-color);
   font-size: clamp-calc(8, 10); //em 쓰면 모바일이 0.8배율
@@ -116,10 +116,26 @@ body{
       }
     }
   }
-  
+
+  // #smooth-wrapper { 
+  //   overflow: hidden; 
+  //   position: fixed; 
+  //   height: 100%; 
+  //   width: 100%; 
+  //   top: 0; 
+  //   left: 0; 
+  //   right: 0; 
+  //   bottom: 0; 
+  // }
+
+  // #smooth-content { 
+  //   overflow: visible; 
+  //   width: 100%; 
+  // }
+
   #layout{
-    height: 100vh;
-    width: 100vw;
+    // height: 100vh;
+    // width: 100vw;
     overflow-x: hidden;
     
     

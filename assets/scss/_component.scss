@@ -5,7 +5,7 @@
 
 
 .quick-btns{
-  position: absolute;
+  position: fixed;
   right: $p-section;
   bottom: $h-header;
   z-index: $z-float;
@@ -80,7 +80,7 @@
 }
 
 .navigation{
-  position: absolute;
+  position: fixed;
   left: $p-section;
   top: 50%;
   transform: translateY(-50%);

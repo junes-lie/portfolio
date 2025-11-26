@@ -57,6 +57,7 @@ const LogoDraw = () =>{
   //   duration: 1,
   // }, '<');
   
+  return tl;
 }
 
 
@@ -78,8 +79,7 @@ const LogoDraw = () =>{
 // }
 
 function init(){
-  document.body.style.overflowY = 'auto';
-  document.scrollingElement.scrollTo(0,0);
+  smoother.paused(false);
 
   const minW = CONFIG.vp.mobile;
   const maxW = CONFIG.vp.pc;
@@ -109,8 +109,23 @@ function init(){
 };
 
 function Loading() {
-  LogoDraw();
+  smoother.scrollTo(0, false);
+  smoother.paused(true);
   
+  let isImageLoaded = false;
+  let isLogoFinished = false;
+
+  const checkStart = () => {
+    if (isLogoFinished && isImageLoaded) {
+      init();
+    }
+  };
+
+  LogoDraw().eventCallback("onComplete", () =>{
+    isLogoFinished = true;
+    checkStart();
+  });
+
   const img = gsap.utils.toArray('img');
   const loader = document.querySelector('.loader-text');
 
@@ -120,7 +135,11 @@ function Loading() {
 
   imagesLoaded(img)
   .on('progress', updateProgress)
-  .on('always', init);
+  .on('always', () => {
+    isImageLoaded = true;
+    checkStart();
+  });
+
 };
 
 Loading();
