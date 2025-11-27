@@ -6,12 +6,13 @@ sections.forEach((section, index)=>{
   const li = navLis[index];
   const dot = li.querySelector('.dot');
   const span = li.querySelector('span');
+  const xValue = remap(40, 55);
 
   let navAnimation = gsap.timeline()
   .to(dot, {scale:1.8})
   .to(span, {
     opacity: 1,
-    x: 55,
+    x: xValue,
     // color: index === 1 ? 'white' : 'black'
   }, 0);
 

@@ -78,13 +78,10 @@ const LogoDraw = () =>{
 //   })
 // }
 
+
+
 function init(){
   smoother.paused(false);
-
-  const minW = CONFIG.vp.mobile;
-  const maxW = CONFIG.vp.pc;
-  const clampedWidth = gsap.utils.clamp(minW, maxW, window.innerWidth);
-  const remap = (min, max) => gsap.utils.mapRange(minW, maxW, min, max, clampedWidth);
 
   const scaleValue = remap(0.9, 0.7);
   const yPercentValue = remap(-60, -40);

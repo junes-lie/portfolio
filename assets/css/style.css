@@ -39,15 +39,18 @@
 html {
   overflow-x: hidden;
   font-size: 62.5%; /* 16px * 0.625 = 10px */
-  color: var(--text-color);
 }
 html body {
   width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
   font-family: "SUITE", sans-serif;
   font-weight: normal;
   font-style: normal;
-  overflow-x: hidden;
   word-break: keep-all;
+  color: var(--text-color);
+  font-size: clamp-calc(8, 10);
+  user-select: none;
 }
 html body article, html body aside, html body details, html body figcaption, html body figure, html body footer, html body hgroup, html body menu, html body nav, html body svg {
   display: block;
@@ -165,7 +168,6 @@ html body input, html body button, html body textarea {
   transform: translateY(-50%);
   z-index: 900;
   /* display: none; */
-  /* mix-blend-mode: difference; */
 }
 .navigation .progress {
   position: absolute;
@@ -174,23 +176,25 @@ html body input, html body button, html body textarea {
   transform: translate(-50%, -50%);
   width: 0.1rem;
   height: 95%;
-  background: #fff;
+  background: black;
+  z-index: 1;
+}
+.navigation ul {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
 }
 .navigation ul li {
   position: relative;
-  margin-bottom: 3rem;
-}
-.navigation ul li:last-child {
-  margin-bottom: 0;
+  cursor: pointer;
 }
 .navigation ul li .dot {
   position: relative;
-  width: 3rem;
-  height: 3rem;
+  width: 3em;
+  height: 3em;
   border-radius: 50%;
   background: #fff;
-  filter: blur(0.3rem);
-  cursor: pointer;
+  filter: blur(0.3em);
 }
 .navigation ul li span {
   position: absolute;
@@ -199,10 +203,27 @@ html body input, html body button, html body textarea {
   transform: translateY(-50%);
   white-space: nowrap;
   font-size: clamp(1.2rem, 1.062rem + 0.385vw, 1.6rem);
-  z-index: -1;
   opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: difference;
 }
 
+@media (orientation: portrait) {
+  .navigation {
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .navigation .progress {
+    width: 95%;
+    height: 0.1rem;
+  }
+  .navigation ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+  }
+}
 #logo-white .half-circle,
 #logo-white .wave {
   fill: none;
@@ -275,19 +296,12 @@ html body input, html body button, html body textarea {
     transform: rotateY(180deg);
   }
 }
-/* 기본 1400이상 max-width: 1400px */
-body {
-  overflow-y: auto;
-  color: var(--text-color);
-  font-size: clamp(0.8rem, 0.731rem + 0.192vw, 1rem);
-  user-select: none;
-  /*  ~ Common _______________________ */
-}
-body h1 {
+h1 {
   font-family: "YUniverse-B";
   font-size: clamp(6.4rem, -1.815rem + 22.821vw, 42rem);
 }
-body section {
+
+section {
   position: relative;
   height: 100vh;
   width: 100vw;
@@ -296,7 +310,8 @@ body section {
   justify-content: center;
   align-items: center;
 }
-body .container {
+
+.container {
   width: 100%;
   height: 100%;
   margin: 0 5vw;
@@ -306,20 +321,24 @@ body .container {
   align-items: center;
   border: 1px solid red;
 }
-body img {
+
+img {
   margin: 0 auto;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-body button {
+
+button {
   font-size: inherit;
   cursor: pointer;
 }
-body #layout {
+
+/*  ~ Common _____________________ */
+#layout {
   overflow-x: hidden;
 }
-body #layout #load {
+#layout #load {
   position: absolute;
   height: 100vh;
   width: 100vw;
@@ -329,7 +348,7 @@ body #layout #load {
   align-items: center;
   z-index: 1000;
 }
-body #layout #load .background-gradient {
+#layout #load .background-gradient {
   position: absolute;
   margin: 0 auto;
   width: 100%;
@@ -337,7 +356,7 @@ body #layout #load .background-gradient {
   background: var(--bg-grad);
   filter: blur(0rem);
 }
-body #layout #load .background-gradient::before {
+#layout #load .background-gradient::before {
   content: "";
   position: absolute;
   margin: 0 auto;
@@ -345,13 +364,13 @@ body #layout #load .background-gradient::before {
   height: 100%;
   background-color: rgba(255, 255, 255, 0.2);
 }
-body #layout #load .container {
+#layout #load .container {
   display: flex;
   flex-direction: column;
   gap: 2em;
   max-width: none;
 }
-body #layout #load .container .possessive {
+#layout #load .container .possessive {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -359,35 +378,35 @@ body #layout #load .container .possessive {
   position: relative;
   padding: 0 28vw;
 }
-body #layout #load .container .possessive .logo {
+#layout #load .container .possessive .logo {
   max-height: 50vh;
 }
-body #layout #load .container .possessive h1 {
+#layout #load .container .possessive h1 {
   position: absolute;
   display: none;
   left: calc(50% + 15vw);
   color: var(--opacity);
   /* 별모양 */
 }
-body #layout #load .container .possessive h1 span {
+#layout #load .container .possessive h1 span {
   display: inline-block;
   vertical-align: top;
   font-size: clamp(2.4rem, -1.2rem + 10vw, 12.8rem);
   animation: rotate-y-180 5s infinite ease-in-out;
   transform-origin: center center;
 }
-body #layout #load .container h3 {
+#layout #load .container h3 {
   font-family: "SUITE", sans-serif;
   font-weight: 800;
   color: #fff;
   font-size: clamp(2.4rem, 1.985rem + 1.154vw, 3.6rem);
   z-index: 0;
 }
-body #layout #intro {
+#layout #intro {
   position: relative;
   overflow: hidden;
 }
-body #layout #intro h1 {
+#layout #intro h1 {
   position: absolute;
   top: 50vh;
   line-height: clamp(6.4rem, -1.815rem + 22.821vw, 42rem);
@@ -395,14 +414,14 @@ body #layout #intro h1 {
   letter-spacing: 0.08em;
   color: var(--opacity);
 }
-body #layout #intro .mouse-wrap {
+#layout #intro .mouse-wrap {
   position: absolute;
   top: 90vh;
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 0.5em;
 }
-body #layout #intro .mouse-wrap .mouse {
+#layout #intro .mouse-wrap .mouse {
   position: relative;
   border: 0.2em solid #fff;
   width: 3.2em;
@@ -410,7 +429,7 @@ body #layout #intro .mouse-wrap .mouse {
   border-radius: 3em;
   margin: 0 auto;
 }
-body #layout #intro .mouse-wrap .mouse::before {
+#layout #intro .mouse-wrap .mouse::before {
   content: "";
   position: absolute;
   top: 40%;
@@ -422,12 +441,12 @@ body #layout #intro .mouse-wrap .mouse::before {
   border-radius: 0.5em;
   animation: mouse-wheel-ani 1s linear infinite alternate;
 }
-body #layout #intro .mouse-wrap span {
+#layout #intro .mouse-wrap span {
   color: #fff;
   font-size: clamp(1.2rem, 1.062rem + 0.385vw, 1.6rem);
   text-transform: capitalize;
 }
-body #layout #publishing .carousel {
+#layout #publishing .carousel {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -439,7 +458,7 @@ body #layout #publishing .carousel {
   user-select: none;
   cursor: grab;
 }
-body #layout #publishing .carousel .carousel-image {
+#layout #publishing .carousel .carousel-image {
   position: absolute;
   top: 50%;
   left: 50%;
