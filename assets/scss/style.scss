@@ -6,7 +6,9 @@
 @use './animation' as *;
 // @use './header' as *;
 
-
+body{
+  font-size: clamp-calc(8, 10); //em 쓰면 모바일이 0.8배율
+}
 
 h1{
   font-family: 'YUniverse-B';
@@ -136,7 +138,7 @@ button{
     .mouse-wrap{
       position: absolute;
       top: calc(100vh - $h-header);
-      @include flex(column, $space-xs);
+      @include flex(column, $space-sm);
       
       .mouse{
         position: relative;

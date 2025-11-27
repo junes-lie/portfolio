@@ -100,7 +100,11 @@
   }
 
   ul{
-    @include flex(column, 3em);
+    height: 40vh;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     li{
       position: relative;
@@ -120,11 +124,12 @@
         left: 0;
         top: 50%;
         transform: translateY(-50%);
+
         white-space: nowrap;
         font-size: $font-caption;
         opacity: 0;
         pointer-events: none;
-        mix-blend-mode: difference;
+        // mix-blend-mode: difference;
       }
     }
   }
@@ -135,17 +140,24 @@
     top: $h-header;
     left: 50%;
     transform: translateX(-50%);
-    // max-width: 36rem;
 
     .progress{
-
       width: 95%;
       height: 0.1rem;
     }
 
     ul{
-      @include flex(row, 2em);
+      width: 70vw;
+      height: auto;
+      flex-direction: row;
 
+      li{
+
+        span{
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
     }
   }
 }

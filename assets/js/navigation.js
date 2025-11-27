@@ -1,43 +1,78 @@
-const sections = gsap.utils.toArray('#layout section');
-const navLis = gsap.utils.toArray('.navigation li');
 
-sections.forEach((section, index)=>{
 
-  const li = navLis[index];
-  const dot = li.querySelector('.dot');
-  const span = li.querySelector('span');
+const navTriggers = (isLandscape) => {
+  const sections = gsap.utils.toArray('#layout section');
+  const navLis = gsap.utils.toArray('.navigation li');
+  
   const xValue = remap(40, 55);
+  const yValue = remap(-35, -50);
 
-  let navAnimation = gsap.timeline()
-  .to(dot, {scale:1.8})
-  .to(span, {
-    opacity: 1,
-    x: xValue,
-    // color: index === 1 ? 'white' : 'black'
-  }, 0);
+  const spanTween = isLandscape 
+    ? { x: xValue, opacity: 1 } 
+    : { y: yValue, opacity: 1 }; // color: index === 1 ? 'white' : 'black'
 
-  ScrollTrigger.create({
-    trigger: section,
-    start: 'top center',
-    end: 'bottom center',
-    animation: navAnimation,
-    toggleActions: 'restart reverse restart reverse'
+  const progressTween = isLandscape 
+    ? { scaleY: 0, transformOrigin: 'center top', ease: 'none' } 
+    : { scaleX: 0, transformOrigin: 'left center', ease: 'none' };
+
+
+  sections.forEach((section, index)=>{
+
+    const li = navLis[index];
+    const dot = li.querySelector('.dot');
+    const span = li.querySelector('span');
+    
+    const navAnimation = gsap.timeline()
+      .to(dot, { scale: 1.8 })
+      .to(span, spanTween, 0); 
+
+    ScrollTrigger.create({
+      trigger: section,
+      start: 'top center',
+      end: 'bottom center',
+      animation: navAnimation,
+      toggleActions: 'restart reverse restart reverse'
+    });
+
+    li.addEventListener('click',()=>{
+      smoother.scrollTo(section, true, "top top");
+    });
+    
   });
 
-  li.addEventListener('click',()=>{
+  ScrollTrigger.create({
+    trigger: '#layout',
+    start: 'top top',
+    end: 'bottom bottom',
+    animation: gsap.from('.progress', progressTween),
+    scrub: true,
+  });
+}
 
-    smoother.scrollTo(section, true, "top top");
 
-  })
-
-})
-
-
-ScrollTrigger.create({
-  trigger: '#layout',
-  start: 'top top',
-  end: 'bottom bottom',
-  animation: gsap.from('.progress',{scaleY: 0, transformOrigin: 'center top', ease: 'none'}),
-  scrub: true,
+gsap.matchMedia().add({ 
+  isLandscape: "(orientation: landscape)",
+  isPortrait: "(orientation: portrait)"
+}, (context) => {
+  let isLandscape = context.conditions.isLandscape;
+  navTriggers(isLandscape);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

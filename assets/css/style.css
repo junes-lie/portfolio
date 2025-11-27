@@ -49,7 +49,6 @@ html body {
   font-style: normal;
   word-break: keep-all;
   color: var(--text-color);
-  font-size: clamp-calc(8, 10);
   user-select: none;
 }
 html body article, html body aside, html body details, html body figcaption, html body figure, html body footer, html body hgroup, html body menu, html body nav, html body svg {
@@ -180,9 +179,11 @@ html body input, html body button, html body textarea {
   z-index: 1;
 }
 .navigation ul {
+  height: 40vh;
+  width: auto;
   display: flex;
   flex-direction: column;
-  gap: 3em;
+  justify-content: space-between;
 }
 .navigation ul li {
   position: relative;
@@ -205,7 +206,6 @@ html body input, html body button, html body textarea {
   font-size: clamp(1.2rem, 1.062rem + 0.385vw, 1.6rem);
   opacity: 0;
   pointer-events: none;
-  mix-blend-mode: difference;
 }
 
 @media (orientation: portrait) {
@@ -219,9 +219,13 @@ html body input, html body button, html body textarea {
     height: 0.1rem;
   }
   .navigation ul {
-    display: flex;
+    width: 70vw;
+    height: auto;
     flex-direction: row;
-    gap: 2em;
+  }
+  .navigation ul li span {
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 #logo-white .half-circle,
@@ -296,6 +300,10 @@ html body input, html body button, html body textarea {
     transform: rotateY(180deg);
   }
 }
+body {
+  font-size: clamp(0.8rem, 0.731rem + 0.192vw, 1rem);
+}
+
 h1 {
   font-family: "YUniverse-B";
   font-size: clamp(6.4rem, -1.815rem + 22.821vw, 42rem);
@@ -419,7 +427,7 @@ button {
   top: 90vh;
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  gap: 1em;
 }
 #layout #intro .mouse-wrap .mouse {
   position: relative;
