@@ -13,132 +13,119 @@ body{
   // scroll-behavior: auto;
   color: var(--text-color);
   font-size: clamp-calc(8, 10); //em 쓰면 모바일이 0.8배율
-
+  // background-color: #333;
+  user-select: none;
 
   h1{
     font-family: 'YUniverse-B';
     font-size: $font-h1;
   }
 
+  section{
+    // overflow-x: hidden;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    padding: $h-header 0;
+    @include center-flex;
+  }
+
+  .container{
+    width: 100%;
+    height: 100%;
+    margin: 0 $p-section;
+    max-width: $pc;
+    @include center-flex;
+    border: 1px solid red;
+  }
+
+  img{
+    @include fill-parent;
+    object-fit: cover;
+  }
+
   button{
     font-size: inherit;
     cursor: pointer;
   }
-
-
-
-
-  section{
-    // overflow-x: hidden;
-    height: 100vh;
-    width: 100vw;
-    padding: $h-header 0;
-    position: relative;
-    @include center-flex;
-    
-    .container{
-      width: 100%;
-      height: 100%;
-      margin: 0 $p-section;
-      max-width: $pc;
-      @include center-flex;
-      border: 1px solid red;
-
-      img{
-        @include fill-parent;
-        object-fit: cover;
-      }
-    }
-  }
+  
 
   /*  ~ Common _______________________ */
 
-  #load{
-    position: fixed;
-    // overflow: hidden;
-    z-index: $z-s1;
 
-    .background-gradient{
-      position: absolute;
-      @include fill-parent;
-      background: var(--bg-grad);
-      filter: blur(0rem);
 
-      &::before{
-        content: '';
-        position: absolute;
-        @include fill-parent;
-        background-color: rgba(255, 255, 255, 0.2);
-      }
-    }
-
-    .container{
-
-      @include flex(column, $space-md);
-      max-width: none;
-
-      .possessive{
-        // border: 1px solid #000;
-        width: 100%;
-        @include center-flex;
-        position: relative;
-        padding: 0 28vw;
-        
-        .logo {
-          max-height: 50vh;
-        }
-
-        h1{
-          // border: 1px solid #000;
-          position: absolute;
-          display: none;
-          left: calc(50% + 15vw);
-          color: var(--opacity);
-
-          /* 별모양 */
-          span{
-            display: inline-block;
-            // border: 1px solid #000;
-            vertical-align: top;
-            font-size: clamp-calc(24, 128);
-            animation: rotate-y-180 5s infinite ease-in-out;
-            transform-origin: center center;
-          }
-        }
-      }
-
-      h3{
-        font-family: 'SUITE', sans-serif;
-        font-weight: 800;
-        color: #fff;
-        font-size: $font-h3;
-        z-index: 0;
-      }
-    }
-  }
-
-  // #smooth-wrapper { 
-  //   overflow: hidden; 
-  //   position: fixed; 
-  //   height: 100%; 
-  //   width: 100%; 
-  //   top: 0; 
-  //   left: 0; 
-  //   right: 0; 
-  //   bottom: 0; 
-  // }
-
-  // #smooth-content { 
-  //   overflow: visible; 
-  //   width: 100%; 
-  // }
 
   #layout{
     // height: 100vh;
     // width: 100vw;
     overflow-x: hidden;
     
-    
+    #load{
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      padding: $h-header 0;
+      @include center-flex;
+      // overflow: hidden;
+      z-index: $z-s1;
+
+      .background-gradient{
+        position: absolute;
+        @include fill-parent;
+        background: var(--bg-grad);
+        filter: blur(0rem);
+
+        &::before{
+          content: '';
+          position: absolute;
+          @include fill-parent;
+          background-color: rgba(255, 255, 255, 0.2);
+        }
+      }
+
+      .container{
+        @include flex(column, $space-md);
+        max-width: none;
+
+        .possessive{
+          // border: 1px solid #000;
+          width: 100%;
+          @include center-flex;
+          position: relative;
+          padding: 0 28vw;
+          
+          .logo {
+            max-height: 50vh;
+          }
+
+          h1{
+            // border: 1px solid #000;
+            position: absolute;
+            display: none;
+            left: calc(50% + 15vw);
+            color: var(--opacity);
+
+            /* 별모양 */
+            span{
+              display: inline-block;
+              // border: 1px solid #000;
+              vertical-align: top;
+              font-size: clamp-calc(24, 128);
+              animation: rotate-y-180 5s infinite ease-in-out;
+              transform-origin: center center;
+            }
+          }
+        }
+
+        h3{
+          font-family: 'SUITE', sans-serif;
+          font-weight: 800;
+          color: #fff;
+          font-size: $font-h3;
+          z-index: 0;
+        }
+      }
+    }
 
 
     #intro{

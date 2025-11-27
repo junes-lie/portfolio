@@ -105,10 +105,11 @@ function init(){
     .to('#load .logo .search',{fill: dimColor}, "<")
     .to('.possessive',{scale: scaleValue, yPercent: yPercentValue}, "<")
     .to('.possessive h1',{opacity: 1})
-
+    .to('.navigation, .quick-btns', {autoAlpha: 1, duration: 1}, "<");
 };
 
 function Loading() {
+  gsap.set('.navigation, .quick-btns', {autoAlpha: 0});
   smoother.scrollTo(0, false);
   smoother.paused(true);
   

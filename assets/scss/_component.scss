@@ -113,6 +113,7 @@
         border-radius: 50%;
         background: #fff;
         filter: blur(0.3rem);
+        cursor: pointer;
       }
 
       span{
@@ -122,6 +123,7 @@
         transform: translateY(-50%);
         white-space: nowrap;
         font-size: $font-caption;
+        z-index: -1;
         opacity: 0;
       }
     }

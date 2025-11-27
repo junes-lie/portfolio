@@ -190,6 +190,7 @@ html body input, html body button, html body textarea {
   border-radius: 50%;
   background: #fff;
   filter: blur(0.3rem);
+  cursor: pointer;
 }
 .navigation ul li span {
   position: absolute;
@@ -198,6 +199,7 @@ html body input, html body button, html body textarea {
   transform: translateY(-50%);
   white-space: nowrap;
   font-size: clamp(1.2rem, 1.062rem + 0.385vw, 1.6rem);
+  z-index: -1;
   opacity: 0;
 }
 
@@ -278,26 +280,23 @@ body {
   overflow-y: auto;
   color: var(--text-color);
   font-size: clamp(0.8rem, 0.731rem + 0.192vw, 1rem);
+  user-select: none;
   /*  ~ Common _______________________ */
 }
 body h1 {
   font-family: "YUniverse-B";
   font-size: clamp(6.4rem, -1.815rem + 22.821vw, 42rem);
 }
-body button {
-  font-size: inherit;
-  cursor: pointer;
-}
 body section {
+  position: relative;
   height: 100vh;
   width: 100vw;
   padding: 10vh 0;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-body section .container {
+body .container {
   width: 100%;
   height: 100%;
   margin: 0 5vw;
@@ -307,17 +306,30 @@ body section .container {
   align-items: center;
   border: 1px solid red;
 }
-body section .container img {
+body img {
   margin: 0 auto;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-body #load {
-  position: fixed;
+body button {
+  font-size: inherit;
+  cursor: pointer;
+}
+body #layout {
+  overflow-x: hidden;
+}
+body #layout #load {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  padding: 10vh 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 1000;
 }
-body #load .background-gradient {
+body #layout #load .background-gradient {
   position: absolute;
   margin: 0 auto;
   width: 100%;
@@ -325,7 +337,7 @@ body #load .background-gradient {
   background: var(--bg-grad);
   filter: blur(0rem);
 }
-body #load .background-gradient::before {
+body #layout #load .background-gradient::before {
   content: "";
   position: absolute;
   margin: 0 auto;
@@ -333,13 +345,13 @@ body #load .background-gradient::before {
   height: 100%;
   background-color: rgba(255, 255, 255, 0.2);
 }
-body #load .container {
+body #layout #load .container {
   display: flex;
   flex-direction: column;
   gap: 2em;
   max-width: none;
 }
-body #load .container .possessive {
+body #layout #load .container .possessive {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -347,32 +359,29 @@ body #load .container .possessive {
   position: relative;
   padding: 0 28vw;
 }
-body #load .container .possessive .logo {
+body #layout #load .container .possessive .logo {
   max-height: 50vh;
 }
-body #load .container .possessive h1 {
+body #layout #load .container .possessive h1 {
   position: absolute;
   display: none;
   left: calc(50% + 15vw);
   color: var(--opacity);
   /* 별모양 */
 }
-body #load .container .possessive h1 span {
+body #layout #load .container .possessive h1 span {
   display: inline-block;
   vertical-align: top;
   font-size: clamp(2.4rem, -1.2rem + 10vw, 12.8rem);
   animation: rotate-y-180 5s infinite ease-in-out;
   transform-origin: center center;
 }
-body #load .container h3 {
+body #layout #load .container h3 {
   font-family: "SUITE", sans-serif;
   font-weight: 800;
   color: #fff;
   font-size: clamp(2.4rem, 1.985rem + 1.154vw, 3.6rem);
   z-index: 0;
-}
-body #layout {
-  overflow-x: hidden;
 }
 body #layout #intro {
   position: relative;
