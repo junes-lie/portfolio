@@ -24,7 +24,7 @@ const navTriggers = (isLandscape) => {
     
     const navAnimation = gsap.timeline()
       .to(dot, { scale: 1.8 })
-      .to(span, spanTween, 0); 
+      .to(span, spanTween, "<");
 
     ScrollTrigger.create({
       trigger: section,
@@ -50,12 +50,13 @@ const navTriggers = (isLandscape) => {
 }
 
 
-gsap.matchMedia().add({ 
-  isLandscape: "(orientation: landscape)",
-  isPortrait: "(orientation: portrait)"
-}, (context) => {
-  let isLandscape = context.conditions.isLandscape;
-  navTriggers(isLandscape);
+
+gsap.matchMedia().add("(orientation: landscape)", () => {
+  navTriggers(true); 
+});
+
+gsap.matchMedia().add("(orientation: portrait)", () => {
+  navTriggers(false);
 });
 
 

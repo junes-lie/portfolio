@@ -163,10 +163,11 @@ html body input, html body button, html body textarea {
 .navigation {
   position: fixed;
   left: 5vw;
-  top: 50%;
-  transform: translateY(-50%);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 900;
-  /* display: none; */
 }
 .navigation .progress {
   position: absolute;
@@ -175,19 +176,24 @@ html body input, html body button, html body textarea {
   transform: translate(-50%, -50%);
   width: 0.1rem;
   height: 95%;
-  background: black;
+  background: #fff;
   z-index: 1;
 }
 .navigation ul {
-  height: 40vh;
-  width: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 .navigation ul li {
   position: relative;
   cursor: pointer;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+}
+.navigation ul li:last-child {
+  margin-bottom: 0;
 }
 .navigation ul li .dot {
   position: relative;
@@ -199,9 +205,6 @@ html body input, html body button, html body textarea {
 }
 .navigation ul li span {
   position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
   white-space: nowrap;
   font-size: clamp(1.2rem, 1.062rem + 0.385vw, 1.6rem);
   opacity: 0;
@@ -210,9 +213,10 @@ html body input, html body button, html body textarea {
 
 @media (orientation: portrait) {
   .navigation {
-    top: 10vh;
-    left: 50%;
-    transform: translateX(-50%);
+    left: auto;
+    height: auto;
+    width: 100vw;
+    bottom: 90vh;
   }
   .navigation .progress {
     width: 95%;
@@ -223,9 +227,9 @@ html body input, html body button, html body textarea {
     height: auto;
     flex-direction: row;
   }
-  .navigation ul li span {
-    left: 50%;
-    transform: translate(-50%, -50%);
+  .navigation ul li {
+    margin-bottom: 0;
+    justify-content: center;
   }
 }
 #logo-white .half-circle,
