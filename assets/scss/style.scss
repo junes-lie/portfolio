@@ -128,11 +128,22 @@ button{
 
     h1{
       position: absolute;
+      // border: 1px solid #000;
       top: 50vh;
       line-height: $font-h1;
+      // line-height: clamp-calc(750, 1500);
+      // height: 100vh;
+
       text-transform: capitalize;
       letter-spacing: 0.08em;
-      color: var(--opacity);
+      // color: var(--opacity);
+
+      // color: rgba(255, 255, 255, 0.7);
+      // mix-blend-mode: plus-lighter;
+      
+      color: #888;
+      mix-blend-mode: color-burn;
+      
     }
 
     .mouse-wrap{
