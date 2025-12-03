@@ -35,7 +35,9 @@ const navTriggers = (isLandscape) => {
     });
 
     li.addEventListener('click',()=>{
-      smoother.scrollTo(section, true, "top top");
+      isManualMove = true;
+      // smoother.scrollTo(section, true, "top top");
+      sectionMove(section, "top top");
     });
     
   });

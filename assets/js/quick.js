@@ -4,7 +4,9 @@ const logoBtn = document.querySelector('.logo-btn');
 const linkBtns = document.querySelector('.link-btns');
 
 topBtn.addEventListener('click', () => {
-  smoother.scrollTo(0, true);
+  isManualMove = true;
+  // smoother.scrollTo(0, true);
+  sectionMove('#intro', "top top");
 });
 
 logoBtn.addEventListener('click', () => {

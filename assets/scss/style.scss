@@ -174,12 +174,13 @@ button{
   
 
   #profile{
-    // background-color: #fff;
+    height: 200vh;
+    background-color: black;
   }
     
     
   #publishing{
-    
+    background-color: royalblue;
     .carousel{
       width: 100%;
       display: flex;
@@ -209,10 +210,13 @@ button{
     }
   }
   
-  
+  #uxui{
+    background-color: coral;
+  }
   
   
 }
+
 
 
 

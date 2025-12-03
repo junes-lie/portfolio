@@ -458,6 +458,13 @@ button {
   font-size: clamp(1.2rem, 1.062rem + 0.385vw, 1.6rem);
   text-transform: capitalize;
 }
+#layout #profile {
+  height: 200vh;
+  background-color: black;
+}
+#layout #publishing {
+  background-color: royalblue;
+}
 #layout #publishing .carousel {
   width: 100%;
   display: flex;
@@ -483,4 +490,7 @@ button {
   align-items: center;
   color: #fff;
   transform-origin: 50% 50%;
+}
+#layout #uxui {
+  background-color: coral;
 }
