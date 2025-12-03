@@ -12,13 +12,13 @@ const CONFIG = {
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-let smoother = ScrollSmoother.create({
-  content: "#layout",
-  smooth: 2,
-  effects: true,
-  smoothTouch: 0.1,
-  // markers: true,
-});
+// let smoother = ScrollSmoother.create({
+//   content: "#layout",
+//   smooth: 2,
+//   effects: true,
+//   smoothTouch: 0.1,
+//   // markers: true,
+// });
 
 const minW = CONFIG.vp.mobile;
   const maxW = CONFIG.vp.pc;
