@@ -83,9 +83,9 @@ const LogoDraw = () =>{
 function init(){
   smoother.paused(false);
 
-  const scaleValue = remap(0.9, 0.7);
+  const scaleValue = remap(0.9, 0.6);
   const yPercentValue = remap(-60, -40);
-  const blurValue = remap(8, 15);
+  const blurValue = remap(8, 25);
 
   const dimColor = 'var(--opacity)';
 
@@ -96,11 +96,12 @@ function init(){
     .set('.possessive h1', { display:'block', opacity: 0})
   
     .to('.loader-text',{autoAlpha: 0})
-    .to('.background-gradient',{borderRadius: '50%', filter: `blur(${blurValue}rem)`}, "<")
+    .to('.background-gradient',{width: '80vw',height: '80vw',borderRadius: '50%', filter: `blur(${blurValue}rem)`}, "<")
     .to('#load .logo .half-circle, #load .logo .wave',{stroke: dimColor}, "<")
     .to('#load .logo .brush-head, #load .logo .brush-body',{fill: dimColor, stroke:'none'}, "<")
     .to('#load .logo .search',{fill: dimColor}, "<")
-    .to('.possessive',{scale: scaleValue, yPercent: yPercentValue}, "<")
+    // .to('.possessive',{scale: scaleValue, yPercent: yPercentValue}, "<")
+    .to('.possessive',{scale: scaleValue}, "<")
     .to('.possessive h1',{opacity: 1})
     .to('.navigation, .quick-btns', {autoAlpha: 1, duration: 1}, "<");
 };

@@ -54,97 +54,150 @@ button{
   // width: 100vw;
   overflow-x: hidden;
   
-  #load{
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    padding: $h-header 0;
-    @include center-flex;
-    // overflow: hidden;
-    z-index: $z-s1;
+  // #load{
+  //   position: absolute;
+  //   height: 100vh;
+  //   width: 100vw;
+  //   padding: $h-header 0;
+  //   @include center-flex;
+  //   // overflow: hidden;
+  //   z-index: $z-s1;
 
-    .background-gradient{
-      position: absolute;
-      @include fill-parent;
-      background: var(--bg-grad);
-      filter: blur(0rem);
+    
 
-      &::before{
-        content: '';
-        position: absolute;
-        @include fill-parent;
-        background-color: rgba(255, 255, 255, 0.2);
-      }
-    }
+  //   .container{
+  //     @include flex(column, $space-md);
+  //     max-width: none;
 
-    .container{
-      @include flex(column, $space-md);
-      max-width: none;
-
-      .possessive{
-        // border: 1px solid #000;
-        width: 100%;
-        @include center-flex;
-        position: relative;
-        padding: 0 28vw;
-        
-        .logo {
-          max-height: 50vh;
-        }
-
-        h1{
-          // border: 1px solid #000;
-          position: absolute;
-          display: none;
-          left: calc(50% + 15vw);
-          color: var(--opacity);
-
-          /* 별모양 */
-          span{
-            display: inline-block;
-            // border: 1px solid #000;
-            vertical-align: top;
-            font-size: clamp-calc(24, 128);
-            animation: rotate-y-180 5s infinite ease-in-out;
-            transform-origin: center center;
-          }
-        }
-      }
-
-      h3{
-        font-family: 'SUITE', sans-serif;
-        font-weight: 800;
-        color: #fff;
-        font-size: $font-h3;
-        z-index: 0;
-      }
-    }
-  }
+      
+  //   }
+  // }
 
 
   #intro{
     position: relative;
     overflow: hidden;
 
-    h1{
+    .container{
       position: absolute;
+      height: 80vh;
+    }
+
+    .background-gradient{
+      z-index: -1;
+      position: absolute;
+      @include fill-parent;
+      background: var(--bg-grad);
+      filter: blur(0rem);
+      // width: 80vw;
+      // height: 80vw;
+      // border-radius: 50%;
+      // filter: blur(25rem);
+
+      // &::before{
+      //   content: '';
+      //   position: absolute;
+      //   @include fill-parent;
+      //   background-color: rgba(255, 255, 255, 0.2);
+      // }
+    }
+
+    .content-wrap{
+      @include fill-parent;
+      @include center-flex;
+      flex-direction: column;
+      // @include flex(column, $space-md);
+    }
+
+    .logo-loader{
+      border: 1px solid #000;
+      @include center-flex;
+      @include flex(column, $space-md);
+    }
+
+    .possessive{
+      // height: 30vh;
+      z-index: 0;
+      border: 1px solid #000;
+      // width: 100%;
+      @include center-flex;
+      // position: relative;
+      // padding: 0 28vw;
+      // transform: scale(0.6);
+
+      .logo {
+        // max-height: 50vh;
+        height: 50vh;
+        height: 30vh;
+      }
+
+      /* 별모양 */
+      span{
+        height: 100%;
+        border: 1px solid #000;
+        font-family: 'YUniverse-B';
+        color: var(--opacity);
+        // display: inline-block;
+        // border: 1px solid #000;
+        vertical-align: top;
+        font-size: clamp-calc(24, 128);
+        animation: rotate-y-180 5s infinite ease-in-out;
+        transform-origin: center center;
+      }
+      
+      h2{
+        // height: 100%;
+        border: 1px solid #000;
+        // display: none;
+        // z-index: 0;
+        // position: absolute;
+        // left: calc(50% + 15vw);
+        color: var(--opacity);
+        // vertical-align: bottom;
+
+        
+      }
+    }
+
+    h3{
+      font-family: 'SUITE', sans-serif;
+      font-weight: 800;
+      color: #fff;
+      font-size: $font-h3;
+      // z-index: 0;
+      display: none;
+    }
+
+    h2{
+      // position: absolute;
+      top: 10vh;
+      font-family: 'YUniverse-B';
+      font-size: 16rem;
+      color: #888;
+      mix-blend-mode: color-burn;
+      // display: none;
+    }
+
+    h1{
+      // display: none;
+      // display: inline-block;
+      // position: absolute;
       // border: 1px solid #000;
-      top: 50vh;
-      line-height: $font-h1;
-      // line-height: clamp-calc(750, 1500);
-      // height: 100vh;
+      top: 61vh;
+      // line-height: $font-h1;
 
-      text-transform: capitalize;
       letter-spacing: 0.08em;
-      // color: var(--opacity);
-
+      
       // color: rgba(255, 255, 255, 0.7);
       // mix-blend-mode: plus-lighter;
       
       color: #888;
       mix-blend-mode: color-burn;
+      text-transform: capitalize;
       
     }
+
+    
 
     .mouse-wrap{
       position: absolute;
