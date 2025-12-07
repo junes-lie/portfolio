@@ -83,8 +83,8 @@ const LogoDraw = () =>{
 function init(){
   smoother.paused(false);
 
-  const scaleValue = remap(0.9, 0.6);
-  const yPercentValue = remap(-60, -40);
+  // const scaleValue = remap(0.9, 0.6);
+  // const yPercentValue = remap(-60, -40);
   const blurValue = remap(8, 25);
 
   const dimColor = 'var(--opacity)';
@@ -92,8 +92,10 @@ function init(){
 
   const tl = gsap.timeline();
   
-  tl.set('#load',{zIndex: -1})
-    .set('.possessive h1', { display:'block', opacity: 0})
+  tl.set('#intro .bg-grad',{zIndex: -1})
+    // .set('.possessive h1', { display:'block', opacity: 0})
+    // .set('.possessive span, .possessive h2', {display:'block', autoAlpha: 0})
+    .to('.possessive span, .possessive h2', {autoAlpha: 1})
   
     .to('.loader-text',{autoAlpha: 0})
     .to('.background-gradient',{width: '80vw',height: '80vw',borderRadius: '50%', filter: `blur(${blurValue}rem)`}, "<")
@@ -101,13 +103,14 @@ function init(){
     .to('#load .logo .brush-head, #load .logo .brush-body',{fill: dimColor, stroke:'none'}, "<")
     .to('#load .logo .search',{fill: dimColor}, "<")
     // .to('.possessive',{scale: scaleValue, yPercent: yPercentValue}, "<")
-    .to('.possessive',{scale: scaleValue}, "<")
+    // .to('.possessive',{scale: scaleValue}, "<")
     .to('.possessive h1',{opacity: 1})
     .to('.navigation, .quick-btns', {autoAlpha: 1, duration: 1}, "<");
 };
 
 function Loading() {
   gsap.set('.navigation, .quick-btns', {autoAlpha: 0});
+  gsap.set('.possessive span, .possessive h2', {autoAlpha: 0});
   smoother.scrollTo(0, false);
   smoother.paused(true);
   

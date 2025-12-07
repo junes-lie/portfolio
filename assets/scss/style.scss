@@ -78,13 +78,13 @@ button{
     position: relative;
     overflow: hidden;
 
-    .container{
-      position: absolute;
-      height: 80vh;
-    }
+    // .container{
+    //   position: absolute;
+    //   height: 80vh;
+    // }
 
-    .background-gradient{
-      z-index: -1;
+    .bg-grad{
+      z-index: $z-s1;
       position: absolute;
       @include fill-parent;
       background: var(--bg-grad);
@@ -104,100 +104,78 @@ button{
 
     .content-wrap{
       @include fill-parent;
-      @include center-flex;
-      flex-direction: column;
-      // @include flex(column, $space-md);
-    }
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      @include flex(column, $space-lg);
 
-    .logo-loader{
-      border: 1px solid #000;
-      @include center-flex;
-      @include flex(column, $space-md);
-    }
-
-    .possessive{
-      // height: 30vh;
-      z-index: 0;
-      border: 1px solid #000;
-      // width: 100%;
-      @include center-flex;
-      // position: relative;
-      // padding: 0 28vw;
-      // transform: scale(0.6);
-
-      .logo {
-        // max-height: 50vh;
-        height: 50vh;
-        height: 30vh;
-      }
-
-      /* 별모양 */
-      span{
-        height: 100%;
-        border: 1px solid #000;
-        font-family: 'YUniverse-B';
-        color: var(--opacity);
-        // display: inline-block;
-        // border: 1px solid #000;
-        vertical-align: top;
-        font-size: clamp-calc(24, 128);
-        animation: rotate-y-180 5s infinite ease-in-out;
-        transform-origin: center center;
-      }
-      
-      h2{
-        // height: 100%;
-        border: 1px solid #000;
+      h1{
         // display: none;
-        // z-index: 0;
-        // position: absolute;
-        // left: calc(50% + 15vw);
-        color: var(--opacity);
-        // vertical-align: bottom;
-
+        line-height: 0.9em;
+        letter-spacing: 0.1em;
+        text-transform: capitalize;
+        
+        // color: rgba(255, 255, 255, 0.7);
+        // mix-blend-mode: plus-lighter;
+        
+        color: #888;
+        mix-blend-mode: color-burn;
         
       }
+
+      h2{
+        // display: none;
+        font-family: 'YUniverse-B';
+        font-size: $font-h2;
+        line-height: $font-h2;
+        color: #888;
+        mix-blend-mode: color-burn;
+        line-height: 0.9em;
+      }
+
+      .logo-loader{
+        @include center-flex;
+        @include flex(column, $space-md);
+        z-index: $z-s1 + 1;
+
+        h3{
+          font-family: 'SUITE', sans-serif;
+          font-weight: 800;
+          color: #fff;
+          font-size: $font-h3;
+          // display: none;
+        }
+
+
+        .possessive{
+          width: 60vw;
+          max-height: 30vh;
+          @include center-flex;
+          
+          .logo{
+            height: 100%;
+          }
+
+          /* 별모양 */
+          span{
+            height: 100%;
+            font-family: 'YUniverse-B';
+            color: var(--opacity);
+            vertical-align: top;
+            font-size: clamp-calc(24, 128);
+            transform-origin: center center;
+            animation: rotate-y-180 5s infinite ease-in-out;
+            // display: none;
+          }
+          
+          h2{
+            color: var(--opacity);
+            // display: none;
+          }
+        }
+      }
+
     }
-
-    h3{
-      font-family: 'SUITE', sans-serif;
-      font-weight: 800;
-      color: #fff;
-      font-size: $font-h3;
-      // z-index: 0;
-      display: none;
-    }
-
-    h2{
-      // position: absolute;
-      top: 10vh;
-      font-family: 'YUniverse-B';
-      font-size: 16rem;
-      color: #888;
-      mix-blend-mode: color-burn;
-      // display: none;
-    }
-
-    h1{
-      // display: none;
-      // display: inline-block;
-      // position: absolute;
-      // border: 1px solid #000;
-      top: 61vh;
-      // line-height: $font-h1;
-
-      letter-spacing: 0.08em;
-      
-      // color: rgba(255, 255, 255, 0.7);
-      // mix-blend-mode: plus-lighter;
-      
-      color: #888;
-      mix-blend-mode: color-burn;
-      text-transform: capitalize;
-      
-    }
-
-    
 
     .mouse-wrap{
       position: absolute;

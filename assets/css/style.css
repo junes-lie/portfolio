@@ -310,7 +310,7 @@ body {
 
 h1 {
   font-family: "YUniverse-B";
-  font-size: clamp(6.4rem, -1.815rem + 22.821vw, 42rem);
+  font-size: clamp(6.4rem, -1.354rem + 21.538vw, 40rem);
 }
 
 section {
@@ -354,12 +354,8 @@ button {
   position: relative;
   overflow: hidden;
 }
-#layout #intro .container {
-  position: absolute;
-  height: 80vh;
-}
-#layout #intro .background-gradient {
-  z-index: -1;
+#layout #intro .bg-grad {
+  z-index: 1000;
   position: absolute;
   margin: 0 auto;
   width: 100%;
@@ -372,65 +368,64 @@ button {
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  display: flex;
   flex-direction: column;
+  gap: 5em;
 }
-#layout #intro .logo-loader {
-  border: 1px solid #000;
+#layout #intro .content-wrap h1 {
+  line-height: 0.9em;
+  letter-spacing: 0.1em;
+  text-transform: capitalize;
+  color: #888;
+  mix-blend-mode: color-burn;
+}
+#layout #intro .content-wrap h2 {
+  font-family: "YUniverse-B";
+  font-size: clamp(4.8rem, 0.923rem + 10.769vw, 16rem);
+  line-height: clamp(4.8rem, 0.923rem + 10.769vw, 16rem);
+  color: #888;
+  mix-blend-mode: color-burn;
+  line-height: 0.9em;
+}
+#layout #intro .content-wrap .logo-loader {
   display: flex;
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
   gap: 2em;
+  z-index: 1001;
 }
-#layout #intro .possessive {
-  z-index: 0;
-  border: 1px solid #000;
+#layout #intro .content-wrap .logo-loader h3 {
+  font-family: "SUITE", sans-serif;
+  font-weight: 800;
+  color: #fff;
+  font-size: clamp(2.4rem, 1.985rem + 1.154vw, 3.6rem);
+}
+#layout #intro .content-wrap .logo-loader .possessive {
+  width: 60vw;
+  max-height: 30vh;
   display: flex;
   justify-content: center;
   align-items: center;
   /* 별모양 */
 }
-#layout #intro .possessive .logo {
-  height: 50vh;
-  height: 30vh;
-}
-#layout #intro .possessive span {
+#layout #intro .content-wrap .logo-loader .possessive .logo {
   height: 100%;
-  border: 1px solid #000;
+}
+#layout #intro .content-wrap .logo-loader .possessive span {
+  height: 100%;
   font-family: "YUniverse-B";
   color: var(--opacity);
   vertical-align: top;
   font-size: clamp(2.4rem, -1.2rem + 10vw, 12.8rem);
-  animation: rotate-y-180 5s infinite ease-in-out;
   transform-origin: center center;
+  animation: rotate-y-180 5s infinite ease-in-out;
 }
-#layout #intro .possessive h2 {
-  border: 1px solid #000;
+#layout #intro .content-wrap .logo-loader .possessive h2 {
   color: var(--opacity);
-}
-#layout #intro h3 {
-  font-family: "SUITE", sans-serif;
-  font-weight: 800;
-  color: #fff;
-  font-size: clamp(2.4rem, 1.985rem + 1.154vw, 3.6rem);
-  display: none;
-}
-#layout #intro h2 {
-  top: 10vh;
-  font-family: "YUniverse-B";
-  font-size: 16rem;
-  color: #888;
-  mix-blend-mode: color-burn;
-}
-#layout #intro h1 {
-  top: 61vh;
-  letter-spacing: 0.08em;
-  color: #888;
-  mix-blend-mode: color-burn;
-  text-transform: capitalize;
 }
 #layout #intro .mouse-wrap {
   position: absolute;
