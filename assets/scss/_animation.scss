@@ -10,3 +10,15 @@
   10% { transform: rotateY(180deg); }
   100% { transform: rotateY(180deg); }
 }
+
+// @keyframes auto-flip-loop {
+//   0%, 45% { transform: rotateY(0deg); }   /* 0~2.25초: 앞면 유지 */
+//   50%, 95% { transform: rotateY(180deg); } /* 2.5~4.75초: 뒷면 유지 */
+//   100% { transform: rotateY(360deg); }     /* 5초: 한 바퀴 돌아 제자리 (360=0) */
+// }
+
+// @keyframes auto-flip-loop {
+//   40% { transform: rotateY(0deg); }
+//   50%, 90% { transform: rotateY(180deg); }
+//   100% { transform: rotateY(360deg); }
+// }

@@ -1,4 +1,3 @@
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 let smoother = ScrollSmoother.create({
   content: "#layout",

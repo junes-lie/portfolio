@@ -78,39 +78,84 @@ const LogoDraw = () =>{
 //   })
 // }
 
+function logoFlip() {
+  const logo = document.querySelector('.logo');
+
+  let timer;
+
+  const AutoFlip = () => {
+    
+    timer = setInterval(() => {
+      logo.classList.add('flipped');
+      
+      setTimeout(() => {
+        if (!logo.matches(':hover')) {
+          logo.classList.remove('flipped');
+        }
+      }, 5000);
+    }, 10000);
+  };
+
+  logo.addEventListener('mouseenter', () => {
+    clearInterval(timer);
+    logo.classList.remove('flipped');
+  });
+
+  logo.addEventListener('mouseleave', () => {
+    AutoFlip();
+  });
+
+  AutoFlip();
+}
 
 
 function init(){
   smoother.paused(false);
 
-  // const scaleValue = remap(0.9, 0.6);
-  // const yPercentValue = remap(-60, -40);
   const blurValue = remap(8, 25);
-
   const dimColor = 'var(--opacity)';
 
-
   const tl = gsap.timeline();
+  const splitH1 = new SplitText('h1.title',{type:'chars'});
+  const splitH2 = new SplitText('h2.title',{type:'chars'});
   
-  tl.set('#intro .bg-grad',{zIndex: -1})
-    // .set('.possessive h1', { display:'block', opacity: 0})
-    // .set('.possessive span, .possessive h2', {display:'block', autoAlpha: 0})
-    // .to('.loader-text',{height: 0, autoAlpha: 0}, "<")
-    // .to('.loader-wrap',{gap: 0}, "<")
-    // .to('.possessive-wrap',{maxHeight: '30vh'}, "<")
-    // .to('.possessive',{width: 'auto', autoAlpha: 1}, "<")
-  
+  tl
+    .set('#intro .logo', {pointerEvents: 'auto'})
+    
+    .to('.loader-text',{height: 0, autoAlpha: 0}, "<")
+    .to('.loader-wrap',{gap: 0}, "<")
+    .to('.possessive-wrap',{height: '30vmin'}, "<")
+    .to('.possessive',{width: 'auto', autoAlpha: 1}, "<")
     .to('.bg-grad',{width: '80vmax',height: '80vmax',borderRadius: '50%', filter: `blur(${blurValue}rem)`}, "<")
     .to('#intro .logo .half-circle, #intro .logo .wave',{stroke: dimColor}, "<")
     .to('#intro .logo .brush-head, #intro .logo .brush-body',{fill: dimColor, stroke:'none'}, "<")
     .to('#intro .logo .search',{fill: dimColor}, "<")
-    .to('.navigation, .quick-btns', {autoAlpha: 1, duration: 1}, "<");
+    .call(logoFlip)
+    
+    .to('.navigation, .quick-btns', {autoAlpha: 1, duration: 1}, "<")
+    .to('.title', {height: 'auto', autoAlpha: 1}, "<")
+    .from(splitH2.chars, {
+      yPercent: -100,
+      autoAlpha: 0,
+      stagger: 0.1,
+    }, "<")
+    .from(splitH1.chars, {
+      yPercent: 100,
+      autoAlpha: 0,
+      stagger: 0.1,
+    })
+    .to('.mouse-wrap',{autoAlpha: 1})
+    
 };
 
 function Loading() {
-  gsap.set('.navigation, .quick-btns', {autoAlpha: 0});
-  gsap.set('.possessive', {width: 0, autoAlpha: 0});
-  gsap.set('.title', {height: 0, autoAlpha: 0});
+  const tl = gsap.timeline();
+
+  tl.set('.navigation, .quick-btns', {autoAlpha: 0})
+    .set('.possessive', {width: 0, autoAlpha: 0})
+    .set('.title', {height: 0, autoAlpha: 0})
+    .set('.mouse-wrap', {autoAlpha: 0})
+    .set('#intro .logo', {pointerEvents: 'none'});
   smoother.scrollTo(0, false);
   smoother.paused(true);
   

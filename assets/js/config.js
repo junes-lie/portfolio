@@ -1,3 +1,5 @@
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+
 const CONFIG = {
   vp: {
     pc: 1400,

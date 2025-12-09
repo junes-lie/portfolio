@@ -84,7 +84,7 @@ button{
     // }
 
     .bg-grad{
-      z-index: $z-s1;
+      // z-index: $z-s1;
       position: absolute;
       @include fill-parent;
       background: var(--bg-grad);
@@ -99,13 +99,10 @@ button{
       align-items: center;
       @include flex(column, $space-lg);
 
-      .title{
-        // display: none;
-      }
+
       h1{
         line-height: 0.9em;
-        letter-spacing: 0.1em;
-        text-transform: capitalize;
+        letter-spacing: 0.07em;
         
         // color: rgba(255, 255, 255, 0.7);
         // mix-blend-mode: plus-lighter;
@@ -138,21 +135,74 @@ button{
 
 
         .possessive-wrap{
+          // border: 1px solid #000;
           width: 60vw;
-          max-height: 30vh;
-          max-height: 50vh;
+          height: 50vmin;
           @include center-flex;
           
-          
           .logo{
+            // border: 1px solid red;
             height: 100%;
+            aspect-ratio: 270/225; 
+
+            perspective: 1000px;
+            cursor: pointer;
+            // pointer-events: none;
+
+
+            .logo-flip{
+              position: relative;
+              @include fill-parent;
+              transform-style: preserve-3d;
+              // animation: auto-flip-loop 10s infinite ease-in-out;
+              transition: 0.5s;
+
+            
+              &>div{
+                position: absolute;
+                @include fill-parent;
+                @include center-flex;
+                backface-visibility: hidden;
+              }
+            
+              
+              .logo-front {
+                
+                svg {
+                  @include fill-parent;
+                }
+              }
+              
+              .logo-back {
+                // border: 1px solid #000;
+                transform: rotateY(180deg);
+                
+                h2{
+
+                  font-family: 'YUniverse-B';
+                  font-size: $font-star;
+                  font-size: $font-h2;
+                  color: var(--opacity);
+                  // background: rgba(255, 255, 255, 0.1);
+                  // border-radius: 30%;
+                }
+                
+                
+              }
+            
+              
+            }
+
+            &:hover .logo-flip,
+            &.flipped .logo-flip{
+              transform: rotateY(180deg);
+            }
           }
+
 
           .possessive{
             @include center-flex;
             height: 100%;
-            // width: 0;
-            // opacity: 0;
 
             /* 별모양 */
             span{
@@ -208,7 +258,7 @@ button{
       }
 
     }      
-  }
+    }
   
   
 
