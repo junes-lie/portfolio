@@ -121,10 +121,10 @@ function init(){
   
   tl
     .set('#intro .logo', {pointerEvents: 'auto'})
-    
+    .set('.title', {height: 'auto', autoAlpha: 1})
     .to('.loader-text',{height: 0, autoAlpha: 0}, "<")
     .to('.loader-wrap',{gap: 0}, "<")
-    .to('.possessive-wrap',{height: '30vmin'}, "<")
+    .to('.possessive-wrap',{height: '25vmin'}, "<")
     .to('.possessive',{width: 'auto', autoAlpha: 1}, "<")
     .to('.bg-grad',{width: '80vmax',height: '80vmax',borderRadius: '50%', filter: `blur(${blurValue}rem)`}, "<")
     .to('#intro .logo .half-circle, #intro .logo .wave',{stroke: dimColor}, "<")
@@ -133,7 +133,7 @@ function init(){
     .call(logoFlip)
     
     .to('.navigation, .quick-btns', {autoAlpha: 1, duration: 1}, "<")
-    .to('.title', {height: 'auto', autoAlpha: 1}, "<")
+    
     .from(splitH2.chars, {
       yPercent: -100,
       autoAlpha: 0,

@@ -15,6 +15,11 @@ h1{
   font-size: $font-h1;
 }
 
+h2{
+  font-family: 'YUniverse-B';
+  font-size: $font-h2;
+}
+
 section{
   // overflow-x: hidden;
   position: relative;
@@ -50,38 +55,17 @@ button{
 
 
 #layout{
-  // height: 100vh;
-  // width: 100vw;
   overflow-x: hidden;
   
-  // #load{
-  //   position: absolute;
-  //   height: 100vh;
-  //   width: 100vw;
-  //   padding: $h-header 0;
-  //   @include center-flex;
-  //   // overflow: hidden;
-  //   z-index: $z-s1;
-
-    
-
-  //   .container{
-  //     @include flex(column, $space-md);
-  //     max-width: none;
-
-      
-  //   }
-  // }
-
 
   #intro{
     position: relative;
     overflow: hidden;
 
-    // .container{
-    //   position: absolute;
-    //   height: 80vh;
-    // }
+    .container{
+      position: absolute;
+      height: 80vh;
+    }
 
     .bg-grad{
       // z-index: $z-s1;
@@ -95,14 +79,14 @@ button{
     .content-wrap{
       @include fill-parent;
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       align-items: center;
       @include flex(column, $space-lg);
 
 
       h1{
         line-height: 0.9em;
-        letter-spacing: 0.07em;
+        letter-spacing: 0.13em;
         
         // color: rgba(255, 255, 255, 0.7);
         // mix-blend-mode: plus-lighter;
@@ -113,9 +97,6 @@ button{
       }
 
       h2{
-        font-family: 'YUniverse-B';
-        font-size: $font-h2;
-        line-height: $font-h2;
         color: #888;
         mix-blend-mode: color-burn;
         line-height: 0.9em;
@@ -145,16 +126,18 @@ button{
             height: 100%;
             aspect-ratio: 270/225; 
 
-            perspective: 1000px;
+            perspective: 100rem;
             cursor: pointer;
-            // pointer-events: none;
 
+            &:hover .logo-flip,
+            &.flipped .logo-flip{
+              transform: rotateY(180deg);
+            }
 
             .logo-flip{
               position: relative;
               @include fill-parent;
               transform-style: preserve-3d;
-              // animation: auto-flip-loop 10s infinite ease-in-out;
               transition: 0.5s;
 
             
@@ -165,51 +148,36 @@ button{
                 backface-visibility: hidden;
               }
             
-              
-              .logo-front {
+              .logo-front{
                 
                 svg {
                   @include fill-parent;
                 }
               }
               
-              .logo-back {
-                // border: 1px solid #000;
+              .logo-back{
                 transform: rotateY(180deg);
                 
                 h2{
-
-                  font-family: 'YUniverse-B';
-                  font-size: $font-star;
-                  font-size: $font-h2;
                   color: var(--opacity);
-                  // background: rgba(255, 255, 255, 0.1);
-                  // border-radius: 30%;
                 }
-                
-                
               }
-            
-              
-            }
-
-            &:hover .logo-flip,
-            &.flipped .logo-flip{
-              transform: rotateY(180deg);
             }
           }
 
 
           .possessive{
+            // border: 1px solid #000;
             @include center-flex;
             height: 100%;
+            
 
             /* 별모양 */
             span{
-              height: 100%;
+              // border: 1px solid #000;
+              height: 110%;
               font-family: 'YUniverse-B';
               color: var(--opacity);
-              vertical-align: top;
               font-size: $font-star;
               transform-origin: center center;
               animation: rotate-y-180 5s infinite ease-in-out;
@@ -221,7 +189,6 @@ button{
           }
         }
       }
-
     }
 
     .mouse-wrap{
@@ -258,7 +225,7 @@ button{
       }
 
     }      
-    }
+  }
   
   
 

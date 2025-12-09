@@ -89,9 +89,9 @@ $ani-du: 1s;
 // $font-body:   clamp-calc(14, 16);
 
 
-$font-h1: clamp-calc(64, 400, $mobile, 1920px);
+$font-h1: clamp-calc(64, 360, $mobile, 1920px);
 $font-h2: clamp-calc(48, 160);
-$font-star: clamp-calc(36, 96);
+$font-star: clamp-calc(24, 64);
 $font-h3: clamp-calc(24, 36);
 // $font-body: clamp-calc(18, 24);
 $font-caption: clamp-calc(12, 16);
@@ -102,7 +102,7 @@ $btn-s: 3.5em;
 
 $space-xs: 0.5em;
 $space-sm: 1em;
-$space-md: 2em;
+$space-md: 3em;
 $space-lg: 5em;
 
 // $size-12rem: clamp(2.4rem , 7vw, 12.8rem); /* ' */
