@@ -89,17 +89,7 @@ button{
       @include fill-parent;
       background: var(--bg-grad);
       filter: blur(0rem);
-      // width: 80vw;
-      // height: 80vw;
-      // border-radius: 50%;
-      // filter: blur(25rem);
 
-      // &::before{
-      //   content: '';
-      //   position: absolute;
-      //   @include fill-parent;
-      //   background-color: rgba(255, 255, 255, 0.2);
-      // }
     }
 
     .content-wrap{
@@ -109,8 +99,10 @@ button{
       align-items: center;
       @include flex(column, $space-lg);
 
-      h1{
+      .title{
         // display: none;
+      }
+      h1{
         line-height: 0.9em;
         letter-spacing: 0.1em;
         text-transform: capitalize;
@@ -124,7 +116,6 @@ button{
       }
 
       h2{
-        // display: none;
         font-family: 'YUniverse-B';
         font-size: $font-h2;
         line-height: $font-h2;
@@ -133,44 +124,50 @@ button{
         line-height: 0.9em;
       }
 
-      .logo-loader{
+      .loader-wrap{
         @include center-flex;
         @include flex(column, $space-md);
         z-index: $z-s1 + 1;
 
-        h3{
+        .loader-text{
           font-family: 'SUITE', sans-serif;
           font-weight: 800;
           color: #fff;
           font-size: $font-h3;
-          // display: none;
         }
 
 
-        .possessive{
+        .possessive-wrap{
           width: 60vw;
           max-height: 30vh;
+          max-height: 50vh;
           @include center-flex;
+          
           
           .logo{
             height: 100%;
           }
 
-          /* 별모양 */
-          span{
+          .possessive{
+            @include center-flex;
             height: 100%;
-            font-family: 'YUniverse-B';
-            color: var(--opacity);
-            vertical-align: top;
-            font-size: clamp-calc(24, 128);
-            transform-origin: center center;
-            animation: rotate-y-180 5s infinite ease-in-out;
-            // display: none;
-          }
-          
-          h2{
-            color: var(--opacity);
-            // display: none;
+            // width: 0;
+            // opacity: 0;
+
+            /* 별모양 */
+            span{
+              height: 100%;
+              font-family: 'YUniverse-B';
+              color: var(--opacity);
+              vertical-align: top;
+              font-size: $font-star;
+              transform-origin: center center;
+              animation: rotate-y-180 5s infinite ease-in-out;
+            }
+            
+            h2{
+              color: var(--opacity);
+            }
           }
         }
       }

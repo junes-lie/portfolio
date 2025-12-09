@@ -95,22 +95,22 @@ function init(){
   tl.set('#intro .bg-grad',{zIndex: -1})
     // .set('.possessive h1', { display:'block', opacity: 0})
     // .set('.possessive span, .possessive h2', {display:'block', autoAlpha: 0})
-    .to('.possessive span, .possessive h2', {autoAlpha: 1})
+    // .to('.loader-text',{height: 0, autoAlpha: 0}, "<")
+    // .to('.loader-wrap',{gap: 0}, "<")
+    // .to('.possessive-wrap',{maxHeight: '30vh'}, "<")
+    // .to('.possessive',{width: 'auto', autoAlpha: 1}, "<")
   
-    .to('.loader-text',{autoAlpha: 0})
-    .to('.background-gradient',{width: '80vw',height: '80vw',borderRadius: '50%', filter: `blur(${blurValue}rem)`}, "<")
-    .to('#load .logo .half-circle, #load .logo .wave',{stroke: dimColor}, "<")
-    .to('#load .logo .brush-head, #load .logo .brush-body',{fill: dimColor, stroke:'none'}, "<")
-    .to('#load .logo .search',{fill: dimColor}, "<")
-    // .to('.possessive',{scale: scaleValue, yPercent: yPercentValue}, "<")
-    // .to('.possessive',{scale: scaleValue}, "<")
-    .to('.possessive h1',{opacity: 1})
+    .to('.bg-grad',{width: '80vmax',height: '80vmax',borderRadius: '50%', filter: `blur(${blurValue}rem)`}, "<")
+    .to('#intro .logo .half-circle, #intro .logo .wave',{stroke: dimColor}, "<")
+    .to('#intro .logo .brush-head, #intro .logo .brush-body',{fill: dimColor, stroke:'none'}, "<")
+    .to('#intro .logo .search',{fill: dimColor}, "<")
     .to('.navigation, .quick-btns', {autoAlpha: 1, duration: 1}, "<");
 };
 
 function Loading() {
   gsap.set('.navigation, .quick-btns', {autoAlpha: 0});
-  gsap.set('.possessive span, .possessive h2', {autoAlpha: 0});
+  gsap.set('.possessive', {width: 0, autoAlpha: 0});
+  gsap.set('.title', {height: 0, autoAlpha: 0});
   smoother.scrollTo(0, false);
   smoother.paused(true);
   

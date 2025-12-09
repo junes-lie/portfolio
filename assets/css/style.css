@@ -389,7 +389,7 @@ button {
   mix-blend-mode: color-burn;
   line-height: 0.9em;
 }
-#layout #intro .content-wrap .logo-loader {
+#layout #intro .content-wrap .loader-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -398,33 +398,40 @@ button {
   gap: 2em;
   z-index: 1001;
 }
-#layout #intro .content-wrap .logo-loader h3 {
+#layout #intro .content-wrap .loader-wrap .loader-text {
   font-family: "SUITE", sans-serif;
   font-weight: 800;
   color: #fff;
   font-size: clamp(2.4rem, 1.985rem + 1.154vw, 3.6rem);
 }
-#layout #intro .content-wrap .logo-loader .possessive {
+#layout #intro .content-wrap .loader-wrap .possessive-wrap {
   width: 60vw;
   max-height: 30vh;
+  max-height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* 별모양 */
 }
-#layout #intro .content-wrap .logo-loader .possessive .logo {
+#layout #intro .content-wrap .loader-wrap .possessive-wrap .logo {
   height: 100%;
 }
-#layout #intro .content-wrap .logo-loader .possessive span {
+#layout #intro .content-wrap .loader-wrap .possessive-wrap .possessive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  /* 별모양 */
+}
+#layout #intro .content-wrap .loader-wrap .possessive-wrap .possessive span {
   height: 100%;
   font-family: "YUniverse-B";
   color: var(--opacity);
   vertical-align: top;
-  font-size: clamp(2.4rem, -1.2rem + 10vw, 12.8rem);
+  font-size: clamp(3.6rem, 1.523rem + 5.769vw, 9.6rem);
   transform-origin: center center;
   animation: rotate-y-180 5s infinite ease-in-out;
 }
-#layout #intro .content-wrap .logo-loader .possessive h2 {
+#layout #intro .content-wrap .loader-wrap .possessive-wrap .possessive h2 {
   color: var(--opacity);
 }
 #layout #intro .mouse-wrap {
