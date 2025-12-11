@@ -23,7 +23,7 @@ const navTriggers = (isLandscape) => {
     const span = li.querySelector('span');
     
     const navAnimation = gsap.timeline()
-      .to(dot, { scale: 1.8 })
+      .to(dot, { scale: 1.5 })
       .to(span, spanTween, "<");
 
     ScrollTrigger.create({

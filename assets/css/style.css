@@ -76,7 +76,7 @@ html body input, html body button, html body textarea {
 :root {
   --text-color: #333;
   --bg-grad: linear-gradient(to bottom, #F2BA52 27%, #F2A766 47%, #F2784B 55%, #D95E52 59%, #7A9FBF 100%);
-  --bg-grad2: linear-gradient(175deg, #fff 10%, #F2BA52 27%, #F2A766 47%, #F2784B 55%, #D95E52 59%, #7A9FBF 100%);
+  --bg-grad2: linear-gradient(174deg, #F0EEE9 23.56%, #F2BA52 38%, #F2A766 54.99%, #F2784B 61.78%, #D95E52 64.85%, #7A9FBF 100%);
   --opacity: rgba(255, 255, 255, 0.7);
 }
 
@@ -84,7 +84,7 @@ html body input, html body button, html body textarea {
   position: fixed;
   right: 5vw;
   bottom: 10vh;
-  z-index: 900;
+  z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,19 +112,17 @@ html body input, html body button, html body textarea {
   transform: translateX(-50%);
   background: #FFF;
   border-radius: 25%/50%;
-  filter: blur(1rem);
+  filter: blur(0.5rem);
   z-index: -1;
 }
 @media (hover: hover) {
   .quick-btns .btn:hover {
     transform: scale(0.95);
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
   }
 }
 @media (hover: none) {
   .quick-btns .btn:active {
     transform: scale(0.95);
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
   }
 }
 .quick-btns i, .quick-btns iconify-icon {
@@ -178,9 +176,15 @@ html body input, html body button, html body textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 900;
+  z-index: 1000;
 }
-.navigation .progress {
+.navigation ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.navigation ul .progress {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -188,12 +192,7 @@ html body input, html body button, html body textarea {
   width: 0.1rem;
   height: 95%;
   background: #fff;
-}
-.navigation ul {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
+  z-index: -1;
 }
 .navigation ul li {
   position: relative;
@@ -226,7 +225,7 @@ html body input, html body button, html body textarea {
   transform: translateX(-50%);
   background: #FFF;
   border-radius: 25%/50%;
-  filter: blur(1rem);
+  filter: blur(0.5rem);
   z-index: -1;
 }
 .navigation ul li span {
@@ -244,14 +243,14 @@ html body input, html body button, html body textarea {
     width: 100vw;
     bottom: 90vh;
   }
-  .navigation .progress {
-    width: 95%;
-    height: 0.1rem;
-  }
   .navigation ul {
     width: 70vw;
     height: auto;
     flex-direction: row;
+  }
+  .navigation ul .progress {
+    width: 95%;
+    height: 0.1rem;
   }
   .navigation ul li {
     margin-bottom: 0;
@@ -344,6 +343,22 @@ h2 {
   font-size: clamp(4.8rem, 0.923rem + 10.769vw, 16rem);
 }
 
+h3 {
+  font-size: clamp(2.4rem, 1.015rem + 3.846vw, 6.4rem);
+}
+
+h4 {
+  font-size: clamp(2.4rem, 1.985rem + 1.154vw, 3.6rem);
+}
+
+h5 {
+  font-size: clamp(2.4rem, 2.4rem + 0vw, 2.4rem);
+}
+
+p {
+  font-size: clamp(1.8rem, 1.869rem + -0.192vw, 1.6rem);
+}
+
 section {
   position: relative;
   height: 100vh;
@@ -362,28 +377,6 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 2rem;
-  background: rgba(255, 255, 255, 0.01);
-  box-shadow: inset 0 0 2px 0 #FFF, inset 0 0 10px 0 rgba(255, 255, 255, 0.5), inset 0 0 20px 0 rgba(255, 255, 255, 0.5), 0 20px 30px 0 rgba(255, 255, 255, 0.3), 0 -5px 10px 0 rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(1rem) saturate(120%);
-  overflow: hidden;
-  position: relative;
-}
-.container::after {
-  content: "";
-  width: 50%;
-  height: 25%;
-  position: absolute;
-  bottom: -12.5%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #FFF;
-  border-radius: 25%/50%;
-  filter: blur(1rem);
-  z-index: -1;
-}
-.container::after {
-  filter: blur(15rem);
 }
 
 img {
@@ -407,7 +400,6 @@ button {
   margin: 0 auto;
   width: 100%;
   height: 100%;
-  margin-top: 100vh;
   background: var(--bg-grad2);
 }
 #layout .bg::before {
@@ -462,13 +454,12 @@ button {
   display: flex;
   flex-direction: column;
   gap: 3em;
-  z-index: 1001;
+  z-index: 900;
 }
 #layout #intro .content-wrap .loader-wrap .loader-text {
   font-family: "SUITE", sans-serif;
   font-weight: 800;
   color: #fff;
-  font-size: clamp(2.4rem, 1.985rem + 1.154vw, 3.6rem);
 }
 #layout #intro .content-wrap .loader-wrap .possessive-wrap {
   width: 60vw;
@@ -564,4 +555,73 @@ button {
   color: #fff;
   font-size: clamp(1.2rem, 1.062rem + 0.385vw, 1.6rem);
   text-transform: capitalize;
+}
+#layout #profile .container {
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+#layout #profile .container h3 {
+  margin-bottom: 1em;
+}
+#layout #profile .container .content-wrap {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5em;
+}
+#layout #profile .container .content-wrap .box {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.01);
+  box-shadow: inset 0 0 2px 0 #FFF, inset 0 0 10px 0 rgba(255, 255, 255, 0.5), inset 0 0 20px 0 rgba(255, 255, 255, 0.5), 0 20px 30px 0 rgba(255, 255, 255, 0.3), 0 -5px 10px 0 rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(1rem) saturate(120%);
+  overflow: hidden;
+  position: relative;
+  border-radius: 2em;
+  padding: 5em;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+#layout #profile .container .content-wrap .box::after {
+  content: "";
+  width: 50%;
+  height: 25%;
+  position: absolute;
+  bottom: -12.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #FFF;
+  border-radius: 25%/50%;
+  filter: blur(0.5rem);
+  z-index: -1;
+}
+#layout #profile .container .content-wrap .box::after {
+  filter: blur(12rem);
+}
+#layout #profile .container .content-wrap .box .row {
+  border: 1px solid #000;
+  display: flex;
+}
+#layout #profile .container .content-wrap .box .row h4 {
+  flex: 1;
+  text-transform: capitalize;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+#layout #profile .container .content-wrap .box .row div {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.5em;
+}
+#layout #profile .container .content-wrap img {
+  flex: 1;
+  border: 1px solid #000;
 }

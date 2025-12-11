@@ -20,6 +20,22 @@ h2{
   font-size: $font-h2;
 }
 
+h3{
+  font-size: $font-h3;
+}
+
+h4{
+  font-size: $font-h4;
+}
+
+h5{
+  font-size: $font-h5;
+}
+
+p{
+  font-size: $font-body;
+}
+
 section{
   // overflow-x: hidden;
   position: relative;
@@ -35,11 +51,11 @@ section{
   margin: 0 $p-section;
   max-width: $pc;
   @include center-flex;
-  border-radius: 2rem;
-  @include glass;
-  &::after{
-    filter: blur(15rem);
-  }
+  // border-radius: 2rem;
+  // @include glass;
+  // &::after{
+  //   filter: blur(15rem);
+  // }
 }
 
 img{
@@ -64,7 +80,7 @@ button{
   .bg{
     position: fixed;
     @include fill-parent;
-    margin-top: 100vh;
+    // margin-top: 100vh;
     background: var(--bg-grad2);
 
     &::before{
@@ -72,12 +88,12 @@ button{
       position: fixed;
       @include fill-parent;
       background: rgba(255, 255, 255, 0.5);
-      // z-index: -1;
     }
   }
 
   #intro{
     position: relative;
+    // background: #F0EEE9;
     // overflow: hidden;
 
     .container{
@@ -96,9 +112,7 @@ button{
 
     .content-wrap{
       @include fill-parent;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include center-flex;
       @include flex(column, $space-lg);
 
 
@@ -123,13 +137,13 @@ button{
       .loader-wrap{
         @include center-flex;
         @include flex(column, $space-md);
-        z-index: $z-s1 + 1;
+        z-index: $z-s1;
 
         .loader-text{
           font-family: 'SUITE', sans-serif;
           font-weight: 800;
           color: #fff;
-          font-size: $font-h3;
+          
         }
 
 
@@ -248,15 +262,69 @@ button{
   
 
   #profile{
-    // background: var(--bg-s2);
+    .container{
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+
+      h3{
+        margin-bottom: $space-sm;
+      }
+
+      .content-wrap{
+        @include fill-parent;
+        @include center-flex;
+        gap: $space-lg;
+
+        .box{
+          flex: 1;
+          @include glass;
+          border-radius: 2em;
+          padding: 5em;
+          display: flex;
+          flex-direction: column;
+          gap: $space-md;
+
+          &::after{
+            filter: blur(12rem);
+          }
+
+          .row{
+            border: 1px solid #000;
+            display: flex;
+            // align-items: center;
+
+            h4{
+              flex: 1;
+              text-transform: capitalize;
+              display: flex;
+              align-items: flex-start;
+              justify-content: flex-start;
+            }
+            div{
+              flex: 2;
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              justify-content: flex-start;
+              gap: $space-xs;
+            }
+
+          }
+        }
+        img{
+          flex: 1;
+          border: 1px solid #000;
+
+        }
+      }
+    }
   }
     
     
   #publishing{
     // background: var(--bg-s3);
-    
   }
-  
   
   #uxui{
     // background: var(--bg-s4);
