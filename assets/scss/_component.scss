@@ -15,7 +15,7 @@
   .btn{
     border-radius: 100%;
     @include glass;
-    border: 0.1em solid rgba(255, 255, 255, 0.5);
+    // border: 0.1em solid rgba(255, 255, 255, 0.5);
     @include center-flex;
     transition: all $trans-du ease;
 
@@ -93,8 +93,6 @@
     width: 0.1rem;
     height: 95%;
     background: #fff;
-    // background: black;
-    z-index: 1;
   }
 
   ul{
@@ -119,8 +117,9 @@
         width: 3em;
         height: 3em;
         border-radius: 50%;
-        background: #fff;
-        filter: blur(0.3em);
+        // background: #fff;
+        @include glass;
+        // filter: blur(0.3em);
         
       }
 

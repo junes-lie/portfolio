@@ -35,7 +35,11 @@ section{
   margin: 0 $p-section;
   max-width: $pc;
   @include center-flex;
-  border: 1px solid red;
+  border-radius: 2rem;
+  @include glass;
+  &::after{
+    filter: blur(15rem);
+  }
 }
 
 img{
@@ -56,11 +60,25 @@ button{
 
 #layout{
   overflow-x: hidden;
-  
+
+  .bg{
+    position: fixed;
+    @include fill-parent;
+    margin-top: 100vh;
+    background: var(--bg-grad2);
+
+    &::before{
+      content: '';
+      position: fixed;
+      @include fill-parent;
+      background: rgba(255, 255, 255, 0.5);
+      // z-index: -1;
+    }
+  }
 
   #intro{
     position: relative;
-    overflow: hidden;
+    // overflow: hidden;
 
     .container{
       position: absolute;
@@ -230,44 +248,26 @@ button{
   
 
   #profile{
-    height: 200vh;
-    background-color: black;
+    // background: var(--bg-s2);
   }
     
     
   #publishing{
-    background-color: royalblue;
-    .carousel{
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      transform: rotateX(-20deg) translateY(-70px);
-      transform-style: preserve-3d;
-      perspective: 800px;
-      user-select: none;
-      cursor: grab;
+    // background: var(--bg-s3);
     
-      .carousel-image{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin: -100px 0 0 -100px;
-        width: 200px;
-        height: 200px;
-        transform: translate3d(0, 0, -10px);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
-        transform-origin: 50% 50%;
-      }
-    }
   }
   
+  
   #uxui{
-    background-color: coral;
+    // background: var(--bg-s4);
+  }
+
+  #graphic{
+    // background: var(--bg-s5);
+  }
+
+  #planning{
+    // background: var(--bg-s6);
   }
   
   
