@@ -74,7 +74,7 @@ html body input, html body button, html body textarea {
 }
 
 :root {
-  --text-color: #333;
+  --text-color: rgba(51, 51, 51, 0.8);
   --bg-grad: linear-gradient(to bottom, #F2BA52 27%, #F2A766 47%, #F2784B 55%, #D95E52 59%, #7A9FBF 100%);
   --bg-grad2: linear-gradient(174deg, #F0EEE9 23.56%, #F2BA52 38%, #F2A766 54.99%, #F2784B 61.78%, #D95E52 64.85%, #7A9FBF 100%);
   --opacity: rgba(255, 255, 255, 0.7);
@@ -92,8 +92,8 @@ html body input, html body button, html body textarea {
 }
 .quick-btns .btn {
   border-radius: 100%;
-  background: rgba(255, 255, 255, 0.01);
-  box-shadow: inset 0 0 2px 0 #FFF, inset 0 0 10px 0 rgba(255, 255, 255, 0.5), inset 0 0 20px 0 rgba(255, 255, 255, 0.5), 0 20px 30px 0 rgba(255, 255, 255, 0.3), 0 -5px 10px 0 rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 1rem 3em 0 rgba(0, 0, 0, 0.05), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 -0.5em 1em 0 rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(1rem) saturate(120%);
   overflow: hidden;
   position: relative;
@@ -209,8 +209,8 @@ html body input, html body button, html body textarea {
   width: 3em;
   height: 3em;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.01);
-  box-shadow: inset 0 0 2px 0 #FFF, inset 0 0 10px 0 rgba(255, 255, 255, 0.5), inset 0 0 20px 0 rgba(255, 255, 255, 0.5), 0 20px 30px 0 rgba(255, 255, 255, 0.3), 0 -5px 10px 0 rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 1rem 3em 0 rgba(0, 0, 0, 0.05), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 -0.5em 1em 0 rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(1rem) saturate(120%);
   overflow: hidden;
   position: relative;
@@ -575,8 +575,8 @@ button {
 }
 #layout #profile .container .content-wrap .box {
   flex: 1;
-  background: rgba(255, 255, 255, 0.01);
-  box-shadow: inset 0 0 2px 0 #FFF, inset 0 0 10px 0 rgba(255, 255, 255, 0.5), inset 0 0 20px 0 rgba(255, 255, 255, 0.5), 0 20px 30px 0 rgba(255, 255, 255, 0.3), 0 -5px 10px 0 rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 1rem 3em 0 rgba(0, 0, 0, 0.05), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 -0.5em 1em 0 rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(1rem) saturate(120%);
   overflow: hidden;
   position: relative;
@@ -605,6 +605,8 @@ button {
 #layout #profile .container .content-wrap .box .row {
   border: 1px solid #000;
   display: flex;
+  align-items: baseline;
+  gap: 3em;
 }
 #layout #profile .container .content-wrap .box .row h4 {
   flex: 1;
