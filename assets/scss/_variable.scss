@@ -6,6 +6,7 @@
   // --bg-color: #fff;
   // --bg-color-rgb: 255, 255, 255;
   --text-color: rgba(51, 51, 51, 0.8);
+  --sub-text-color: rgba(51, 51, 51, 0.6);
   // --text-color: #333;
   // --text-color-rgb: 51, 51, 51;
 
@@ -96,9 +97,9 @@ $font-h1: clamp-calc(64, 360, $mobile, 1920px);
 $font-h2: clamp-calc(48, 160);
 $font-star: clamp-calc(24, 64);
 $font-h3: clamp-calc(24, 64);
-$font-h4: clamp-calc(24, 36);
+$font-h4: clamp-calc(24, 32);
 $font-h5: clamp-calc(24, 24);
-$font-body: clamp-calc(18, 16);
+$font-body: clamp-calc(12, 16);
 $font-caption: clamp-calc(12, 16);
 $font-icon: 1.8em;
 
@@ -108,7 +109,7 @@ $btn-s: 3.5em;
 $space-xs: 0.5em;
 $space-sm: 1em;
 $space-md: 3em;
-$space-lg: 5em;
+$space-lg: 5.2em;
 
 // $size-12rem: clamp(2.4rem , 7vw, 12.8rem); /* ' */
 

@@ -21,6 +21,7 @@ html {
     font-weight: normal;
     font-style: normal;
     word-break: keep-all;
+    font-variant-numeric: tabular-nums;
     color: var(--text-color);
     // font-size: clamp-calc(8, 10); //em 쓰면 모바일이 0.8배율
     user-select: none;

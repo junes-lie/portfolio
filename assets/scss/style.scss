@@ -8,6 +8,7 @@
 
 body{
   font-size: clamp-calc(8, 10); //em 쓰면 모바일이 0.8배율
+  line-height: 1.5;
 }
 
 h1{
@@ -42,7 +43,7 @@ section{
   height: 100vh;
   width: 100vw;
   padding: $h-header 0;
-  @include center-flex;
+  @include flex-center;
 }
 
 .container{
@@ -50,7 +51,7 @@ section{
   height: 100%;
   margin: 0 $p-section;
   max-width: $pc;
-  @include center-flex;
+  @include flex-center;
   // border-radius: 2rem;
   // @include glass;
   // &::after{
@@ -66,8 +67,21 @@ img{
 button{
   font-size: inherit;
   cursor: pointer;
+  @include flex-center;
 }
 
+.btn-c{
+  border-radius: 100%;
+  @include glass;
+  @include flex-center;
+}
+
+.btn-r{
+  @include flex-center;
+  padding: $space-sm $space-md;
+  // width: 15em;
+  border: 1px solid #000;
+}
 
 /*  ~ Common _____________________ */
 
@@ -112,7 +126,7 @@ button{
 
     .content-wrap{
       @include fill-parent;
-      @include center-flex;
+      @include flex-center;
       @include flex(column, $space-lg);
 
 
@@ -135,7 +149,7 @@ button{
       }
 
       .loader-wrap{
-        @include center-flex;
+        @include flex-center;
         @include flex(column, $space-md);
         z-index: $z-s1;
 
@@ -151,7 +165,7 @@ button{
           // border: 1px solid #000;
           width: 60vw;
           height: 50vmin;
-          @include center-flex;
+          @include flex-center;
           
           .logo{
             // border: 1px solid red;
@@ -176,7 +190,7 @@ button{
               &>div{
                 position: absolute;
                 @include fill-parent;
-                @include center-flex;
+                @include flex-center;
                 backface-visibility: hidden;
               }
             
@@ -200,7 +214,7 @@ button{
 
           .possessive{
             // border: 1px solid #000;
-            @include center-flex;
+            @include flex-center;
             height: 100%;
             
 
@@ -273,44 +287,135 @@ button{
 
       .content-wrap{
         @include fill-parent;
-        @include center-flex;
+        @include flex-center;
         gap: $space-lg;
 
         .box{
-          flex: 1;
+          flex: 2;
           @include glass;
           border-radius: 2em;
           padding: 5em;
           display: flex;
           flex-direction: column;
+          // align-items: flex-end;
+          // align-self: stretch;
+          // justify-content: stretch;
           gap: $space-md;
 
           &::after{
             filter: blur(12rem);
           }
-
-          .row{
-            border: 1px solid #000;
+          
+          .desc{
             display: flex;
-            align-items: baseline;
+            flex-direction: column;
             gap: $space-md;
 
-            h4{
-              flex: 1;
-              text-transform: capitalize;
+            .row{
+              // border: 1px solid #000;
               display: flex;
-              align-items: flex-start;
-              justify-content: flex-start;
-            }
-            div{
-              flex: 2;
-              display: flex;
-              flex-direction: column;
-              align-items: flex-start;
-              justify-content: flex-start;
-              gap: $space-xs;
-            }
+              align-items: baseline;
+              gap: $space-md;
 
+              h4{
+                flex: 1;
+                // text-transform: capitalize;
+                text-transform: uppercase;
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+              }
+
+              .details{
+                flex: 2;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                
+                p{
+                  span{
+                    margin-right: $space-sm;
+                  }
+                }
+                
+                .sub{
+                  color: var(--sub-text-color);
+                }
+              }
+
+              &.r5 div{
+                flex-direction: row;
+                flex-wrap: wrap; 
+                // gap: 2rem; 
+                // align-items: flex-start;
+
+                .circleContainer{
+                  // @include flex(column, $space-sm);
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  // gap: 1rem;
+                  // width: 18%; 
+                  /* 반응형 크기: 부모 너비의 18% 정도 */
+                  // min-width: 80px; 
+                  /* 너무 작아지지 않도록 최소 너비 설정 */
+
+                  .circleBox{
+                    width: 100%; 
+                    aspect-ratio: 1/1;
+                    @include flex-center;
+                    position: relative;
+
+                    svg{
+                      position: absolute; 
+                      top: 0; 
+                      left: 0;
+                      width: 100%;
+                      height: 100%;
+                      transform: rotate(-90deg); /* 12시 방향부터 시작 */
+                      z-index: 0;
+
+                      circle {
+                        fill: none;
+                        stroke-width: 8; /* 선 두께 (viewBox 100 기준) */
+                        stroke-linecap: round; /* 선 끝을 둥글게 */
+
+                        &.bg {
+                          stroke: #eee; /* 배경색 */
+                        }
+
+                        &.fg {
+                          stroke: #F2784B; /* 차트 색상 */
+                          stroke-dasharray: 251.2; /* 2 * π * r(40) ≈ 251.2 */
+                          stroke-dashoffset: 251.2;
+                          // stroke-dashoffset: 0; /* JS로 조절할 값 */
+                          /* 예시: 90% -> 251.2 * (1 - 0.9) ≈ 25.12 */
+                        }
+                      }
+                    }
+
+                    iconify-icon{
+                      z-index: 1;
+                      font-size: 2.2rem;
+                    }
+
+                    .rate {
+                      font-size: 1rem;
+                      font-weight: 500;
+                      color: #666;
+                      text-align: center;
+                    }
+                  }
+
+                }
+              }
+
+            }
+          }
+
+          a{
+            border: 1px solid #000;
           }
         }
         img{

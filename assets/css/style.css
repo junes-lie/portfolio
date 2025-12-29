@@ -48,6 +48,7 @@ html body {
   font-weight: normal;
   font-style: normal;
   word-break: keep-all;
+  font-variant-numeric: tabular-nums;
   color: var(--text-color);
   user-select: none;
 }
@@ -75,6 +76,7 @@ html body input, html body button, html body textarea {
 
 :root {
   --text-color: rgba(51, 51, 51, 0.8);
+  --sub-text-color: rgba(51, 51, 51, 0.6);
   --bg-grad: linear-gradient(to bottom, #F2BA52 27%, #F2A766 47%, #F2784B 55%, #D95E52 59%, #7A9FBF 100%);
   --bg-grad2: linear-gradient(174deg, #F0EEE9 23.56%, #F2BA52 38%, #F2A766 54.99%, #F2784B 61.78%, #D95E52 64.85%, #7A9FBF 100%);
   --opacity: rgba(255, 255, 255, 0.7);
@@ -90,38 +92,16 @@ html body input, html body button, html body textarea {
   align-items: center;
   flex-direction: column;
 }
-.quick-btns .btn {
-  border-radius: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 1rem 3em 0 rgba(0, 0, 0, 0.05), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 -0.5em 1em 0 rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(1rem) saturate(120%);
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.quick-btns .btn-c {
   transition: all 0.3s ease;
 }
-.quick-btns .btn::after {
-  content: "";
-  width: 50%;
-  height: 25%;
-  position: absolute;
-  bottom: -12.5%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #FFF;
-  border-radius: 25%/50%;
-  filter: blur(0.5rem);
-  z-index: -1;
-}
 @media (hover: hover) {
-  .quick-btns .btn:hover {
+  .quick-btns .btn-c:hover {
     transform: scale(0.95);
   }
 }
 @media (hover: none) {
-  .quick-btns .btn:active {
+  .quick-btns .btn-c:active {
     transform: scale(0.95);
   }
 }
@@ -331,6 +311,7 @@ html body input, html body button, html body textarea {
 }
 body {
   font-size: clamp(0.8rem, 0.731rem + 0.192vw, 1rem);
+  line-height: 1.5;
 }
 
 h1 {
@@ -348,7 +329,7 @@ h3 {
 }
 
 h4 {
-  font-size: clamp(2.4rem, 1.985rem + 1.154vw, 3.6rem);
+  font-size: clamp(2.4rem, 2.123rem + 0.769vw, 3.2rem);
 }
 
 h5 {
@@ -356,7 +337,7 @@ h5 {
 }
 
 p {
-  font-size: clamp(1.8rem, 1.869rem + -0.192vw, 1.6rem);
+  font-size: clamp(1.2rem, 1.062rem + 0.385vw, 1.6rem);
 }
 
 section {
@@ -389,6 +370,42 @@ img {
 button {
   font-size: inherit;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-c {
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 1rem 3em 0 rgba(0, 0, 0, 0.05), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 -0.5em 1em 0 rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(1rem) saturate(120%);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-c::after {
+  content: "";
+  width: 50%;
+  height: 25%;
+  position: absolute;
+  bottom: -12.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #FFF;
+  border-radius: 25%/50%;
+  filter: blur(0.5rem);
+  z-index: -1;
+}
+
+.btn-r {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 3em;
+  border: 1px solid #000;
 }
 
 /*  ~ Common _____________________ */
@@ -434,7 +451,7 @@ button {
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 5em;
+  gap: 5.2em;
 }
 #layout #intro .content-wrap h1 {
   line-height: 0.9em;
@@ -571,10 +588,10 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5em;
+  gap: 5.2em;
 }
 #layout #profile .container .content-wrap .box {
-  flex: 1;
+  flex: 2;
   background: rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 1rem 3em 0 rgba(0, 0, 0, 0.05), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 -0.5em 1em 0 rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(1rem) saturate(120%);
@@ -602,26 +619,90 @@ button {
 #layout #profile .container .content-wrap .box::after {
   filter: blur(12rem);
 }
-#layout #profile .container .content-wrap .box .row {
-  border: 1px solid #000;
+#layout #profile .container .content-wrap .box .desc {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+#layout #profile .container .content-wrap .box .desc .row {
   display: flex;
   align-items: baseline;
   gap: 3em;
 }
-#layout #profile .container .content-wrap .box .row h4 {
+#layout #profile .container .content-wrap .box .desc .row h4 {
   flex: 1;
-  text-transform: capitalize;
+  text-transform: uppercase;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 }
-#layout #profile .container .content-wrap .box .row div {
+#layout #profile .container .content-wrap .box .desc .row .details {
   flex: 2;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 0.5em;
+}
+#layout #profile .container .content-wrap .box .desc .row .details p span {
+  margin-right: 1em;
+}
+#layout #profile .container .content-wrap .box .desc .row .details .sub {
+  color: var(--sub-text-color);
+}
+#layout #profile .container .content-wrap .box .desc .row.r5 div {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#layout #profile .container .content-wrap .box .desc .row.r5 div .circleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* 반응형 크기: 부모 너비의 18% 정도 */
+  /* 너무 작아지지 않도록 최소 너비 설정 */
+}
+#layout #profile .container .content-wrap .box .desc .row.r5 div .circleContainer .circleBox {
+  width: 100%;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#layout #profile .container .content-wrap .box .desc .row.r5 div .circleContainer .circleBox svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg); /* 12시 방향부터 시작 */
+  z-index: 0;
+}
+#layout #profile .container .content-wrap .box .desc .row.r5 div .circleContainer .circleBox svg circle {
+  fill: none;
+  stroke-width: 8; /* 선 두께 (viewBox 100 기준) */
+  stroke-linecap: round; /* 선 끝을 둥글게 */
+}
+#layout #profile .container .content-wrap .box .desc .row.r5 div .circleContainer .circleBox svg circle.bg {
+  stroke: #eee; /* 배경색 */
+}
+#layout #profile .container .content-wrap .box .desc .row.r5 div .circleContainer .circleBox svg circle.fg {
+  stroke: #F2784B; /* 차트 색상 */
+  stroke-dasharray: 251.2; /* 2 * π * r(40) ≈ 251.2 */
+  stroke-dashoffset: 251.2;
+  /* 예시: 90% -> 251.2 * (1 - 0.9) ≈ 25.12 */
+}
+#layout #profile .container .content-wrap .box .desc .row.r5 div .circleContainer .circleBox iconify-icon {
+  z-index: 1;
+  font-size: 2.2rem;
+}
+#layout #profile .container .content-wrap .box .desc .row.r5 div .circleContainer .circleBox .rate {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #666;
+  text-align: center;
+}
+#layout #profile .container .content-wrap .box a {
+  border: 1px solid #000;
 }
 #layout #profile .container .content-wrap img {
   flex: 1;

@@ -21,6 +21,7 @@
   <!-- <script src="assets/js/logo.js" defer></script> -->
   <script src="assets/js/quick.js" defer></script>
   <script src="assets/js/navigation.js" defer></script>
+  <script src="assets/js/skillCircle.js" defer></script>
   <!-- <script src="assets/js/publish.js" defer></script> -->
 
 </head>
@@ -30,19 +31,19 @@
 
   <div class="quick-btns">
     <div class="link-btns">
-      <a href="/path/to/portfolio.pdf" target="_blank" class="btn pdf-btn" title="포트폴리오 PDF">
+      <a href="/path/to/portfolio.pdf" target="_blank" class="btn-c pdf-btn" title="포트폴리오 PDF">
         <i class="bi bi-file-earmark-pdf-fill"></i>
       </a>
-      <a href="/path/to/resume.docx" download class="btn resume-btn" title="이력서 다운로드">
+      <a href="/path/to/resume.docx" download class="btn-c resume-btn" title="이력서 다운로드">
         <!-- <i class="bi bi-file-earmark-word-fill"></i> -->
         <iconify-icon icon="file-icons:microsoft-word"></iconify-icon>
       </a>
-      <a href="https://github.com/junes-lie/portfolio.git" target="_blank" class="btn git-btn" title="GitHub">
+      <a href="https://github.com/junes-lie/portfolio.git" target="_blank" class="btn-c git-btn" title="GitHub">
         <i class="bi bi-github"></i>
       </a>
     </div>
     
-    <button class="btn logo-btn">
+    <button class="btn-c logo-btn">
       <svg id="logo-colored" viewBox="0 0 270 225" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="grad"  x1="0" y1="0" x2="0" y2="150" gradientUnits="userSpaceOnUse">
@@ -75,7 +76,7 @@
       </svg>
     </button>
     
-    <button class="btn top-btn" title="맨 위로">
+    <button class="btn-c top-btn" title="맨 위로">
       <!-- <i class="fa-solid fa-chevron-up"></i> -->
       <i class="bi bi-caret-up-fill"></i>
     </button>
@@ -170,43 +171,101 @@
         <h3>Hi, Hello</h3>
         <div class="content-wrap">
           <div class="box">
-            <div class="row r1">
-              <h4>i am</h4>
-              <div>
-                <p><span>이지선</span><span>Jisun Lee</span></p>
-                <p>1993.05.30</p>
-                <p>010-3550-2157</p>
+            <div class="desc">
+              <div class="row r1">
+                <h4>i am</h4>
+                <div class="details">
+                  <p><span>이지선</span><span>Jisun Lee</span></p>
+                  <p class="sub">1993.05.30</p>
+                  <p class="sub">010-3550-2157</p>
+                </div>
+              </div>
+              <div class="row r2">
+                <!-- <h4>career</h4> -->
+                <h4>worked at</h4>
+                <div class="details">
+                  <p><span>2023.09 ~ 2024.08</span>㈜슈어소프트테크</p>
+                  <p><span>2018.04 ~ 2020.07</span>㈱パーソルR&D</p>
+                  <p><span>2014.12 ~ 2015.02</span>㈜몽태랑인터내셔날</p>
+                </div>
+              </div>
+              <div class="row r3">
+                <!-- <h4>education</h4> -->
+                <h4>studied</h4>
+                <div class="details">
+                  <p>UXUI 디자인 프론트엔드 부트캠프 과정(960H) 수료</p>
+                  <p class="sub">이젠DX아카데미 교육센터 종로캠퍼스</p>
+                </div>
+              </div>
+              <div class="row r4">
+                <!-- <h4>language</h4> -->
+                <h4>certified in</h4>
+                <div class="details">
+                  <p>JLPT N1</p>
+                </div>
+              </div>
+              <div class="row r5">
+                <!-- <h4>skill</h4> -->
+                <h4>can handle</h4>
+                <div class="details">
+                  <div class="circleContainer">
+                    <div class="circleBox">
+                      <svg class="circle" viewBox="0 0 100 100">
+                        <circle class="bg" cx="50%" cy="50%" r="40"></circle>
+                        <circle class="fg" cx="50" cy="50" r="40" data-percent="90"></circle>
+                      </svg>
+                      <iconify-icon icon="devicon:figma" title="Figma"></iconify-icon>
+                    </div>
+                    <div class="rate">90%</div>
+                  </div>
+                  <div class="circleContainer">
+                    <div class="circleBox">
+                      <svg class="circle" viewBox="0 0 100 100">
+                        <circle class="bg" cx="50%" cy="50%" r="40"></circle>
+                        <circle class="fg" cx="50" cy="50" r="40" data-percent="70"></circle>
+                      </svg>
+                      <iconify-icon icon="devicon:photoshop" title="Photoshop"></iconify-icon>
+                    </div>
+                    <div class="rate">70%</div>
+                  </div>
+                  <div class="circleContainer">
+                    <div class="circleBox">
+                      <svg class="circle" viewBox="0 0 100 100">
+                        <circle class="bg" cx="50%" cy="50%" r="40"></circle>
+                        <circle class="fg" cx="50" cy="50" r="40" data-percent="90"></circle>
+                      </svg>
+                      <iconify-icon icon="devicon:html5" title="HTML5"></iconify-icon>
+                    </div>
+                    <div class="rate">90%</div>
+                  </div>
+                  <div class="circleContainer">
+                    <div class="circleBox">
+                      <svg class="circle" viewBox="0 0 100 100">
+                        <circle class="bg" cx="50%" cy="50%" r="40"></circle>
+                        <circle class="fg" cx="50" cy="50" r="40" data-percent="90"></circle>
+                      </svg>
+                      <iconify-icon icon="devicon:css3" title="CSS3"></iconify-icon>
+                    </div>
+                    <div class="rate">90%</div>
+                  </div>
+                  <div class="circleContainer">
+                    <div class="circleBox">
+                      <svg class="circle" viewBox="0 0 100 100">
+                        <circle class="bg" cx="50%" cy="50%" r="40"></circle>
+                        <circle class="fg" cx="50" cy="50" r="40" data-percent="70"></circle>
+                      </svg>
+                      <iconify-icon icon="devicon:javascript" title="JavaScript"></iconify-icon>
+                    </div>
+                    <div class="rate">70%</div>
+                  </div>
+  
+                </div>
               </div>
             </div>
-            <div class="row r2">
-              <!-- <h4>career</h4> -->
-              <h4>worked at</h4>
-              <div>
-                <p>2000.01 ~ 2000.01  어느어느회사</p>
-                <p>2000.01 ~ 2000.01  어느어느회사</p>
-              </div>
-            </div>
-            <div class="row r3">
-              <!-- <h4>education</h4> -->
-              <h4>studied</h4>
-              <div>
-                <p>UXUI 디자인 프론트엔드 부트캠프 과정(960H) 수료</p>
-                <p>이젠DX아카데미 교육센터 종로캠퍼스</p>
-              </div>
-            </div>
-            <div class="row r4">
-              <!-- <h4>language</h4> -->
-              <h4>certified in</h4>
-              <div>
-                <p>JLPT N1</p>
-              </div>
-            </div>
-            <div class="row r5">
-              <!-- <h4>skill</h4> -->
-              <h4>can handle</h4>
-              <div>
-              </div>
-            </div>
+            <a href="/path/to/resume.docx" download class="btn-r" title="이력서 다운로드">
+              <iconify-icon icon="file-icons:microsoft-word"></iconify-icon>
+              이력서 보러가기
+            </a>
           </div>
           <img src="" alt="">
         </div>

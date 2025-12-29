@@ -9,14 +9,14 @@
   right: $p-section;
   bottom: $h-header;
   z-index: $z-float;
-  @include center-flex;
+  @include flex-center;
   flex-direction: column;
   
 
-  .btn{
-    border-radius: 100%;
-    @include glass;
-    @include center-flex;
+  .btn-c{
+    // border-radius: 100%;
+    // @include glass;
+    // @include flex-center;
     transition: all $trans-du ease;
     
 
@@ -94,7 +94,7 @@
     position: relative;
 
     .progress{
-      @include center-absolute;
+      @include absolute-center;
       width: 0.1rem;
       height: 95%;
       background: #fff;
