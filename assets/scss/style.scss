@@ -74,13 +74,15 @@ button{
   border-radius: 100%;
   @include glass;
   @include flex-center;
+  transition: all $trans-du ease;
 }
 
 .btn-r{
-  @include flex-center;
+  border-radius: $radius-sm;
   padding: $space-sm $space-md;
-  // width: 15em;
-  border: 1px solid #000;
+  @include glass;
+  @include flex-center;
+  transition: all $trans-du ease;
 }
 
 /*  ~ Common _____________________ */
@@ -293,14 +295,9 @@ button{
         .box{
           flex: 2;
           @include glass;
-          border-radius: 2em;
-          padding: 5em;
-          display: flex;
-          flex-direction: column;
-          // align-items: flex-end;
-          // align-self: stretch;
-          // justify-content: stretch;
-          gap: $space-md;
+          border-radius: $radius-md;
+          padding: $space-lg;
+          @include flex(column, $space-md);
 
           &::after{
             filter: blur(12rem);
@@ -344,22 +341,22 @@ button{
                 }
               }
 
-              &.r5 div{
+              &.r1 .details{
+                p:first-of-type{
+                  font-size: $font-h5;
+                }
+              }
+
+              &.r5 .details{
                 flex-direction: row;
                 flex-wrap: wrap; 
                 // gap: 2rem; 
                 // align-items: flex-start;
 
                 .circleContainer{
-                  // @include flex(column, $space-sm);
-                  display: flex;
+                  flex: 1;
+                  @include flex-center;
                   flex-direction: column;
-                  align-items: center;
-                  // gap: 1rem;
-                  // width: 18%; 
-                  /* 반응형 크기: 부모 너비의 18% 정도 */
-                  // min-width: 80px; 
-                  /* 너무 작아지지 않도록 최소 너비 설정 */
 
                   .circleBox{
                     width: 100%; 
@@ -400,12 +397,14 @@ button{
                       font-size: 2.2rem;
                     }
 
-                    .rate {
-                      font-size: 1rem;
-                      font-weight: 500;
-                      color: #666;
-                      text-align: center;
-                    }
+                    
+                  }
+
+                  .rate{
+                    font-size: $font-body;
+                    font-weight: 500;
+                    color: #666;
+                    text-align: center;
                   }
 
                 }
@@ -415,7 +414,15 @@ button{
           }
 
           a{
-            border: 1px solid #000;
+            align-self: flex-end;
+            gap: $space-sm;
+
+            iconify-icon{
+              font-size: $font-h5;
+            }
+            p{
+              color: var(--text-color);
+            }
           }
         }
         img{

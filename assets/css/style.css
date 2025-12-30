@@ -64,7 +64,6 @@ html body table {
 }
 html body a {
   text-decoration: none;
-  color: inherit;
 }
 html body img {
   max-width: 100%;
@@ -91,9 +90,6 @@ html body input, html body button, html body textarea {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-.quick-btns .btn-c {
-  transition: all 0.3s ease;
 }
 @media (hover: hover) {
   .quick-btns .btn-c:hover {
@@ -181,7 +177,7 @@ html body input, html body button, html body textarea {
   display: flex;
   align-items: center;
 }
-.navigation ul li:last-child {
+.navigation ul li:last-of-type {
   margin-bottom: 0;
 }
 .navigation ul li .dot {
@@ -385,6 +381,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease;
 }
 .btn-c::after {
   content: "";
@@ -401,11 +398,30 @@ button {
 }
 
 .btn-r {
+  border-radius: 1em;
+  padding: 1em 3em;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 1rem 3em 0 rgba(0, 0, 0, 0.05), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 -0.5em 1em 0 rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(1rem) saturate(120%);
+  overflow: hidden;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1em 3em;
-  border: 1px solid #000;
+  transition: all 0.3s ease;
+}
+.btn-r::after {
+  content: "";
+  width: 50%;
+  height: 25%;
+  position: absolute;
+  bottom: -12.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #FFF;
+  border-radius: 25%/50%;
+  filter: blur(0.5rem);
+  z-index: -1;
 }
 
 /*  ~ Common _____________________ */
@@ -598,7 +614,7 @@ button {
   overflow: hidden;
   position: relative;
   border-radius: 2em;
-  padding: 5em;
+  padding: 5.2em;
   display: flex;
   flex-direction: column;
   gap: 3em;
@@ -649,18 +665,21 @@ button {
 #layout #profile .container .content-wrap .box .desc .row .details .sub {
   color: var(--sub-text-color);
 }
-#layout #profile .container .content-wrap .box .desc .row.r5 div {
+#layout #profile .container .content-wrap .box .desc .row.r1 .details p:first-of-type {
+  font-size: clamp(2.4rem, 2.4rem + 0vw, 2.4rem);
+}
+#layout #profile .container .content-wrap .box .desc .row.r5 .details {
   flex-direction: row;
   flex-wrap: wrap;
 }
-#layout #profile .container .content-wrap .box .desc .row.r5 div .circleContainer {
+#layout #profile .container .content-wrap .box .desc .row.r5 .details .circleContainer {
+  flex: 1;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  /* 반응형 크기: 부모 너비의 18% 정도 */
-  /* 너무 작아지지 않도록 최소 너비 설정 */
+  flex-direction: column;
 }
-#layout #profile .container .content-wrap .box .desc .row.r5 div .circleContainer .circleBox {
+#layout #profile .container .content-wrap .box .desc .row.r5 .details .circleContainer .circleBox {
   width: 100%;
   aspect-ratio: 1/1;
   display: flex;
@@ -668,7 +687,7 @@ button {
   align-items: center;
   position: relative;
 }
-#layout #profile .container .content-wrap .box .desc .row.r5 div .circleContainer .circleBox svg {
+#layout #profile .container .content-wrap .box .desc .row.r5 .details .circleContainer .circleBox svg {
   position: absolute;
   top: 0;
   left: 0;
@@ -677,32 +696,39 @@ button {
   transform: rotate(-90deg); /* 12시 방향부터 시작 */
   z-index: 0;
 }
-#layout #profile .container .content-wrap .box .desc .row.r5 div .circleContainer .circleBox svg circle {
+#layout #profile .container .content-wrap .box .desc .row.r5 .details .circleContainer .circleBox svg circle {
   fill: none;
   stroke-width: 8; /* 선 두께 (viewBox 100 기준) */
   stroke-linecap: round; /* 선 끝을 둥글게 */
 }
-#layout #profile .container .content-wrap .box .desc .row.r5 div .circleContainer .circleBox svg circle.bg {
+#layout #profile .container .content-wrap .box .desc .row.r5 .details .circleContainer .circleBox svg circle.bg {
   stroke: #eee; /* 배경색 */
 }
-#layout #profile .container .content-wrap .box .desc .row.r5 div .circleContainer .circleBox svg circle.fg {
+#layout #profile .container .content-wrap .box .desc .row.r5 .details .circleContainer .circleBox svg circle.fg {
   stroke: #F2784B; /* 차트 색상 */
   stroke-dasharray: 251.2; /* 2 * π * r(40) ≈ 251.2 */
   stroke-dashoffset: 251.2;
   /* 예시: 90% -> 251.2 * (1 - 0.9) ≈ 25.12 */
 }
-#layout #profile .container .content-wrap .box .desc .row.r5 div .circleContainer .circleBox iconify-icon {
+#layout #profile .container .content-wrap .box .desc .row.r5 .details .circleContainer .circleBox iconify-icon {
   z-index: 1;
   font-size: 2.2rem;
 }
-#layout #profile .container .content-wrap .box .desc .row.r5 div .circleContainer .circleBox .rate {
-  font-size: 1rem;
+#layout #profile .container .content-wrap .box .desc .row.r5 .details .circleContainer .rate {
+  font-size: clamp(1.2rem, 1.062rem + 0.385vw, 1.6rem);
   font-weight: 500;
   color: #666;
   text-align: center;
 }
 #layout #profile .container .content-wrap .box a {
-  border: 1px solid #000;
+  align-self: flex-end;
+  gap: 1em;
+}
+#layout #profile .container .content-wrap .box a iconify-icon {
+  font-size: clamp(2.4rem, 2.4rem + 0vw, 2.4rem);
+}
+#layout #profile .container .content-wrap .box a p {
+  color: var(--text-color);
 }
 #layout #profile .container .content-wrap img {
   flex: 1;

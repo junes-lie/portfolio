@@ -111,6 +111,9 @@ $space-sm: 1em;
 $space-md: 3em;
 $space-lg: 5.2em;
 
+$radius-sm: 1em;
+$radius-md: 2em;
+
 // $size-12rem: clamp(2.4rem , 7vw, 12.8rem); /* ' */
 
 
@@ -145,6 +148,7 @@ $space-lg: 5.2em;
 // // 모서리 둥글기 (Border Radius)
 // $radius-sm: clamp-calc(4, 8);
 // $radius-md: clamp-calc(12, 24); // 카드 기본 둥글기
+
 // $radius-lg: clamp-calc(20, 40); // 큰 컨테이너 둥글기
 // $radius-full: 9999px;           // 완전 원형 (pill shape)
 
