@@ -143,7 +143,7 @@ button{
     .content-wrap{
       @include fill-parent;
       @include flex-center;
-      @include flex(column, $space-lg);
+      @include flex(column, $space-xl);
 
 
       h1{
@@ -166,7 +166,7 @@ button{
 
       .loader-wrap{
         @include flex-center;
-        @include flex(column, $space-md);
+        @include flex(column, $space-lg);
         z-index: $z-s1;
 
         .loader-text{
@@ -304,14 +304,14 @@ button{
       .content-wrap{
         @include fill-parent;
         @include flex-center;
-        gap: $space-lg;
+        gap: $space-xl;
 
         .box{
           flex: 2;
           @include glass;
           border-radius: $radius-md;
-          padding: $space-lg;
-          @include flex(column, $space-md);
+          padding: $space-xl;
+          @include flex(column, $space-lg);
 
           &::after{
             filter: blur(12rem);
@@ -326,7 +326,7 @@ button{
               // border: 1px solid #000;
               display: flex;
               align-items: baseline;
-              gap: $space-md;
+              gap: $space-lg;
 
               h4{
                 flex: 1;
