@@ -423,6 +423,22 @@ button {
   filter: blur(0.5rem);
   z-index: -1;
 }
+@media (hover: hover) {
+  .btn-r:hover {
+    transform: scale(0.95);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 1rem 3em 0 rgba(0, 0, 0, 0.05), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 -0.5em 1em 0 rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(1rem) saturate(120%);
+  }
+}
+@media (hover: none) {
+  .btn-r:active {
+    transform: scale(0.95);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 1rem 3em 0 rgba(0, 0, 0, 0.05), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 -0.5em 1em 0 rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(1rem) saturate(120%);
+  }
+}
 
 /*  ~ Common _____________________ */
 #layout {
@@ -595,7 +611,7 @@ button {
   flex-direction: column;
 }
 #layout #profile .container h3 {
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 #layout #profile .container .content-wrap {
   margin: 0 auto;
@@ -638,7 +654,7 @@ button {
 #layout #profile .container .content-wrap .box .desc {
   display: flex;
   flex-direction: column;
-  gap: 3em;
+  gap: 1em;
 }
 #layout #profile .container .content-wrap .box .desc .row {
   display: flex;
