@@ -5,7 +5,7 @@ const navTriggers = (isLandscape) => {
   const navLis = gsap.utils.toArray('.navigation li');
   
   const xValue = remap(40, 55);
-  const yValue = remap(-35, -50);
+  const yValue = remap(-30, -50);
 
   const spanTween = isLandscape 
     ? { x: xValue, opacity: 1 } 

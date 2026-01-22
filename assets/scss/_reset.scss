@@ -43,7 +43,11 @@ html {
     }
     a{
       text-decoration: none; 
-      // color: inherit;  
+      color: inherit;
+
+      &:visited{
+        color: inherit;
+      }
     }  
     img{
       max-width: 100%;

@@ -64,6 +64,10 @@ html body table {
 }
 html body a {
   text-decoration: none;
+  color: inherit;
+}
+html body a:visited {
+  color: inherit;
 }
 html body img {
   max-width: 100%;
@@ -93,7 +97,7 @@ html body input, html body button, html body textarea {
   flex-direction: column;
 }
 .quick-btns i, .quick-btns iconify-icon {
-  font-size: 1.8em;
+  font-size: clamp(1.4rem, 1.192rem + 0.577vw, 2rem);
 }
 .quick-btns button {
   width: 5em;
@@ -135,6 +139,9 @@ html body input, html body button, html body textarea {
 .quick-btns .link-btns .resume-btn {
   color: #2c76b6;
 }
+.quick-btns .link-btns .git-btn {
+  color: #1f2328;
+}
 
 .navigation {
   position: fixed;
@@ -145,11 +152,26 @@ html body input, html body button, html body textarea {
   justify-content: center;
   z-index: 1000;
 }
+@media (orientation: portrait) {
+  .navigation {
+    left: auto;
+    height: auto;
+    width: 100vw;
+    bottom: calc(90vh + 1em);
+  }
+}
 .navigation ul {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
+}
+@media (orientation: portrait) {
+  .navigation ul {
+    width: 70vw;
+    height: auto;
+    flex-direction: row;
+  }
 }
 .navigation ul .progress {
   position: absolute;
@@ -161,12 +183,24 @@ html body input, html body button, html body textarea {
   background: #fff;
   z-index: -1;
 }
+@media (orientation: portrait) {
+  .navigation ul .progress {
+    width: 95%;
+    height: 0.1rem;
+  }
+}
 .navigation ul li {
   position: relative;
   cursor: pointer;
   margin-bottom: 3rem;
   display: flex;
   align-items: center;
+}
+@media (orientation: portrait) {
+  .navigation ul li {
+    margin-bottom: 0;
+    justify-content: center;
+  }
 }
 .navigation ul li:last-of-type {
   margin-bottom: 0;
@@ -184,27 +218,6 @@ html body input, html body button, html body textarea {
   pointer-events: none;
 }
 
-@media (orientation: portrait) {
-  .navigation {
-    left: auto;
-    height: auto;
-    width: 100vw;
-    bottom: 90vh;
-  }
-  .navigation ul {
-    width: 70vw;
-    height: auto;
-    flex-direction: row;
-  }
-  .navigation ul .progress {
-    width: 95%;
-    height: 0.1rem;
-  }
-  .navigation ul li {
-    margin-bottom: 0;
-    justify-content: center;
-  }
-}
 #logo-white .half-circle,
 #logo-white .wave {
   fill: none;
@@ -278,7 +291,7 @@ html body input, html body button, html body textarea {
   }
 }
 body {
-  font-size: clamp(0.8rem, 0.731rem + 0.192vw, 1rem);
+  font-size: clamp(0.7rem, 0.596rem + 0.288vw, 1rem);
   line-height: 1.5;
 }
 
@@ -297,11 +310,11 @@ h3 {
 }
 
 h4 {
-  font-size: clamp(2.4rem, 2.123rem + 0.769vw, 3.2rem);
+  font-size: clamp(1.6rem, 1.046rem + 1.538vw, 3.2rem);
 }
 
 h5 {
-  font-size: clamp(2.4rem, 2.4rem + 0vw, 2.4rem);
+  font-size: clamp(1.4rem, 1.054rem + 0.962vw, 2.4rem);
 }
 
 p {
@@ -469,6 +482,11 @@ button {
   flex-direction: column;
   gap: 5.2em;
 }
+@media (orientation: portrait) {
+  #layout #intro .content-wrap {
+    gap: 1em;
+  }
+}
 #layout #intro .content-wrap h1 {
   line-height: 0.9em;
   letter-spacing: 0.13em;
@@ -588,6 +606,14 @@ button {
   font-size: clamp(1.2rem, 1.062rem + 0.385vw, 1.6rem);
   text-transform: capitalize;
 }
+#layout #profile {
+  border: 1px solid #000;
+}
+@media (orientation: portrait) {
+  #layout #profile {
+    height: fit-content;
+  }
+}
 #layout #profile .container {
   justify-content: flex-start;
   align-items: flex-start;
@@ -595,6 +621,11 @@ button {
 }
 #layout #profile .container h3 {
   margin-bottom: 0.5em;
+}
+@media (orientation: portrait) {
+  #layout #profile .container h3 {
+    margin-top: 0.5em;
+  }
 }
 #layout #profile .container .content-wrap {
   margin: 0 auto;
@@ -604,6 +635,11 @@ button {
   justify-content: center;
   align-items: center;
   gap: 5.2em;
+}
+@media (orientation: portrait) {
+  #layout #profile .container .content-wrap {
+    flex-direction: column-reverse;
+  }
 }
 #layout #profile .container .content-wrap .box {
   flex: 2;
@@ -631,6 +667,12 @@ button {
   filter: blur(0.5rem);
   z-index: -1;
 }
+@media (orientation: portrait) {
+  #layout #profile .container .content-wrap .box {
+    width: 100%;
+    gap: 5.2em;
+  }
+}
 #layout #profile .container .content-wrap .box::after {
   filter: blur(12rem);
 }
@@ -639,10 +681,22 @@ button {
   flex-direction: column;
   gap: 2em;
 }
+@media (orientation: portrait) {
+  #layout #profile .container .content-wrap .box .desc {
+    gap: 3em;
+  }
+}
 #layout #profile .container .content-wrap .box .desc .row {
   display: flex;
   align-items: flex-start;
   gap: 3em;
+}
+@media (orientation: portrait) {
+  #layout #profile .container .content-wrap .box .desc .row {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
 }
 #layout #profile .container .content-wrap .box .desc .row h4 {
   flex: 1;
@@ -665,11 +719,16 @@ button {
   color: var(--sub-text-color);
 }
 #layout #profile .container .content-wrap .box .desc .row.r1 .details p:first-of-type {
-  font-size: clamp(2.4rem, 2.4rem + 0vw, 2.4rem);
+  font-size: clamp(1.4rem, 1.054rem + 0.962vw, 2.4rem);
 }
 #layout #profile .container .content-wrap .box .desc .row.r5 .details {
   flex-direction: row;
   flex-wrap: wrap;
+}
+@media (orientation: portrait) {
+  #layout #profile .container .content-wrap .box .desc .row.r5 .details {
+    align-self: stretch;
+  }
 }
 #layout #profile .container .content-wrap .box .desc .row.r5 .details .circleContainer {
   flex: 1;
@@ -704,14 +763,15 @@ button {
   stroke-dashoffset: 251.2;
 }
 #layout #profile .container .content-wrap .box .desc .row.r5 .details .circleContainer .circleBox iconify-icon {
-  font-size: clamp(2.4rem, 2.123rem + 0.769vw, 3.2rem);
+  font-size: clamp(1.6rem, 1.046rem + 1.538vw, 3.2rem);
 }
 #layout #profile .container .content-wrap .box a {
   align-self: flex-end;
   gap: 1em;
 }
 #layout #profile .container .content-wrap .box a iconify-icon {
-  font-size: clamp(2.4rem, 2.4rem + 0vw, 2.4rem);
+  font-size: clamp(1.4rem, 1.054rem + 0.962vw, 2.4rem);
+  color: #0000ee;
 }
 #layout #profile .container .content-wrap .box a p {
   color: var(--text-color);

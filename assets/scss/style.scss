@@ -7,7 +7,7 @@
 // @use './header' as *;
 
 body{
-  font-size: clamp-calc(8, 10); //em 쓰면 모바일이 0.8배율
+  font-size: clamp-calc(7, 10); //em 쓰면 모바일이 0.7배율
   line-height: 1.5;
 }
 
@@ -155,6 +155,9 @@ button{
       @include flex-center;
       @include flex(column, $space-xl);
 
+      @include portrait{
+        gap: 1em;
+      }
 
       h1{
         line-height: 0.9em;
@@ -249,7 +252,7 @@ button{
               height: 110%;
               font-family: 'YUniverse-B';
               color: var(--opacity);
-              font-size: $font-star;
+              font-size: $font-h3;
               transform-origin: center center;
               animation: rotate-y-180 5s infinite ease-in-out;
             }
@@ -301,6 +304,12 @@ button{
   
 
   #profile{
+    border: 1px solid #000;
+
+    @include portrait{
+      height: fit-content;
+    }
+
     .container{
       justify-content: flex-start;
       align-items: flex-start;
@@ -308,6 +317,10 @@ button{
 
       h3{
         margin-bottom: $space-xs;
+
+        @include portrait{
+          margin-top: $space-xs;
+        }
       }
 
       .content-wrap{
@@ -315,12 +328,21 @@ button{
         @include flex-center;
         gap: $space-xl;
 
+        @include portrait{
+          flex-direction: column-reverse;
+        }
+
         .box{
           flex: 2;
           @include glass;
           border-radius: $radius-md;
           padding: $space-xl;
           @include flex(column, $space-lg);
+
+          @include portrait{
+            width: 100%;
+            gap: $space-xl;
+          }
 
           &::after{
             filter: blur(12rem);
@@ -331,12 +353,20 @@ button{
             flex-direction: column;
             gap: $space-md;
 
+            @include portrait{
+              gap: $space-lg;
+            }
+
             .row{
               // border: 1px solid #000;
               display: flex;
               // align-items: baseline;
               align-items: flex-start;
               gap: $space-lg;
+
+              @include portrait{
+                @include flex(column, $space-sm);
+              }
 
               h4{
                 flex: 1;
@@ -376,6 +406,9 @@ button{
                 flex-wrap: wrap; 
                 // gap: 2rem; 
                 // align-items: flex-start;
+                @include portrait{
+                  align-self: stretch;
+                }
 
                 .circleContainer{
                   flex: 1;
@@ -427,6 +460,7 @@ button{
 
             iconify-icon{
               font-size: $font-h5;
+              color: #0000ee;
             }
             p{
               color: var(--text-color);

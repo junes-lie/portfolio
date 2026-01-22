@@ -60,6 +60,7 @@
 
     .pdf-btn{ color: #EF5350; }
     .resume-btn{ color: #2c76b6; }
+    .git-btn{ color: #1f2328; }
   }
 
 
@@ -74,11 +75,24 @@
   justify-content: center;
   z-index: $z-float;
 
+  @include portrait{
+    left: auto;
+    height: auto;
+    width: 100vw;
+    bottom: calc(100vh - $h-header + 1em);
+  }
+
   ul{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+
+    @include portrait{
+      width: 70vw;
+      height: auto;
+      flex-direction: row;
+    }
 
     .progress{
       @include absolute-center;
@@ -86,6 +100,11 @@
       height: 95%;
       background: #fff;
       z-index: -1;
+
+      @include portrait{
+        width: 95%;
+        height: 0.1rem;
+      }
     }
 
     li{
@@ -94,6 +113,11 @@
       margin-bottom: 3rem;
       display: flex;
       align-items: center;
+
+      @include portrait{
+        margin-bottom: 0;
+        justify-content: center;
+      }
       
       &:last-of-type{
         margin-bottom: 0;
@@ -116,31 +140,6 @@
   }
 }
 
-@media (orientation: portrait) {
-  .navigation{
-    left: auto;
-    height: auto;
-    width: 100vw;
-    bottom: calc(100vh - $h-header);
-
-
-    ul{
-      width: 70vw;
-      height: auto;
-      flex-direction: row;
-
-      .progress{
-        width: 95%;
-        height: 0.1rem;
-      }
-
-      li{
-        margin-bottom: 0;
-        justify-content: center;
-      }
-    }
-  }
-}
   
 
 #logo-white {

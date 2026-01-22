@@ -35,6 +35,12 @@
   }
 }
 
+@mixin portrait {
+  @media (orientation: portrait) {
+    @content;
+  }
+}
+
 
 @mixin absolute-center {
   position: absolute;

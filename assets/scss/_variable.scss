@@ -96,13 +96,14 @@ $ani-du: 1s;
 
 $font-h1: clamp-calc(64, 360, $mobile, 1920px);
 $font-h2: clamp-calc(48, 160);
-$font-star: clamp-calc(24, 64);
+// $font-star: clamp-calc(24, 64);
 $font-h3: clamp-calc(24, 64);
-$font-h4: clamp-calc(24, 32);
-$font-h5: clamp-calc(24, 24);
+$font-h4: clamp-calc(16, 32);
+$font-h5: clamp-calc(14, 24);
+$font-icon: clamp-calc(14, 20);
 $font-body: clamp-calc(12, 16);
 $font-caption: clamp-calc(12, 16);
-$font-icon: 1.8em;
+// $font-icon: 1.8em;
 
 $btn-m: 5em;
 $btn-s: 3.5em;
