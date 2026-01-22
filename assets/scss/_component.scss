@@ -13,14 +13,6 @@
   flex-direction: column;
   
 
-  .btn-c{
-
-    @include hover-effect {
-      transform: scale(0.95);
-    }
-
-  }
-
   i, iconify-icon{
     font-size: $font-icon;
   }
@@ -111,9 +103,6 @@
         position: relative;
         width: 3em;
         height: 3em;
-        border-radius: 50%;
-        @include glass;
-        // background: #000;
       }
 
       span{

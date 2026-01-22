@@ -75,6 +75,18 @@ button{
   @include glass;
   @include flex-center;
   transition: all $trans-du ease;
+
+  @include hover-effect {
+    transform: scale(0.95);
+
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 
+    inset 0 0 0.2em 0 #FFF,
+    inset 0 0 0.5em 0 rgba(255, 255, 255, 0.5), 
+    inset 0 0 1.5em 0 rgba(255, 255, 255, 0.5), 
+    0 0.5rem 1em 0 rgba(255, 255, 255, 0.3), 
+    0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
+  }
 }
 
 .btn-r{
@@ -85,17 +97,15 @@ button{
   transition: all $trans-du ease;
 
   @include hover-effect {
-    transform: scale(0.95);
+    transform: scale(0.95) translateY(0.2em);
     
     background: rgba(255, 255, 255, 0.3);
     box-shadow: 
     inset 0 0 0.2em 0 #FFF,
-    inset 0 0 1em 0 rgba(255, 255, 255, 0.50), 
-    inset 0 0 2em 0 rgba(255, 255, 255, 0.50), 
-    0 1rem 3em 0 rgba(0, 0, 0, 0.05),
-    0 2rem 3em 0 rgba(255, 255, 255, 0.30), 
-    0 -0.5em 1em 0 rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(1rem) saturate(120%);
+    inset 0 0 0.5em 0 rgba(255, 255, 255, 0.5), 
+    inset 0 0 1.5em 0 rgba(255, 255, 255, 0.5), 
+    0 0.5rem 1em 0 rgba(255, 255, 255, 0.3), 
+    0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -234,8 +244,7 @@ button{
             height: 100%;
             
 
-            /* 별모양 */
-            span{
+            .star{
               // border: 1px solid #000;
               height: 110%;
               font-family: 'YUniverse-B';
@@ -320,12 +329,13 @@ button{
           .desc{
             display: flex;
             flex-direction: column;
-            gap: $space-sm;
+            gap: $space-md;
 
             .row{
               // border: 1px solid #000;
               display: flex;
-              align-items: baseline;
+              // align-items: baseline;
+              align-items: flex-start;
               gap: $space-lg;
 
               h4{
@@ -373,52 +383,36 @@ button{
                   flex-direction: column;
 
                   .circleBox{
+                    position: relative;
                     width: 100%; 
                     aspect-ratio: 1/1;
                     @include flex-center;
-                    position: relative;
 
                     svg{
                       position: absolute; 
-                      top: 0; 
-                      left: 0;
-                      width: 100%;
-                      height: 100%;
-                      transform: rotate(-90deg); /* 12시 방향부터 시작 */
-                      z-index: 0;
+                      transform: rotate(-90deg);
 
                       circle {
                         fill: none;
-                        stroke-width: 8; /* 선 두께 (viewBox 100 기준) */
-                        stroke-linecap: round; /* 선 끝을 둥글게 */
+                        stroke-width: 8;
+                        stroke-linecap: round;
 
                         &.bg {
-                          stroke: #eee; /* 배경색 */
+                          stroke: #eee;
                         }
 
                         &.fg {
-                          stroke: #F2784B; /* 차트 색상 */
-                          stroke-dasharray: 251.2; /* 2 * π * r(40) ≈ 251.2 */
+                          stroke: var(--text-point);
+                          stroke-dasharray: 251.2; /* 2π * r(40) ≈ 251.2 */
                           stroke-dashoffset: 251.2;
-                          // stroke-dashoffset: 0; /* JS로 조절할 값 */
-                          /* 예시: 90% -> 251.2 * (1 - 0.9) ≈ 25.12 */
                         }
                       }
                     }
 
                     iconify-icon{
-                      z-index: 1;
-                      font-size: 2.2rem;
+                      font-size: $font-h4;
                     }
 
-                    
-                  }
-
-                  .rate{
-                    font-size: $font-body;
-                    font-weight: 500;
-                    color: #666;
-                    text-align: center;
                   }
 
                 }
@@ -439,6 +433,7 @@ button{
             }
           }
         }
+
         img{
           flex: 1;
           border: 1px solid #000;
