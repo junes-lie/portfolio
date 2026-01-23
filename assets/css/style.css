@@ -634,14 +634,21 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+#layout #profile .container .content-wrap .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  align-items: stretch;
   gap: 5.2em;
 }
 @media (orientation: portrait) {
-  #layout #profile .container .content-wrap {
+  #layout #profile .container .content-wrap .content {
     flex-direction: column-reverse;
   }
 }
-#layout #profile .container .content-wrap .box {
+#layout #profile .container .content-wrap .content .box {
   flex: 2;
   background: rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
@@ -654,7 +661,7 @@ button {
   flex-direction: column;
   gap: 3em;
 }
-#layout #profile .container .content-wrap .box::after {
+#layout #profile .container .content-wrap .content .box::after {
   content: "";
   width: 50%;
   height: 25%;
@@ -668,76 +675,76 @@ button {
   z-index: -1;
 }
 @media (orientation: portrait) {
-  #layout #profile .container .content-wrap .box {
+  #layout #profile .container .content-wrap .content .box {
     width: 100%;
     gap: 5.2em;
   }
 }
-#layout #profile .container .content-wrap .box::after {
+#layout #profile .container .content-wrap .content .box::after {
   filter: blur(12rem);
 }
-#layout #profile .container .content-wrap .box .desc {
+#layout #profile .container .content-wrap .content .box .desc {
   display: flex;
   flex-direction: column;
   gap: 2em;
 }
 @media (orientation: portrait) {
-  #layout #profile .container .content-wrap .box .desc {
+  #layout #profile .container .content-wrap .content .box .desc {
     gap: 3em;
   }
 }
-#layout #profile .container .content-wrap .box .desc .row {
+#layout #profile .container .content-wrap .content .box .desc .row {
   display: flex;
   align-items: flex-start;
   gap: 3em;
 }
 @media (orientation: portrait) {
-  #layout #profile .container .content-wrap .box .desc .row {
+  #layout #profile .container .content-wrap .content .box .desc .row {
     display: flex;
     flex-direction: column;
     gap: 1em;
   }
 }
-#layout #profile .container .content-wrap .box .desc .row h4 {
+#layout #profile .container .content-wrap .content .box .desc .row h4 {
   flex: 1;
   text-transform: uppercase;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 }
-#layout #profile .container .content-wrap .box .desc .row .details {
+#layout #profile .container .content-wrap .content .box .desc .row .details {
   flex: 2;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
-#layout #profile .container .content-wrap .box .desc .row .details p span {
+#layout #profile .container .content-wrap .content .box .desc .row .details p span {
   margin-right: 1em;
 }
-#layout #profile .container .content-wrap .box .desc .row .details .sub {
+#layout #profile .container .content-wrap .content .box .desc .row .details .sub {
   color: var(--sub-text-color);
 }
-#layout #profile .container .content-wrap .box .desc .row.r1 .details p:first-of-type {
+#layout #profile .container .content-wrap .content .box .desc .row.r1 .details p:first-of-type {
   font-size: clamp(1.4rem, 1.054rem + 0.962vw, 2.4rem);
 }
-#layout #profile .container .content-wrap .box .desc .row.r5 .details {
+#layout #profile .container .content-wrap .content .box .desc .row.r5 .details {
   flex-direction: row;
   flex-wrap: wrap;
 }
 @media (orientation: portrait) {
-  #layout #profile .container .content-wrap .box .desc .row.r5 .details {
+  #layout #profile .container .content-wrap .content .box .desc .row.r5 .details {
     align-self: stretch;
   }
 }
-#layout #profile .container .content-wrap .box .desc .row.r5 .details .circleContainer {
+#layout #profile .container .content-wrap .content .box .desc .row.r5 .details .circleContainer {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-#layout #profile .container .content-wrap .box .desc .row.r5 .details .circleContainer .circleBox {
+#layout #profile .container .content-wrap .content .box .desc .row.r5 .details .circleContainer .circleBox {
   position: relative;
   width: 100%;
   aspect-ratio: 1/1;
@@ -745,38 +752,43 @@ button {
   justify-content: center;
   align-items: center;
 }
-#layout #profile .container .content-wrap .box .desc .row.r5 .details .circleContainer .circleBox svg {
+#layout #profile .container .content-wrap .content .box .desc .row.r5 .details .circleContainer .circleBox svg {
   position: absolute;
   transform: rotate(-90deg);
 }
-#layout #profile .container .content-wrap .box .desc .row.r5 .details .circleContainer .circleBox svg circle {
+#layout #profile .container .content-wrap .content .box .desc .row.r5 .details .circleContainer .circleBox svg circle {
   fill: none;
   stroke-width: 8;
   stroke-linecap: round;
 }
-#layout #profile .container .content-wrap .box .desc .row.r5 .details .circleContainer .circleBox svg circle.bg {
+#layout #profile .container .content-wrap .content .box .desc .row.r5 .details .circleContainer .circleBox svg circle.bg {
   stroke: #eee;
 }
-#layout #profile .container .content-wrap .box .desc .row.r5 .details .circleContainer .circleBox svg circle.fg {
+#layout #profile .container .content-wrap .content .box .desc .row.r5 .details .circleContainer .circleBox svg circle.fg {
   stroke: var(--text-point);
   stroke-dasharray: 251.2; /* 2π * r(40) ≈ 251.2 */
   stroke-dashoffset: 251.2;
 }
-#layout #profile .container .content-wrap .box .desc .row.r5 .details .circleContainer .circleBox iconify-icon {
+#layout #profile .container .content-wrap .content .box .desc .row.r5 .details .circleContainer .circleBox iconify-icon {
   font-size: clamp(1.6rem, 1.046rem + 1.538vw, 3.2rem);
 }
-#layout #profile .container .content-wrap .box a {
+#layout #profile .container .content-wrap .content .box a {
   align-self: flex-end;
   gap: 1em;
 }
-#layout #profile .container .content-wrap .box a iconify-icon {
+#layout #profile .container .content-wrap .content .box a iconify-icon {
   font-size: clamp(1.4rem, 1.054rem + 0.962vw, 2.4rem);
   color: #0000ee;
 }
-#layout #profile .container .content-wrap .box a p {
+#layout #profile .container .content-wrap .content .box a p {
   color: var(--text-color);
 }
-#layout #profile .container .content-wrap img {
+#layout #profile .container .content-wrap .content .portrait {
   flex: 1;
   border: 1px solid #000;
+  position: relative;
+  aspect-ratio: 2/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

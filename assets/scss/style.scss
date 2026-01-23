@@ -326,152 +326,175 @@ button{
       .content-wrap{
         @include fill-parent;
         @include flex-center;
-        gap: $space-xl;
 
-        @include portrait{
-          flex-direction: column-reverse;
-        }
-
-        .box{
-          flex: 2;
-          @include glass;
-          border-radius: $radius-md;
-          padding: $space-xl;
-          @include flex(column, $space-lg);
+        .content{
+          @include flex-center;
+          width: 100%;
+          align-items: stretch;
+          gap: $space-xl;
 
           @include portrait{
-            width: 100%;
-            gap: $space-xl;
+            flex-direction: column-reverse;
           }
 
-          &::after{
-            filter: blur(12rem);
-          }
-          
-          .desc{
-            display: flex;
-            flex-direction: column;
-            gap: $space-md;
+          .box{
+            flex: 2;
+            @include glass;
+            border-radius: $radius-md;
+            padding: $space-xl;
+            @include flex(column, $space-lg);
 
             @include portrait{
-              gap: $space-lg;
+              width: 100%;
+              gap: $space-xl;
             }
 
-            .row{
-              // border: 1px solid #000;
+            &::after{
+              filter: blur(12rem);
+            }
+            
+            .desc{
               display: flex;
-              // align-items: baseline;
-              align-items: flex-start;
-              gap: $space-lg;
+              flex-direction: column;
+              gap: $space-md;
 
               @include portrait{
-                @include flex(column, $space-sm);
+                gap: $space-lg;
               }
 
-              h4{
-                flex: 1;
-                // text-transform: capitalize;
-                text-transform: uppercase;
+              .row{
+                // border: 1px solid #000;
                 display: flex;
+                // align-items: baseline;
                 align-items: flex-start;
-                justify-content: flex-start;
-              }
+                gap: $space-lg;
 
-              .details{
-                flex: 2;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: flex-start;
-                
-                p{
-                  span{
-                    margin-right: $space-sm;
+                @include portrait{
+                  @include flex(column, $space-sm);
+                }
+
+                h4{
+                  flex: 1;
+                  // text-transform: capitalize;
+                  text-transform: uppercase;
+                  display: flex;
+                  align-items: flex-start;
+                  justify-content: flex-start;
+                }
+
+                .details{
+                  flex: 2;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-start;
+                  justify-content: flex-start;
+                  
+                  p{
+                    span{
+                      margin-right: $space-sm;
+                    }
+                  }
+                  
+                  .sub{
+                    color: var(--sub-text-color);
                   }
                 }
-                
-                .sub{
-                  color: var(--sub-text-color);
-                }
-              }
 
-              &.r1 .details{
-                p:first-of-type{
-                  font-size: $font-h5;
-                }
-              }
-
-              &.r5 .details{
-                flex-direction: row;
-                flex-wrap: wrap; 
-                // gap: 2rem; 
-                // align-items: flex-start;
-                @include portrait{
-                  align-self: stretch;
+                &.r1 .details{
+                  p:first-of-type{
+                    font-size: $font-h5;
+                  }
                 }
 
-                .circleContainer{
-                  flex: 1;
-                  @include flex-center;
-                  flex-direction: column;
+                &.r5 .details{
+                  flex-direction: row;
+                  flex-wrap: wrap; 
+                  // gap: 2rem; 
+                  // align-items: flex-start;
+                  @include portrait{
+                    align-self: stretch;
+                  }
 
-                  .circleBox{
-                    position: relative;
-                    width: 100%; 
-                    aspect-ratio: 1/1;
+                  .circleContainer{
+                    flex: 1;
                     @include flex-center;
+                    flex-direction: column;
 
-                    svg{
-                      position: absolute; 
-                      transform: rotate(-90deg);
+                    .circleBox{
+                      position: relative;
+                      width: 100%;
+                      aspect-ratio: 1/1;
+                      @include flex-center;
 
-                      circle {
-                        fill: none;
-                        stroke-width: 8;
-                        stroke-linecap: round;
+                      svg{
+                        position: absolute; 
+                        transform: rotate(-90deg);
 
-                        &.bg {
-                          stroke: #eee;
-                        }
+                        circle {
+                          fill: none;
+                          stroke-width: 8;
+                          stroke-linecap: round;
 
-                        &.fg {
-                          stroke: var(--text-point);
-                          stroke-dasharray: 251.2; /* 2π * r(40) ≈ 251.2 */
-                          stroke-dashoffset: 251.2;
+                          &.bg {
+                            stroke: #eee;
+                          }
+
+                          &.fg {
+                            stroke: var(--text-point);
+                            stroke-dasharray: 251.2; /* 2π * r(40) ≈ 251.2 */
+                            stroke-dashoffset: 251.2;
+                          }
                         }
                       }
-                    }
 
-                    iconify-icon{
-                      font-size: $font-h4;
+                      iconify-icon{
+                        font-size: $font-h4;
+                      }
+
                     }
 
                   }
-
                 }
+
               }
+            }
 
+            a{
+              align-self: flex-end;
+              gap: $space-sm;
+
+              iconify-icon{
+                font-size: $font-h5;
+                color: #0000ee;
+              }
+              p{
+                color: var(--text-color);
+              }
             }
           }
 
-          a{
-            align-self: flex-end;
-            gap: $space-sm;
+          .portrait{
+            flex: 1;
+            border: 1px solid #000;
 
-            iconify-icon{
-              font-size: $font-h5;
-              color: #0000ee;
+            position: relative;
+            // width: 100%;
+            // height: 100%;
+            aspect-ratio: 2/3;
+            @include flex-center;
+
+            img {
+              // border: 1px solid blue;
+              // position: absolute; 
+              // top: 0;
+              // left: 0;
+              // width: 100%;
+              // height: 100%;
+              // object-fit: cover;
+              // display: block;
             }
-            p{
-              color: var(--text-color);
-            }
+
           }
-        }
-
-        img{
-          flex: 1;
-          border: 1px solid #000;
-
         }
       }
     }
