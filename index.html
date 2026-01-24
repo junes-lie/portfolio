@@ -275,10 +275,32 @@
                   <clipPath id="clip-bottom">
                     <use href="#oval"></use>
                   </clipPath>
+                  <clipPath id="clip-top">
+                    <rect width="500" height="500"></rect>
+                  </clipPath>
                 </defs>
-                <!-- <ellipse cx="250" cy="415" rx="232" ry="348" transform="rotate(20 250 415)"></ellipse> -->
-                <image src="assets/images/portrait.png" width="500" height="755" />
-                <image src="" alt="">
+                <ellipse id="oval" cx="250" cy="415" rx="232" ry="348" transform="rotate(20 250 415)" fill="var(--point-color)"></ellipse>
+                <g clip-path="url(#clip-bottom)">
+                  <image href="assets/images/portrait.png" 
+                    width="500" 
+                    height="755" 
+                    x="-150"
+                    y="-70" 
+                    transform="scale(2.5)" 
+                    preserveAspectRatio="xMidYMid slice"
+                  />
+                </g>
+                <g clip-path="url(#clip-top)">
+                  <image href="assets/images/portrait.png" 
+                    width="500" 
+                    height="755" 
+                    x="-150"
+                    y="-70" 
+                    transform="scale(2.5)" 
+                    preserveAspectRatio="xMidYMid slice"
+                  />
+                </g>
+                
               </svg>
             </div>
           </div>

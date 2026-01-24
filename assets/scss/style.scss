@@ -440,7 +440,7 @@ button{
                           }
 
                           &.fg {
-                            stroke: var(--text-point);
+                            stroke: var(--point-color);
                             stroke-dasharray: 251.2; /* 2π * r(40) ≈ 251.2 */
                             stroke-dashoffset: 251.2;
                           }
@@ -475,7 +475,7 @@ button{
 
           .portrait{
             flex: 1;
-            border: 1px solid #000;
+            // border: 1px solid #000;
 
             position: relative;
             // width: 100%;
