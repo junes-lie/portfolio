@@ -6,7 +6,8 @@
 
 .quick-btns{
   position: fixed;
-  right: $p-section;
+  right: calc($w-gutter - 4.5em);
+  // left: calc(100vw - $p-section);
   bottom: $h-header;
   z-index: $z-float;
   @include flex-center;
@@ -37,6 +38,7 @@
   .top-btn{
     margin-top: 1em;
     color: var(--opacity);
+    // color: var(--sub-text-color);
   }
 
   a{
@@ -68,7 +70,7 @@
 
 .navigation{
   position: fixed;
-  left: $p-section;
+  left: calc($w-gutter - 4.5em);
   height: 100vh;
   display: flex;
   align-items: center;
@@ -79,7 +81,7 @@
     left: auto;
     height: auto;
     width: 100vw;
-    bottom: calc(100vh - $h-header + 1em);
+    bottom: calc(100vh - $h-section + 1em);
   }
 
   ul{
@@ -131,10 +133,14 @@
 
       span{
         position: absolute;
-        white-space: nowrap;
+        // white-space: nowrap;
         font-size: $font-caption;
         opacity: 0;
         pointer-events: none;
+
+        @include portrait{
+          text-align: center;
+        }
       }
     }
   }

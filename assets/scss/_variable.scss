@@ -42,8 +42,11 @@ $pc: 1400px;
 $tablet: 768px;
 $mobile: 360px;
 
-$h-header: 10vh;
-$p-section: 5vw;
+$h-header: 8vh;
+$h-section: 10vh;
+$w-gutter: 8vw;
+$p-section: 10vw;
+
 
 
 $z-float: 1000;
@@ -102,7 +105,7 @@ $font-h4: clamp-calc(16, 32);
 $font-h5: clamp-calc(14, 24);
 $font-icon: clamp-calc(14, 20);
 $font-body: clamp-calc(12, 16);
-$font-caption: clamp-calc(12, 16);
+$font-caption: clamp-calc(10, 12);
 // $font-icon: 1.8em;
 
 $btn-m: 5em;

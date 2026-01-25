@@ -44,6 +44,10 @@ section{
   width: 100vw;
   padding: $h-header 0;
   @include flex-center;
+  
+  @include portrait{
+    padding: $h-section 0;
+  }
 }
 
 .container{
@@ -267,7 +271,7 @@ button{
 
     .mouse-wrap{
       position: absolute;
-      top: calc(100vh - $h-header);
+      top: calc(100vh - $h-section);
       @include flex(column, $space-sm);
       
       .mouse{
@@ -304,7 +308,8 @@ button{
   
 
   #profile{
-    border: 1px solid #000;
+
+    // padding: 8vh 0;
 
     @include portrait{
       height: fit-content;
@@ -380,6 +385,7 @@ button{
                   display: flex;
                   align-items: flex-start;
                   justify-content: flex-start;
+                  white-space: nowrap;
                 }
 
                 .details{

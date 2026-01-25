@@ -4,7 +4,7 @@ const navTriggers = (isLandscape) => {
   const sections = gsap.utils.toArray('#layout section');
   const navLis = gsap.utils.toArray('.navigation li');
   
-  const xValue = remap(40, 55);
+  const xValue = remap(30, 50);
   const yValue = remap(-30, -50);
 
   const spanTween = isLandscape 
