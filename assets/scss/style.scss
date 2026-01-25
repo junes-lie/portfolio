@@ -56,11 +56,10 @@ section{
   margin: 0 $p-section;
   max-width: $pc;
   @include flex-center;
-  // border-radius: 2rem;
-  // @include glass;
-  // &::after{
-  //   filter: blur(15rem);
-  // }
+
+  @include portrait{
+    margin: 0 $w-gutter;
+  }
 }
 
 img{
@@ -343,15 +342,17 @@ button{
           }
 
           .box{
+            // font-size: clamp-calc(1, 10);
             flex: 2;
             @include glass;
             border-radius: $radius-md;
-            padding: $space-xl;
+            padding: $p-xl;
             @include flex(column, $space-lg);
 
             @include portrait{
               width: 100%;
               gap: $space-xl;
+              padding: $p-lg;
             }
 
             &::after{
@@ -359,6 +360,7 @@ button{
             }
             
             .desc{
+              font-size: clamp-calc(7, 10);
               display: flex;
               flex-direction: column;
               gap: $space-md;
@@ -386,6 +388,7 @@ button{
                   align-items: flex-start;
                   justify-content: flex-start;
                   white-space: nowrap;
+                  min-width: 6em;
                 }
 
                 .details{
@@ -466,6 +469,7 @@ button{
             }
 
             a{
+              font-size: clamp-calc(7, 10);
               align-self: flex-end;
               gap: $space-sm;
 

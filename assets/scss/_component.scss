@@ -6,8 +6,7 @@
 
 .quick-btns{
   position: fixed;
-  right: calc($w-gutter - 4.5em);
-  // left: calc(100vw - $p-section);
+  right: $w-gutter;
   bottom: $h-header;
   z-index: $z-float;
   @include flex-center;
@@ -70,7 +69,7 @@
 
 .navigation{
   position: fixed;
-  left: calc($w-gutter - 4.5em);
+  left: $w-gutter;
   height: 100vh;
   display: flex;
   align-items: center;

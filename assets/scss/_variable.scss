@@ -37,21 +37,12 @@
 // $opacity: rgba(255, 255, 255, 0.7);
 
 
-
 $pc: 1400px;
 $tablet: 768px;
 $mobile: 360px;
 
-$h-header: 8vh;
-$h-section: 10vh;
-$w-gutter: 8vw;
-$p-section: 10vw;
-
-
-
 $z-float: 1000;
 $z-s1: 900;
-
 
 $trans-du: 0.3s;
 $ani-du: 1s;
@@ -73,29 +64,11 @@ $ani-du: 1s;
   @return clamp(#{$min-rem}rem, #{$y-rem}rem + #{$slope-vw}vw, #{$max-rem}rem);
 }
 
-
-
-// $type-system: (
-//   'display': (m: 40, p: 80), // 초대형 타이틀 (인트로 등)
-//   'h1':      (m: 32, p: 64), // 섹션 제목
-//   'h2':      (m: 24, p: 40), // 서브 제목
-//   'h3':      (m: 20, p: 28), // 소제목
-//   'body-l':  (m: 16, p: 20), // 본문 강조
-//   'body':    (m: 14, p: 16), // 일반 본문
-//   'caption': (m: 12, p: 14)  // 캡션, 설명
-// );
-
-
-// // =================================================================
-// // [3. 디자인 시스템 - 타이포그래피]
-// // =================================================================
-// $font-display: clamp-calc(40, 120);
-// $font-h1: clamp-calc(32, 64);
-// $font-h2: clamp-calc(24, 48);
-// $font-h3: clamp-calc(20, 32);
-// $font-body-l: clamp-calc(16, 20);
-// $font-body:   clamp-calc(14, 16);
-
+$h-header: 8vh;
+$h-section: 10vh;
+// $w-gutter: 2vw;
+$w-gutter: clamp-calc(16, 115.2, $tablet, 1920px);
+$p-section: 12vw;
 
 $font-h1: clamp-calc(64, 360, $mobile, 1920px);
 $font-h2: clamp-calc(48, 160);
@@ -117,8 +90,36 @@ $space-md: 2em;
 $space-lg: 3em;
 $space-xl: 5.2em;
 
+$space-xs: 0.5em;
+$space-sm: 1em;
+$space-md: 2em;
+$space-lg: 3em;
+$p-lg: clamp-calc(24, 30, $mobile, $tablet);
+$p-xl: clamp-calc(30, 52, $tablet, $pc);
+
 $radius-sm: 1em;
 $radius-md: 2em;
+
+// $type-system: (
+//   'display': (m: 40, p: 80), // 초대형 타이틀 (인트로 등)
+//   'h1':      (m: 32, p: 64), // 섹션 제목
+//   'h2':      (m: 24, p: 40), // 서브 제목
+//   'h3':      (m: 20, p: 28), // 소제목
+//   'body-l':  (m: 16, p: 20), // 본문 강조
+//   'body':    (m: 14, p: 16), // 일반 본문
+//   'caption': (m: 12, p: 14)  // 캡션, 설명
+// );
+
+
+// // =================================================================
+// // [3. 디자인 시스템 - 타이포그래피]
+// // =================================================================
+// $font-display: clamp-calc(40, 120);
+// $font-h1: clamp-calc(32, 64);
+// $font-h2: clamp-calc(24, 48);
+// $font-h3: clamp-calc(20, 32);
+// $font-body-l: clamp-calc(16, 20);
+// $font-body:   clamp-calc(14, 16);
 
 // $size-12rem: clamp(2.4rem , 7vw, 12.8rem); /* ' */
 
