@@ -300,6 +300,8 @@ html body input, html body button, html body textarea {
 body {
   font-size: clamp(0.7rem, 0.596rem + 0.288vw, 1rem);
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1 {
@@ -560,6 +562,8 @@ button {
   justify-content: center;
   align-items: center;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
 }
 #layout #intro .content-wrap .loader-wrap .possessive-wrap .logo .logo-flip .logo-front svg {
   margin: 0 auto;
@@ -571,11 +575,12 @@ button {
 }
 #layout #intro .content-wrap .loader-wrap .possessive-wrap .logo .logo-flip .logo-back h2 {
   color: var(--opacity);
-  -webkit-font-smoothing: antialiased;
+  opacity: 0.99;
+  -webkit-text-stroke: 0.01px rgba(0, 0, 0, 0);
+  transform: translateZ(0);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  transform: translateZ(-1px);
-  will-change: transform;
+  will-change: transform, opacity;
 }
 #layout #intro .content-wrap .loader-wrap .possessive-wrap .possessive {
   display: flex;
@@ -593,11 +598,12 @@ button {
 }
 #layout #intro .content-wrap .loader-wrap .possessive-wrap .possessive h2 {
   color: var(--opacity);
-  -webkit-font-smoothing: antialiased;
+  opacity: 0.99;
+  -webkit-text-stroke: 0.01px rgba(0, 0, 0, 0);
+  transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  transform: translateZ(0);
-  will-change: transform;
+  will-change: transform, opacity;
 }
 #layout #intro .mouse-wrap {
   position: absolute;

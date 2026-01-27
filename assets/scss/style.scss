@@ -9,6 +9,9 @@
 body{
   font-size: clamp-calc(7, 10); //em 쓰면 모바일이 0.7배율
   line-height: 1.5;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1{
@@ -217,6 +220,9 @@ button{
                 @include fill-parent;
                 @include flex-center;
                 backface-visibility: hidden;
+
+                -webkit-backface-visibility: hidden;
+                transform: translate3d(0,0,0);
               }
             
               .logo-front{
@@ -231,11 +237,17 @@ button{
                 
                 h2{
                   color: var(--opacity);
-                  -webkit-font-smoothing: antialiased;
-              -webkit-backface-visibility: hidden;
+
+                  opacity: 0.99; 
+                  -webkit-text-stroke: 0.01px rgba(0, 0, 0, 0);
+                  transform: translateZ(0);
+                  -webkit-backface-visibility: hidden;
                   backface-visibility: hidden;
-                  transform: translateZ(-1px);
-                  will-change: transform; 
+                  will-change: transform, opacity;
+
+
+                  // -webkit-font-smoothing: antialiased;
+                  // transform: translateZ(-1px);
                 }
               }
             }
@@ -260,11 +272,17 @@ button{
             
             h2{
               color: var(--opacity);
-              -webkit-font-smoothing: antialiased;
+
+              opacity: 0.99;
+              -webkit-text-stroke: 0.01px rgba(0, 0, 0, 0);
+              transform: translate3d(0, 0, 0);
               -webkit-backface-visibility: hidden;
               backface-visibility: hidden;
-              transform: translateZ(0);
-              will-change: transform; 
+              will-change: transform, opacity;
+
+
+              // -webkit-font-smoothing: antialiased;
+              // transform: translateZ(0);
             }
           }
         }
