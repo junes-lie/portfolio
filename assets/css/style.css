@@ -504,16 +504,14 @@ button {
     gap: 1em;
   }
 }
-#layout #intro .content-wrap h1 {
-  line-height: 0.9em;
-  letter-spacing: 0.13em;
+#layout #intro .content-wrap .title {
   color: #888;
   mix-blend-mode: color-burn;
+  line-height: 0.9em;
 }
-#layout #intro .content-wrap h2 {
-  color: #888;
-  mix-blend-mode: color-burn;
-  line-height: 0.9em;
+#layout #intro .content-wrap h1 {
+  letter-spacing: 0.13em;
+  white-space: nowrap;
 }
 #layout #intro .content-wrap .loader-wrap {
   display: flex;

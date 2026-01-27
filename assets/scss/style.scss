@@ -162,22 +162,15 @@ button{
         gap: $space-sm;
       }
 
-      h1{
-        line-height: 0.9em;
-        letter-spacing: 0.13em;
-        
-        // color: rgba(255, 255, 255, 0.7);
-        // mix-blend-mode: plus-lighter;
-        
+      .title{
         color: #888;
         mix-blend-mode: color-burn;
-        
+        line-height: 0.9em;
       }
 
-      h2{
-        color: #888;
-        mix-blend-mode: color-burn;
-        line-height: 0.9em;
+      h1{
+        letter-spacing: 0.13em;
+        white-space: nowrap;
       }
 
       .loader-wrap{
