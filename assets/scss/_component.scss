@@ -6,8 +6,8 @@
 
 .quick-btns{
   position: fixed;
-  right: $w-gutter;
-  bottom: $h-header;
+  right: $p-float;
+  bottom: $p-section-y-l;
   z-index: $z-float;
   @include flex-center;
   flex-direction: column;
@@ -69,7 +69,7 @@
 
 .navigation{
   position: fixed;
-  left: $w-gutter;
+  left: $p-float;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -80,7 +80,7 @@
     left: auto;
     height: auto;
     width: 100vw;
-    bottom: calc(100vh - $h-section + 1em);
+    bottom: calc(100vh - $p-section-y-p + 1em);
   }
 
   ul{

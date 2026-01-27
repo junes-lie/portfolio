@@ -42,23 +42,23 @@ section{
   position: relative;
   height: 100vh;
   width: 100vw;
-  padding: $h-header 0;
+  padding: $p-section-y-l 0;
   @include flex-center;
   
   @include portrait{
-    padding: $h-section 0;
+    padding: $p-section-y-p 0;
   }
 }
 
 .container{
   width: 100%;
   height: 100%;
-  margin: 0 $p-section;
+  margin: 0 $p-section-x-l;
   max-width: $pc;
   @include flex-center;
 
   @include portrait{
-    margin: 0 $w-gutter;
+    margin: 0 $p-section-x-p;
   }
 }
 
@@ -159,7 +159,7 @@ button{
       @include flex(column, $space-xl);
 
       @include portrait{
-        gap: 1em;
+        gap: $space-sm;
       }
 
       h1{
@@ -270,7 +270,7 @@ button{
 
     .mouse-wrap{
       position: absolute;
-      top: calc(100vh - $h-section);
+      top: calc(100vh - $p-section-y-p);
       @include flex(column, $space-sm);
       
       .mouse{

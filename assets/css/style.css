@@ -86,6 +86,9 @@ html body input, html body button, html body textarea {
   --opacity: rgba(255, 255, 255, 0.7);
 }
 
+/* 네비, 퀵 */
+/* 가로 */
+/* 세로 */
 .quick-btns {
   position: fixed;
   right: clamp(1.6rem, -5.013rem + 8.611vw, 11.52rem);
@@ -351,7 +354,7 @@ section {
 }
 @media (orientation: portrait) {
   .container {
-    margin: 0 clamp(1.6rem, -5.013rem + 8.611vw, 11.52rem);
+    margin: 0 5vw;
   }
 }
 

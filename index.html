@@ -273,15 +273,16 @@
                 <defs>
                   <ellipse id="oval" cx="250" cy="415" rx="232" ry="348" transform="rotate(20 250 415)"></ellipse>
                   <clipPath id="clip-bottom">
-                    <use href="#oval"></use>
+                    <!-- <use href="#oval"></use> -->
+                    <ellipse id="oval" cx="250" cy="415" rx="232" ry="348" transform="rotate(20 250 415)"></ellipse>
                   </clipPath>
                   <clipPath id="clip-top">
                     <rect width="500" height="500"></rect>
                   </clipPath>
                 </defs>
-                <ellipse id="oval" cx="250" cy="415" rx="232" ry="348" transform="rotate(20 250 415)" fill="var(--point-color)"></ellipse>
+                <ellipse cx="250" cy="415" rx="232" ry="348" transform="rotate(20 250 415)" fill="var(--point-color)"></ellipse>
                 <g clip-path="url(#clip-bottom)">
-                  <image href="assets/images/portrait.png" 
+                  <image xlink:href="assets/images/portrait.png" 
                     width="500" 
                     height="755" 
                     x="-150"
@@ -291,7 +292,7 @@
                   />
                 </g>
                 <g clip-path="url(#clip-top)">
-                  <image href="assets/images/portrait.png" 
+                  <image xlink:href="assets/images/portrait.png" 
                     width="500" 
                     height="755" 
                     x="-150"
