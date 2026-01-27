@@ -571,6 +571,8 @@ button {
 }
 #layout #intro .content-wrap .loader-wrap .possessive-wrap .logo .logo-flip .logo-back h2 {
   color: var(--opacity);
+  backface-visibility: hidden;
+  transform: translateZ(-0.1px);
 }
 #layout #intro .content-wrap .loader-wrap .possessive-wrap .possessive {
   display: flex;
@@ -588,6 +590,8 @@ button {
 }
 #layout #intro .content-wrap .loader-wrap .possessive-wrap .possessive h2 {
   color: var(--opacity);
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 #layout #intro .mouse-wrap {
   position: absolute;

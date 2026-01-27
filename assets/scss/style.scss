@@ -231,6 +231,8 @@ button{
                 
                 h2{
                   color: var(--opacity);
+                  backface-visibility: hidden;
+                  transform: translateZ(-0.1px);
                 }
               }
             }
@@ -255,6 +257,8 @@ button{
             
             h2{
               color: var(--opacity);
+              backface-visibility: hidden;
+              transform: translateZ(0);
             }
           }
         }
