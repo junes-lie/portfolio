@@ -7,10 +7,18 @@ const LogoDraw = () =>{
   // 선 그릴 준비
   gsap.utils.toArray('#logo-white .stroke').forEach(path => {
     const length = path.getTotalLength();
-    const offset = path.classList.contains('wave2') ? -length : length;
+    // const offset = path.classList.contains('wave2') ? -length : length;
+    if (path.classList.contains('wave2')) {
+      gsap.set(path, {
+        transformOrigin: "center center",
+        scaleX: -1 
+      });
+    }
+
     gsap.set(path, {
       strokeDasharray: length,
-      strokeDashoffset: offset
+      // strokeDashoffset: offset
+      strokeDashoffset: length
     });
   });
   
