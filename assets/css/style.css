@@ -534,6 +534,7 @@ button {
   color: #fff;
 }
 #layout #intro .content-wrap .loader-wrap .possessive-wrap {
+  border: 1px solid #000;
   width: 60vw;
   height: 50vmin;
   display: flex;
@@ -566,8 +567,6 @@ button {
   justify-content: center;
   align-items: center;
   backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform: translate3d(0, 0, 0);
 }
 #layout #intro .content-wrap .loader-wrap .possessive-wrap .logo .logo-flip .logo-back {
   transform: rotateY(180deg);
