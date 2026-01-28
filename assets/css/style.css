@@ -113,8 +113,7 @@ html body input, html body button, html body textarea {
   position: absolute;
   width: 80%;
   top: 15%;
-  left: 50%;
-  transform: translateX(-50%);
+  height: auto;
 }
 .quick-btns .top-btn {
   margin-top: 1em;
@@ -534,7 +533,6 @@ button {
   color: #fff;
 }
 #layout #intro .content-wrap .loader-wrap .possessive-wrap {
-  border: 1px solid #000;
   width: 60vw;
   height: 50vmin;
   display: flex;
@@ -574,7 +572,6 @@ button {
 #layout #intro .content-wrap .loader-wrap .possessive-wrap .logo .logo-flip .logo-back h2 {
   color: #fff;
   opacity: 0.7;
-  backface-visibility: hidden;
 }
 #layout #intro .content-wrap .loader-wrap .possessive-wrap .possessive {
   display: flex;
@@ -585,7 +582,8 @@ button {
 #layout #intro .content-wrap .loader-wrap .possessive-wrap .possessive .star {
   height: 110%;
   font-family: "YUniverse-B";
-  color: var(--opacity);
+  color: #fff;
+  opacity: 0.7;
   font-size: clamp(2.4rem, 1.015rem + 3.846vw, 6.4rem);
   transform-origin: center center;
   animation: rotate-y-180 5s infinite ease-in-out;
@@ -593,7 +591,6 @@ button {
 #layout #intro .content-wrap .loader-wrap .possessive-wrap .possessive h2 {
   color: #fff;
   opacity: 0.7;
-  backface-visibility: hidden;
 }
 #layout #intro .mouse-wrap {
   position: absolute;
