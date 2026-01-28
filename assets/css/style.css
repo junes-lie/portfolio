@@ -367,6 +367,12 @@ img {
   object-fit: cover;
 }
 
+svg {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+
 button {
   font-size: inherit;
   cursor: pointer;
@@ -564,11 +570,6 @@ button {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
-}
-#layout #intro .content-wrap .loader-wrap .possessive-wrap .logo .logo-flip .logo-front svg {
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
 }
 #layout #intro .content-wrap .loader-wrap .possessive-wrap .logo .logo-flip .logo-back {
   transform: rotateY(180deg);
@@ -825,9 +826,4 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-#layout #profile .container .content-wrap .content .portrait svg {
-  display: block;
-  width: 100%;
-  height: auto;
 }

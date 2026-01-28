@@ -70,6 +70,10 @@ img{
   object-fit: cover;
 }
 
+svg{
+  @include fill-parent;
+}
+
 button{
   font-size: inherit;
   cursor: pointer;
@@ -225,12 +229,12 @@ button{
                 transform: translate3d(0,0,0);
               }
             
-              .logo-front{
+              // .logo-front{
                 
-                svg {
-                  @include fill-parent;
-                }
-              }
+              //   svg {
+              //     @include fill-parent;
+              //   }
+              // }
               
               .logo-back{
                 transform: rotateY(180deg);
@@ -512,22 +516,9 @@ button{
             position: relative;
             @include flex-center;
 
-            
-              
-            svg{
-              display: block;
-              width: 100%;
-              // max-width: 100%;
-              height: auto;
-            }
-            
-
-            
-
-            
-
-            
-
+            // svg{
+            //   @include fill-parent;
+            // }
 
           }
         }
