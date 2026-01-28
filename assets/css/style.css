@@ -300,8 +300,6 @@ html body input, html body button, html body textarea {
 body {
   font-size: clamp(0.7rem, 0.596rem + 0.288vw, 1rem);
   line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 h1 {
@@ -577,13 +575,7 @@ button {
 #layout #intro .content-wrap .loader-wrap .possessive-wrap .logo .logo-flip .logo-back h2 {
   color: #fff;
   opacity: 0.7;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translateZ(1px);
   backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  -webkit-text-stroke: 0.01px rgba(0, 0, 0, 0);
-  will-change: transform;
 }
 #layout #intro .content-wrap .loader-wrap .possessive-wrap .possessive {
   display: flex;
@@ -602,12 +594,7 @@ button {
 #layout #intro .content-wrap .loader-wrap .possessive-wrap .possessive h2 {
   color: #fff;
   opacity: 0.7;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  will-change: transform;
-  transform: translateZ(0);
 }
 #layout #intro .mouse-wrap {
   position: absolute;
