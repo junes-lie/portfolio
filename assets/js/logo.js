@@ -118,12 +118,19 @@ function logoFlip() {
 
 
 function init(){
-  smoother.paused(false);
+  // smoother.paused(false);
 
   const blurValue = remap(8, 25);
   const dimColor = 'var(--opacity)';
 
-  const tl = gsap.timeline();
+  // const tl = gsap.timeline();
+  const tl = gsap.timeline({
+    onComplete: () => {
+      window.isIntroDone = true;
+      smoother.paused(false);
+    }
+  });
+  
   const splitH1 = new SplitText('h1.title',{type:'chars'});
   const splitH2 = new SplitText('h2.title',{type:'chars'});
   

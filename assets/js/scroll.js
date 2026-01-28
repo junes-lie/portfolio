@@ -11,6 +11,7 @@ const fullMoveSections = gsap.utils.toArray('[data-full-move="true"]');
 let isManualMove = false;
 
 function sectionMove(section, position) {
+  if (!window.isIntroDone) return;
   smoother.paused(true);
   const sectionPos = smoother.offset(section, position);
 
