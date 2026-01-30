@@ -99,6 +99,7 @@ $p-xl: clamp-calc(30, 52, $tablet, $pc);
 
 $radius-sm: 1em;
 $radius-md: 2em;
+$radius-max: 999em;
 
 // $type-system: (
 //   'display': (m: 40, p: 80), // 초대형 타이틀 (인트로 등)

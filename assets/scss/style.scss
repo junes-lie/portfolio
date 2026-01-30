@@ -25,7 +25,9 @@ h2{
 }
 
 h3{
+  font-family: 'YUniverse-B';
   font-size: $font-h3;
+  text-transform: capitalize;
   margin-bottom: $space-xs;
 
   @include portrait{
@@ -34,6 +36,7 @@ h3{
 }
 
 h4{
+  font-family: 'YUniverse-B';
   font-size: $font-h4;
 }
 
@@ -514,7 +517,7 @@ button{
           @include flex-center;
 
           .card{
-            border: 1px solid #000;
+            // border: 1px solid #000;
             position: absolute;
             aspect-ratio: 2/3;
             max-width: 40em;
@@ -525,19 +528,55 @@ button{
             padding: $space-lg;
             overflow: hidden;
 
-
             &[data-index="0"]{
-              background-image: url(../images/deosup.png);
+              /* 아이폰 XR */
+              background-image: url(../images/deosup.png); 
               background-position: center top;
               background-size: cover;
             }
 
+            .card-num{
+              // font-family: 'YUniverse-B';
+              color: #fff;
+              mix-blend-mode: difference;
+              display: inline-flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+            }
+
             .card-desc{
+              // @include glass;
               position: absolute;
+              width: 100%;
+              left: 0;
               bottom: 0;
-              padding: $space-lg 0;
+              padding: $space-lg;
               height: auto;
               color: #fff;
+              // mix-blend-mode: difference;
+              background: rgba(0, 0, 0, 0.1);
+              backdrop-filter: blur(1.5rem) saturate(180%);
+
+              // &::after{
+              //   content: none;
+              // }
+
+              .badge{
+                display: inline;
+                font-size: $font-caption;
+                border: 0.5px solid rgba(255, 255, 255, 0.3);
+                padding: $space-xs $space-sm;
+                border-radius: $radius-max;
+
+                i{
+                  margin-right: $space-xs;
+                }
+              }
+
+              h5{
+                margin-top: $space-xs;
+              }
             }
 
           }
