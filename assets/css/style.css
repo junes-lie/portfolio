@@ -89,6 +89,186 @@ html body input, html body button, html body textarea {
 /* 네비, 퀵 */
 /* 가로 */
 /* 세로 */
+body {
+  font-size: clamp(0.7rem, 0.596rem + 0.288vw, 1rem);
+  line-height: 1.5;
+}
+
+h1 {
+  font-family: "YUniverse-B";
+  font-size: clamp(6.4rem, -0.431rem + 18.974vw, 36rem);
+}
+
+h2 {
+  font-family: "YUniverse-B";
+  font-size: clamp(4.8rem, 0.923rem + 10.769vw, 16rem);
+}
+
+h3 {
+  font-size: clamp(2.4rem, 1.015rem + 3.846vw, 6.4rem);
+}
+
+h3.title {
+  text-transform: capitalize;
+  margin-bottom: 0.5em;
+}
+@media (orientation: portrait) {
+  h3.title {
+    margin-top: 0.5em;
+  }
+}
+
+h4 {
+  font-family: "YUniverse-B";
+  font-size: clamp(1.6rem, 1.046rem + 1.538vw, 3.2rem);
+}
+
+h5 {
+  font-size: clamp(1.4rem, 1.054rem + 0.962vw, 2.4rem);
+}
+
+p {
+  font-size: clamp(1.2rem, 1.062rem + 0.385vw, 1.6rem);
+}
+
+section {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  padding: 8vh 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (orientation: portrait) {
+  section {
+    padding: 10vh 0;
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0 12vw;
+  max-width: 1400px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  overflow: hidden;
+}
+@media (orientation: portrait) {
+  .container {
+    margin: 0 5vw;
+  }
+}
+
+img {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+svg {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  font-size: clamp(1.2rem, 1.062rem + 0.385vw, 1.6rem);
+}
+
+button {
+  font-size: inherit;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-c {
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(1rem) saturate(120%);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.btn-c::after {
+  content: "";
+  width: 50%;
+  height: 25%;
+  position: absolute;
+  bottom: -12.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #FFF;
+  border-radius: 25%/50%;
+  filter: blur(0.5rem);
+  z-index: -1;
+}
+@media (hover: hover) {
+  .btn-c:hover {
+    transform: scale(0.95);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 0.5em 0 rgba(255, 255, 255, 0.5), inset 0 0 1.5em 0 rgba(255, 255, 255, 0.5), 0 0.5rem 1em 0 rgba(255, 255, 255, 0.3), 0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
+  }
+}
+@media (hover: none) {
+  .btn-c:active {
+    transform: scale(0.95);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 0.5em 0 rgba(255, 255, 255, 0.5), inset 0 0 1.5em 0 rgba(255, 255, 255, 0.5), 0 0.5rem 1em 0 rgba(255, 255, 255, 0.3), 0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
+  }
+}
+
+.btn-r {
+  border-radius: 1em;
+  padding: 1em 2em;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(1rem) saturate(120%);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.btn-r::after {
+  content: "";
+  width: 50%;
+  height: 25%;
+  position: absolute;
+  bottom: -12.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #FFF;
+  border-radius: 25%/50%;
+  filter: blur(0.5rem);
+  z-index: -1;
+}
+@media (hover: hover) {
+  .btn-r:hover {
+    transform: scale(0.95) translateY(0.2em);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 0.5em 0 rgba(255, 255, 255, 0.5), inset 0 0 1.5em 0 rgba(255, 255, 255, 0.5), 0 0.5rem 1em 0 rgba(255, 255, 255, 0.3), 0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
+  }
+}
+@media (hover: none) {
+  .btn-r:active {
+    transform: scale(0.95) translateY(0.2em);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 0.5em 0 rgba(255, 255, 255, 0.5), inset 0 0 1.5em 0 rgba(255, 255, 255, 0.5), 0 0.5rem 1em 0 rgba(255, 255, 255, 0.3), 0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
+  }
+}
+
 .quick-btns {
   position: fixed;
   right: clamp(1.6rem, -5.013rem + 8.611vw, 11.52rem);
@@ -296,181 +476,6 @@ html body input, html body button, html body textarea {
     transform: rotateY(180deg);
   }
 }
-body {
-  font-size: clamp(0.7rem, 0.596rem + 0.288vw, 1rem);
-  line-height: 1.5;
-}
-
-h1 {
-  font-family: "YUniverse-B";
-  font-size: clamp(6.4rem, -0.431rem + 18.974vw, 36rem);
-}
-
-h2 {
-  font-family: "YUniverse-B";
-  font-size: clamp(4.8rem, 0.923rem + 10.769vw, 16rem);
-}
-
-h3 {
-  font-family: "YUniverse-B";
-  font-size: clamp(2.4rem, 1.015rem + 3.846vw, 6.4rem);
-  text-transform: capitalize;
-  margin-bottom: 0.5em;
-}
-@media (orientation: portrait) {
-  h3 {
-    margin-top: 0.5em;
-  }
-}
-
-h4 {
-  font-family: "YUniverse-B";
-  font-size: clamp(1.6rem, 1.046rem + 1.538vw, 3.2rem);
-}
-
-h5 {
-  font-size: clamp(1.4rem, 1.054rem + 0.962vw, 2.4rem);
-}
-
-p {
-  font-size: clamp(1.2rem, 1.062rem + 0.385vw, 1.6rem);
-}
-
-section {
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  padding: 8vh 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-@media (orientation: portrait) {
-  section {
-    padding: 10vh 0;
-  }
-}
-
-.container {
-  width: 100%;
-  height: 100%;
-  margin: 0 12vw;
-  max-width: 1400px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-  overflow: hidden;
-}
-@media (orientation: portrait) {
-  .container {
-    margin: 0 5vw;
-  }
-}
-
-img {
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-svg {
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
-}
-
-button {
-  font-size: inherit;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.btn-c {
-  border-radius: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(1rem) saturate(120%);
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s ease;
-}
-.btn-c::after {
-  content: "";
-  width: 50%;
-  height: 25%;
-  position: absolute;
-  bottom: -12.5%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #FFF;
-  border-radius: 25%/50%;
-  filter: blur(0.5rem);
-  z-index: -1;
-}
-@media (hover: hover) {
-  .btn-c:hover {
-    transform: scale(0.95);
-    background: rgba(255, 255, 255, 0.3);
-    box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 0.5em 0 rgba(255, 255, 255, 0.5), inset 0 0 1.5em 0 rgba(255, 255, 255, 0.5), 0 0.5rem 1em 0 rgba(255, 255, 255, 0.3), 0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
-  }
-}
-@media (hover: none) {
-  .btn-c:active {
-    transform: scale(0.95);
-    background: rgba(255, 255, 255, 0.3);
-    box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 0.5em 0 rgba(255, 255, 255, 0.5), inset 0 0 1.5em 0 rgba(255, 255, 255, 0.5), 0 0.5rem 1em 0 rgba(255, 255, 255, 0.3), 0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
-  }
-}
-
-.btn-r {
-  border-radius: 1em;
-  padding: 1em 2em;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(1rem) saturate(120%);
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s ease;
-}
-.btn-r::after {
-  content: "";
-  width: 50%;
-  height: 25%;
-  position: absolute;
-  bottom: -12.5%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #FFF;
-  border-radius: 25%/50%;
-  filter: blur(0.5rem);
-  z-index: -1;
-}
-@media (hover: hover) {
-  .btn-r:hover {
-    transform: scale(0.95) translateY(0.2em);
-    background: rgba(255, 255, 255, 0.3);
-    box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 0.5em 0 rgba(255, 255, 255, 0.5), inset 0 0 1.5em 0 rgba(255, 255, 255, 0.5), 0 0.5rem 1em 0 rgba(255, 255, 255, 0.3), 0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
-  }
-}
-@media (hover: none) {
-  .btn-r:active {
-    transform: scale(0.95) translateY(0.2em);
-    background: rgba(255, 255, 255, 0.3);
-    box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 0.5em 0 rgba(255, 255, 255, 0.5), inset 0 0 1.5em 0 rgba(255, 255, 255, 0.5), 0 0.5rem 1em 0 rgba(255, 255, 255, 0.3), 0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
-  }
-}
-
-/*  ~ Common _____________________ */
 #layout {
   overflow-x: hidden;
 }
@@ -520,7 +525,7 @@ button {
     gap: 1em;
   }
 }
-#layout #intro .content-wrap .title {
+#layout #intro .content-wrap h2.title {
   color: #888;
   mix-blend-mode: color-burn;
   line-height: 0.9em;
@@ -838,6 +843,18 @@ button {
   padding: 3em;
   overflow: hidden;
 }
+#layout #publishing .container .content-wrap .cards .card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 10;
+}
 #layout #publishing .container .content-wrap .cards .card[data-index="0"] {
   /* 아이폰 XR */
   background-image: url(../images/deosup.png);
@@ -851,6 +868,15 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  line-height: 1.2;
+}
+#layout #publishing .container .content-wrap .cards .card .card-num p {
+  color: var(--point-color);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+#layout #publishing .container .content-wrap .cards .card .card-num h3 {
+  font-family: "YUniverse-B";
 }
 #layout #publishing .container .content-wrap .cards .card .card-desc {
   position: absolute;
@@ -859,18 +885,22 @@ button {
   bottom: 0;
   padding: 3em;
   height: auto;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(1.5rem) saturate(180%);
+  z-index: 5;
 }
-#layout #publishing .container .content-wrap .cards .card .card-desc .badge {
-  display: inline;
+#layout #publishing .container .content-wrap .cards .card .card-desc .badges {
+  display: flex;
+  gap: 0.5rem;
+}
+#layout #publishing .container .content-wrap .cards .card .card-desc .badges .badge {
   font-size: clamp(1rem, 0.931rem + 0.192vw, 1.2rem);
   border: 0.5px solid rgba(255, 255, 255, 0.3);
   padding: 0.5em 1em;
   border-radius: 999em;
+  background: rgba(255, 255, 255, 0.1);
 }
-#layout #publishing .container .content-wrap .cards .card .card-desc .badge i {
+#layout #publishing .container .content-wrap .cards .card .card-desc .badges .badge i {
   margin-right: 0.5em;
 }
 #layout #publishing .container .content-wrap .cards .card .card-desc h5 {

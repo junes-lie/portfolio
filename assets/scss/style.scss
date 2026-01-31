@@ -2,141 +2,10 @@
 @use './reset' as *;
 @use './variable' as *;
 @use './mixin' as *;
+@use './common' as *;
 @use './component' as *; /* 재활용가능한 것들 */
 @use './animation' as *;
 // @use './header' as *;
-
-body{
-  font-size: clamp-calc(7, 10); //em 쓰면 모바일이 0.7배율
-  line-height: 1.5;
-
-  // -webkit-font-smoothing: antialiased;
-  // -moz-osx-font-smoothing: grayscale;
-}
-
-h1{
-  font-family: 'YUniverse-B';
-  font-size: $font-h1;
-}
-
-h2{
-  font-family: 'YUniverse-B';
-  font-size: $font-h2;
-}
-
-h3{
-  font-family: 'YUniverse-B';
-  font-size: $font-h3;
-  text-transform: capitalize;
-  margin-bottom: $space-xs;
-
-  @include portrait{
-    margin-top: $space-xs;
-  }
-}
-
-h4{
-  font-family: 'YUniverse-B';
-  font-size: $font-h4;
-}
-
-h5{
-  font-size: $font-h5;
-}
-
-p{
-  font-size: $font-body;
-}
-
-section{
-  // border: 1px solid #000;
-  // overflow-x: hidden;
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  padding: $p-section-y-l 0;
-  @include flex-center;
-  
-  @include portrait{
-    padding: $p-section-y-p 0;
-  }
-}
-
-.container{
-  width: 100%;
-  height: 100%;
-  margin: 0 $p-section-x-l;
-  max-width: $pc;
-  // @include flex-center;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-
-  overflow: hidden;
-
-  @include portrait{
-    margin: 0 $p-section-x-p;
-  }
-}
-
-img{
-  @include fill-parent;
-  object-fit: cover;
-}
-
-svg{
-  @include fill-parent;
-}
-
-button{
-  font-size: inherit;
-  cursor: pointer;
-  @include flex-center;
-}
-
-.btn-c{
-  border-radius: 100%;
-  @include glass;
-  @include flex-center;
-  transition: all $trans-du ease;
-
-  @include hover-effect {
-    transform: scale(0.95);
-
-    background: rgba(255, 255, 255, 0.3);
-    box-shadow: 
-    inset 0 0 0.2em 0 #FFF,
-    inset 0 0 0.5em 0 rgba(255, 255, 255, 0.5), 
-    inset 0 0 1.5em 0 rgba(255, 255, 255, 0.5), 
-    0 0.5rem 1em 0 rgba(255, 255, 255, 0.3), 
-    0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
-  }
-}
-
-.btn-r{
-  border-radius: $radius-sm;
-  padding: $space-sm $space-md;
-  @include glass;
-  @include flex-center;
-  transition: all $trans-du ease;
-
-  @include hover-effect {
-    transform: scale(0.95) translateY(0.2em);
-    
-    background: rgba(255, 255, 255, 0.3);
-    box-shadow: 
-    inset 0 0 0.2em 0 #FFF,
-    inset 0 0 0.5em 0 rgba(255, 255, 255, 0.5), 
-    inset 0 0 1.5em 0 rgba(255, 255, 255, 0.5), 
-    0 0.5rem 1em 0 rgba(255, 255, 255, 0.3), 
-    0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
-  }
-}
-
-/*  ~ Common _____________________ */
-
-
 
 
 #layout{
@@ -184,7 +53,7 @@ button{
         gap: $space-sm;
       }
 
-      .title{
+      h2.title{
         color: #888;
         mix-blend-mode: color-burn;
         line-height: 0.9em;
@@ -317,8 +186,6 @@ button{
 
     }      
   }
-  
-  
 
   #profile{
 
@@ -518,6 +385,7 @@ button{
 
           .card{
             // border: 1px solid #000;
+            // @include glass;
             position: absolute;
             aspect-ratio: 2/3;
             max-width: 40em;
@@ -527,6 +395,28 @@ button{
             border-radius: $radius-md;
             padding: $space-lg;
             overflow: hidden;
+
+            &::before{
+              content: '';
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              left: 0;
+              box-shadow: 
+                inset 0 0 0.2em 0 #FFF,
+                inset 0 0 1em 0 rgba(255, 255, 255, 0.5), 
+                inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 
+                0 2rem 3em 0 rgba(255, 255, 255, 0.3), 
+                0 1rem 3em 0 rgba(0, 0, 0, 0.05);
+              border-radius: inherit;
+              pointer-events: none;
+              z-index: 10;
+            }
+
+            // &::after{
+            //   content: none;
+            // }
 
             &[data-index="0"]{
               /* 아이폰 XR */
@@ -543,6 +433,16 @@ button{
               flex-direction: column;
               align-items: center;
               justify-content: center;
+              line-height: 1.2;
+
+              p{
+                color: var(--point-color);
+                font-weight: 900;
+                text-transform: uppercase;
+              }
+              h3{
+                font-family: 'YUniverse-B';
+              }
             }
 
             .card-desc{
@@ -553,24 +453,31 @@ button{
               bottom: 0;
               padding: $space-lg;
               height: auto;
-              color: #fff;
+              // color: rgba(51, 51, 51, 0.8);
               // mix-blend-mode: difference;
-              background: rgba(0, 0, 0, 0.1);
+              background: rgba(255, 255, 255, 0.3);
               backdrop-filter: blur(1.5rem) saturate(180%);
 
+              z-index: 5;
               // &::after{
               //   content: none;
               // }
+              .badges{
 
-              .badge{
-                display: inline;
-                font-size: $font-caption;
-                border: 0.5px solid rgba(255, 255, 255, 0.3);
-                padding: $space-xs $space-sm;
-                border-radius: $radius-max;
+                display: flex;
+                gap: 0.5rem;
 
-                i{
-                  margin-right: $space-xs;
+                .badge{
+                  // display: inline;
+                  font-size: $font-caption;
+                  border: 0.5px solid rgba(255, 255, 255, 0.3);
+                  padding: $space-xs $space-sm;
+                  border-radius: $radius-max;
+                  background: rgba(255, 255, 255, 0.1);
+                  
+                  i{
+                    margin-right: $space-xs;
+                  }
                 }
               }
 
