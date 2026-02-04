@@ -120,6 +120,7 @@ button{
   padding: $space-sm $space-md;
   @include glass;
   @include flex-center;
+  font-weight: 700;
   transition: all $trans-du ease;
 
   @include hover-effect {
@@ -127,11 +128,35 @@ button{
     
     background: rgba(255, 255, 255, 0.3);
     box-shadow: 
-    inset 0 0 0.2em 0 #FFF,
-    inset 0 0 0.5em 0 rgba(255, 255, 255, 0.5), 
-    inset 0 0 1.5em 0 rgba(255, 255, 255, 0.5), 
-    0 0.5rem 1em 0 rgba(255, 255, 255, 0.3), 
-    0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
+      inset 0 0 0.2em 0 rgb(255, 255, 255),
+      inset 0 0 0.5em 0 rgba(255, 255, 255, 0.5), 
+      inset 0 0 1.5em 0 rgba(255, 255, 255, 0.5), 
+      0 0.5rem 1em 0 rgba(255, 255, 255, 0.3), 
+      0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
   }
 }
 
+.point{
+  // color: rgba(255, 255, 255, 0.8);
+  background: rgba(242, 120, 75, 0.1);
+  box-shadow: 
+    inset 0 0 0.2em 0 rgb(242, 120, 75),
+    inset 0 0 1em 0 rgba(242, 120, 75, 0.5), 
+    inset 0 0 2em 0 rgba(242, 120, 75,), 
+    0 2rem 3em 0 rgba(242, 120, 75, 0.3), 
+    0 1rem 3em 0 rgba(0, 0, 0, 0.05);
+
+  &::after{
+    background: rgb(242, 120, 75);
+  }
+
+  @include hover-effect {
+    background: rgba(242, 120, 75, 0.3);
+    box-shadow: 
+      inset 0 0 0.2em 0 rgb(242, 120, 75),
+      inset 0 0 0.5em 0 rgba(242, 120, 75, 0.5), 
+      inset 0 0 1.5em 0 rgba(242, 120, 75, 0.5), 
+      0 0.5rem 1em 0 rgba(242, 120, 75, 0.3), 
+      0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
+  }
+}

@@ -384,9 +384,9 @@
           @include flex-center;
 
           .card{
-            // border: 1px solid #000;
-            // @include glass;
-            position: absolute;
+            // position: absolute;
+            position: relative;
+
             aspect-ratio: 2/3;
             max-width: 40em;
             max-height: 60em;
@@ -424,6 +424,18 @@
               background-position: center top;
               background-size: cover;
             }
+            &[data-index="1"]{
+              /* iPhone 14 Pro Max */
+              background-image: url(../images/arthub.png); 
+              background-position: center top;
+              background-size: cover;
+            }
+            &[data-index="2"]{
+              /* pc */
+              background-image: url(../images/wicked.png); 
+              background-position: center top;
+              background-size: cover;
+            }
 
             .card-num{
               // font-family: 'YUniverse-B';
@@ -451,7 +463,7 @@
               width: 100%;
               left: 0;
               bottom: 0;
-              padding: $space-lg;
+              padding: $space-md $space-lg;
               height: auto;
               // color: rgba(51, 51, 51, 0.8);
               // mix-blend-mode: difference;
@@ -465,7 +477,7 @@
               .badges{
 
                 display: flex;
-                gap: 0.5rem;
+                gap: $space-sm;
 
                 .badge{
                   // display: inline;
@@ -483,6 +495,13 @@
 
               h5{
                 margin-top: $space-xs;
+              }
+
+              .links{
+                display: flex;
+                gap: $space-md;
+                text-transform: capitalize;
+                margin-top: $space-md;
               }
             }
 

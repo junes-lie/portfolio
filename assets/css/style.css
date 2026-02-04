@@ -80,7 +80,7 @@ html body input, html body button, html body textarea {
 :root {
   --text-color: rgba(51, 51, 51, 0.8);
   --sub-text-color: rgba(51, 51, 51, 0.6);
-  --point-color: #F2784B;
+  --point-color: rgb(242, 120, 75);
   --bg-grad: linear-gradient(to bottom, #F2BA52 27%, #F2A766 47%, #F2784B 55%, #D95E52 59%, #7A9FBF 100%);
   --bg-grad2: linear-gradient(174deg, #F0EEE9 23.56%, #F2BA52 38%, #F2A766 54.99%, #F2784B 61.78%, #D95E52 64.85%, #7A9FBF 100%);
   --opacity: rgba(255, 255, 255, 0.7);
@@ -191,7 +191,7 @@ button {
 .btn-c {
   border-radius: 100%;
   background: rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 0 0.2em 0 rgb(255, 255, 255), inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(1rem) saturate(120%);
   overflow: hidden;
   position: relative;
@@ -232,13 +232,14 @@ button {
   border-radius: 1em;
   padding: 1em 2em;
   background: rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 0 0.2em 0 rgb(255, 255, 255), inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(1rem) saturate(120%);
   overflow: hidden;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: 700;
   transition: all 0.3s ease;
 }
 .btn-r::after {
@@ -258,14 +259,34 @@ button {
   .btn-r:hover {
     transform: scale(0.95) translateY(0.2em);
     background: rgba(255, 255, 255, 0.3);
-    box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 0.5em 0 rgba(255, 255, 255, 0.5), inset 0 0 1.5em 0 rgba(255, 255, 255, 0.5), 0 0.5rem 1em 0 rgba(255, 255, 255, 0.3), 0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 0.2em 0 rgb(255, 255, 255), inset 0 0 0.5em 0 rgba(255, 255, 255, 0.5), inset 0 0 1.5em 0 rgba(255, 255, 255, 0.5), 0 0.5rem 1em 0 rgba(255, 255, 255, 0.3), 0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
   }
 }
 @media (hover: none) {
   .btn-r:active {
     transform: scale(0.95) translateY(0.2em);
     background: rgba(255, 255, 255, 0.3);
-    box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 0.5em 0 rgba(255, 255, 255, 0.5), inset 0 0 1.5em 0 rgba(255, 255, 255, 0.5), 0 0.5rem 1em 0 rgba(255, 255, 255, 0.3), 0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 0.2em 0 rgb(255, 255, 255), inset 0 0 0.5em 0 rgba(255, 255, 255, 0.5), inset 0 0 1.5em 0 rgba(255, 255, 255, 0.5), 0 0.5rem 1em 0 rgba(255, 255, 255, 0.3), 0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
+  }
+}
+
+.point {
+  background: rgba(242, 120, 75, 0.1);
+  box-shadow: inset 0 0 0.2em 0 rgb(242, 120, 75), inset 0 0 1em 0 rgba(242, 120, 75, 0.5), inset 0 0 2em 0 rgb(242, 120, 75), 0 2rem 3em 0 rgba(242, 120, 75, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
+}
+.point::after {
+  background: rgb(242, 120, 75);
+}
+@media (hover: hover) {
+  .point:hover {
+    background: rgba(242, 120, 75, 0.3);
+    box-shadow: inset 0 0 0.2em 0 rgb(242, 120, 75), inset 0 0 0.5em 0 rgba(242, 120, 75, 0.5), inset 0 0 1.5em 0 rgba(242, 120, 75, 0.5), 0 0.5rem 1em 0 rgba(242, 120, 75, 0.3), 0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
+  }
+}
+@media (hover: none) {
+  .point:active {
+    background: rgba(242, 120, 75, 0.3);
+    box-shadow: inset 0 0 0.2em 0 rgb(242, 120, 75), inset 0 0 0.5em 0 rgba(242, 120, 75, 0.5), inset 0 0 1.5em 0 rgba(242, 120, 75, 0.5), 0 0.5rem 1em 0 rgba(242, 120, 75, 0.3), 0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -672,7 +693,7 @@ button {
 #layout #profile .container .content-wrap .content .box {
   flex: 2;
   background: rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 0 0.2em 0 rgb(255, 255, 255), inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(1rem) saturate(120%);
   overflow: hidden;
   position: relative;
@@ -833,7 +854,7 @@ button {
   align-items: center;
 }
 #layout #publishing .container .content-wrap .cards .card {
-  position: absolute;
+  position: relative;
   aspect-ratio: 2/3;
   max-width: 40em;
   max-height: 60em;
@@ -861,6 +882,18 @@ button {
   background-position: center top;
   background-size: cover;
 }
+#layout #publishing .container .content-wrap .cards .card[data-index="1"] {
+  /* iPhone 14 Pro Max */
+  background-image: url(../images/arthub.png);
+  background-position: center top;
+  background-size: cover;
+}
+#layout #publishing .container .content-wrap .cards .card[data-index="2"] {
+  /* pc */
+  background-image: url(../images/wicked.png);
+  background-position: center top;
+  background-size: cover;
+}
 #layout #publishing .container .content-wrap .cards .card .card-num {
   color: #fff;
   mix-blend-mode: difference;
@@ -883,7 +916,7 @@ button {
   width: 100%;
   left: 0;
   bottom: 0;
-  padding: 3em;
+  padding: 2em 3em;
   height: auto;
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(1.5rem) saturate(180%);
@@ -891,7 +924,7 @@ button {
 }
 #layout #publishing .container .content-wrap .cards .card .card-desc .badges {
   display: flex;
-  gap: 0.5rem;
+  gap: 1em;
 }
 #layout #publishing .container .content-wrap .cards .card .card-desc .badges .badge {
   font-size: clamp(1rem, 0.931rem + 0.192vw, 1.2rem);
@@ -905,4 +938,10 @@ button {
 }
 #layout #publishing .container .content-wrap .cards .card .card-desc h5 {
   margin-top: 0.5em;
+}
+#layout #publishing .container .content-wrap .cards .card .card-desc .links {
+  display: flex;
+  gap: 2em;
+  text-transform: capitalize;
+  margin-top: 2em;
 }
