@@ -78,9 +78,11 @@ html body input, html body button, html body textarea {
 }
 
 :root {
-  --text-color: rgba(51, 51, 51, 0.8);
-  --sub-text-color: rgba(51, 51, 51, 0.6);
+  --text-color: #333;
+  --text-color-rgb: 51, 51, 51;
+  --sub-text-color: rgba(var(--text-color-rgb), 0.6);
   --point-color: rgb(242, 120, 75);
+  --point-color-rgb: 242, 120, 75;
   --bg-grad: linear-gradient(to bottom, #F2BA52 27%, #F2A766 47%, #F2784B 55%, #D95E52 59%, #7A9FBF 100%);
   --bg-grad2: linear-gradient(174deg, #F0EEE9 23.56%, #F2BA52 38%, #F2A766 54.99%, #F2784B 61.78%, #D95E52 64.85%, #7A9FBF 100%);
   --opacity: rgba(255, 255, 255, 0.7);
@@ -190,9 +192,11 @@ button {
 
 .btn-c {
   border-radius: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 0 0.2em 0 rgb(255, 255, 255), inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(1rem) saturate(120%);
+  border: 0.1em solid rgba(255, 255, 255, 0.4);
+  border-top: 0.1em solid rgba(255, 255, 255, 0.5);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.45) 100%);
+  box-shadow: inset 0 0 0.2em 0 rgba(255, 255, 255, 0.4), inset 0 0 1.2em 0 rgba(255, 255, 255, 0.3), 0 1.2em 2.5em 0 rgba(255, 255, 255, 0.2), 0 0.4em 1.2em 0 rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(1.2rem) saturate(130%);
   overflow: hidden;
   position: relative;
   display: flex;
@@ -202,15 +206,15 @@ button {
 }
 .btn-c::after {
   content: "";
-  width: 50%;
-  height: 25%;
   position: absolute;
-  bottom: -12.5%;
+  width: 80%;
+  height: 30%;
+  bottom: -15%;
   left: 50%;
   transform: translateX(-50%);
+  border-radius: 30%/80%;
+  filter: blur(0.7rem);
   background: #FFF;
-  border-radius: 25%/50%;
-  filter: blur(0.5rem);
   z-index: -1;
 }
 @media (hover: hover) {
@@ -231,62 +235,74 @@ button {
 .btn-r {
   border-radius: 1em;
   padding: 1em 2em;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 0 0.2em 0 rgb(255, 255, 255), inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(1rem) saturate(120%);
+  border: 0.1em solid rgba(255, 255, 255, 0.4);
+  border-top: 0.1em solid rgba(255, 255, 255, 0.5);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.45) 100%);
+  box-shadow: inset 0 0 0.2em 0 rgba(255, 255, 255, 0.4), inset 0 0 1.2em 0 rgba(255, 255, 255, 0.3), 0 1.2em 2.5em 0 rgba(255, 255, 255, 0.2), 0 0.4em 1.2em 0 rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(1.2rem) saturate(130%);
   overflow: hidden;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 700;
+  white-space: nowrap;
+  text-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 .btn-r::after {
   content: "";
-  width: 50%;
-  height: 25%;
   position: absolute;
-  bottom: -12.5%;
+  width: 80%;
+  height: 30%;
+  bottom: -15%;
   left: 50%;
   transform: translateX(-50%);
+  border-radius: 30%/80%;
+  filter: blur(0.7rem);
   background: #FFF;
-  border-radius: 25%/50%;
-  filter: blur(0.5rem);
   z-index: -1;
 }
 @media (hover: hover) {
   .btn-r:hover {
     transform: scale(0.95) translateY(0.2em);
-    background: rgba(255, 255, 255, 0.3);
-    box-shadow: inset 0 0 0.2em 0 rgb(255, 255, 255), inset 0 0 0.5em 0 rgba(255, 255, 255, 0.5), inset 0 0 1.5em 0 rgba(255, 255, 255, 0.5), 0 0.5rem 1em 0 rgba(255, 255, 255, 0.3), 0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.6) 100%);
+    box-shadow: inset 0 0 0.3em 0 rgba(255, 255, 255, 0.6), inset 0 0 1.5em 0 rgba(255, 255, 255, 0.8), 0 0.6rem 1.2em 0 rgba(255, 255, 255, 0.4), 0 0.2rem 0.8em 0 rgba(0, 0, 0, 0.1);
   }
 }
 @media (hover: none) {
   .btn-r:active {
     transform: scale(0.95) translateY(0.2em);
-    background: rgba(255, 255, 255, 0.3);
-    box-shadow: inset 0 0 0.2em 0 rgb(255, 255, 255), inset 0 0 0.5em 0 rgba(255, 255, 255, 0.5), inset 0 0 1.5em 0 rgba(255, 255, 255, 0.5), 0 0.5rem 1em 0 rgba(255, 255, 255, 0.3), 0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.6) 100%);
+    box-shadow: inset 0 0 0.3em 0 rgba(255, 255, 255, 0.6), inset 0 0 1.5em 0 rgba(255, 255, 255, 0.8), 0 0.6rem 1.2em 0 rgba(255, 255, 255, 0.4), 0 0.2rem 0.8em 0 rgba(0, 0, 0, 0.1);
   }
 }
 
 .point {
-  background: rgba(242, 120, 75, 0.1);
-  box-shadow: inset 0 0 0.2em 0 rgb(242, 120, 75), inset 0 0 1em 0 rgba(242, 120, 75, 0.5), inset 0 0 2em 0 rgb(242, 120, 75), 0 2rem 3em 0 rgba(242, 120, 75, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
+  border: 0.1em solid rgba(var(--point-color-rgb), 0.4);
+  border-top: 0.1em solid rgba(255, 255, 255, 0.5);
+  background: linear-gradient(to bottom, rgba(var(--point-color-rgb), 0.1) 0%, rgba(var(--point-color-rgb), 0.45) 100%);
+  box-shadow: inset 0 0 0.2em 0 rgba(255, 255, 255, 0.4), inset 0 0 1.2em 0 rgba(var(--point-color-rgb), 0.3), 0 1.2em 2.5em 0 rgba(var(--point-color-rgb), 0.2), 0 0.4em 1.2em 0 rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(1.2rem) saturate(180%);
+  color: #fff;
+}
+.point:visited {
+  color: #fff;
 }
 .point::after {
-  background: rgb(242, 120, 75);
+  background: rgba(var(--point-color-rgb), 0.5);
+  filter: blur(1rem);
 }
 @media (hover: hover) {
   .point:hover {
-    background: rgba(242, 120, 75, 0.3);
-    box-shadow: inset 0 0 0.2em 0 rgb(242, 120, 75), inset 0 0 0.5em 0 rgba(242, 120, 75, 0.5), inset 0 0 1.5em 0 rgba(242, 120, 75, 0.5), 0 0.5rem 1em 0 rgba(242, 120, 75, 0.3), 0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, rgba(var(--point-color-rgb), 0.2) 0%, rgba(var(--point-color-rgb), 0.6) 100%);
+    box-shadow: inset 0 0 0.3em 0 rgba(255, 255, 255, 0.6), inset 0 0 1.5em 0 rgba(var(--point-color-rgb), 0.5), 0 0.6rem 1.2em 0 rgba(var(--point-color-rgb), 0.4), 0 0.2rem 0.8em 0 rgba(0, 0, 0, 0.1);
   }
 }
 @media (hover: none) {
   .point:active {
-    background: rgba(242, 120, 75, 0.3);
-    box-shadow: inset 0 0 0.2em 0 rgb(242, 120, 75), inset 0 0 0.5em 0 rgba(242, 120, 75, 0.5), inset 0 0 1.5em 0 rgba(242, 120, 75, 0.5), 0 0.5rem 1em 0 rgba(242, 120, 75, 0.3), 0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, rgba(var(--point-color-rgb), 0.2) 0%, rgba(var(--point-color-rgb), 0.6) 100%);
+    box-shadow: inset 0 0 0.3em 0 rgba(255, 255, 255, 0.6), inset 0 0 1.5em 0 rgba(var(--point-color-rgb), 0.5), 0 0.6rem 1.2em 0 rgba(var(--point-color-rgb), 0.4), 0 0.2rem 0.8em 0 rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -692,9 +708,11 @@ button {
 }
 #layout #profile .container .content-wrap .content .box {
   flex: 2;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 0 0.2em 0 rgb(255, 255, 255), inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(1rem) saturate(120%);
+  border: 0.1em solid rgba(255, 255, 255, 0.4);
+  border-top: 0.1em solid rgba(255, 255, 255, 0.5);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.45) 100%);
+  box-shadow: inset 0 0 0.2em 0 rgba(255, 255, 255, 0.4), inset 0 0 1.2em 0 rgba(255, 255, 255, 0.3), 0 1.2em 2.5em 0 rgba(255, 255, 255, 0.2), 0 0.4em 1.2em 0 rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(1.2rem) saturate(130%);
   overflow: hidden;
   position: relative;
   border-radius: 2em;
@@ -705,15 +723,15 @@ button {
 }
 #layout #profile .container .content-wrap .content .box::after {
   content: "";
-  width: 50%;
-  height: 25%;
   position: absolute;
-  bottom: -12.5%;
+  width: 80%;
+  height: 30%;
+  bottom: -15%;
   left: 50%;
   transform: translateX(-50%);
+  border-radius: 30%/80%;
+  filter: blur(0.7rem);
   background: #FFF;
-  border-radius: 25%/50%;
-  filter: blur(0.5rem);
   z-index: -1;
 }
 @media (orientation: portrait) {
@@ -836,6 +854,9 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+#layout #publishing {
+  border: 1px solid #000;
 }
 #layout #publishing .container .content-wrap {
   margin: 0 auto;

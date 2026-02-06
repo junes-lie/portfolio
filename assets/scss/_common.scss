@@ -6,6 +6,7 @@
 body{
   font-size: clamp-calc(7, 10); //em 쓰면 모바일이 0.7배율
   line-height: 1.5;
+  
 }
 
 h1{
@@ -116,47 +117,86 @@ button{
 }
 
 .btn-r{
+  // border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: $radius-sm;
   padding: $space-sm $space-md;
   @include glass;
   @include flex-center;
   font-weight: 700;
+  white-space: nowrap;
+  text-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.2);
   transition: all $trans-du ease;
 
   @include hover-effect {
     transform: scale(0.95) translateY(0.2em);
     
-    background: rgba(255, 255, 255, 0.3);
-    box-shadow: 
-      inset 0 0 0.2em 0 rgb(255, 255, 255),
-      inset 0 0 0.5em 0 rgba(255, 255, 255, 0.5), 
-      inset 0 0 1.5em 0 rgba(255, 255, 255, 0.5), 
-      0 0.5rem 1em 0 rgba(255, 255, 255, 0.3), 
-      0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, 
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0.6) 100%
+    );
+    box-shadow:
+      inset 0 0 0.3em 0 rgba(255, 255, 255, 0.6),
+      inset 0 0 1.5em 0 rgba(255, 255, 255, 0.8), 
+      0 0.6rem 1.2em 0 rgba(255, 255, 255, 0.4), 
+      0 0.2rem 0.8em 0 rgba(0, 0, 0, 0.1);
+
+    // background: rgba(255, 255, 255, 0.3);
+    // box-shadow: 
+    //   inset 0 0 0.2em 0 rgb(255, 255, 255),
+    //   inset 0 0 0.5em 0 rgba(255, 255, 255, 0.5), 
+    //   inset 0 0 1.5em 0 rgba(255, 255, 255, 0.5), 
+    //   0 0.5rem 1em 0 rgba(255, 255, 255, 0.3), 
+    //   0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
   }
 }
 
 .point{
-  // color: rgba(255, 255, 255, 0.8);
-  background: rgba(242, 120, 75, 0.1);
-  box-shadow: 
-    inset 0 0 0.2em 0 rgb(242, 120, 75),
-    inset 0 0 1em 0 rgba(242, 120, 75, 0.5), 
-    inset 0 0 2em 0 rgba(242, 120, 75,), 
-    0 2rem 3em 0 rgba(242, 120, 75, 0.3), 
-    0 1rem 3em 0 rgba(0, 0, 0, 0.05);
+  border: 0.1em solid rgba(var(--point-color-rgb), 0.4);
+  border-top: 0.1em solid rgba(255, 255, 255, 0.5);
+  background: linear-gradient(to bottom,
+    rgba(var(--point-color-rgb), 0.1) 0%,
+    rgba(var(--point-color-rgb), 0.45) 100%
+  );
+  box-shadow:
+    inset 0 0 0.2em 0 rgba(255, 255, 255, 0.4),
+    inset 0 0 1.2em 0 rgba(var(--point-color-rgb), 0.3), 
+    0 1.2em 2.5em 0 rgba(var(--point-color-rgb), 0.2),
+    0 0.4em 1.2em 0 rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(1.2rem) saturate(180%);
+  color: #fff;
+
+  &:visited{
+    color: #fff;
+  }
 
   &::after{
-    background: rgb(242, 120, 75);
+    background: rgba(var(--point-color-rgb), 0.5);
+    filter: blur(1rem);
+    // width: 80%;
+    // height: 30%;
+    // bottom: -15%;
+    // background: rgb(242, 120, 75);
   }
 
   @include hover-effect {
-    background: rgba(242, 120, 75, 0.3);
-    box-shadow: 
-      inset 0 0 0.2em 0 rgb(242, 120, 75),
-      inset 0 0 0.5em 0 rgba(242, 120, 75, 0.5), 
-      inset 0 0 1.5em 0 rgba(242, 120, 75, 0.5), 
-      0 0.5rem 1em 0 rgba(242, 120, 75, 0.3), 
-      0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
+
+    background: linear-gradient(to bottom, 
+      rgba(var(--point-color-rgb), 0.2) 0%,
+      rgba(var(--point-color-rgb), 0.6) 100%
+    );
+    box-shadow:
+      inset 0 0 0.3em 0 rgba(255, 255, 255, 0.6),
+      inset 0 0 1.5em 0 rgba(var(--point-color-rgb), 0.5), 
+      0 0.6rem 1.2em 0 rgba(var(--point-color-rgb), 0.4), 
+      0 0.2rem 0.8em 0 rgba(0, 0, 0, 0.1);
+  // transform: scale(0.96) translateY(0.1em);
+
+    // background: rgba(242, 120, 75, 0.3);
+    // box-shadow: 
+    //   inset 0 0 0.2em 0 rgb(242, 120, 75),
+    //   inset 0 0 0.5em 0 rgba(242, 120, 75, 0.5), 
+    //   inset 0 0 1.5em 0 rgba(242, 120, 75, 0.5), 
+    //   0 0.5rem 1em 0 rgba(242, 120, 75, 0.3), 
+    //   0 0.3rem 1em 0 rgba(0, 0, 0, 0.1);
   }
 }

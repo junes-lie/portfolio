@@ -371,6 +371,7 @@
     
     
   #publishing{
+    border: 1px solid #000;
     // background: var(--bg-s3);
     .container{
       .content-wrap{
@@ -446,6 +447,7 @@
               align-items: center;
               justify-content: center;
               line-height: 1.2;
+              
 
               p{
                 color: var(--point-color);
@@ -502,6 +504,7 @@
                 gap: $space-md;
                 text-transform: capitalize;
                 margin-top: $space-md;
+
               }
             }
 
