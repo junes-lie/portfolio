@@ -110,12 +110,12 @@ h3 {
   font-size: clamp(2.4rem, 1.015rem + 3.846vw, 6.4rem);
 }
 
-h3.title {
+h3.headline {
   text-transform: capitalize;
   margin-bottom: 0.5em;
 }
 @media (orientation: portrait) {
-  h3.title {
+  h3.headline {
     margin-top: 0.5em;
   }
 }
@@ -192,10 +192,10 @@ button {
 
 .btn-c {
   border-radius: 100%;
-  border: 0.1em solid rgba(255, 255, 255, 0.4);
-  border-top: 0.1em solid rgba(255, 255, 255, 0.5);
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.45) 100%);
-  box-shadow: inset 0 0 0.2em 0 rgba(255, 255, 255, 0.4), inset 0 0 1.2em 0 rgba(255, 255, 255, 0.3), 0 1.2em 2.5em 0 rgba(255, 255, 255, 0.2), 0 0.4em 1.2em 0 rgba(0, 0, 0, 0.05);
+  border: 0.1em solid rgba(255, 255, 255, 0.3);
+  border-top: 0.1em solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0.2em 0 rgb(255, 255, 255), inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(1.2rem) saturate(130%);
   overflow: hidden;
   position: relative;
@@ -207,12 +207,12 @@ button {
 .btn-c::after {
   content: "";
   position: absolute;
-  width: 80%;
-  height: 30%;
-  bottom: -15%;
+  width: 70%;
+  height: 35%;
+  bottom: -17.5%;
   left: 50%;
   transform: translateX(-50%);
-  border-radius: 30%/80%;
+  border-radius: 35%/70%;
   filter: blur(0.7rem);
   background: #FFF;
   z-index: -1;
@@ -235,16 +235,18 @@ button {
 .btn-r {
   border-radius: 1em;
   padding: 1em 2em;
-  border: 0.1em solid rgba(255, 255, 255, 0.4);
-  border-top: 0.1em solid rgba(255, 255, 255, 0.5);
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.45) 100%);
-  box-shadow: inset 0 0 0.2em 0 rgba(255, 255, 255, 0.4), inset 0 0 1.2em 0 rgba(255, 255, 255, 0.3), 0 1.2em 2.5em 0 rgba(255, 255, 255, 0.2), 0 0.4em 1.2em 0 rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(1.2rem) saturate(130%);
-  overflow: hidden;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 0.1em solid rgba(255, 255, 255, 0.3);
+  border-top: 0.1em solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0.2em 0 rgb(255, 255, 255), inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(1.2rem) saturate(130%);
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.6) 100%);
+  box-shadow: inset 0 0.1em 0.1em 0 rgba(255, 255, 255, 0.4), inset 0 0 1.5em 0 rgba(255, 255, 255, 0.2), 0 1em 2.5em 0 rgba(255, 255, 255, 0.2), 0 0.3em 1em 0 rgba(0, 0, 0, 0.05);
   font-weight: 700;
   white-space: nowrap;
   text-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.2);
@@ -253,12 +255,12 @@ button {
 .btn-r::after {
   content: "";
   position: absolute;
-  width: 80%;
-  height: 30%;
-  bottom: -15%;
+  width: 70%;
+  height: 35%;
+  bottom: -17.5%;
   left: 50%;
   transform: translateX(-50%);
-  border-radius: 30%/80%;
+  border-radius: 35%/70%;
   filter: blur(0.7rem);
   background: #FFF;
   z-index: -1;
@@ -266,43 +268,44 @@ button {
 @media (hover: hover) {
   .btn-r:hover {
     transform: scale(0.95) translateY(0.2em);
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.6) 100%);
-    box-shadow: inset 0 0 0.3em 0 rgba(255, 255, 255, 0.6), inset 0 0 1.5em 0 rgba(255, 255, 255, 0.8), 0 0.6rem 1.2em 0 rgba(255, 255, 255, 0.4), 0 0.2rem 0.8em 0 rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.8) 100%);
+    box-shadow: inset 0 0.1em 0.2em 0 rgba(255, 255, 255, 0.6), inset 0 0 1.5em 0 rgba(255, 255, 255, 0.4), 0 0.6rem 1.5em 0 rgba(255, 255, 255, 0.4), 0 0.2rem 0.8em 0 rgba(0, 0, 0, 0.1);
   }
 }
 @media (hover: none) {
   .btn-r:active {
     transform: scale(0.95) translateY(0.2em);
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.6) 100%);
-    box-shadow: inset 0 0 0.3em 0 rgba(255, 255, 255, 0.6), inset 0 0 1.5em 0 rgba(255, 255, 255, 0.8), 0 0.6rem 1.2em 0 rgba(255, 255, 255, 0.4), 0 0.2rem 0.8em 0 rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.8) 100%);
+    box-shadow: inset 0 0.1em 0.2em 0 rgba(255, 255, 255, 0.6), inset 0 0 1.5em 0 rgba(255, 255, 255, 0.4), 0 0.6rem 1.5em 0 rgba(255, 255, 255, 0.4), 0 0.2rem 0.8em 0 rgba(0, 0, 0, 0.1);
   }
 }
 
 .point {
-  border: 0.1em solid rgba(var(--point-color-rgb), 0.4);
-  border-top: 0.1em solid rgba(255, 255, 255, 0.5);
-  background: linear-gradient(to bottom, rgba(var(--point-color-rgb), 0.1) 0%, rgba(var(--point-color-rgb), 0.45) 100%);
-  box-shadow: inset 0 0 0.2em 0 rgba(255, 255, 255, 0.4), inset 0 0 1.2em 0 rgba(var(--point-color-rgb), 0.3), 0 1.2em 2.5em 0 rgba(var(--point-color-rgb), 0.2), 0 0.4em 1.2em 0 rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(1.2rem) saturate(180%);
+  border: 0.1em solid rgba(var(--point-color-rgb), 0.3);
+  border-top: 0.1em solid rgba(255, 255, 255, 0.7);
+  background: linear-gradient(to bottom, rgba(var(--point-color-rgb), 0.2) 0%, rgba(var(--point-color-rgb), 0.6) 100%);
+  box-shadow: inset 0 0.1em 0.1em 0 rgba(255, 255, 255, 0.4), inset 0 0 1.5em 0 rgba(var(--point-color-rgb), 0.2), 0 1em 2.5em 0 rgba(var(--point-color-rgb), 0.2), 0 0.3em 1em 0 rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(1.5rem) saturate(180%);
   color: #fff;
+  text-shadow: 0 0.1em 0.2em rgba(var(--point-color-rgb), 0.5);
+}
+.point::after {
+  background: rgba(var(--point-color-rgb), 0.7);
+  filter: blur(1.2rem);
 }
 .point:visited {
   color: #fff;
 }
-.point::after {
-  background: rgba(var(--point-color-rgb), 0.5);
-  filter: blur(1rem);
-}
 @media (hover: hover) {
   .point:hover {
-    background: linear-gradient(to bottom, rgba(var(--point-color-rgb), 0.2) 0%, rgba(var(--point-color-rgb), 0.6) 100%);
-    box-shadow: inset 0 0 0.3em 0 rgba(255, 255, 255, 0.6), inset 0 0 1.5em 0 rgba(var(--point-color-rgb), 0.5), 0 0.6rem 1.2em 0 rgba(var(--point-color-rgb), 0.4), 0 0.2rem 0.8em 0 rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, rgba(var(--point-color-rgb), 0.4) 0%, rgba(var(--point-color-rgb), 0.8) 100%);
+    box-shadow: inset 0 0.1em 0.2em 0 rgba(255, 255, 255, 0.6), inset 0 0 1.5em 0 rgba(var(--point-color-rgb), 0.4), 0 0.6rem 1.5em 0 rgba(var(--point-color-rgb), 0.4), 0 0.2rem 0.8em 0 rgba(0, 0, 0, 0.1);
   }
 }
 @media (hover: none) {
   .point:active {
-    background: linear-gradient(to bottom, rgba(var(--point-color-rgb), 0.2) 0%, rgba(var(--point-color-rgb), 0.6) 100%);
-    box-shadow: inset 0 0 0.3em 0 rgba(255, 255, 255, 0.6), inset 0 0 1.5em 0 rgba(var(--point-color-rgb), 0.5), 0 0.6rem 1.2em 0 rgba(var(--point-color-rgb), 0.4), 0 0.2rem 0.8em 0 rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, rgba(var(--point-color-rgb), 0.4) 0%, rgba(var(--point-color-rgb), 0.8) 100%);
+    box-shadow: inset 0 0.1em 0.2em 0 rgba(255, 255, 255, 0.6), inset 0 0 1.5em 0 rgba(var(--point-color-rgb), 0.4), 0 0.6rem 1.5em 0 rgba(var(--point-color-rgb), 0.4), 0 0.2rem 0.8em 0 rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -562,7 +565,7 @@ button {
     gap: 1em;
   }
 }
-#layout #intro .content-wrap h2.title {
+#layout #intro .content-wrap .hero {
   color: #888;
   mix-blend-mode: color-burn;
   line-height: 0.9em;
@@ -708,10 +711,10 @@ button {
 }
 #layout #profile .container .content-wrap .content .box {
   flex: 2;
-  border: 0.1em solid rgba(255, 255, 255, 0.4);
-  border-top: 0.1em solid rgba(255, 255, 255, 0.5);
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.45) 100%);
-  box-shadow: inset 0 0 0.2em 0 rgba(255, 255, 255, 0.4), inset 0 0 1.2em 0 rgba(255, 255, 255, 0.3), 0 1.2em 2.5em 0 rgba(255, 255, 255, 0.2), 0 0.4em 1.2em 0 rgba(0, 0, 0, 0.05);
+  border: 0.1em solid rgba(255, 255, 255, 0.3);
+  border-top: 0.1em solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0.2em 0 rgb(255, 255, 255), inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(1.2rem) saturate(130%);
   overflow: hidden;
   position: relative;
@@ -724,12 +727,12 @@ button {
 #layout #profile .container .content-wrap .content .box::after {
   content: "";
   position: absolute;
-  width: 80%;
-  height: 30%;
-  bottom: -15%;
+  width: 70%;
+  height: 35%;
+  bottom: -17.5%;
   left: 50%;
   transform: translateX(-50%);
-  border-radius: 30%/80%;
+  border-radius: 35%/70%;
   filter: blur(0.7rem);
   background: #FFF;
   z-index: -1;
@@ -855,8 +858,8 @@ button {
   justify-content: center;
   align-items: center;
 }
-#layout #publishing {
-  border: 1px solid #000;
+#layout #publishing .container {
+  overflow: visible;
 }
 #layout #publishing .container .content-wrap {
   margin: 0 auto;
@@ -865,37 +868,70 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  perspective: 100rem;
+  transition: all 0.3s ease;
 }
 #layout #publishing .container .content-wrap .cards {
-  position: relative;
+  margin: 0 auto;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 #layout #publishing .container .content-wrap .cards .card {
-  position: relative;
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
   aspect-ratio: 2/3;
   max-width: 40em;
   max-height: 60em;
-  width: 100%;
-  height: 100%;
   border-radius: 2em;
   padding: 3em;
+  transition: all 0.3s ease;
   overflow: hidden;
 }
 #layout #publishing .container .content-wrap .cards .card::before {
   content: "";
+  border: 0.1em solid rgba(255, 255, 255, 0.3);
+  border-top: 0.1em solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0.2em 0 rgb(255, 255, 255), inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(1.2rem) saturate(130%);
+  overflow: hidden;
+  position: relative;
   position: absolute;
+  margin: 0 auto;
   width: 100%;
   height: 100%;
   top: 0;
-  left: 0;
-  box-shadow: inset 0 0 0.2em 0 #FFF, inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
+  left: -0.1em; /* 왜 생기는 거?? */
+  backdrop-filter: none;
+  background: none;
   border-radius: inherit;
   pointer-events: none;
   z-index: 10;
+}
+#layout #publishing .container .content-wrap .cards .card::before::after {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 35%;
+  bottom: -17.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 35%/70%;
+  filter: blur(0.7rem);
+  background: #FFF;
+  z-index: -1;
+}
+#layout #publishing .container .content-wrap .cards .card::after {
+  content: none;
 }
 #layout #publishing .container .content-wrap .cards .card[data-index="0"] {
   /* 아이폰 XR */
@@ -965,4 +1001,46 @@ button {
   gap: 2em;
   text-transform: capitalize;
   margin-top: 2em;
+}
+#layout #publishing .container .content-wrap .indicators {
+  display: flex;
+  gap: 2em;
+}
+#layout #publishing .container .content-wrap .indicators .indicator {
+  border: 0.1em solid rgba(255, 255, 255, 0.3);
+  border-top: 0.1em solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0.2em 0 rgb(255, 255, 255), inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(1.2rem) saturate(130%);
+  overflow: hidden;
+  position: relative;
+  width: 3em;
+  height: 1em;
+  border-radius: 999em;
+  transition: all 0.3s ease;
+}
+#layout #publishing .container .content-wrap .indicators .indicator::after {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 35%;
+  bottom: -17.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 35%/70%;
+  filter: blur(0.7rem);
+  background: #FFF;
+  z-index: -1;
+}
+#layout #publishing .container .content-wrap .indicators .indicator.active {
+  border: 0.1em solid rgba(var(--point-color-rgb), 0.3);
+  border-top: 0.1em solid rgba(255, 255, 255, 0.7);
+  background: linear-gradient(to bottom, rgba(var(--point-color-rgb), 0.2) 0%, rgba(var(--point-color-rgb), 0.6) 100%);
+  box-shadow: inset 0 0.1em 0.1em 0 rgba(255, 255, 255, 0.4), inset 0 0 1.5em 0 rgba(var(--point-color-rgb), 0.2), 0 1em 2.5em 0 rgba(var(--point-color-rgb), 0.2), 0 0.3em 1em 0 rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(1.5rem) saturate(180%);
+  width: 5em;
+}
+#layout #publishing .container .content-wrap .indicators .indicator.active::after {
+  background: rgba(var(--point-color-rgb), 0.7);
+  filter: blur(1.2rem);
 }

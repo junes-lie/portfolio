@@ -53,7 +53,7 @@
         gap: $space-sm;
       }
 
-      h2.title{
+      .hero{
         color: #888;
         mix-blend-mode: color-burn;
         line-height: 0.9em;
@@ -371,53 +371,54 @@
     
     
   #publishing{
-    border: 1px solid #000;
+    // border: 1px solid #000;
     // background: var(--bg-s3);
     .container{
+      overflow: visible;
+
       .content-wrap{
         @include fill-parent;
         @include flex-center;
+        @include flex(column, $space-lg);
+        perspective: 100rem;
+        transition: all $trans-du ease;
 
         .cards{
-          position: relative;
-          width: 100%;
-          height: 100%;
+          @include fill-parent;
           @include flex-center;
+          position: relative;
 
           .card{
-            // position: absolute;
-            position: relative;
+            position: absolute;
+            // position: relative;
 
+            @include fill-parent;
             aspect-ratio: 2/3;
             max-width: 40em;
             max-height: 60em;
-            width: 100%;
-            height: 100%;
             border-radius: $radius-md;
             padding: $space-lg;
+            transition: all $trans-du ease;
             overflow: hidden;
+            
 
             &::before{
               content: '';
+              @include glass;
               position: absolute;
-              width: 100%;
-              height: 100%;
+              @include fill-parent;
               top: 0;
-              left: 0;
-              box-shadow: 
-                inset 0 0 0.2em 0 #FFF,
-                inset 0 0 1em 0 rgba(255, 255, 255, 0.5), 
-                inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 
-                0 2rem 3em 0 rgba(255, 255, 255, 0.3), 
-                0 1rem 3em 0 rgba(0, 0, 0, 0.05);
+              left: -0.1em; /* 왜 생기는 거?? */
+              backdrop-filter: none;
+              background: none;
               border-radius: inherit;
               pointer-events: none;
               z-index: 10;
             }
 
-            // &::after{
-            //   content: none;
-            // }
+            &::after{
+              content: none;
+            }
 
             &[data-index="0"]{
               /* 아이폰 XR */
@@ -508,6 +509,24 @@
               }
             }
 
+          }
+        }
+
+        .indicators{
+          display: flex;
+          gap: $space-md;
+
+          .indicator{
+            @include glass;
+            width: 3em;
+            height: 1em;
+            border-radius: $radius-max;
+            transition: all $trans-du ease;
+
+            &.active{
+              @include point;
+              width: 5em;
+            }
           }
         }
       }

@@ -131,12 +131,12 @@ function init(){
     }
   });
   
-  const splitH1 = new SplitText('h1.title',{type:'chars'});
-  const splitH2 = new SplitText('h2.title',{type:'chars'});
+  const splitH1 = new SplitText('h1.hero',{type:'chars'});
+  const splitH2 = new SplitText('h2.hero',{type:'chars'});
   
   tl
     .set('#intro .logo', {pointerEvents: 'auto'})
-    .set('.title', {height: 'auto', autoAlpha: 1})
+    .set('.hero', {height: 'auto', autoAlpha: 1})
     .to('.loader-text',{height: 0, autoAlpha: 0}, "<")
     .to('.loader-wrap',{gap: 0}, "<")
     .to('.possessive-wrap',{height: '25vmin'}, "<")
@@ -168,7 +168,7 @@ function Loading() {
 
   tl.set('.navigation, .quick-btns', {autoAlpha: 0})
     .set('.possessive', {width: 0, autoAlpha: 0})
-    .set('.title', {height: 0, autoAlpha: 0})
+    .set('.hero', {height: 0, autoAlpha: 0})
     .set('.mouse-wrap', {autoAlpha: 0})
     .set('#intro .logo', {pointerEvents: 'none'});
   smoother.scrollTo(0, false);

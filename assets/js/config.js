@@ -15,8 +15,8 @@ const CONFIG = {
 
 
 const minW = CONFIG.vp.mobile;
-  const maxW = CONFIG.vp.pc;
-  const clampedWidth = gsap.utils.clamp(minW, maxW, window.innerWidth);
-  const remap = (min, max) => gsap.utils.mapRange(minW, maxW, min, max, clampedWidth);
+const maxW = CONFIG.vp.pc;
+const clampedWidth = gsap.utils.clamp(minW, maxW, window.innerWidth);
+const remap = (min, max) => gsap.utils.mapRange(minW, maxW, min, max, clampedWidth);
 
 
