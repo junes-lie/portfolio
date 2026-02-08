@@ -1,7 +1,7 @@
 
 const cards = document.querySelectorAll('#publishing .card');
 const indicators = document.querySelectorAll('#publishing .indicator');
-let activeIndex = 1;
+let activeIndex = 0;
 let autoPlayInterval;
 
 function updateCards() {
@@ -19,12 +19,12 @@ function updateCards() {
       card.style.zIndex = '10';
       card.style.opacity = '0.8';
       card.style.transform = 'translateX(60%) scale(0.85) rotate(15deg)';
-      card.style.filter = 'brightness(70%)';
+      card.style.filter = 'brightness(50%)';
     } else {
       card.style.zIndex = '10';
       card.style.opacity = '0.8';
       card.style.transform = 'translateX(-60%) scale(0.85) rotate(-15deg)';
-      card.style.filter = 'brightness(70%)';
+      card.style.filter = 'brightness(50%)';
     }
   });
 

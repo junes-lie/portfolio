@@ -351,8 +351,7 @@
                   transform="rotate(20 250 415)" 
                   fill="var(--point-color)"></ellipse>
                 <g clip-path="url(#clip-bottom)">
-                  <image href="assets/images/portrait.png" 
-                    xlink:href="assets/images/portrait.png" 
+                  <image href="assets/images/profile_portrait.png" 
                     width="500" 
                     height="755" 
                     x="-150"
@@ -362,8 +361,7 @@
                   />
                 </g>
                 <g clip-path="url(#clip-top)">
-                  <image href="assets/images/portrait.png" 
-                    xlink:href="assets/images/portrait.png" 
+                  <image href="assets/images/profile_portrait.png" 
                     width="500" 
                     height="755" 
                     x="-150"
@@ -383,7 +381,9 @@
         <h3 class="headline">I build</h3>
         <div class="content-wrap">
           <ul class="cards">
-            <li class="card" data-index="0">
+            <li class="card" data-card-index="0">
+              <img src="assets/images/pub_card01_deosup.jpg"
+                class="card-img" alt="더숲 하이브리드 웹앱">
               <div class="card-num">
                 <p>project</p>
                 <h3>01</h3>
@@ -395,6 +395,8 @@
                     팀 프로젝트
                   </span>
                   <span class="badge">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <i class="fa-solid fa-desktop"></i>
                     모바일웹
                   </span>
                 </div>
@@ -402,14 +404,27 @@
                 <div class="links">
                   <a href="https://github.com/junes-lie/deosup"
                     target="_blank"
-                    class="btn-r">code</a>
-                  <a href="https://junes-lie.github.io/deosup" 
-                    target="_blank"
-                    class="btn-r point">visit site</a>
+                    class="btn-r">
+                    code
+                  </a>
+                  <a href="javascript:void(0)"
+                    title="모바일로 보기"
+                    class="btn-r point"
+                    onclick="window.open('https://junes-lie.github.io/deosup', 'popup-mobile', 'width=375, height=667, left=200, top=100')">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                  </a>
+                  <a href="javascript:void(0)"
+                    title="데스크탑으로 보기"
+                    class="btn-r point"
+                    onclick="window.open('https://junes-lie.github.io/deosup', 'popup-pc', 'width=1920, height=1024')">
+                    <i class="fa-solid fa-desktop"></i>
+                  </a>
                 </div>
               </div>
             </li>
-            <li class="card" data-index="1">
+            <li class="card" data-card-index="1">
+              <img src="assets/images/pub_card02_arthub.jpg"
+                class="card-img" alt="아트허브 반응형">
               <div class="card-num">
                 <p>project</p>
                 <h3>02</h3>
@@ -421,6 +436,9 @@
                     팀 프로젝트
                   </span>
                   <span class="badge">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <i class="fa-solid fa-tablet-screen-button"></i>
+                    <i class="fa-solid fa-desktop"></i>
                     반응형
                   </span>
                 </div>
@@ -428,14 +446,33 @@
                 <div class="links">
                   <a href="https://github.com/junes-lie/group-C"
                     target="_blank"
-                    class="btn-r">code</a>
-                  <a href="https://junes-lie.github.io/group-C"
-                    target="_blank"
-                    class="btn-r point">visit site</a>
+                    class="btn-r">
+                    code
+                  </a>
+                  <a href="javascript:void(0)"
+                    title="모바일로 보기"
+                    class="btn-r point"
+                    onclick="window.open('https://junes-lie.github.io/group-C', 'popup-mobile', 'width=375, height=667, left=200, top=100')">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                  </a>
+                  <a href="javascript:void(0)"
+                    title="태블릿으로 보기"
+                    class="btn-r point"
+                    onclick="window.open('https://junes-lie.github.io/group-C', 'popup-tablet', 'width=820, height=1024, left=100')">
+                    <i class="fa-solid fa-tablet-screen-button"></i>
+                  </a>
+                  <a href="javascript:void(0)"
+                    title="데스크탑으로 보기"
+                    class="btn-r point"
+                    onclick="window.open('https://junes-lie.github.io/group-C', 'popup-pc', 'width=1920, height=1024')">
+                    <i class="fa-solid fa-desktop"></i>
+                  </a>
                 </div>
               </div>
             </li>
-            <li class="card" data-index="2">
+            <li class="card" data-card-index="2">
+              <img src="assets/images/pub_card03_wicked.jpg"
+                class="card-img" alt="뮤지컬 위키드 원페이지">
               <div class="card-num">
                 <p>project</p>
                 <h3>03</h3>
@@ -447,6 +484,7 @@
                     개인 프로젝트
                   </span>
                   <span class="badge">
+                    <i class="fa-solid fa-desktop"></i>
                     웹
                   </span>
                 </div>
@@ -454,10 +492,15 @@
                 <div class="links">
                   <a href="https://github.com/junes-lie/Wicked"
                     target="_blank"
-                    class="btn-r">code</a>
-                  <a href="https://junes-lie.github.io/Wicked" 
-                    target="_blank"
-                    class="btn-r point">visit site</a>
+                    class="btn-r">
+                    code
+                  </a>
+                  <a href="javascript:void(0)"
+                    title="데스크탑으로 보기"
+                    class="btn-r point"
+                    onclick="window.open('https://junes-lie.github.io/Wicked', 'popup-pc', 'width=1920, height=1024')">
+                    <i class="fa-solid fa-desktop"></i>
+                  </a>
                 </div>
               </div>
             </li>
@@ -474,7 +517,115 @@
     <section id="uxui" class="s4" data-full-move="true">
       <div class="container">
         <h3 class="headline">I design</h3>
-        <img src="https://picsum.photos/1240/874?random=1" alt="" >
+        <div class="content-wrap">
+          <ul class="gallery">
+            <li class="gallery-item card" data-gallery-index="0">
+              <img src="assets/images/uxui_gal01_pizzahut.jpg" alt="피자헛">
+              <div class="card-desc">
+                <div class="badges">
+                  <span class="badge">
+                    <i class="fa-solid fa-user"></i>
+                    개인 프로젝트
+                  </span>
+                  <span class="badge">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    앱
+                  </span>
+                </div>
+                <h5>피자헛</h5>
+                <div class="links">
+                  <a href="#" target="_blank">
+                    view details
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="gallery-item card" data-gallery-index="1">
+              <img src="assets/images/uxui_gal02_touslesjours.jpg" alt="뚜레주르">
+              <div class="card-desc">
+                <div class="badges">
+                  <span class="badge">
+                    <i class="fa-solid fa-user"></i>
+                    개인 프로젝트
+                  </span>
+                  <span class="badge">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    앱
+                  </span>
+                </div>
+                <h5>뚜레주르</h5>
+                <div class="links">
+                  <a href="#" target="_blank">
+                    view details
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="gallery-item card" data-gallery-index="2">
+              <img src="assets/images/uxui_gal03_osulloc.jpg" alt="오설록">
+              <div class="card-desc">
+                <div class="badges">
+                  <span class="badge">
+                    <i class="fa-solid fa-user"></i>
+                    개인 프로젝트
+                  </span>
+                  <span class="badge">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    앱
+                  </span>
+                </div>
+                <h5>오설록</h5>
+                <div class="links">
+                  <a href="#" target="_blank">
+                    view details
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="gallery-item card" data-gallery-index="3">
+              <img src="assets/images/uxui_gal04_cannon.jpg" alt="캐논">
+              <div class="card-desc">
+                <div class="badges">
+                  <span class="badge">
+                    <i class="fa-solid fa-user"></i>
+                    개인 프로젝트
+                  </span>
+                  <span class="badge">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    앱
+                  </span>
+                </div>
+                <h5>캐논</h5>
+                <div class="links">
+                  <a href="#" target="_blank">
+                    view details
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="gallery-item card" data-gallery-index="4">
+              <img src="assets/images/uxui_gal05_soulnmedia.jpg" alt="헤드폰">
+              <div class="card-desc">
+                <div class="badges">
+                  <span class="badge">
+                    <i class="fa-solid fa-user"></i>
+                    개인 프로젝트
+                  </span>
+                  <span class="badge">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    앱
+                  </span>
+                </div>
+                <h5>헤드폰</h5>
+                <div class="links">
+                  <a href="#" target="_blank">
+                    view details
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
       
     </section>

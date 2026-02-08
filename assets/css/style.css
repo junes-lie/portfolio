@@ -107,7 +107,7 @@ h2 {
 }
 
 h3 {
-  font-size: clamp(2.4rem, 1.015rem + 3.846vw, 6.4rem);
+  font-size: clamp(3.2rem, 2.092rem + 3.077vw, 6.4rem);
 }
 
 h3.headline {
@@ -640,7 +640,7 @@ button {
   font-family: "YUniverse-B";
   color: #fff;
   opacity: 0.7;
-  font-size: clamp(2.4rem, 1.015rem + 3.846vw, 6.4rem);
+  font-size: clamp(3.2rem, 2.092rem + 3.077vw, 6.4rem);
   transform-origin: center center;
   animation: rotate-y-180 5s infinite ease-in-out;
 }
@@ -933,23 +933,15 @@ button {
 #layout #publishing .container .content-wrap .cards .card::after {
   content: none;
 }
-#layout #publishing .container .content-wrap .cards .card[data-index="0"] {
-  /* 아이폰 XR */
-  background-image: url(../images/deosup.png);
-  background-position: center top;
-  background-size: cover;
-}
-#layout #publishing .container .content-wrap .cards .card[data-index="1"] {
-  /* iPhone 14 Pro Max */
-  background-image: url(../images/arthub.png);
-  background-position: center top;
-  background-size: cover;
-}
-#layout #publishing .container .content-wrap .cards .card[data-index="2"] {
-  /* pc */
-  background-image: url(../images/wicked.png);
-  background-position: center top;
-  background-size: cover;
+#layout #publishing .container .content-wrap .cards .card .card-img {
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  object-position: center top;
 }
 #layout #publishing .container .content-wrap .cards .card .card-num {
   color: #fff;
@@ -962,6 +954,7 @@ button {
 }
 #layout #publishing .container .content-wrap .cards .card .card-num p {
   color: var(--point-color);
+  font-size: clamp(1rem, 0.792rem + 0.577vw, 1.6rem);
   font-weight: 900;
   text-transform: uppercase;
 }
@@ -999,8 +992,10 @@ button {
 #layout #publishing .container .content-wrap .cards .card .card-desc .links {
   display: flex;
   gap: 2em;
-  text-transform: capitalize;
   margin-top: 2em;
+}
+#layout #publishing .container .content-wrap .cards .card .card-desc .links a:first-of-type {
+  text-transform: capitalize;
 }
 #layout #publishing .container .content-wrap .indicators {
   display: flex;
@@ -1043,4 +1038,7 @@ button {
 #layout #publishing .container .content-wrap .indicators .indicator.active::after {
   background: rgba(var(--point-color-rgb), 0.7);
   filter: blur(1.2rem);
+}
+#layout #uxui {
+  border: 1px solid #000;
 }
