@@ -2,6 +2,8 @@
 
 const navTriggers = (isLandscape) => {
   const sections = gsap.utils.toArray('#layout section');
+  // const nav = gsap.utils.toArray('.navigation');
+  const nav = document.querySelector('.navigation');
   const navLis = gsap.utils.toArray('.navigation li');
   
   const xValue = remap(30, 50);
@@ -48,6 +50,17 @@ const navTriggers = (isLandscape) => {
     end: 'bottom bottom',
     animation: gsap.from('.progress', progressTween),
     scrub: true,
+  });
+
+  const pubStart = isLandscape ? "top center" : "top 0%";
+  const pubEnd = isLandscape ? "bottom center" : "bottom 0%";
+
+  ScrollTrigger.create({
+    trigger: "#publishing",
+    start: pubStart,
+    end: pubEnd,
+    toggleClass: { targets: nav, className: "is-diff" },
+    // markers: true,
   });
 }
 

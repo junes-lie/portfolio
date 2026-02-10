@@ -82,6 +82,12 @@
     bottom: calc(100vh - $p-section-y-p + 1em);
   }
 
+  &.is-diff{
+    span{
+      color: #fff;
+    }
+  }
+
   ul{
     display: flex;
     flex-direction: column;

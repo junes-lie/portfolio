@@ -383,7 +383,7 @@
         content: '';
         position: absolute;
         @include fill-parent;
-        // background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.3);
         backdrop-filter: blur(0.5rem);
         // z-index: 1;
       }
@@ -398,8 +398,9 @@
 
       .headline{
         z-index: 10;
-        color: #888;
-        mix-blend-mode: difference;
+        // color: #888;
+        // mix-blend-mode: difference;
+        @include difference;
       }
 
       .content-wrap{
