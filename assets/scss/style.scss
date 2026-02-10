@@ -389,8 +389,14 @@
           position: relative;
 
           .card{
-            position: absolute;
-            // position: relative;
+            @include glass;
+            // position: absolute;
+            position: relative;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            // justify-content: flex-start;
 
             @include fill-parent;
             aspect-ratio: 2/3;
@@ -402,32 +408,32 @@
             overflow: hidden;
             
 
-            &::before{
-              content: '';
-              @include glass;
-              position: absolute;
-              @include fill-parent;
-              top: 0;
-              left: -0.1em; /* 왜 생기는 거?? */
-              backdrop-filter: none;
-              background: none;
-              border-radius: inherit;
-              pointer-events: none;
-              z-index: 10;
-            }
+            // &::before{
+            //   content: '';
+            //   @include glass;
+            //   position: absolute;
+            //   @include fill-parent;
+            //   top: 0;
+            //   left: -0.1em; /* 왜 생기는 거?? */
+            //   backdrop-filter: none;
+            //   background: none;
+            //   border-radius: inherit;
+            //   pointer-events: none;
+            //   z-index: 10;
+            // }
 
             &::after{
               content: none;
             }
 
-            .card-img{
-              position: absolute;
-              @include fill-parent;
-              left: 0;
-              top: 0;
-              object-fit: cover;
-              object-position: center top;
-            }
+            // .card-img{
+            //   position: absolute;
+            //   @include fill-parent;
+            //   left: 0;
+            //   top: 0;
+            //   object-fit: cover;
+            //   object-position: center top;
+            // }
 
             .card-num{
               // font-family: 'YUniverse-B';
@@ -451,25 +457,37 @@
             }
 
             .card-desc{
-              position: absolute;
-              width: 100%;
-              left: 0;
-              bottom: 0;
-              padding: $space-md $space-lg;
-              height: auto;
+              // @include glass;
+              // position: absolute;
+              // width: 100%;
+              // left: 0;
+              // bottom: 0;
+              // padding: $space-md $space-lg;
+              // height: auto;
               // color: rgba(51, 51, 51, 0.8);
               // mix-blend-mode: difference;
-              background: rgba(255, 255, 255, 0.3);
-              backdrop-filter: blur(1.5rem) saturate(180%);
+              // background: rgba(255, 255, 255, 0.3);
+              // backdrop-filter: blur(1.5rem) saturate(180%);
+              // border-radius: $radius-md;
+              // border-radius: inherit;
 
-              z-index: 5;
+              // z-index: 5;
 
-              .badges{
+              // &::after{
+              //   content: none;
+              // }
+
+              h5{
+                margin: $space-xs 0;
+              }
+
+              .tags{
 
                 display: flex;
                 gap: $space-sm;
+                margin-bottom: $space-md;
 
-                .badge{
+                .tag{
                   // display: inline;
                   font-size: $font-caption;
                   border: 0.5px solid rgba(255, 255, 255, 0.3);
@@ -483,18 +501,23 @@
                 }
               }
 
-              h5{
-                margin-top: $space-xs;
-              }
+            }
 
-              .links{
-                display: flex;
-                gap: $space-md;
-                margin-top: $space-md;
+            .links{
+              display: flex;
+              flex-direction: column;
+              gap: $space-md;
+              // justify-content: stretch;
+              // align-items: stretch;
+              width: 100%;
+              
+              margin-top: $space-md;
 
-                a:first-of-type{
-                  text-transform: capitalize;
-                }
+              a:first-of-type{
+                text-transform: capitalize;
+                
+                // align-self: stretch;
+                // justify-self: stretch;
               }
             }
 
