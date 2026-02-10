@@ -373,8 +373,34 @@
   #publishing{
     // border: 1px solid #000;
     // background: var(--bg-s3);
+    .section-bg{
+      position: absolute;
+      @include fill-parent;
+      background-size: cover;
+      background-position: top;
+
+      &::before{
+        content: '';
+        position: absolute;
+        @include fill-parent;
+        // background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(0.5rem);
+        // z-index: 1;
+      }
+      // .card-img{
+      //   // z-index: 0;
+      // }
+    }
+
     .container{
       overflow: visible;
+      // z-index: 2;
+
+      .headline{
+        z-index: 10;
+        color: #888;
+        mix-blend-mode: difference;
+      }
 
       .content-wrap{
         @include fill-parent;
@@ -390,13 +416,14 @@
 
           .card{
             @include glass;
-            // position: absolute;
-            position: relative;
+
+            position: absolute;
+            // position: relative;
             
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            // justify-content: flex-start;
+            justify-content: space-around;
 
             @include fill-parent;
             aspect-ratio: 2/3;
@@ -406,6 +433,8 @@
             padding: $space-lg;
             transition: all $trans-du ease;
             overflow: hidden;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(1.5rem) saturate(180%);
             
 
             // &::before{
@@ -426,19 +455,20 @@
               content: none;
             }
 
-            // .card-img{
+            .card-img{
             //   position: absolute;
             //   @include fill-parent;
             //   left: 0;
             //   top: 0;
             //   object-fit: cover;
             //   object-position: center top;
-            // }
+            display: none;
+            }
 
             .card-num{
               // font-family: 'YUniverse-B';
-              color: #fff;
-              mix-blend-mode: difference;
+              // color: #fff;
+              // mix-blend-mode: difference;
               display: inline-flex;
               flex-direction: column;
               align-items: center;
@@ -506,18 +536,25 @@
             .links{
               display: flex;
               flex-direction: column;
-              gap: $space-md;
-              // justify-content: stretch;
-              // align-items: stretch;
+              gap: $space-sm;
               width: 100%;
-              
               margin-top: $space-md;
+              text-transform: capitalize;
 
-              a:first-of-type{
-                text-transform: capitalize;
-                
-                // align-self: stretch;
-                // justify-self: stretch;
+              .bi-github{
+                margin-right: $space-xs;
+              }
+
+              .device{
+                display: flex;
+                width: 100%;
+                gap: $space-sm;
+
+                a{
+                  flex: 1;
+                  flex-direction: column;
+                  gap: $space-xs;
+                }
               }
             }
 
