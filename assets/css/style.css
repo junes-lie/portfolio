@@ -164,6 +164,14 @@ section {
     margin: 0 5vw;
   }
 }
+.container .content-wrap {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 img {
   margin: 0 auto;
@@ -280,7 +288,7 @@ button {
   }
 }
 
-.point {
+.btn-r.point {
   border: 0.1em solid rgba(var(--point-color-rgb), 0.3);
   border-top: 0.1em solid rgba(255, 255, 255, 0.7);
   background: linear-gradient(to bottom, rgba(var(--point-color-rgb), 0.2) 0%, rgba(var(--point-color-rgb), 0.6) 100%);
@@ -289,24 +297,39 @@ button {
   color: #fff;
   text-shadow: 0 0.1em 0.2em rgba(var(--point-color-rgb), 0.5);
 }
-.point::after {
+.btn-r.point::after {
   background: rgba(var(--point-color-rgb), 0.7);
   filter: blur(1.2rem);
 }
-.point:visited {
+.btn-r.point:visited {
   color: #fff;
 }
 @media (hover: hover) {
-  .point:hover {
+  .btn-r.point:hover {
     background: linear-gradient(to bottom, rgba(var(--point-color-rgb), 0.4) 0%, rgba(var(--point-color-rgb), 0.8) 100%);
     box-shadow: inset 0 0.1em 0.2em 0 rgba(255, 255, 255, 0.6), inset 0 0 1.5em 0 rgba(var(--point-color-rgb), 0.4), 0 0.6rem 1.5em 0 rgba(var(--point-color-rgb), 0.4), 0 0.2rem 0.8em 0 rgba(0, 0, 0, 0.1);
   }
 }
 @media (hover: none) {
-  .point:active {
+  .btn-r.point:active {
     background: linear-gradient(to bottom, rgba(var(--point-color-rgb), 0.4) 0%, rgba(var(--point-color-rgb), 0.8) 100%);
     box-shadow: inset 0 0.1em 0.2em 0 rgba(255, 255, 255, 0.6), inset 0 0 1.5em 0 rgba(var(--point-color-rgb), 0.4), 0 0.6rem 1.5em 0 rgba(var(--point-color-rgb), 0.4), 0 0.2rem 0.8em 0 rgba(0, 0, 0, 0.1);
   }
+}
+
+.tags {
+  display: flex;
+  gap: 1em;
+}
+.tags .tag {
+  font-size: clamp(1rem, 0.931rem + 0.192vw, 1.2rem);
+  border: 0.5px solid rgba(255, 255, 255, 0.3);
+  padding: 0.5em 1em;
+  border-radius: 999em;
+  background: rgba(255, 255, 255, 0.1);
+}
+.tags .tag i {
+  margin-right: 0.5em;
 }
 
 .quick-btns {
@@ -553,12 +576,6 @@ button {
   filter: blur(0rem);
 }
 #layout #intro .content-wrap {
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   display: flex;
   flex-direction: column;
   gap: 5.2em;
@@ -690,14 +707,6 @@ button {
 }
 #layout #profile .container {
   overflow: visible;
-}
-#layout #profile .container .content-wrap {
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 #layout #profile .container .content-wrap .content {
   display: flex;
@@ -887,12 +896,6 @@ button {
   mix-blend-mode: difference;
 }
 #layout #publishing .container .content-wrap {
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   display: flex;
   flex-direction: column;
   gap: 3em;
@@ -950,9 +953,6 @@ button {
 #layout #publishing .container .content-wrap .cards .card::after {
   content: none;
 }
-#layout #publishing .container .content-wrap .cards .card .card-img {
-  display: none;
-}
 #layout #publishing .container .content-wrap .cards .card .card-num {
   display: inline-flex;
   flex-direction: column;
@@ -973,19 +973,7 @@ button {
   margin: 0.5em 0;
 }
 #layout #publishing .container .content-wrap .cards .card .card-desc .tags {
-  display: flex;
-  gap: 1em;
   margin-bottom: 2em;
-}
-#layout #publishing .container .content-wrap .cards .card .card-desc .tags .tag {
-  font-size: clamp(1rem, 0.931rem + 0.192vw, 1.2rem);
-  border: 0.5px solid rgba(255, 255, 255, 0.3);
-  padding: 0.5em 1em;
-  border-radius: 999em;
-  background: rgba(255, 255, 255, 0.1);
-}
-#layout #publishing .container .content-wrap .cards .card .card-desc .tags .tag i {
-  margin-right: 0.5em;
 }
 #layout #publishing .container .content-wrap .cards .card .links {
   display: flex;
@@ -1052,4 +1040,69 @@ button {
 }
 #layout #uxui {
   border: 1px solid #000;
+}
+#layout #uxui .gallery {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+}
+#layout #uxui .gallery .gallery-item {
+  position: relative;
+  height: 100%;
+  flex: 1;
+  border-radius: 2em;
+  padding: 3em;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+#layout #uxui .gallery .gallery-item.active {
+  flex: 10;
+}
+#layout #uxui .gallery .gallery-item img {
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  object-position: center;
+}
+#layout #uxui .gallery .gallery-item .gallery-desc {
+  border: 0.1em solid rgba(255, 255, 255, 0.3);
+  border-top: 0.1em solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0.2em 0 rgb(255, 255, 255), inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(1.2rem) saturate(130%);
+  overflow: hidden;
+  position: relative;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding: 2em 3em;
+  height: auto;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(1.5rem) saturate(180%);
+  border-radius: inherit;
+}
+#layout #uxui .gallery .gallery-item .gallery-desc::after {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 35%;
+  bottom: -17.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 35%/70%;
+  filter: blur(0.7rem);
+  background: #FFF;
+  z-index: -1;
+}
+#layout #uxui .gallery .gallery-item .gallery-desc::after {
+  content: none;
 }

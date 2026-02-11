@@ -76,6 +76,11 @@ section{
   @include portrait{
     margin: 0 $p-section-x-p;
   }
+
+  .content-wrap{
+    @include fill-parent;
+    @include flex-center;
+  }
 }
 
 img{
@@ -159,7 +164,7 @@ button{
   }
 }
 
-.point{
+.btn-r.point{
   @include point;
   color: #fff;
   text-shadow: 0 0.1em 0.2em rgba(var(--point-color-rgb), 0.5);
@@ -167,8 +172,6 @@ button{
   &:visited{
     color: #fff;
   }
-
-
 
   @include hover-effect {
 
@@ -182,5 +185,22 @@ button{
       0 0.6rem 1.5em 0 rgba(var(--point-color-rgb), 0.4), 
       0 0.2rem 0.8em 0 rgba(0, 0, 0, 0.1);
 
+  }
+}
+
+.tags{
+  display: flex;
+  gap: $space-sm;
+
+  .tag{
+    font-size: $font-caption;
+    border: 0.5px solid rgba(255, 255, 255, 0.3);
+    padding: $space-xs $space-sm;
+    border-radius: $radius-max;
+    background: rgba(255, 255, 255, 0.1);
+    
+    i{
+      margin-right: $space-xs;
+    }
   }
 }
