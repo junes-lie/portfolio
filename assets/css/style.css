@@ -1060,7 +1060,7 @@ button {
   overflow: hidden;
 }
 #layout #uxui .gallery .gallery-item.active {
-  flex: 10;
+  flex: 50;
 }
 #layout #uxui .gallery .gallery-item img {
   position: absolute;
