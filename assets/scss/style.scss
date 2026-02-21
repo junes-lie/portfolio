@@ -30,10 +30,10 @@
     // background: #F0EEE9;
     // overflow: hidden;
 
-    .container{
-      position: absolute;
-      height: 80vh;
-    }
+    // .container{
+    //   position: absolute;
+    //   height: 80vh;
+    // }
 
     .bg-grad{
       // z-index: $z-s1;
@@ -45,8 +45,8 @@
     }
 
     .content-wrap{
-      // @include fill-parent;
-      // @include flex-center;
+      @include fill-parent;
+      @include flex-center;
       @include flex(column, $space-xl);
 
       @include portrait{
@@ -378,6 +378,7 @@
       @include fill-parent;
       background-size: cover;
       background-position: top;
+      transition: all $trans-du ease;
 
       &::before{
         content: '';
@@ -597,9 +598,13 @@
         padding: $space-lg;
         transition: all $trans-du ease;
         overflow: hidden;
+        // cursor: pointer;
+        filter: grayscale(80%);
+        transition: all $trans-du ease;
 
         &.active{
           flex: 50;
+          filter: grayscale(0%);
         }
 
         img{
@@ -622,11 +627,32 @@
           background: rgba(255, 255, 255, 0.3);
           backdrop-filter: blur(1.5rem) saturate(180%);
           border-radius: inherit;
+          display: flex;
+          flex-direction: column;
+          gap: $space-sm;
           
           &::after{
             content: none;
           }
 
+          // .tags{
+          //   margin-bottom: $space-sm;
+          // }
+
+          // h5{
+          //   margin-left: $space-xs;
+          // }
+
+          a{
+            // width: fit-content;
+            align-self: flex-start;
+            // margin-top: $space-sm;
+            text-transform: capitalize;
+
+            i{
+              margin-left: $space-xs;
+            }
+          }
 
 
 
