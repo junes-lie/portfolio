@@ -1,6 +1,5 @@
 const section = document.querySelector('#publishing');
 const sectionBg = section.querySelector('.section-bg');
-
 const cards = section.querySelectorAll('.card');
 const indicators = section.querySelectorAll('.indicator');
 let activeIndex = 0;

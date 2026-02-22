@@ -1055,32 +1055,28 @@ button {
 #layout #publishing .container .content-wrap .indicators .indicator.active {
   width: 5em;
 }
-#layout #uxui {
-  border: 1px solid #000;
-}
 #layout #uxui .gallery {
   margin: 0 auto;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   gap: 3em;
+}
+@media (orientation: portrait) {
+  #layout #uxui .gallery {
+    flex-direction: column;
+  }
 }
 #layout #uxui .gallery .gallery-item {
   position: relative;
-  height: 100%;
-  flex: 1;
+  flex: 1 1 0;
   border-radius: 2em;
   padding: 3em;
-  transition: all 0.3s ease;
   overflow: hidden;
-  filter: grayscale(80%);
+  filter: grayscale(1);
   transition: all 0.3s ease;
-}
-#layout #uxui .gallery .gallery-item.active {
-  flex: 50;
-  filter: grayscale(0%);
 }
 #layout #uxui .gallery .gallery-item img {
   position: absolute;
@@ -1127,14 +1123,37 @@ button {
   display: flex;
   flex-direction: column;
   gap: 1em;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+@media (orientation: portrait) {
+  #layout #uxui .gallery .gallery-item .gallery-desc {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 #layout #uxui .gallery .gallery-item .gallery-desc::after {
   content: none;
 }
-#layout #uxui .gallery .gallery-item .gallery-desc a {
-  align-self: flex-start;
+#layout #uxui .gallery .gallery-item .gallery-desc .tags {
+  flex-wrap: wrap;
+  margin-bottom: 1em;
+}
+#layout #uxui .gallery .gallery-item .gallery-desc .btn-view {
+  width: fit-content;
+  height: fit-content;
   text-transform: capitalize;
 }
-#layout #uxui .gallery .gallery-item .gallery-desc a i {
+#layout #uxui .gallery .gallery-item .gallery-desc .btn-view i {
   margin-left: 0.5em;
+}
+#layout #uxui .gallery .gallery-item.active {
+  flex: 50;
+  filter: grayscale(0);
+}
+#layout #uxui .gallery .gallery-item.active .gallery-desc {
+  transform: translateY(0);
+  opacity: 1;
 }

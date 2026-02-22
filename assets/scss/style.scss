@@ -581,31 +581,28 @@
   }
   
   #uxui{
-    // background: var(--bg-s4);
-    border: 1px solid #000;
 
     .gallery{
       @include fill-parent;
-      @include flex-center;
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
       gap: $space-lg;
 
+      @include portrait{
+        flex-direction: column;
+      }
+
       .gallery-item{
-        // border: 1px solid #000;
         position: relative;
-        height: 100%;
-        flex: 1;
+        // flex: 1;
+        flex: 1 1 0;
         border-radius: $radius-md;
         padding: $space-lg;
-        transition: all $trans-du ease;
         overflow: hidden;
         // cursor: pointer;
-        filter: grayscale(80%);
+        filter: grayscale(1);
         transition: all $trans-du ease;
-
-        &.active{
-          flex: 50;
-          filter: grayscale(0%);
-        }
 
         img{
           position: absolute;
@@ -627,41 +624,50 @@
           background: rgba(255, 255, 255, 0.3);
           backdrop-filter: blur(1.5rem) saturate(180%);
           border-radius: inherit;
-          display: flex;
-          flex-direction: column;
-          gap: $space-sm;
-          
+          @include flex(column, $space-sm);
+          transform: translateY(100%);
+          opacity: 0;
+          transition: all $trans-du ease;
+
+          @include portrait{
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+          }
+
           &::after{
             content: none;
           }
 
-          // .tags{
-          //   margin-bottom: $space-sm;
-          // }
+          .tags{
+            flex-wrap: wrap;
+            margin-bottom: $space-sm;
+          }
 
-          // h5{
-          //   margin-left: $space-xs;
-          // }
-
-          a{
-            // width: fit-content;
-            align-self: flex-start;
-            // margin-top: $space-sm;
+          .btn-view{
+            width: fit-content;
+            height: fit-content;
+            // align-self: flex-start;
             text-transform: capitalize;
-
+            // margin-top: $space-sm;
+            
             i{
               margin-left: $space-xs;
             }
           }
-
-
-
         }
 
-      }
+        &.active{
+          flex: 50;
+          filter: grayscale(0);
 
+          .gallery-desc{
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+      }
     }
-    
   }
 
   #graphic{
