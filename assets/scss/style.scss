@@ -438,34 +438,9 @@
             background: rgba(255, 255, 255, 0.3);
             backdrop-filter: blur(1.5rem) saturate(180%);
             
-
-            // &::before{
-            //   content: '';
-            //   @include glass;
-            //   position: absolute;
-            //   @include fill-parent;
-            //   top: 0;
-            //   left: -0.1em; /* 왜 생기는 거?? */
-            //   backdrop-filter: none;
-            //   background: none;
-            //   border-radius: inherit;
-            //   pointer-events: none;
-            //   z-index: 10;
-            // }
-
             &::after{
               content: none;
             }
-
-            // .card-img{
-            //   position: absolute;
-            //   @include fill-parent;
-            //   left: 0;
-            //   top: 0;
-            //   object-fit: cover;
-            //   object-position: center top;
-              // display: none;
-            // }
 
             .card-num{
               display: inline-flex;
@@ -486,47 +461,13 @@
             }
 
             .card-desc{
-              // @include glass;
-              // position: absolute;
-              // width: 100%;
-              // left: 0;
-              // bottom: 0;
-              // padding: $space-md $space-lg;
-              // height: auto;
-              // color: rgba(51, 51, 51, 0.8);
-              // mix-blend-mode: difference;
-              // background: rgba(255, 255, 255, 0.3);
-              // backdrop-filter: blur(1.5rem) saturate(180%);
-              // border-radius: $radius-md;
-              // border-radius: inherit;
-
-              // z-index: 5;
-
-              // &::after{
-              //   content: none;
-              // }
 
               h5{
                 margin: $space-xs 0;
               }
 
               .tags{
-                // display: flex;
-                // gap: $space-sm;
                 margin-bottom: $space-md;
-
-                // .tag{
-                //   // display: inline;
-                //   font-size: $font-caption;
-                //   border: 0.5px solid rgba(255, 255, 255, 0.3);
-                //   padding: $space-xs $space-sm;
-                //   border-radius: $radius-max;
-                //   background: rgba(255, 255, 255, 0.1);
-                  
-                //   i{
-                //     margin-right: $space-xs;
-                //   }
-                // }
               }
 
             }
@@ -539,7 +480,7 @@
               margin-top: $space-md;
               text-transform: capitalize;
 
-              .bi-github{
+              .fa-brands{
                 margin-right: $space-xs;
               }
 
@@ -555,7 +496,6 @@
                 }
               }
             }
-
           }
         }
 
@@ -652,7 +592,7 @@
             // margin-top: $space-sm;
             
             i{
-              margin-left: $space-xs;
+              margin-right: $space-xs;
             }
           }
         }
@@ -671,7 +611,12 @@
   }
 
   #graphic{
+
     // background: var(--bg-s5);
+    border: 1px solid #000;
+    height: 200vh;
+
+
   }
 
   #planning{
