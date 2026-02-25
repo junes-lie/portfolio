@@ -227,7 +227,7 @@
             }
 
             &::after{
-              filter: blur(12rem);
+              filter: blur(4rem);
             }
             
             .desc{
@@ -615,6 +615,65 @@
     // background: var(--bg-s5);
     border: 1px solid #000;
     height: 200vh;
+
+    .grid{
+      border: 1px solid #000;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: $space-xl;
+
+      .thumb{
+        // border: 1px solid #000;
+        aspect-ratio: 1/1;
+        border-radius: $radius-md;
+        overflow: hidden;
+        
+
+        .thumb-inner{
+          @include fill-parent;
+          position: relative;
+          transform-style: preserve-3d;
+          transition: all $trans-du ease;
+
+          &>div{
+            position: absolute;
+            @include fill-parent;
+            @include flex-center;
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+          }
+
+          .front{
+
+            img{
+              object-fit: cover;
+              object-position: center;
+            }
+          }
+          
+          .back{
+            @include glass;
+            padding: $space-lg;
+
+            &::after{
+              filter: blur(10rem);
+            }
+
+            h5{
+              text-align: center;
+              transform: translateZ(1rem);
+            }
+          }
+
+        }
+
+
+      }
+
+
+
+    }
 
 
   }
