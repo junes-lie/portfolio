@@ -11,6 +11,12 @@
   100% { transform: rotateY(180deg); }
 }
 
+@keyframes spin {
+  // from { transform: translate(-50%, -50%) rotate(0deg); }
+  // to { transform: translate(-50%, -50%) rotate(360deg); }
+
+  100% { transform: rotate(360deg); }
+}
 // @keyframes auto-flip-loop {
 //   0%, 45% { transform: rotateY(0deg); }   /* 0~2.25초: 앞면 유지 */
 //   50%, 95% { transform: rotateY(180deg); } /* 2.5~4.75초: 뒷면 유지 */

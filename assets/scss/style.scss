@@ -624,17 +624,38 @@
       gap: $space-xl;
 
       .thumb{
-        // border: 1px solid #000;
+        // border: 1px solid red;
         aspect-ratio: 1/1;
-        border-radius: $radius-md;
+        border-radius: calc($radius-md) + 0.2em;
         overflow: hidden;
+        position: relative;
+        @include flex-center;
+        padding: 0.2em;
+        
+
+        &::before{
+          content: '';
+          position: absolute;
+          width: 140%;
+          height: 140%;
+          background: conic-gradient(
+            from 45deg,
+            transparent 75%,
+            var(--point-color),
+            transparent 100%
+          );
+          animation: spin 4s linear infinite;
+        }
         
 
         .thumb-inner{
           @include fill-parent;
           position: relative;
+          border-radius: $radius-md;
+          overflow: hidden;
           transform-style: preserve-3d;
           transition: all $trans-du ease;
+          z-index: 1;
 
           &>div{
             position: absolute;
@@ -642,10 +663,11 @@
             @include flex-center;
             transform-style: preserve-3d;
             backface-visibility: hidden;
+            border-radius: inherit;
           }
 
           .front{
-
+            
             img{
               object-fit: cover;
               object-position: center;
