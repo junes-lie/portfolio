@@ -3,13 +3,13 @@
 const gridContainer = document.querySelector("#graphic .container");
 const thumbs = gridContainer.querySelectorAll(".thumb");
 
-const getAxisByColorIndex = (index) => {
+const getAxisByIndex = (index) => {
   return (index % 2 === 0) ? "1, 1, 0" : "1, -1, 0";
 };
 
 thumbs.forEach((card, i) => {
   const back = card.querySelector('.back');
-  const axis = getAxisByColorIndex(i);
+  const axis = getAxisByIndex(i);
   // 뒷면 초기 보정: 축 방향에 따라 뒤집혔을 때 똑바로 보이도록 설정
   back.style.transform = `rotate3d(${axis}, 180deg)`;
 });
@@ -47,7 +47,7 @@ thumbs.forEach((card, i) => {
 
 thumbs.forEach((card, i) => {
   const inner = card.querySelector('.thumb-inner');
-  const axis = getAxisByColorIndex(i); // 인덱스 기반으로 축 정보 획득
+  const axis = getAxisByIndex(i); // 인덱스 기반으로 축 정보 획득
   const flipState = { angle: 0 };
 
   card.addEventListener('mouseenter', () => {

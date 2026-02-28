@@ -627,9 +627,15 @@
 
       &.is-aligned{
         .grid{
-          .thumb::before{
-            opacity: 1;
-            animation: spin 4s linear infinite;
+          .thumb{
+            .thumb-inner{
+              .clip{
+                .border{
+                  opacity: 1;
+                  animation: spin 4s linear infinite;
+                }
+              }
+            }
           }
         }
       } 
@@ -646,61 +652,94 @@
         }
 
         .thumb{
-          // border: 1px solid red;
           aspect-ratio: 1/1;
-          border-radius: calc($radius-md) + 0.2em;
-          overflow: hidden;
-          position: relative;
-          @include flex-center;
-          padding: 0.2em;
-          
 
-          &::before{
-            content: '';
-            position: absolute;
-            width: 140%;
-            height: 140%;
-            background: conic-gradient(
-              from 45deg,
-              transparent 75%,
-              var(--point-color),
-              transparent 100%
-            );
-            animation: spin 4s linear infinite;
-            opacity: 0;
-            transition: all $trans-du ease;
-          }
           
-
+          // position: relative;
+          // @include flex-center;
+          
+          perspective: 100rem;
+          
           .thumb-inner{
+            // border: 1px solid #000;
             @include fill-parent;
+            @include flex-center;
             position: relative;
-            border-radius: $radius-md;
-            overflow: hidden;
+            border-radius: calc($radius-md) + 0.2em;
             transform-style: preserve-3d;
-            transition: all $trans-du ease;
+            transition: all 4s ease;
             z-index: 1;
+            
+            &:hover, &:focus{
+              transform: rotateY(180deg);
+            }
 
-            &>div{
-              position: absolute;
+            .clip{
               @include fill-parent;
               @include flex-center;
-              border-radius: inherit;
+              position: absolute;
+              border-radius: calc($radius-md) + 0.2em;
+              overflow: hidden;
+              padding: 0.2em;
+              // -webkit-mask: 
+              //   linear-gradient(#fff 0 0) content-box, 
+              //   linear-gradient(#fff 0 0);
+              // -webkit-mask-composite: xor;
+              mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+              mask-composite: exclude;
+              transform: translateZ(0);
+              z-index: 0;
+
+              .border{
+                position: absolute;
+                width: 140%;
+                height: 140%;
+                background: conic-gradient(
+                  from 45deg,
+                  transparent 75%,
+                  var(--point-color),
+                  transparent 100%
+                );
+                animation: spin 4s linear infinite;
+                opacity: 0;
+                transition: all $trans-du ease;
+              }
+            }
+
+            &>div:not(.clip) {
+              position: absolute;
+              // @include fill-parent;
+              inset: 0.2em;
+              @include flex-center;
+              border-radius: calc($radius-md);
               transform-style: preserve-3d;
               backface-visibility: hidden;
             }
 
             .front{
+              z-index: 2;
               
               img{
+                border-radius: calc($radius-md);
                 object-fit: cover;
                 object-position: center;
               }
             }
             
             .back{
-              @include glass;
+
+              &::before{
+                content: '';
+                @include glass;
+                position: absolute;
+                inset: 0;
+                border-radius: calc($radius-md);
+              }
               padding: $space-lg;
+              backface-visibility: hidden;
+              transform-style: preserve-3d;
+              transform: rotateY(180deg);
+              z-index: 1;
 
               &::after{
                 filter: blur(10rem);
@@ -708,7 +747,7 @@
 
               h5{
                 text-align: center;
-                transform: translateZ(1rem);
+                transform: translateZ(2rem);
               }
             }
 

@@ -1174,7 +1174,7 @@ button {
 #layout #graphic .container .content-wrap {
   display: block;
 }
-#layout #graphic .container.is-aligned .grid .thumb::before {
+#layout #graphic .container.is-aligned .grid .thumb .thumb-inner .clip .border {
   opacity: 1;
   animation: spin 4s linear infinite;
 }
@@ -1192,16 +1192,41 @@ button {
 }
 #layout #graphic .container .grid .thumb {
   aspect-ratio: 1/1;
-  border-radius: 2.2em;
-  overflow: hidden;
-  position: relative;
+  perspective: 100rem;
+}
+#layout #graphic .container .grid .thumb .thumb-inner {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.2em;
+  position: relative;
+  border-radius: 2.2em;
+  transform-style: preserve-3d;
+  transition: all 4s ease;
+  z-index: 1;
 }
-#layout #graphic .container .grid .thumb::before {
-  content: "";
+#layout #graphic .container .grid .thumb .thumb-inner:hover, #layout #graphic .container .grid .thumb .thumb-inner:focus {
+  transform: rotateY(180deg);
+}
+#layout #graphic .container .grid .thumb .thumb-inner .clip {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border-radius: 2.2em;
+  overflow: hidden;
+  padding: 0.2em;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  transform: translateZ(0);
+  z-index: 0;
+}
+#layout #graphic .container .grid .thumb .thumb-inner .clip .border {
   position: absolute;
   width: 140%;
   height: 140%;
@@ -1210,34 +1235,26 @@ button {
   opacity: 0;
   transition: all 0.3s ease;
 }
-#layout #graphic .container .grid .thumb .thumb-inner {
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  border-radius: 2em;
-  overflow: hidden;
-  transform-style: preserve-3d;
-  transition: all 0.3s ease;
-  z-index: 1;
-}
-#layout #graphic .container .grid .thumb .thumb-inner > div {
+#layout #graphic .container .grid .thumb .thumb-inner > div:not(.clip) {
   position: absolute;
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
+  inset: 0.2em;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: inherit;
+  border-radius: 2em;
   transform-style: preserve-3d;
   backface-visibility: hidden;
 }
+#layout #graphic .container .grid .thumb .thumb-inner .front {
+  z-index: 2;
+}
 #layout #graphic .container .grid .thumb .thumb-inner .front img {
+  border-radius: 2em;
   object-fit: cover;
   object-position: center;
 }
-#layout #graphic .container .grid .thumb .thumb-inner .back {
+#layout #graphic .container .grid .thumb .thumb-inner .back::before {
+  content: "";
   border: 0.1em solid rgba(255, 255, 255, 0.3);
   border-top: 0.1em solid rgba(255, 255, 255, 0.7);
   background: rgba(255, 255, 255, 0.1);
@@ -1246,7 +1263,7 @@ button {
   overflow: hidden;
   position: relative;
 }
-#layout #graphic .container .grid .thumb .thumb-inner .back::after {
+#layout #graphic .container .grid .thumb .thumb-inner .back::before::after {
   content: "";
   position: absolute;
   width: 70%;
@@ -1259,13 +1276,22 @@ button {
   background: #FFF;
   z-index: -1;
 }
+#layout #graphic .container .grid .thumb .thumb-inner .back::before {
+  position: absolute;
+  inset: 0;
+  border-radius: 2em;
+}
 #layout #graphic .container .grid .thumb .thumb-inner .back {
   padding: 3em;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
+  z-index: 1;
 }
 #layout #graphic .container .grid .thumb .thumb-inner .back::after {
   filter: blur(10rem);
 }
 #layout #graphic .container .grid .thumb .thumb-inner .back h5 {
   text-align: center;
-  transform: translateZ(1rem);
+  transform: translateZ(2rem);
 }
