@@ -48,6 +48,8 @@ $z-s1: 900;
 $trans-du: 0.3s;
 $ani-du: 1s;
 
+$border-th: 0.3em;
+
 
 @function clamp-calc($min, $max, $vp-min: $mobile, $vp-max: $pc) {
   $min-w: math.div($vp-min, 1px);

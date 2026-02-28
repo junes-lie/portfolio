@@ -641,54 +641,50 @@
       } 
       
       .grid{
-        border: 1px solid #000;
+        // border: 1px solid #000;
         width: 100%;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: $space-xl;
+        // gap: $space-xl;
+        gap: $p-xl;
 
         @include portrait{
           grid-template-columns: repeat(2, 1fr);
+          gap: $p-lg;
         }
 
         .thumb{
           aspect-ratio: 1/1;
+          cursor: pointer;
 
-          
-          // position: relative;
-          // @include flex-center;
-          
-          perspective: 100rem;
+          &:hover .thumb-inner, 
+          &:focus .thumb-inner{
+            transform: rotate3d(1, 1, 0, 180deg);
+          }
           
           .thumb-inner{
             // border: 1px solid #000;
             @include fill-parent;
             @include flex-center;
             position: relative;
-            border-radius: calc($radius-md) + 0.2em;
+            border-radius: calc($radius-md) + $border-th;
             transform-style: preserve-3d;
-            transition: all 4s ease;
-            z-index: 1;
-            
-            &:hover, &:focus{
-              transform: rotateY(180deg);
-            }
+            transition: all $trans-du ease;
+            // transition: all 4s ease;
 
             .clip{
               @include fill-parent;
               @include flex-center;
               position: absolute;
-              border-radius: calc($radius-md) + 0.2em;
+              border-radius: calc($radius-md) + $border-th;
               overflow: hidden;
-              padding: 0.2em;
+              padding: $border-th;
               // -webkit-mask: 
               //   linear-gradient(#fff 0 0) content-box, 
               //   linear-gradient(#fff 0 0);
               // -webkit-mask-composite: xor;
               mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
               mask-composite: exclude;
-              transform: translateZ(0);
-              z-index: 0;
 
               .border{
                 position: absolute;
@@ -709,7 +705,7 @@
             &>div:not(.clip) {
               position: absolute;
               // @include fill-parent;
-              inset: 0.2em;
+              inset: $border-th;
               @include flex-center;
               border-radius: calc($radius-md);
               transform-style: preserve-3d;
@@ -717,7 +713,6 @@
             }
 
             .front{
-              z-index: 2;
               
               img{
                 border-radius: calc($radius-md);
@@ -728,18 +723,13 @@
             
             .back{
 
-              &::before{
-                content: '';
-                @include glass;
-                position: absolute;
-                inset: 0;
-                border-radius: calc($radius-md);
-              }
+              @include glass;
+              position: absolute;
+              inset: 0;
+              border-radius: calc($radius-md);
+
               padding: $space-lg;
-              backface-visibility: hidden;
-              transform-style: preserve-3d;
-              transform: rotateY(180deg);
-              z-index: 1;
+              transform: rotate3d(1, 1, 0, 180deg);
 
               &::after{
                 filter: blur(10rem);
@@ -747,7 +737,6 @@
 
               h5{
                 text-align: center;
-                transform: translateZ(2rem);
               }
             }
 
