@@ -113,6 +113,7 @@ h3 {
 h3.headline {
   text-transform: capitalize;
   margin-bottom: 0.5em;
+  z-index: 100;
 }
 @media (orientation: portrait) {
   h3.headline {
@@ -1164,12 +1165,10 @@ button {
 }
 #layout #graphic {
   border: 1px solid #000;
-  height: 200vh;
 }
-@media (orientation: portrait) {
-  #layout #graphic {
-    height: 400vh;
-  }
+#layout #graphic .container {
+  overflow: visible;
+  justify-content: flex-start;
 }
 #layout #graphic .container .content-wrap {
   display: block;
@@ -1188,6 +1187,7 @@ button {
   #layout #graphic .container .grid {
     grid-template-columns: repeat(2, 1fr);
     gap: clamp(2.4rem, 1.871rem + 1.471vw, 3rem);
+    padding-bottom: 10vh;
   }
 }
 #layout #graphic .container .grid .thumb {

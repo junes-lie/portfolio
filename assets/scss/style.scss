@@ -614,13 +614,16 @@
 
     // background: var(--bg-s5);
     border: 1px solid #000;
-    height: 200vh;
+    // height: 200vh;
 
     @include portrait{
-      height: 400vh;  
+      // height: 400vh; 
     }
 
     .container{
+      overflow: visible;
+      justify-content: flex-start;
+
       .content-wrap{
         display: block;
       }
@@ -651,6 +654,7 @@
         @include portrait{
           grid-template-columns: repeat(2, 1fr);
           gap: $p-lg;
+          padding-bottom: $p-section-y-p;
         }
 
         .thumb{
