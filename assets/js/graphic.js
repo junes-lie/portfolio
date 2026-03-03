@@ -28,10 +28,23 @@
     const entryDist = isPortrait ? vh * 1.0 : vh * 0.5;
     const stayDist = isPortrait ? vh * 2.0 : vh * 1.0;
     const totalDist = entryDist * 2 + stayDist;
+    
+
+
+    // console.log(window.innerHeight); 
+    // console.log(entryDist);
+    // console.log(stayDist);
+    // console.log(totalDist);
+
+    // console.log(gridElement.offsetTop); //148
+    // console.log(gridElement.offsetHeight); //762
+    // console.log(gridElement.scrollHeight); //762
+    // console.log(scrollDist); //243
 
     const mainTl = gsap.timeline({
       scrollTrigger: {
         trigger: "#graphic",
+        // start: "top 20%",
         start: "top top",
         end: `+=${totalDist}`,
         scrub: 1.5,
@@ -65,42 +78,18 @@
       const yDir = (row + col) % 2 === 0 ? 1 : -1;
       const exitDistance = (yDir === 1) ? "-=120vh" : "+=120vh";
 
-      gsap.fromTo(card, 
-        { 
-          y: yDir * 120 + "vh", // 화면 밖 시작
-          opacity: 0, 
-          scale: 0.4 
-        },
-        { 
-          y: yDir * 40 + "vh",  // 상단 도달 시 40vh 지점까지 도착
-          opacity: 0.6,
-          scale: 0.7,
-          scrollTrigger: {
-            trigger: "#graphic",
-            start: "top bottom", // 섹션이 바닥에서 보일 때부터
-            end: "top top",      // 상단에 닿을 때까지
-            scrub: 1,
-            markers: true,
-          }
-        }
-      );
-
-
-
       mainTl.fromTo(card, 
         { 
-          // start: "top 20%",
-          // markers: true,
           // y: yDir * 600,
           y: yDir * 120 + "vh",
-          // z: 1000, 
+          z: 1000, 
           opacity: 0,
           scale: 0.3,
         },
         { 
           y: 0, 
           x: 0,
-          // z: 0, 
+          z: 0, 
           opacity: 1, 
           scale: 1,
           duration: entryDist, 
@@ -110,7 +99,7 @@
       .to(card, {
         // y: yDir * -600, 
         y: exitDistance,
-        // z: -1000, 
+        z: -1000, 
         opacity: 0,
         scale: 0.3,
         duration: entryDist, 
