@@ -10,7 +10,7 @@ circles.forEach(circle => {
   gsap.to(circle, {
     strokeDashoffset: offset,
     duration: 1.5,
-    ease: "power2.out",
+    ease: "power1.out",
     
     scrollTrigger: {
       trigger: "#profile",
