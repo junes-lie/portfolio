@@ -13,8 +13,7 @@
   });
 
   let mm = gsap.matchMedia();
-  // const isPortrait = window.matchMedia("(orientation: portrait)").matches;
-  // return isPortrait ? card.dataset.bgMo : card.dataset.bgPc;
+
   mm.add({
     isPortrait: "(orientation: portrait)",
     isLandscape: "(orientation: landscape)",
@@ -32,20 +31,11 @@
     ScrollTrigger.create({
       trigger: "#graphic",
       start: "top top",
-      end: `+=${totalDist}`,
+      end: `+=${entryDist + stayDist}`,
+      // markers: true,
       pin: true,
       anticipatePin: 1
     });
-
-    // console.log(window.innerHeight); 
-    // console.log(entryDist);
-    // console.log(stayDist);
-    // console.log(totalDist);
-
-    // console.log(gridElement.offsetTop); //148
-    // console.log(gridElement.offsetHeight); //762
-    // console.log(gridElement.scrollHeight); //762
-    // console.log(scrollDist); //243
 
     const mainTl = gsap.timeline({
       scrollTrigger: {
@@ -111,12 +101,6 @@
         ease: "expo.in"
       }, `exit+=${i * (entryDist / 25)}`);
     });
-
-    // mainTl.to(isPortrait ? gridElement : {}, {
-    //   y: -scrollDist,
-    //   duration: stayDist,
-    //   ease: "none"
-    // }, "stay");
 
     if (isPortrait) {
       mainTl.to(gridElement, {
