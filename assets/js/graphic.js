@@ -112,6 +112,8 @@
       mainTl.to({}, { duration: stayDist }, "stay");
     }
 
+    ScrollTrigger.refresh();
+
   });
 
   thumbs.forEach((card, i) => {
