@@ -29,7 +29,13 @@
     const stayDist = isPortrait ? vh * 2.0 : vh * 1.0;
     const totalDist = entryDist * 2 + stayDist;
     
-
+    ScrollTrigger.create({
+      trigger: "#graphic",
+      start: "top top",
+      end: `+=${totalDist}`,
+      pin: true,
+      anticipatePin: 1
+    });
 
     // console.log(window.innerHeight); 
     // console.log(entryDist);
@@ -44,12 +50,11 @@
     const mainTl = gsap.timeline({
       scrollTrigger: {
         trigger: "#graphic",
-        // start: "top 20%",
-        start: "top top",
+        start: "top 20%",
         end: `+=${totalDist}`,
         scrub: 1.5,
-        pin: true,
-        anticipatePin: 1,
+        // pin: true,
+        // anticipatePin: 1,
         // markers: true,
         onUpdate: (self) => {
 
