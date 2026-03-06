@@ -1170,6 +1170,10 @@ button {
   overflow: visible;
   justify-content: flex-start;
 }
+#layout #graphic .container .headline {
+  color: #fff;
+  mix-blend-mode: difference;
+}
 #layout #graphic .container .content-wrap {
   display: block;
 }
@@ -1180,7 +1184,7 @@ button {
 #layout #graphic .container .grid {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: clamp(3rem, 0.327rem + 3.481vw, 5.2rem);
 }
 @media (orientation: portrait) {

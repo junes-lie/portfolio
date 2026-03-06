@@ -19,7 +19,7 @@
     isLandscape: "(orientation: landscape)",
   }, (context)=>{
     let { isPortrait } = context.conditions;
-    const columns = isPortrait ? 2 : 4;
+    const columns = isPortrait ? 2 : 5;
     const vh = window.innerHeight;
     
     const scrollDist = gridElement.offsetTop + gridElement.offsetHeight - vh;
@@ -34,7 +34,7 @@
       end: `+=${entryDist + stayDist}`,
       // markers: true,
       pin: true,
-      anticipatePin: 1
+      anticipatePin: 1,
     });
 
     const mainTl = gsap.timeline({
@@ -48,8 +48,10 @@
         // markers: true,
         onUpdate: (self) => {
 
-          const startProgress = entryDist / totalDist;
-          const endProgress = (entryDist + stayDist) / totalDist;
+          // const startProgress = entryDist / totalDist;
+          // const endProgress = (entryDist + stayDist) / totalDist;
+          const startProgress = (entryDist * 0.8) / totalDist;
+          const endProgress = (entryDist + stayDist + entryDist * 0.2) / totalDist;
 
           if (self.progress > startProgress && self.progress < endProgress) {
             gridContainer.classList.add('is-aligned');
@@ -89,7 +91,7 @@
           scale: 1,
           duration: entryDist, 
           ease: "expo.out" 
-        }, `entry+=${i * (entryDist / 25)}`
+        }, `entry+=${i * (entryDist / 30)}`
       )
       .to(card, {
         // y: yDir * -600, 
@@ -99,7 +101,7 @@
         scale: 0.3,
         duration: entryDist, 
         ease: "expo.in"
-      }, `exit+=${i * (entryDist / 25)}`);
+      }, `exit+=${i * (entryDist / 30)}`);
     });
 
     if (isPortrait) {

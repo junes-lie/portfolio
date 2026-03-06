@@ -624,6 +624,10 @@
       overflow: visible;
       justify-content: flex-start;
 
+      .headline{
+        @include difference;
+      }
+
       .content-wrap{
         display: block;
       }
@@ -647,7 +651,7 @@
         // border: 1px solid #000;
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         // gap: $space-xl;
         gap: $p-xl;
 
