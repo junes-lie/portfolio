@@ -762,6 +762,21 @@
 
   #planning{
     // background: var(--bg-s6);
+
+    .iframe-wrapper{
+      // width: 100%;
+      height: 100%;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+
+      iframe{
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    }
+
+
   }
   
   
