@@ -1286,6 +1286,43 @@ button {
 #layout #graphic .container .grid .thumb .thumb-inner .back h5 {
   text-align: center;
 }
+#layout #planning .bg-blobs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+#layout #planning .blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  animation: blobFloat 25s infinite alternate ease-in-out;
+}
+#layout #planning .blob-1 {
+  width: 800px;
+  height: 800px;
+  background: #0047ff;
+  top: -15%;
+  right: -10%;
+}
+#layout #planning .blob-2 {
+  width: 600px;
+  height: 600px;
+  background: #ff3e00;
+  bottom: 5%;
+  left: -10%;
+}
+@keyframes blobFloat {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(80px, 40px);
+  }
+}
 #layout #planning .content-wrap {
   align-items: flex-start;
 }
@@ -1314,30 +1351,77 @@ button {
   border-top: 2px solid var(--text-color);
 }
 #layout #planning .content-wrap .process .projects .project {
-  border-bottom: 1px solid rgba(var(--text-color-rgb), 0.7);
+  border-bottom: 0.1em solid rgba(var(--point-color-rgb), 0.7);
+  position: relative;
+}
+#layout #planning .content-wrap .process .projects .project::before {
+  content: "";
+  inset: 0;
+  border: 0.1em solid rgba(var(--point-color-rgb), 0.3);
+  border-top: 0.1em solid rgba(255, 255, 255, 0.7);
+  background: linear-gradient(to bottom, rgba(var(--point-color-rgb), 0.2) 0%, rgba(var(--point-color-rgb), 0.6) 100%);
+  box-shadow: inset 0 0.1em 0.1em 0 rgba(255, 255, 255, 0.4), inset 0 0 1.5em 0 rgba(var(--point-color-rgb), 0.2), 0 1em 2.5em 0 rgba(var(--point-color-rgb), 0.2), 0 0.3em 1em 0 rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(1.5rem) saturate(180%);
+}
+#layout #planning .content-wrap .process .projects .project::before::after {
+  background: rgba(var(--point-color-rgb), 0.7);
+  filter: blur(1.2rem);
+}
+#layout #planning .content-wrap .process .projects .project::before {
+  position: absolute;
+  border: 0.1em solid rgba(var(--point-color-rgb), 0.3);
+  border-top: 0.1em solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0.2em 0 rgba(var(--point-color-rgb), 1), inset 0 0.5em 1em 0 rgba(var(--point-color-rgb), 0.5), inset 0 -0.5em 1em 0 rgba(var(--point-color-rgb), 0.5), inset 0 1em 2em 0 rgba(var(--point-color-rgb), 0.5), inset 0 -1em 2em 0 rgba(var(--point-color-rgb), 0.5), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
+  z-index: 0;
+}
+#layout #planning .content-wrap .process .projects .project > * {
+  position: relative;
+  z-index: 10;
 }
 #layout #planning .content-wrap .process .projects .project .row-btn {
   width: 100%;
-  padding: 2em 1em;
+  padding: 3em 2em 3em 0;
   background: none;
+  border: 0.1em solid rgba(255, 255, 255, 0);
   display: flex;
   justify-content: space-between;
+  align-items: center;
   cursor: pointer;
 }
-#layout #planning .content-wrap .process .projects .project .row-btn > * {
+#layout #planning .content-wrap .process .projects .project .row-btn span {
   font-size: clamp(1.4rem, 1.054rem + 0.962vw, 2.4rem);
 }
-#layout #planning .content-wrap .process .projects .project .row-btn i {
+#layout #planning .content-wrap .process .projects .project .row-btn span::before {
+  content: "";
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 100%;
+  background-color: var(--point-color);
+  margin-right: 0.5em;
+  opacity: 0;
   transition: all 0.3s ease;
 }
-#layout #planning .content-wrap .process .projects .project .row-btn.is-active i {
+#layout #planning .content-wrap .process .projects .project .row-btn:hover span::before {
+  opacity: 1;
+}
+#layout #planning .content-wrap .process .projects .project .row-btn i {
+  font-size: clamp(1.4rem, 1.054rem + 0.962vw, 2.4rem);
+  transition: all 0.3s ease;
+}
+#layout #planning .content-wrap .process .projects .project .row-btn:hover i {
   transform: rotateX(180deg);
 }
 #layout #planning .content-wrap .process .projects .project .expand {
   width: 100%;
   height: 100%;
+  padding: 5.2em;
 }
-#layout #planning .content-wrap .process .projects .project .expand iframe {
+#layout #planning .content-wrap .process .projects .project .expand .expand-inner {
+  width: 100%;
   aspect-ratio: 16/9;
+}
+#layout #planning .content-wrap .process .projects .project .expand .expand-inner iframe {
   border: none;
 }
