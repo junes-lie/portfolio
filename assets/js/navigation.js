@@ -54,13 +54,16 @@ const navTriggers = (isLandscape) => {
 
   const pubStart = isLandscape ? "top center" : "top 0%";
   const pubEnd = isLandscape ? "bottom center" : "bottom 0%";
+  const triggerSections = ["#planning", "#publishing"];
 
-  ScrollTrigger.create({
-    trigger: "#publishing",
-    start: pubStart,
-    end: pubEnd,
-    toggleClass: { targets: nav, className: "is-diff" },
-    // markers: true,
+  triggerSections.forEach((selector) => {
+    ScrollTrigger.create({
+      trigger: selector,
+      start: pubStart,
+      end: pubEnd,
+      toggleClass: { targets: nav, className: "is-diff" },
+      // markers: true,
+    });
   });
 }
 

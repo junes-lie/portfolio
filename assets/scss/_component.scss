@@ -141,6 +141,7 @@
         font-size: $font-caption;
         opacity: 0;
         pointer-events: none;
+        transition: all $trans-du ease;
 
         @include portrait{
           text-align: center;

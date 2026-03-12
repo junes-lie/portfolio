@@ -7,7 +7,9 @@
   // --bg-color-rgb: 255, 255, 255;
   // --text-color: rgba(51, 51, 51, 0.8);
   --text-color: #333;
+  --white: #fff;
   --text-color-rgb: 51, 51, 51;
+  --white-rgb: 255, 255, 255;
   --sub-text-color: rgba(var(--text-color-rgb), 0.6);
   --point-color: rgb(242, 120, 75);
   --point-color-rgb: 242, 120, 75;
@@ -96,6 +98,7 @@ $space-xl: 5.2em;
 $p-lg: clamp-calc(24, 30, $mobile, $tablet);
 $p-xl: clamp-calc(30, 52, $tablet, $pc);
 
+$radius-xs: 0.5em;
 $radius-sm: 1em;
 $radius-md: 2em;
 $radius-max: 999em;

@@ -79,7 +79,9 @@ html body input, html body button, html body textarea {
 
 :root {
   --text-color: #333;
+  --white: #fff;
   --text-color-rgb: 51, 51, 51;
+  --white-rgb: 255, 255, 255;
   --sub-text-color: rgba(var(--text-color-rgb), 0.6);
   --point-color: rgb(242, 120, 75);
   --point-color-rgb: 242, 120, 75;
@@ -166,25 +168,25 @@ section {
   }
 }
 .container .content-wrap {
-  margin: 0 auto;
   width: 100%;
   height: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 img {
-  margin: 0 auto;
   width: 100%;
   height: 100%;
+  margin: 0 auto;
   object-fit: cover;
 }
 
 svg {
-  margin: 0 auto;
   width: 100%;
   height: 100%;
+  margin: 0 auto;
 }
 
 a {
@@ -470,6 +472,7 @@ button {
   font-size: clamp(1rem, 0.931rem + 0.192vw, 1.2rem);
   opacity: 0;
   pointer-events: none;
+  transition: all 0.3s ease;
 }
 @media (orientation: portrait) {
   .navigation ul li span {
@@ -592,17 +595,13 @@ button {
 }
 #layout .bg {
   position: fixed;
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: var(--bg-grad2);
 }
 #layout .bg::before {
   content: "";
   position: fixed;
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(255, 255, 255, 0.5);
 }
 #layout #intro {
@@ -610,16 +609,14 @@ button {
 }
 #layout #intro .bg-grad {
   position: absolute;
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: var(--bg-grad);
   filter: blur(0rem);
 }
 #layout #intro .content-wrap {
-  margin: 0 auto;
   width: 100%;
   height: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -673,17 +670,17 @@ button {
 }
 #layout #intro .content-wrap .loader-wrap .possessive-wrap .logo .logo-flip {
   position: relative;
-  margin: 0 auto;
   width: 100%;
   height: 100%;
+  margin: 0 auto;
   transform-style: preserve-3d;
   transition: 0.5s;
 }
 #layout #intro .content-wrap .loader-wrap .possessive-wrap .logo .logo-flip > div {
   position: absolute;
-  margin: 0 auto;
   width: 100%;
   height: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -889,9 +886,7 @@ button {
 }
 #layout #publishing .section-bg {
   position: absolute;
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background-size: cover;
   background-position: top;
   transition: all 0.3s ease;
@@ -899,9 +894,7 @@ button {
 #layout #publishing .section-bg::before {
   content: "";
   position: absolute;
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(0.5rem);
 }
@@ -921,9 +914,9 @@ button {
   transition: all 0.3s ease;
 }
 #layout #publishing .container .content-wrap .cards {
-  margin: 0 auto;
   width: 100%;
   height: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -957,9 +950,9 @@ button {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
-  margin: 0 auto;
   width: 100%;
   height: 100%;
+  margin: 0 auto;
   aspect-ratio: 2/3;
   max-width: 40em;
   max-height: 60em;
@@ -1063,9 +1056,9 @@ button {
   width: 5em;
 }
 #layout #uxui .gallery {
-  margin: 0 auto;
   width: 100%;
   height: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: stretch;
@@ -1087,11 +1080,7 @@ button {
 }
 #layout #uxui .gallery .gallery-item img {
   position: absolute;
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
+  inset: 0;
   object-fit: cover;
   object-position: center;
 }
@@ -1202,9 +1191,9 @@ button {
   transform: rotate3d(1, 1, 0, 180deg);
 }
 #layout #graphic .container .grid .thumb .thumb-inner {
-  margin: 0 auto;
   width: 100%;
   height: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1214,9 +1203,9 @@ button {
   transition: all 0.3s ease;
 }
 #layout #graphic .container .grid .thumb .thumb-inner .clip {
-  margin: 0 auto;
   width: 100%;
   height: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1286,42 +1275,10 @@ button {
 #layout #graphic .container .grid .thumb .thumb-inner .back h5 {
   text-align: center;
 }
-#layout #planning .bg-blobs {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-}
-#layout #planning .blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(100px);
-  animation: blobFloat 25s infinite alternate ease-in-out;
-}
-#layout #planning .blob-1 {
-  width: 800px;
-  height: 800px;
-  background: #0047ff;
-  top: -15%;
-  right: -10%;
-}
-#layout #planning .blob-2 {
-  width: 600px;
-  height: 600px;
-  background: #ff3e00;
-  bottom: 5%;
-  left: -10%;
-}
-@keyframes blobFloat {
-  from {
-    transform: translate(0, 0);
-  }
-  to {
-    transform: translate(80px, 40px);
-  }
+#layout #planning {
+  background: var(--text-color);
+  color: var(--white);
+  height: auto;
 }
 #layout #planning .content-wrap {
   align-items: flex-start;
@@ -1344,36 +1301,48 @@ button {
 }
 #layout #planning .content-wrap .process hgroup h4 .kor {
   font-family: "SUITE", sans-serif;
-  color: rgba(var(--text-color-rgb), 0.7);
+  color: rgba(var(--white-rgb), 0.7);
 }
 #layout #planning .content-wrap .process .projects {
   flex: 2;
-  border-top: 2px solid var(--text-color);
+  border-top: 2px solid rgba(var(--white-rgb), 1);
 }
 #layout #planning .content-wrap .process .projects .project {
-  border-bottom: 0.1em solid rgba(var(--point-color-rgb), 0.7);
+  border-bottom: 0.1em solid rgba(var(--white-rgb), 0.7);
   position: relative;
 }
 #layout #planning .content-wrap .process .projects .project::before {
   content: "";
   inset: 0;
-  border: 0.1em solid rgba(var(--point-color-rgb), 0.3);
+  border: 0.1em solid rgba(255, 255, 255, 0.3);
   border-top: 0.1em solid rgba(255, 255, 255, 0.7);
-  background: linear-gradient(to bottom, rgba(var(--point-color-rgb), 0.2) 0%, rgba(var(--point-color-rgb), 0.6) 100%);
-  box-shadow: inset 0 0.1em 0.1em 0 rgba(255, 255, 255, 0.4), inset 0 0 1.5em 0 rgba(var(--point-color-rgb), 0.2), 0 1em 2.5em 0 rgba(var(--point-color-rgb), 0.2), 0 0.3em 1em 0 rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(1.5rem) saturate(180%);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0.2em 0 rgb(255, 255, 255), inset 0 0 1em 0 rgba(255, 255, 255, 0.5), inset 0 0 2em 0 rgba(255, 255, 255, 0.5), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(1.2rem) saturate(130%);
+  overflow: hidden;
+  position: relative;
 }
 #layout #planning .content-wrap .process .projects .project::before::after {
-  background: rgba(var(--point-color-rgb), 0.7);
-  filter: blur(1.2rem);
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 35%;
+  bottom: -17.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 35%/70%;
+  filter: blur(0.7rem);
+  background: #FFF;
+  z-index: -1;
 }
 #layout #planning .content-wrap .process .projects .project::before {
   position: absolute;
-  border: 0.1em solid rgba(var(--point-color-rgb), 0.3);
-  border-top: 0.1em solid rgba(255, 255, 255, 0.7);
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 0 0.2em 0 rgba(var(--point-color-rgb), 1), inset 0 0.5em 1em 0 rgba(var(--point-color-rgb), 0.5), inset 0 -0.5em 1em 0 rgba(var(--point-color-rgb), 0.5), inset 0 1em 2em 0 rgba(var(--point-color-rgb), 0.5), inset 0 -1em 2em 0 rgba(var(--point-color-rgb), 0.5), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
+  border: none;
+  box-shadow: inset 0 0 0.2em 0 rgba(var(--white-rgb), 1), inset 0 0.5em 1em 0 rgba(var(--white-rgb), 0.5), inset 0 -0.5em 1em 0 rgba(var(--white-rgb), 0.5), inset 0 1em 2em 0 rgba(var(--white-rgb), 0.5), inset 0 -1em 2em 0 rgba(var(--white-rgb), 0.5), 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
   z-index: 0;
+  opacity: 0;
+  transition: all 0.3s ease;
 }
 #layout #planning .content-wrap .process .projects .project > * {
   position: relative;
@@ -1384,6 +1353,7 @@ button {
   padding: 3em 2em 3em 0;
   background: none;
   border: 0.1em solid rgba(255, 255, 255, 0);
+  color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1403,25 +1373,55 @@ button {
   opacity: 0;
   transition: all 0.3s ease;
 }
-#layout #planning .content-wrap .process .projects .project .row-btn:hover span::before {
-  opacity: 1;
-}
 #layout #planning .content-wrap .process .projects .project .row-btn i {
   font-size: clamp(1.4rem, 1.054rem + 0.962vw, 2.4rem);
   transition: all 0.3s ease;
 }
-#layout #planning .content-wrap .process .projects .project .row-btn:hover i {
-  transform: rotateX(180deg);
-}
 #layout #planning .content-wrap .process .projects .project .expand {
   width: 100%;
-  height: 100%;
-  padding: 5.2em;
+  height: auto;
+  overflow: hidden;
 }
 #layout #planning .content-wrap .process .projects .project .expand .expand-inner {
-  width: 100%;
+  position: relative;
   aspect-ratio: 16/9;
+  margin: 5.2em;
+  box-shadow: 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
+}
+#layout #planning .content-wrap .process .projects .project .expand .expand-inner > * {
+  position: absolute;
+}
+#layout #planning .content-wrap .process .projects .project .expand .expand-inner .scroll-guard {
+  inset: 0;
+}
+#layout #planning .content-wrap .process .projects .project .expand .expand-inner .fullscreen-btn {
+  position: absolute;
+  right: 2em;
+  top: 2em;
+  width: 3em;
+  height: 3em;
+  background: var(--white);
+  border-radius: 0.5em;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.149), 0 0 0.5px 0 rgba(0, 0, 0, 0.302);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#layout #planning .content-wrap .process .projects .project .expand .expand-inner .fullscreen-btn i {
+  font-size: clamp(1.2rem, 1.062rem + 0.385vw, 1.6rem);
 }
 #layout #planning .content-wrap .process .projects .project .expand .expand-inner iframe {
   border: none;
+}
+#layout #planning .content-wrap .process .projects .project:hover::before, #layout #planning .content-wrap .process .projects .project.is-active::before {
+  opacity: 1;
+}
+#layout #planning .content-wrap .process .projects .project:hover .row-btn span::before, #layout #planning .content-wrap .process .projects .project.is-active .row-btn span::before {
+  opacity: 1;
+}
+#layout #planning .content-wrap .process .projects .project.is-active .row-btn i {
+  transform: rotateX(180deg);
+}
+#layout #planning .content-wrap .process .projects .project.is-active .expand {
+  height: auto;
 }
