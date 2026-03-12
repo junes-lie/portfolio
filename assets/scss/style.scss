@@ -880,7 +880,6 @@
               align-items: center;
               cursor: pointer;
 
-              
               span{
                 font-size: $font-h5;
                 
@@ -897,19 +896,10 @@
                 }
               }
               
-
-              
-
-
-
-
               i{
                 font-size: $font-h5;
                 transition: all $trans-du ease;
               }
-
-
-
             }
 
             .expand{
@@ -923,7 +913,7 @@
               .expand-inner{
                 position: relative;
                 aspect-ratio: 16/9;
-                margin: $space-xl;
+                margin: $space-lg $space-xl $space-xl;
                 box-shadow: 
                   0 2rem 3em 0 rgba(255, 255, 255, 0.3), 
                   0 1rem 3em 0 rgba(0, 0, 0, 0.05);
@@ -932,15 +922,12 @@
                   position: absolute;
                 }
 
-                .scroll-guard{
-                  inset: 0;
-
+                iframe{
+                  @include fill-parent;
+                  border: none;
+                  z-index: 0;
                 }
 
-                .scroll-hint{
-
-                }
-                
                 .fullscreen-btn{
                   position: absolute;
                   right: $space-md;
@@ -953,20 +940,40 @@
                     0 1px 3px 0 rgba(0, 0, 0, 0.149), 
                     0 0 .5px 0 rgba(0, 0, 0, 0.302);
                   @include flex-center;
+                  z-index: 10;
 
                   i{
                     font-size: $font-body;
                   }
+                }
+
+                .scroll-guard{
+                  inset: 0;
+                  background: rgba(var(--text-color-rgb), 0.7);
+                  @include flex-center;
+                  z-index: 20;
+                  transition: all $trans-du ease;
+
+                  .guard-btn{
+                    font-size: $font-body;
+                  }
+
+                  .mouse-wrap{
+                    top: unset;
+                    opacity: 0;
+                  }
+
+                  // &:has(.guard-btn.is-explore){
+                  //   opacity: 0;
+                  // }
 
                   
                 }
 
-                iframe{
-                  // width: 100%;
-                  // height: 100%;
-                  // aspect-ratio: 16/9;
-                  border: none;
-                }
+                
+
+
+
               }
             }
 
