@@ -961,6 +961,7 @@
                   .mouse-wrap{
                     top: unset;
                     opacity: 0;
+                    pointer-events: none;
                   }
 
                   // &:has(.guard-btn.is-explore){

@@ -1430,6 +1430,7 @@ button {
 #layout #planning .content-wrap .process .projects .project .expand .expand-inner .scroll-guard .mouse-wrap {
   top: unset;
   opacity: 0;
+  pointer-events: none;
 }
 #layout #planning .content-wrap .process .projects .project:hover::before, #layout #planning .content-wrap .process .projects .project.is-active::before {
   opacity: 1;
