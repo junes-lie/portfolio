@@ -1279,19 +1279,38 @@ button {
   background: var(--text-color);
   color: var(--white);
   height: auto;
+  height: 300vh;
 }
 #layout #planning .content-wrap {
-  align-items: flex-start;
+  justify-content: flex-start;
   flex-direction: column;
-  gap: 15em;
 }
 #layout #planning .content-wrap .process {
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   gap: clamp(3rem, 0.327rem + 3.481vw, 5.2rem);
+  margin-bottom: 15em;
+  position: relative;
+}
+@media (orientation: portrait) {
+  #layout #planning .content-wrap .process {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  #layout #planning .content-wrap .process .projects {
+    flex: 1;
+  }
 }
 #layout #planning .content-wrap .process hgroup {
-  flex: 1;
+  z-index: 100;
+  background: var(--text-color);
+}
+@media (orientation: portrait) {
+  #layout #planning .content-wrap .process hgroup {
+    padding-bottom: clamp(3rem, 0.327rem + 3.481vw, 5.2rem);
+    border-bottom: 0.2em solid rgba(var(--white-rgb), 1);
+  }
 }
 #layout #planning .content-wrap .process hgroup span {
   font-family: "YUniverse-B";
@@ -1306,8 +1325,13 @@ button {
   color: rgba(var(--white-rgb), 0.7);
 }
 #layout #planning .content-wrap .process .projects {
-  flex: 2;
-  border-top: 2px solid rgba(var(--white-rgb), 1);
+  border-top: 0.2em solid rgba(var(--white-rgb), 1);
+  z-index: 10;
+}
+@media (orientation: portrait) {
+  #layout #planning .content-wrap .process .projects {
+    border: none;
+  }
 }
 #layout #planning .content-wrap .process .projects .project {
   border-bottom: 0.1em solid rgba(var(--white-rgb), 0.7);
@@ -1354,7 +1378,6 @@ button {
   width: 100%;
   padding: 3em 2em 3em 0;
   background: none;
-  border: 0.1em solid rgba(255, 255, 255, 0);
   color: #fff;
   display: flex;
   justify-content: space-between;
