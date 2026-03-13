@@ -1,7 +1,36 @@
 
 const plan = document.querySelector('#planning');
-// const rows = plan.querySelectorAll('.row-btn');
+const rows = plan.querySelectorAll('.row-btn');
 const activeBtns = plan.querySelectorAll('.guard-btn');
+
+rows.forEach(btn => {
+  btn.addEventListener('click', function() {
+    const item = this.parentElement;
+    const area = this.nextElementSibling;
+    const isActive = item.classList.contains('is-active');
+
+    document.querySelectorAll('.project').forEach(el => {
+      if(el !== item) {
+        el.classList.remove('is-active');
+        gsap.to(el.querySelector('.expand'), { height: 0 });
+      }
+    });
+
+    if (!isActive) {
+      item.classList.add('is-active');
+      gsap.to(area, { 
+        height: 'auto', 
+        onComplete: () => ScrollTrigger.refresh()
+      });
+    } else {
+      item.classList.remove('is-active');
+      gsap.to(area, { 
+        height: 0, 
+        onComplete: () => ScrollTrigger.refresh()
+      });
+    }
+  });
+});
 
 activeBtns.forEach(btn => {
 
@@ -22,3 +51,4 @@ activeBtns.forEach(btn => {
       .set(guard, { pointerEvents: "none" });
   });
 });
+

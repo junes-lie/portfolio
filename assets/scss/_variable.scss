@@ -94,6 +94,7 @@ $space-sm: 1em;
 $space-md: 2em;
 $space-lg: 3em;
 $space-xl: 5.2em;
+$space-xxl: 15em;
 
 $p-lg: clamp-calc(24, 30, $mobile, $tablet);
 $p-xl: clamp-calc(30, 52, $tablet, $pc);

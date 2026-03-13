@@ -1,6 +1,6 @@
 
 const plan = document.querySelector('#planning');
-// const btns = plan.querySelectorAll('.row-btn');
+const btns = plan.querySelectorAll('.row-btn');
 // const fullscreenBtns = plan.querySelectorAll('.fullscreen-btn');
 const activeBtns = plan.querySelectorAll('.guard-btn');
 
@@ -23,53 +23,53 @@ const activeBtns = plan.querySelectorAll('.guard-btn');
 // });
 
 // 2. 아코디언 로직 (상태 리셋 포함)
-// btns.forEach(btn => {
-//   btn.addEventListener('click', function() {
-//     const currentItem = this.closest('.project-item');
-//     const content = this.nextElementSibling;
-//     if(!content || !content.classList.contains('expand-area')) return;
+btns.forEach(btn => {
+  btn.addEventListener('click', function() {
+    const currentItem = this.closest('.project-item');
+    const content = this.nextElementSibling;
+    if(!content || !content.classList.contains('expand-area')) return;
 
-//     const inner = content.querySelector('.expand-inner-integrated');
-//     const isActive = currentItem.classList.contains('is-active');
+    const inner = content.querySelector('.expand-inner-integrated');
+    const isActive = currentItem.classList.contains('is-active');
 
-//     document.querySelectorAll('.project-item').forEach(item => {
-//       if (item !== currentItem) {
-//         item.classList.remove('is-active');
-//         const otherArea = item.querySelector('.expand-area');
-//         if(otherArea) {
-//           gsap.to(otherArea, { height: 0, duration: 0.6, ease: 'expo.inOut' });
-//           const otherInner = otherArea.querySelector('.expand-inner-integrated');
-//           if(otherInner) gsap.to(otherInner, { opacity: 0, y: 20, duration: 0.4 });
+    document.querySelectorAll('.project-item').forEach(item => {
+      if (item !== currentItem) {
+        item.classList.remove('is-active');
+        const otherArea = item.querySelector('.expand-area');
+        if(otherArea) {
+          gsap.to(otherArea, { height: 0, duration: 0.6, ease: 'expo.inOut' });
+          const otherInner = otherArea.querySelector('.expand-inner-integrated');
+          if(otherInner) gsap.to(otherInner, { opacity: 0, y: 20, duration: 0.4 });
           
-//           const otherGuard = otherArea.querySelector('.scroll-guard');
-//           if(otherGuard) {
-//             otherGuard.classList.remove('is-inactive', 'is-exploring');
-//             gsap.set(otherGuard, { opacity: 1 });
-//             gsap.set(otherGuard.querySelector('.mouse-wrap'), { opacity: 0, y: 20 });
-//           }
-//         }
-//       }
-//     });
+          const otherGuard = otherArea.querySelector('.scroll-guard');
+          if(otherGuard) {
+            otherGuard.classList.remove('is-inactive', 'is-exploring');
+            gsap.set(otherGuard, { opacity: 1 });
+            gsap.set(otherGuard.querySelector('.mouse-wrap'), { opacity: 0, y: 20 });
+          }
+        }
+      }
+    });
 
-//     if (!isActive) {
-//       currentItem.classList.add('is-active');
-//       gsap.to(content, { height: 'auto', duration: 0.8, ease: 'expo.out', onUpdate: () => ScrollTrigger.refresh() });
-//       gsap.to(inner, { opacity: 1, y: 0, duration: 0.6, delay: 0.3 });
+    if (!isActive) {
+      currentItem.classList.add('is-active');
+      gsap.to(content, { height: 'auto', duration: 0.8, ease: 'expo.out', onUpdate: () => ScrollTrigger.refresh() });
+      gsap.to(inner, { opacity: 1, y: 0, duration: 0.6, delay: 0.3 });
       
-//       setTimeout(() => {
-//         const isMobile = window.innerWidth <= 1024;
-//         const stickyHeader = currentItem.closest('.process-group').querySelector('.category-header');
-//         const headerOffset = isMobile ? (stickyHeader ? stickyHeader.offsetHeight : 100) : 120;
-//         const elementPosition = currentItem.getBoundingClientRect().top + window.pageYOffset;
-//         window.scrollTo({ top: elementPosition - headerOffset, behavior: 'smooth' });
-//       }, 450);
-//     } else {
-//       currentItem.classList.remove('is-active');
-//       gsap.to(content, { height: 0, duration: 0.6, ease: 'expo.inOut', onUpdate: () => ScrollTrigger.refresh() });
-//       gsap.to(inner, { opacity: 0, y: 20, duration: 0.4 });
-//     }
-//   });
-// });
+      setTimeout(() => {
+        const isMobile = window.innerWidth <= 1024;
+        const stickyHeader = currentItem.closest('.process-group').querySelector('.category-header');
+        const headerOffset = isMobile ? (stickyHeader ? stickyHeader.offsetHeight : 100) : 120;
+        const elementPosition = currentItem.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({ top: elementPosition - headerOffset, behavior: 'smooth' });
+      }, 450);
+    } else {
+      currentItem.classList.remove('is-active');
+      gsap.to(content, { height: 0, duration: 0.6, ease: 'expo.inOut', onUpdate: () => ScrollTrigger.refresh() });
+      gsap.to(inner, { opacity: 0, y: 20, duration: 0.4 });
+    }
+  });
+});
 
 // 3. [v83 핵심] 버튼 클릭 기반 시퀀스 로직
 activeBtns.forEach(abtn => {

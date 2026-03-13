@@ -1282,6 +1282,8 @@ button {
 }
 #layout #planning .content-wrap {
   align-items: flex-start;
+  flex-direction: column;
+  gap: 15em;
 }
 #layout #planning .content-wrap .process {
   width: 100%;
@@ -1379,7 +1381,7 @@ button {
 }
 #layout #planning .content-wrap .process .projects .project .expand {
   width: 100%;
-  height: auto;
+  height: 0;
   overflow: hidden;
 }
 #layout #planning .content-wrap .process .projects .project .expand .expand-inner {
@@ -1440,7 +1442,4 @@ button {
 }
 #layout #planning .content-wrap .process .projects .project.is-active .row-btn i {
   transform: rotateX(180deg);
-}
-#layout #planning .content-wrap .process .projects .project.is-active .expand {
-  height: auto;
 }
