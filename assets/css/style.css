@@ -758,7 +758,7 @@ button {
 }
 #layout #profile .container .content-wrap .content .box {
   border-radius: 2em;
-  padding: clamp(3rem, 0.327rem + 3.481vw, 5.2rem);
+  padding: clamp(2.4rem, -1.003rem + 4.43vw, 5.2rem);
   display: flex;
   flex-direction: column;
   gap: 3em;
@@ -1174,7 +1174,7 @@ button {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: clamp(3rem, 0.327rem + 3.481vw, 5.2rem);
+  gap: clamp(2.4rem, -1.003rem + 4.43vw, 5.2rem);
 }
 @media (orientation: portrait) {
   #layout #graphic .container .grid {
@@ -1289,7 +1289,7 @@ button {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: clamp(3rem, 0.327rem + 3.481vw, 5.2rem);
+  gap: clamp(2.4rem, -1.003rem + 4.43vw, 5.2rem);
   margin-bottom: 15em;
   position: relative;
 }
@@ -1308,7 +1308,7 @@ button {
 }
 @media (orientation: portrait) {
   #layout #planning .content-wrap .process hgroup {
-    padding-bottom: clamp(3rem, 0.327rem + 3.481vw, 5.2rem);
+    padding-bottom: clamp(2.4rem, -1.003rem + 4.43vw, 5.2rem);
     border-bottom: 0.2em solid rgba(var(--white-rgb), 1);
   }
 }
