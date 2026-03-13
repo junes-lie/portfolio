@@ -781,15 +781,11 @@
 
 
     .content-wrap{
-      // align-items: flex-start;
       justify-content: flex-start;
       flex-direction: column;
-      // gap: $space-xxl;
       
       .process{
         width: 100%;
-        // width: 90%;
-        // margin: 0 3vw;
         display: grid;
         grid-template-columns: 1fr 2fr;
         gap: $p-xl;
@@ -798,7 +794,6 @@
 
         @include portrait{
           grid-template-columns: 1fr;
-          // flex-direction: column;
           gap: 0;
 
           .projects{
@@ -807,18 +802,11 @@
         }
 
         hgroup{
-          // position: sticky;
-          // top: 0;
-          // align-self: flex-start;
-          // flex: 1;
           z-index: 100;
           background: var(--text-color);
-          // background: yellow;
           
           @include portrait{
             padding-bottom: $p-xl;
-            // padding: $p-xl 0;
-            // margin-top: 10vh;
             border-bottom: 0.2em solid rgba(var(--white-rgb), 1);
           }
 
@@ -841,7 +829,6 @@
         }
 
         .projects{
-          // flex: 2;
           border-top: 0.2em solid rgba(var(--white-rgb), 1);
           z-index: 10;
 
@@ -911,15 +898,13 @@
               }
             }
 
-            .expand{
+            .spread{
               width: 100%;
               // height: auto;
               height: 0;
-              // padding: $space-xl;
-              // @include glass;
               overflow: hidden;
 
-              .expand-inner{
+              .spread-inner{
                 position: relative;
                 aspect-ratio: 16/9;
                 margin: $space-lg $space-xl $space-xl;
@@ -943,16 +928,32 @@
                   top: $space-md;
                   width: $space-lg;
                   height: $space-lg;
-                  background: var(--white);
-                  border-radius: $radius-xs;
-                  box-shadow: 
-                    0 1px 3px 0 rgba(0, 0, 0, 0.149), 
-                    0 0 .5px 0 rgba(0, 0, 0, 0.302);
-                  @include flex-center;
-                  z-index: 10;
 
-                  i{
-                    font-size: $font-body;
+                  &>*{
+                    position: absolute;
+                    @include fill-parent;
+                    background: var(--white);
+                    border-radius: $radius-xs;
+                    box-shadow: 
+                      0 1px 3px 0 rgba(0, 0, 0, 0.149), 
+                      0 0 .5px 0 rgba(0, 0, 0, 0.302);
+                    @include flex-center;
+                    z-index: 10;
+                    
+                    i{
+                      font-size: $font-body;
+                    }
+                  }
+
+                  .close{
+                    display: none;
+                  }
+
+                  &.is-fullscreen .expand { 
+                    display: none; 
+                  }
+                  &.is-fullscreen .close { 
+                    display: flex; 
                   }
                 }
 
@@ -973,20 +974,9 @@
                     pointer-events: none;
                   }
 
-                  // &:has(.guard-btn.is-explore){
-                  //   opacity: 0;
-                  // }
-
-                  
                 }
-
-                
-
-
-
               }
             }
-
 
             &:hover::before,
             &.is-active::before{
@@ -1002,20 +992,15 @@
               transform: rotateX(180deg);
             }
 
-            // &.is-active .expand{
+            // &.is-active .spread{
             //   height: auto;
             // }
           }
         }
-
-        
       }
     }
-
-
   }
-  
-  
+
 }
 
 

@@ -1402,33 +1402,39 @@ button {
   font-size: clamp(1.4rem, 1.054rem + 0.962vw, 2.4rem);
   transition: all 0.3s ease;
 }
-#layout #planning .content-wrap .process .projects .project .expand {
+#layout #planning .content-wrap .process .projects .project .spread {
   width: 100%;
   height: 0;
   overflow: hidden;
 }
-#layout #planning .content-wrap .process .projects .project .expand .expand-inner {
+#layout #planning .content-wrap .process .projects .project .spread .spread-inner {
   position: relative;
   aspect-ratio: 16/9;
   margin: 3em 5.2em 5.2em;
   box-shadow: 0 2rem 3em 0 rgba(255, 255, 255, 0.3), 0 1rem 3em 0 rgba(0, 0, 0, 0.05);
 }
-#layout #planning .content-wrap .process .projects .project .expand .expand-inner > * {
+#layout #planning .content-wrap .process .projects .project .spread .spread-inner > * {
   position: absolute;
 }
-#layout #planning .content-wrap .process .projects .project .expand .expand-inner iframe {
+#layout #planning .content-wrap .process .projects .project .spread .spread-inner iframe {
   width: 100%;
   height: 100%;
   margin: 0 auto;
   border: none;
   z-index: 0;
 }
-#layout #planning .content-wrap .process .projects .project .expand .expand-inner .fullscreen-btn {
+#layout #planning .content-wrap .process .projects .project .spread .spread-inner .fullscreen-btn {
   position: absolute;
   right: 2em;
   top: 2em;
   width: 3em;
   height: 3em;
+}
+#layout #planning .content-wrap .process .projects .project .spread .spread-inner .fullscreen-btn > * {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
   background: var(--white);
   border-radius: 0.5em;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.149), 0 0 0.5px 0 rgba(0, 0, 0, 0.302);
@@ -1437,10 +1443,19 @@ button {
   align-items: center;
   z-index: 10;
 }
-#layout #planning .content-wrap .process .projects .project .expand .expand-inner .fullscreen-btn i {
+#layout #planning .content-wrap .process .projects .project .spread .spread-inner .fullscreen-btn > * i {
   font-size: clamp(1.2rem, 1.062rem + 0.385vw, 1.6rem);
 }
-#layout #planning .content-wrap .process .projects .project .expand .expand-inner .scroll-guard {
+#layout #planning .content-wrap .process .projects .project .spread .spread-inner .fullscreen-btn .close {
+  display: none;
+}
+#layout #planning .content-wrap .process .projects .project .spread .spread-inner .fullscreen-btn.is-fullscreen .expand {
+  display: none;
+}
+#layout #planning .content-wrap .process .projects .project .spread .spread-inner .fullscreen-btn.is-fullscreen .close {
+  display: flex;
+}
+#layout #planning .content-wrap .process .projects .project .spread .spread-inner .scroll-guard {
   inset: 0;
   background: rgba(var(--text-color-rgb), 0.7);
   display: flex;
@@ -1449,10 +1464,10 @@ button {
   z-index: 20;
   transition: all 0.3s ease;
 }
-#layout #planning .content-wrap .process .projects .project .expand .expand-inner .scroll-guard .guard-btn {
+#layout #planning .content-wrap .process .projects .project .spread .spread-inner .scroll-guard .guard-btn {
   font-size: clamp(1.2rem, 1.062rem + 0.385vw, 1.6rem);
 }
-#layout #planning .content-wrap .process .projects .project .expand .expand-inner .scroll-guard .mouse-wrap {
+#layout #planning .content-wrap .process .projects .project .spread .spread-inner .scroll-guard .mouse-wrap {
   top: unset;
   opacity: 0;
   pointer-events: none;

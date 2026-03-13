@@ -3,6 +3,7 @@ const plan = document.querySelector('#planning');
 const process = plan.querySelectorAll('.process');
 const rows = plan.querySelectorAll('.row-btn');
 const activeBtns = plan.querySelectorAll('.guard-btn');
+const fullscreenBtns = plan.querySelectorAll('.fullscreen-btn');
 const vh10 = window.innerHeight * 0.1;
 
 process.forEach((process) => {
@@ -19,17 +20,17 @@ process.forEach((process) => {
   });
 });
 
-const closeExpand = (project) => {
-  const expand = project.querySelector('.expand');
+const unfold = (project) => {
+  const spread = project.querySelector('.spread');
   const guard = project.querySelector('.scroll-guard');
   const btn = guard.querySelector('.guard-btn');
   const hint = guard.querySelector('.mouse-wrap');
   
   project.classList.remove('is-active');
-  gsap.to(expand, { 
+  gsap.to(spread, { 
     height: 0, 
     onComplete: () => {
-      ScrollTrigger.refresh();
+      // ScrollTrigger.refresh();
 
       guard.classList.remove('is-unlocked');
       gsap.set([guard, btn], { opacity: 1, pointerEvents: "auto" });
@@ -39,24 +40,23 @@ const closeExpand = (project) => {
   });
 }
 
-
 rows.forEach(btn => {
   btn.addEventListener('click', function() {
     const project = this.parentElement;
-    const expand = this.nextElementSibling;
+    const spread = this.nextElementSibling;
     const header = this.closest('.process').querySelector('hgroup');
     const isActive = project.classList.contains('is-active');
 
     // 클릭한 플젝 이외의 뿐만아니라 모든 플젝.active 지우기
     document.querySelectorAll('.project').forEach(p => {
       if(p !== project) {
-        closeExpand(p);
+        unfold(p);
       }
     });
 
     if (!isActive) {
       project.classList.add('is-active');
-      gsap.to(expand, { 
+      gsap.to(spread, { 
         height: 'auto', 
         onComplete: () => {
           ScrollTrigger.refresh();
@@ -69,7 +69,7 @@ rows.forEach(btn => {
 
             const isAlreadyInGoodView = viewTop > totalOffset && viewTop < window.innerHeight * 0.4;
             if (!isAlreadyInGoodView) {
-
+              
               const elementAbsoluteTop = viewTop + window.pageYOffset;
               gsap.to(window, {
                 scrollTo: { 
@@ -84,7 +84,7 @@ rows.forEach(btn => {
       });
 
     } else {
-      closeExpand(project);
+      unfold(project);
     }
   });
 });
@@ -111,3 +111,27 @@ activeBtns.forEach(btn => {
   });
 });
 
+
+fullscreenBtns.forEach(btn => {
+  btn.addEventListener('click', function() {
+    const wrapper = this.closest('.spread-inner');
+    
+    if (!document.fullscreenElement) {
+      
+      if (wrapper.requestFullscreen) wrapper.requestFullscreen();
+      else if (wrapper.webkitRequestFullscreen) wrapper.webkitRequestFullscreen();
+    } else {
+      
+      if (document.exitFullscreen) document.exitFullscreen();
+      else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+    }
+  });
+});
+
+document.addEventListener('fullscreenchange', () => {
+  const isFS = !!document.fullscreenElement;
+  
+  fullscreenBtns.forEach(btn => {
+    btn.classList.toggle('is-fullscreen', isFS);
+  });
+});
