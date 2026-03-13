@@ -1281,6 +1281,11 @@ button {
   height: auto;
   height: 300vh;
 }
+@media (orientation: portrait) {
+  #layout #planning .headline {
+    margin-bottom: unset;
+  }
+}
 #layout #planning .content-wrap {
   justify-content: flex-start;
   flex-direction: column;
@@ -1308,7 +1313,7 @@ button {
 }
 @media (orientation: portrait) {
   #layout #planning .content-wrap .process hgroup {
-    padding-bottom: clamp(2.4rem, -1.003rem + 4.43vw, 5.2rem);
+    padding: clamp(2.4rem, -1.003rem + 4.43vw, 5.2rem) 0;
     border-bottom: 0.2em solid rgba(var(--white-rgb), 1);
   }
 }

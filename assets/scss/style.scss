@@ -779,6 +779,11 @@
     height: auto;
     height: 300vh;
 
+    .headline{
+      @include portrait{
+        margin-bottom: unset;
+      }
+    }
 
     .content-wrap{
       justify-content: flex-start;
@@ -804,9 +809,11 @@
         hgroup{
           z-index: 100;
           background: var(--text-color);
+          // background: yellow;
           
           @include portrait{
-            padding-bottom: $p-xl;
+            // padding-bottom: $p-xl;
+            padding: $p-xl 0;
             border-bottom: 0.2em solid rgba(var(--white-rgb), 1);
           }
 

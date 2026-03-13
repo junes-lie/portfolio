@@ -20,22 +20,22 @@ process.forEach((process) => {
   });
 });
 
-const unfold = (project) => {
+const fold = (project) => {
   const spread = project.querySelector('.spread');
   const guard = project.querySelector('.scroll-guard');
   const btn = guard.querySelector('.guard-btn');
   const hint = guard.querySelector('.mouse-wrap');
   
   project.classList.remove('is-active');
+  guard.classList.remove('is-unlocked');
+
+  // gsap.killTweensOf([spread, guard, btn, hint]);
+  gsap.set(hint, { opacity: 0 });
+  gsap.set([guard, btn], { opacity: 1, pointerEvents: "auto" });
   gsap.to(spread, { 
     height: 0, 
     onComplete: () => {
-      // ScrollTrigger.refresh();
-
-      guard.classList.remove('is-unlocked');
-      gsap.set([guard, btn], { opacity: 1, pointerEvents: "auto" });
-      gsap.set(hint, { opacity: 0 });
-
+      ScrollTrigger.refresh();
     }
   });
 }
@@ -47,15 +47,19 @@ rows.forEach(btn => {
     const header = this.closest('.process').querySelector('hgroup');
     const isActive = project.classList.contains('is-active');
 
+    isManualMove = true;
+
     // 클릭한 플젝 이외의 뿐만아니라 모든 플젝.active 지우기
     document.querySelectorAll('.project').forEach(p => {
       if(p !== project) {
-        unfold(p);
+        fold(p);
       }
     });
 
     if (!isActive) {
       project.classList.add('is-active');
+      const hint = project.querySelector('.scroll-guard .mouse-wrap');
+      gsap.set(hint, { opacity: 0 });
       gsap.to(spread, { 
         height: 'auto', 
         onComplete: () => {
@@ -71,10 +75,17 @@ rows.forEach(btn => {
             if (!isAlreadyInGoodView) {
               
               const elementAbsoluteTop = viewTop + window.pageYOffset;
-              gsap.to(window, {
-                scrollTo: { 
-                  y: elementAbsoluteTop - totalOffset, 
-                  autoKill: true 
+              // gsap.to(window, {
+              //   scrollTo: { 
+              //     y: elementAbsoluteTop - totalOffset, 
+              //     autoKill: true 
+              //   },
+              // });
+              gsap.to(smoother, {
+                scrollTop: elementAbsoluteTop - totalOffset, 
+                onComplete: () => {
+                  
+                  isManualMove = false;
                 },
               });
             }
@@ -84,7 +95,7 @@ rows.forEach(btn => {
       });
 
     } else {
-      unfold(project);
+      fold(project);
     }
   });
 });
