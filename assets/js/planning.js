@@ -6,6 +6,10 @@ const activeBtns = plan.querySelectorAll('.guard-btn');
 const fullscreenBtns = plan.querySelectorAll('.fullscreen-btn');
 const vh10 = window.innerHeight * 0.1;
 
+process.forEach((process, index) => {
+  process.querySelector('hgroup span').textContent = `${String(index + 1).padStart(2, '0')}.`;
+});
+
 process.forEach((process) => {
   const header = process.querySelector('hgroup');
 

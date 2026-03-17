@@ -777,7 +777,7 @@
     background: var(--text-color);
     color: var(--white);
     height: auto;
-    height: 300vh;
+    // height: 300vh;
 
     .headline{
       @include portrait{
