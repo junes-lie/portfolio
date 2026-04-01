@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Static Server",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", ".", "-p", "3000"],
+      "port": 3000
+    },
+    {
+      "name": "SCSS Watcher",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["sass", "--watch", "assets/scss/style.scss:assets/css/style.css"],
+      "port": 3001
+    }
+  ]
+}
