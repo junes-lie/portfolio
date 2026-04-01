@@ -24,8 +24,6 @@ html {
     font-variant-numeric: tabular-nums;
     color: var(--text-color);
     // font-size: clamp-calc(8, 10); //em 쓰면 모바일이 0.8배율
-    user-select: none;
-
     article, aside, details, figcaption, figure, footer, hgroup, menu, nav, svg{ 
       display: block; 
     }

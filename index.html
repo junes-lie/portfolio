@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jisun's Portfolio</title>
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="shortcut icon" href="assets/images/favicon.svg">
+  <link rel="icon" href="assets/images/favicon.svg">
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
@@ -19,7 +19,7 @@
 
   <script src="assets/js/config.js" defer></script>
   <script src="assets/js/scroll.js" defer></script>
-  <!-- <script src="assets/js/logo.js" defer></script> -->
+  <script src="assets/js/logo.js" defer></script>
   <script src="assets/js/quick.js" defer></script>
   <script src="assets/js/navigation.js" defer></script>
   <script src="assets/js/skillCircle.js" defer></script>
@@ -47,14 +47,14 @@
         class="btn-c resume-btn" 
         title="이력서 다운로드">
         <!-- <i class="bi bi-file-earmark-word-fill"></i> -->
-        <iconify-icon icon="file-icons:microsoft-word"></iconify-icon>
+        <iconify-icon icon="file-icons:microsoft-word" aria-hidden="true"></iconify-icon>
       </a>
       <a href="https://github.com/junes-lie/portfolio.git" 
         target="_blank" 
         class="btn-c git-btn" 
         title="GitHub로 이동하기">
         <!-- <i class="bi bi-github"></i> -->
-        <i class="fa-brands fa-github"></i>
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
       </a>
     </div>
     
@@ -93,14 +93,14 @@
     
     <button class="btn-c top-btn" title="맨 위로">
       <!-- <i class="fa-solid fa-chevron-up"></i> -->
-      <i class="bi bi-caret-up-fill"></i>
+      <i class="bi bi-caret-up-fill" aria-hidden="true"></i>
     </button>
 
   </aside>
 
   <nav class="navigation">
     <ul>
-      <li class="progress"></div>
+      <li class="progress"></li>
       <li>
         <div class="dot btn-c"></div>
         <span>Intro</span>
@@ -139,7 +139,7 @@
         <h2>맠 흞 굷 빟 눉 벊 빞 밠 앆 닰</h2>
       </div> 
     </div> -->
-    <section id="intro" class="s1" data-full-move="true">
+    <section id="intro" class="s1" data-full-move="true" aria-label="인트로">
       <div class="bg-grad"></div>
       <!-- <div class="container"></div> -->
       <div class="content-wrap">
@@ -183,9 +183,9 @@
         <div class="mouse"></div>
       </div>
     </section>
-    <section id="profile" class="s2">
+    <section id="profile" class="s2" aria-labelledby="headline-profile">
       <div class="container">
-        <h3 class="headline">Hi, Hello</h3>
+        <h3 class="headline" id="headline-profile">Hi, Hello</h3>
         <div class="content-wrap">
           <div class="content">
             <article class="box">
@@ -328,7 +328,7 @@
                 download 
                 class="btn-r" 
                 title="이력서 다운로드">
-                <iconify-icon icon="file-icons:microsoft-word"></iconify-icon>
+                <iconify-icon icon="file-icons:microsoft-word" aria-hidden="true"></iconify-icon>
                 <p>이력서 보러가기</p>
               </a>
             </article>
@@ -380,10 +380,10 @@
         </div>
       </div>
     </section>
-    <section id="publishing" class="s3" data-full-move="true">
+    <section id="publishing" class="s3" data-full-move="true" aria-labelledby="headline-publishing">
       <div class="section-bg"></div>
       <div class="container">
-        <h3 class="headline">I build</h3>
+        <h3 class="headline" id="headline-publishing">I build</h3>
         <div class="content-wrap">
           <ul class="cards">
             <li class="card" data-card-index="0" 
@@ -397,7 +397,7 @@
                 <h5>더숲 하이브리드 웹앱</h5>
                 <div class="tags">
                   <span class="tag">
-                    <i class="fa-solid fa-users"></i>
+                    <i class="fa-solid fa-users" aria-hidden="true"></i>
                     팀 프로젝트
                   </span>
                 </div>
@@ -407,13 +407,13 @@
               </div>
               <div class="links">
                 <a href="https://www.figma.com/deck/cm400imDoh7BdI1tF6WMcj/%EB%8D%94%EC%88%B2-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%82%B0%EC%B6%9C%EB%AC%BC--Copy-?node-id=3-42&viewport=-148%2C-157%2C0.72&t=okx2N50sJjW3xXsY-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1" target="_blank" class="btn-r">
-                  <i class="fa-brands fa-figma"></i>
+                  <i class="fa-brands fa-figma" aria-hidden="true"></i>
                   view details
                 </a>
                 <a href="https://github.com/junes-lie/deosup"
                   target="_blank"
                   class="btn-r">
-                  <i class="fa-brands fa-github"></i>
+                  <i class="fa-brands fa-github" aria-hidden="true"></i>
                   view code
                 </a>
                 <div class="device">
@@ -421,14 +421,14 @@
                     title="모바일로 보기"
                     class="btn-r point"
                     onclick="window.open('https://junes-lie.github.io/deosup', 'popup-mobile', 'width=375, height=667, left=200, top=100')">
-                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
                     <span>mobile</span>
                   </a>
                   <a href="javascript:void(0)"
                     title="데스크탑으로 보기"
                     class="btn-r point"
                     onclick="window.open('https://junes-lie.github.io/deosup', 'popup-pc', 'width=1920, height=1024')">
-                    <i class="fa-solid fa-desktop"></i>
+                    <i class="fa-solid fa-desktop" aria-hidden="true"></i>
                     <span>desktop</span>
                   </a>
                 </div>
@@ -445,7 +445,7 @@
                 <h5>아트허브 반응형</h5>
                 <div class="tags">
                   <span class="tag">
-                    <i class="fa-solid fa-users"></i>
+                    <i class="fa-solid fa-users" aria-hidden="true"></i>
                     팀 프로젝트
                   </span>
                 </div>
@@ -455,13 +455,13 @@
               </div>
               <div class="links">
                 <a href="https://www.figma.com/deck/5rTqyQABrGSooMpjmdrGRt/%EC%95%84%ED%8A%B8%ED%97%88%EB%B8%8C-%EA%B2%B0%EA%B3%BC%EB%B3%B4%EA%B3%A0%EC%84%9C--Copy-?node-id=1-429&viewport=-148%2C-157%2C0.72&t=7940LGW5XSy8QaLJ-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1" target="_blank" class="btn-r">
-                  <i class="fa-brands fa-figma"></i>
+                  <i class="fa-brands fa-figma" aria-hidden="true"></i>
                   view details
                 </a>
                 <a href="https://github.com/junes-lie/group-C"
                   target="_blank"
                   class="btn-r">
-                  <i class="fa-brands fa-github"></i>
+                  <i class="fa-brands fa-github" aria-hidden="true"></i>
                   view code
                 </a>
                 <div class="device">
@@ -469,21 +469,21 @@
                   title="모바일로 보기"
                     class="btn-r point"
                     onclick="window.open('https://junes-lie.github.io/group-C', 'popup-mobile', 'width=375, height=667, left=200, top=100')">
-                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
                     <span>mobile</span>
                   </a>
                   <a href="javascript:void(0)"
                     title="태블릿으로 보기"
                     class="btn-r point"
                     onclick="window.open('https://junes-lie.github.io/group-C', 'popup-tablet', 'width=820, height=1024, left=100')">
-                    <i class="fa-solid fa-tablet-screen-button"></i>
+                    <i class="fa-solid fa-tablet-screen-button" aria-hidden="true"></i>
                     <span>tablet</span>
                   </a>
                   <a href="javascript:void(0)"
                     title="데스크탑으로 보기"
                     class="btn-r point"
                     onclick="window.open('https://junes-lie.github.io/group-C', 'popup-pc', 'width=1920, height=1024')">
-                    <i class="fa-solid fa-desktop"></i>
+                    <i class="fa-solid fa-desktop" aria-hidden="true"></i>
                     <span>desktop</span>
                   </a>
                 </div>
@@ -500,7 +500,7 @@
                 <h5>뮤지컬 위키드 원페이지</h5>
                 <div class="tags">
                   <span class="tag">
-                    <i class="fa-solid fa-user"></i>
+                    <i class="fa-solid fa-user" aria-hidden="true"></i>
                     개인 프로젝트
                   </span>
                 </div>
@@ -510,13 +510,13 @@
               </div>
               <div class="links">
                 <a href="#" target="_blank" class="btn-r">
-                  <i class="fa-brands fa-figma"></i>
+                  <i class="fa-brands fa-figma" aria-hidden="true"></i>
                   view details
                 </a>
                 <a href="https://github.com/junes-lie/Wicked"
                   target="_blank"
                   class="btn-r">
-                  <i class="fa-brands fa-github"></i>
+                  <i class="fa-brands fa-github" aria-hidden="true"></i>
                   view code
                 </a>
                 <div class="device">
@@ -524,7 +524,7 @@
                   title="데스크탑으로 보기"
                     class="btn-r point"
                     onclick="window.open('https://junes-lie.github.io/Wicked', 'popup-pc', 'width=1920, height=1024')">
-                    <i class="fa-solid fa-desktop"></i>
+                    <i class="fa-solid fa-desktop" aria-hidden="true"></i>
                     <span>desktop</span>
                   </a>
                 </div>
@@ -532,16 +532,16 @@
             </li>
           </ul>
           <nav class="indicators">
-            <a href="#none" class="indicator" data-slide="0"></a>
-            <a href="#none" class="indicator" data-slide="1"></a>
-            <a href="#none" class="indicator" data-slide="2"></a>
+            <button type="button" class="indicator" data-slide="0" aria-label="슬라이드 1"></button>
+            <button type="button" class="indicator" data-slide="1" aria-label="슬라이드 2"></button>
+            <button type="button" class="indicator" data-slide="2" aria-label="슬라이드 3"></button>
           </nav>
         </div>
       </div>
     </section>
-    <section id="uxui" class="s4" data-full-move="true">
+    <section id="uxui" class="s4" data-full-move="true" aria-labelledby="headline-uxui">
       <div class="container">
-        <h3 class="headline">I design</h3>
+        <h3 class="headline" id="headline-uxui">I design</h3>
         <div class="content-wrap">
           <ul class="gallery">
             <li class="gallery-item active" data-gallery-index="0">
@@ -550,18 +550,18 @@
                 <div class="text">
                   <div class="tags">
                     <span class="tag">
-                      <i class="fa-solid fa-user"></i>
+                      <i class="fa-solid fa-user" aria-hidden="true"></i>
                       개인 프로젝트
                     </span>
                     <span class="tag">
-                      <i class="fa-solid fa-mobile-screen-button"></i>
+                      <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
                       앱
                     </span>
                   </div>
                   <h5>피자헛</h5>
                 </div>
                 <a href="https://www.figma.com/proto/kqCb9DpSD9FCkAvTUkK12B/%EB%AA%A8%EB%B0%94%EC%9D%BC%EC%9B%B9?page-id=1%3A9&node-id=199-3692&viewport=100%2C197%2C0.44&t=kOVoas3nOYtFndl1-1&scaling=min-zoom&content-scaling=fixed" target="_blank" class="btn-view btn-r">
-                  <i class="fa-brands fa-figma"></i>
+                  <i class="fa-brands fa-figma" aria-hidden="true"></i>
                   view details
                 </a>
               </div>
@@ -572,11 +572,11 @@
                 <div class="text">
                   <div class="tags">
                     <span class="tag">
-                      <i class="fa-solid fa-user"></i>
+                      <i class="fa-solid fa-user" aria-hidden="true"></i>
                       개인 프로젝트
                     </span>
                     <span class="tag">
-                      <i class="fa-solid fa-desktop"></i>
+                      <i class="fa-solid fa-desktop" aria-hidden="true"></i>
                       웹
                     </span>
                     <span class="tag">
@@ -589,7 +589,7 @@
                   <h5>뚜레주르</h5>
                 </div>
                 <a href="https://www.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=29%3A2&node-id=143-962&m=draw&scaling=min-zoom&content-scaling=fixed&t=HMfqEAPg2KtuCnFX-1" target="_blank" class="btn-view btn-r">
-                  <i class="fa-brands fa-figma"></i>
+                  <i class="fa-brands fa-figma" aria-hidden="true"></i>
                   view details
                 </a>
               </div>
@@ -600,11 +600,11 @@
                 <div class="text">
                   <div class="tags">
                     <span class="tag">
-                      <i class="fa-solid fa-user"></i>
+                      <i class="fa-solid fa-user" aria-hidden="true"></i>
                       개인 프로젝트
                     </span>
                     <span class="tag">
-                      <i class="fa-solid fa-desktop"></i>
+                      <i class="fa-solid fa-desktop" aria-hidden="true"></i>
                       웹
                     </span>
                     <span class="tag">
@@ -614,7 +614,7 @@
                   <h5>오설록</h5>
                 </div>
                 <a href="https://www.figma.com/proto/aZpZvAunQJS9fG7hWm5bdH/UIUX-%EB%94%94%EC%9E%90%EC%9D%B8?page-id=0%3A1&node-id=102-280&viewport=44%2C292%2C0.07&t=1GHTjsATEvDCFo5R-1&scaling=contain&content-scaling=fixed&starting-point-node-id=102%3A428" target="_blank" class="btn-view btn-r">
-                  <i class="fa-brands fa-figma"></i>
+                  <i class="fa-brands fa-figma" aria-hidden="true"></i>
                   view details
                 </a>
               </div>
@@ -625,18 +625,18 @@
                 <div class="text">
                   <div class="tags">
                     <span class="tag">
-                      <i class="fa-solid fa-user"></i>
+                      <i class="fa-solid fa-user" aria-hidden="true"></i>
                       개인 프로젝트
                     </span>
                     <span class="tag">
-                      <i class="fa-solid fa-desktop"></i>
+                      <i class="fa-solid fa-desktop" aria-hidden="true"></i>
                       웹
                     </span>
                   </div>
                   <h5>캐논</h5>
                 </div>
                 <a href="#" target="_blank" class="btn-view btn-r">
-                  <i class="fa-brands fa-figma"></i>
+                  <i class="fa-brands fa-figma" aria-hidden="true"></i>
                   view details
                 </a>
               </div>
@@ -647,18 +647,18 @@
                 <div class="text">
                   <div class="tags">
                     <span class="tag">
-                      <i class="fa-solid fa-user"></i>
+                      <i class="fa-solid fa-user" aria-hidden="true"></i>
                       개인 프로젝트
                     </span>
                     <span class="tag">
-                      <i class="fa-solid fa-desktop"></i>
+                      <i class="fa-solid fa-desktop" aria-hidden="true"></i>
                       웹
                     </span>
                   </div>
                   <h5>헤드폰</h5>
                 </div>
                 <a href="#" target="_blank" class="btn-view btn-r">
-                  <i class="fa-brands fa-figma"></i>
+                  <i class="fa-brands fa-figma" aria-hidden="true"></i>
                   view details
                 </a>
               </div>
@@ -668,9 +668,9 @@
       </div>
       
     </section>
-    <section id="graphic" class="s5">
+    <section id="graphic" class="s5" aria-labelledby="headline-graphic">
       <div class="container is-aligned">
-        <h3 class="headline">I visualize</h3>
+        <h3 class="headline" id="headline-graphic">I visualize</h3>
         <div class="content-wrap">
           <ul class="grid">
             <li class="thumb">
@@ -810,9 +810,9 @@
       </div>
     </section>
       
-    <section id="planning" class="s6" data-full-move="true">
+    <section id="planning" class="s6" data-full-move="true" aria-labelledby="headline-planning">
       <div class="container">
-        <h3 class="headline">I plan</h3>
+        <h3 class="headline" id="headline-planning">I plan</h3>
         <div class="content-wrap">
           <div class="process">
             <hgroup>
@@ -828,20 +828,22 @@
               <li class="project">
                 <button class="row-btn">
                   <span>2025 Global UX/UI Trend Report</span>
-                  <i class="fa-solid fa-chevron-down"></i>
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="spread">
                   <div class="spread-inner">
                     <iframe 
-                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1" allowfullscreen>
+                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1"
+                    title="Figma 프레젠테이션 뷰어"
+                    allowfullscreen>
                     </iframe>
 
                     <div class="fullscreen-btn">
                       <button class="expand" title="전체화면 보기">
-                        <i class="bi bi-arrows-angle-expand"></i>
+                        <i class="bi bi-arrows-angle-expand" aria-hidden="true"></i>
                       </button>
                       <button class="close" title="전체화면 닫기">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="bi bi-x-lg" aria-hidden="true"></i>
                       </button>
                     </div>
                     
@@ -874,21 +876,23 @@
               <li class="project">
                 <button class="row-btn">
                   <span>Pizza Hut Mobile App Re-Design</span>
-                  <i class="fa-solid fa-chevron-down"></i>
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="spread">
                   <div class="spread-inner">
 
                     <iframe 
-                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1" allowfullscreen>
+                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1"
+                    title="Figma 프레젠테이션 뷰어"
+                    allowfullscreen>
                     </iframe>
 
                     <div class="fullscreen-btn">
                       <button class="expand" title="전체화면 보기">
-                        <i class="bi bi-arrows-angle-expand"></i>
+                        <i class="bi bi-arrows-angle-expand" aria-hidden="true"></i>
                       </button>
                       <button class="close" title="전체화면 닫기">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="bi bi-x-lg" aria-hidden="true"></i>
                       </button>
                     </div>
                     
@@ -921,21 +925,23 @@
               <li class="project">
                 <button class="row-btn">
                   <span>Pizza Hut Mobile App Re-Design</span>
-                  <i class="fa-solid fa-chevron-down"></i>
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="spread">
                   <div class="spread-inner">
 
                     <iframe 
-                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1" allowfullscreen>
+                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1"
+                    title="Figma 프레젠테이션 뷰어"
+                    allowfullscreen>
                     </iframe>
 
                     <div class="fullscreen-btn">
                       <button class="expand" title="전체화면 보기">
-                        <i class="bi bi-arrows-angle-expand"></i>
+                        <i class="bi bi-arrows-angle-expand" aria-hidden="true"></i>
                       </button>
                       <button class="close" title="전체화면 닫기">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="bi bi-x-lg" aria-hidden="true"></i>
                       </button>
                     </div>
                     
@@ -968,21 +974,23 @@
               <li class="project">
                 <button class="row-btn">
                   <span>Pizza Hut Mobile App Re-Design</span>
-                  <i class="fa-solid fa-chevron-down"></i>
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="spread">
                   <div class="spread-inner">
 
                     <iframe 
-                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1" allowfullscreen>
+                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1"
+                    title="Figma 프레젠테이션 뷰어"
+                    allowfullscreen>
                     </iframe>
 
                     <div class="fullscreen-btn">
                       <button class="expand" title="전체화면 보기">
-                        <i class="bi bi-arrows-angle-expand"></i>
+                        <i class="bi bi-arrows-angle-expand" aria-hidden="true"></i>
                       </button>
                       <button class="close" title="전체화면 닫기">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="bi bi-x-lg" aria-hidden="true"></i>
                       </button>
                     </div>
                     
@@ -1002,21 +1010,23 @@
               <li class="project">
                 <button class="row-btn">
                   <span>Arthub Responsive Web Re-Design</span>
-                  <i class="fa-solid fa-chevron-down"></i>
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="spread">
                   <div class="spread-inner">
 
                     <iframe 
-                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1" allowfullscreen>
+                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1"
+                    title="Figma 프레젠테이션 뷰어"
+                    allowfullscreen>
                     </iframe>
 
                     <div class="fullscreen-btn">
                       <button class="expand" title="전체화면 보기">
-                        <i class="bi bi-arrows-angle-expand"></i>
+                        <i class="bi bi-arrows-angle-expand" aria-hidden="true"></i>
                       </button>
                       <button class="close" title="전체화면 닫기">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="bi bi-x-lg" aria-hidden="true"></i>
                       </button>
                     </div>
                     
@@ -1049,21 +1059,23 @@
               <li class="project">
                 <button class="row-btn">
                   <span>Pizza Hut Mobile App Re-Design</span>
-                  <i class="fa-solid fa-chevron-down"></i>
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="spread">
                   <div class="spread-inner">
 
                     <iframe 
-                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1" allowfullscreen>
+                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1"
+                    title="Figma 프레젠테이션 뷰어"
+                    allowfullscreen>
                     </iframe>
 
                     <div class="fullscreen-btn">
                       <button class="expand" title="전체화면 보기">
-                        <i class="bi bi-arrows-angle-expand"></i>
+                        <i class="bi bi-arrows-angle-expand" aria-hidden="true"></i>
                       </button>
                       <button class="close" title="전체화면 닫기">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="bi bi-x-lg" aria-hidden="true"></i>
                       </button>
                     </div>
                     
@@ -1083,21 +1095,23 @@
               <li class="project">
                 <button class="row-btn">
                   <span>Arthub Responsive Web Re-Design</span>
-                  <i class="fa-solid fa-chevron-down"></i>
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="spread">
                   <div class="spread-inner">
 
                     <iframe 
-                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1" allowfullscreen>
+                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1"
+                    title="Figma 프레젠테이션 뷰어"
+                    allowfullscreen>
                     </iframe>
 
                     <div class="fullscreen-btn">
                       <button class="expand" title="전체화면 보기">
-                        <i class="bi bi-arrows-angle-expand"></i>
+                        <i class="bi bi-arrows-angle-expand" aria-hidden="true"></i>
                       </button>
                       <button class="close" title="전체화면 닫기">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="bi bi-x-lg" aria-hidden="true"></i>
                       </button>
                     </div>
                     
@@ -1130,21 +1144,23 @@
               <li class="project">
                 <button class="row-btn">
                   <span>Pizza Hut Mobile App Re-Design</span>
-                  <i class="fa-solid fa-chevron-down"></i>
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="spread">
                   <div class="spread-inner">
 
                     <iframe 
-                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1" allowfullscreen>
+                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1"
+                    title="Figma 프레젠테이션 뷰어"
+                    allowfullscreen>
                     </iframe>
 
                     <div class="fullscreen-btn">
                       <button class="expand" title="전체화면 보기">
-                        <i class="bi bi-arrows-angle-expand"></i>
+                        <i class="bi bi-arrows-angle-expand" aria-hidden="true"></i>
                       </button>
                       <button class="close" title="전체화면 닫기">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="bi bi-x-lg" aria-hidden="true"></i>
                       </button>
                     </div>
                     
@@ -1164,21 +1180,23 @@
               <li class="project">
                 <button class="row-btn">
                   <span>Arthub Responsive Web Re-Design</span>
-                  <i class="fa-solid fa-chevron-down"></i>
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="spread">
                   <div class="spread-inner">
 
                     <iframe 
-                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1" allowfullscreen>
+                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1"
+                    title="Figma 프레젠테이션 뷰어"
+                    allowfullscreen>
                     </iframe>
 
                     <div class="fullscreen-btn">
                       <button class="expand" title="전체화면 보기">
-                        <i class="bi bi-arrows-angle-expand"></i>
+                        <i class="bi bi-arrows-angle-expand" aria-hidden="true"></i>
                       </button>
                       <button class="close" title="전체화면 닫기">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="bi bi-x-lg" aria-hidden="true"></i>
                       </button>
                     </div>
                     
@@ -1211,21 +1229,23 @@
               <li class="project">
                 <button class="row-btn">
                   <span>Pizza Hut Mobile App Re-Design</span>
-                  <i class="fa-solid fa-chevron-down"></i>
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="spread">
                   <div class="spread-inner">
 
                     <iframe 
-                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1" allowfullscreen>
+                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1"
+                    title="Figma 프레젠테이션 뷰어"
+                    allowfullscreen>
                     </iframe>
 
                     <div class="fullscreen-btn">
                       <button class="expand" title="전체화면 보기">
-                        <i class="bi bi-arrows-angle-expand"></i>
+                        <i class="bi bi-arrows-angle-expand" aria-hidden="true"></i>
                       </button>
                       <button class="close" title="전체화면 닫기">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="bi bi-x-lg" aria-hidden="true"></i>
                       </button>
                     </div>
                     
@@ -1245,21 +1265,23 @@
               <li class="project">
                 <button class="row-btn">
                   <span>Arthub Responsive Web Re-Design</span>
-                  <i class="fa-solid fa-chevron-down"></i>
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="spread">
                   <div class="spread-inner">
 
                     <iframe 
-                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1" allowfullscreen>
+                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1"
+                    title="Figma 프레젠테이션 뷰어"
+                    allowfullscreen>
                     </iframe>
 
                     <div class="fullscreen-btn">
                       <button class="expand" title="전체화면 보기">
-                        <i class="bi bi-arrows-angle-expand"></i>
+                        <i class="bi bi-arrows-angle-expand" aria-hidden="true"></i>
                       </button>
                       <button class="close" title="전체화면 닫기">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="bi bi-x-lg" aria-hidden="true"></i>
                       </button>
                     </div>
                     
@@ -1292,21 +1314,23 @@
               <li class="project">
                 <button class="row-btn">
                   <span>TOUS les JOURS Responsive Web Re-Design</span>
-                  <i class="fa-solid fa-chevron-down"></i>
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="spread">
                   <div class="spread-inner">
 
                     <iframe 
-                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1" allowfullscreen>
+                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1"
+                    title="Figma 프레젠테이션 뷰어"
+                    allowfullscreen>
                     </iframe>
 
                     <div class="fullscreen-btn">
                       <button class="expand" title="전체화면 보기">
-                        <i class="bi bi-arrows-angle-expand"></i>
+                        <i class="bi bi-arrows-angle-expand" aria-hidden="true"></i>
                       </button>
                       <button class="close" title="전체화면 닫기">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="bi bi-x-lg" aria-hidden="true"></i>
                       </button>
                     </div>
                     
@@ -1339,21 +1363,23 @@
               <li class="project">
                 <button class="row-btn">
                   <span>Pizza Hut Mobile App Re-Design</span>
-                  <i class="fa-solid fa-chevron-down"></i>
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="spread">
                   <div class="spread-inner">
 
                     <iframe 
-                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1" allowfullscreen>
+                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1"
+                    title="Figma 프레젠테이션 뷰어"
+                    allowfullscreen>
                     </iframe>
 
                     <div class="fullscreen-btn">
                       <button class="expand" title="전체화면 보기">
-                        <i class="bi bi-arrows-angle-expand"></i>
+                        <i class="bi bi-arrows-angle-expand" aria-hidden="true"></i>
                       </button>
                       <button class="close" title="전체화면 닫기">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="bi bi-x-lg" aria-hidden="true"></i>
                       </button>
                     </div>
                     
@@ -1373,21 +1399,23 @@
               <li class="project">
                 <button class="row-btn">
                   <span>Arthub Responsive Web Re-Design</span>
-                  <i class="fa-solid fa-chevron-down"></i>
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="spread">
                   <div class="spread-inner">
 
                     <iframe 
-                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1" allowfullscreen>
+                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1"
+                    title="Figma 프레젠테이션 뷰어"
+                    allowfullscreen>
                     </iframe>
 
                     <div class="fullscreen-btn">
                       <button class="expand" title="전체화면 보기">
-                        <i class="bi bi-arrows-angle-expand"></i>
+                        <i class="bi bi-arrows-angle-expand" aria-hidden="true"></i>
                       </button>
                       <button class="close" title="전체화면 닫기">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="bi bi-x-lg" aria-hidden="true"></i>
                       </button>
                     </div>
                     
@@ -1407,21 +1435,23 @@
               <li class="project">
                 <button class="row-btn">
                   <span>Deosup Hybrid WebApp Re-Design</span>
-                  <i class="fa-solid fa-chevron-down"></i>
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="spread">
                   <div class="spread-inner">
 
                     <iframe 
-                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1" allowfullscreen>
+                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1"
+                    title="Figma 프레젠테이션 뷰어"
+                    allowfullscreen>
                     </iframe>
 
                     <div class="fullscreen-btn">
                       <button class="expand" title="전체화면 보기">
-                        <i class="bi bi-arrows-angle-expand"></i>
+                        <i class="bi bi-arrows-angle-expand" aria-hidden="true"></i>
                       </button>
                       <button class="close" title="전체화면 닫기">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="bi bi-x-lg" aria-hidden="true"></i>
                       </button>
                     </div>
                     
@@ -1454,21 +1484,23 @@
               <li class="project">
                 <button class="row-btn">
                   <span>Pizza Hut Mobile App Re-Design</span>
-                  <i class="fa-solid fa-chevron-down"></i>
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="spread">
                   <div class="spread-inner">
 
                     <iframe 
-                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1" allowfullscreen>
+                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1"
+                    title="Figma 프레젠테이션 뷰어"
+                    allowfullscreen>
                     </iframe>
 
                     <div class="fullscreen-btn">
                       <button class="expand" title="전체화면 보기">
-                        <i class="bi bi-arrows-angle-expand"></i>
+                        <i class="bi bi-arrows-angle-expand" aria-hidden="true"></i>
                       </button>
                       <button class="close" title="전체화면 닫기">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="bi bi-x-lg" aria-hidden="true"></i>
                       </button>
                     </div>
                     
@@ -1501,21 +1533,23 @@
               <li class="project">
                 <button class="row-btn">
                   <span>Pizza Hut Mobile App Re-Design</span>
-                  <i class="fa-solid fa-chevron-down"></i>
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="spread">
                   <div class="spread-inner">
 
                     <iframe 
-                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1" allowfullscreen>
+                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1"
+                    title="Figma 프레젠테이션 뷰어"
+                    allowfullscreen>
                     </iframe>
 
                     <div class="fullscreen-btn">
                       <button class="expand" title="전체화면 보기">
-                        <i class="bi bi-arrows-angle-expand"></i>
+                        <i class="bi bi-arrows-angle-expand" aria-hidden="true"></i>
                       </button>
                       <button class="close" title="전체화면 닫기">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="bi bi-x-lg" aria-hidden="true"></i>
                       </button>
                     </div>
                     
@@ -1535,21 +1569,23 @@
               <li class="project">
                 <button class="row-btn">
                   <span>TOUS les JOURS Responsive Web Re-Design</span>
-                  <i class="fa-solid fa-chevron-down"></i>
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="spread">
                   <div class="spread-inner">
 
                     <iframe 
-                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1" allowfullscreen>
+                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1"
+                    title="Figma 프레젠테이션 뷰어"
+                    allowfullscreen>
                     </iframe>
 
                     <div class="fullscreen-btn">
                       <button class="expand" title="전체화면 보기">
-                        <i class="bi bi-arrows-angle-expand"></i>
+                        <i class="bi bi-arrows-angle-expand" aria-hidden="true"></i>
                       </button>
                       <button class="close" title="전체화면 닫기">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="bi bi-x-lg" aria-hidden="true"></i>
                       </button>
                     </div>
                     
@@ -1569,21 +1605,23 @@
               <li class="project">
                 <button class="row-btn">
                   <span>Arthub Responsive Web Re-Design</span>
-                  <i class="fa-solid fa-chevron-down"></i>
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="spread">
                   <div class="spread-inner">
 
                     <iframe 
-                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1" allowfullscreen>
+                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1"
+                    title="Figma 프레젠테이션 뷰어"
+                    allowfullscreen>
                     </iframe>
 
                     <div class="fullscreen-btn">
                       <button class="expand" title="전체화면 보기">
-                        <i class="bi bi-arrows-angle-expand"></i>
+                        <i class="bi bi-arrows-angle-expand" aria-hidden="true"></i>
                       </button>
                       <button class="close" title="전체화면 닫기">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="bi bi-x-lg" aria-hidden="true"></i>
                       </button>
                     </div>
                     
@@ -1603,21 +1641,23 @@
               <li class="project">
                 <button class="row-btn">
                   <span>Deosup Hybrid WebApp Re-Design</span>
-                  <i class="fa-solid fa-chevron-down"></i>
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="spread">
                   <div class="spread-inner">
 
                     <iframe 
-                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1" allowfullscreen>
+                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1"
+                    title="Figma 프레젠테이션 뷰어"
+                    allowfullscreen>
                     </iframe>
 
                     <div class="fullscreen-btn">
                       <button class="expand" title="전체화면 보기">
-                        <i class="bi bi-arrows-angle-expand"></i>
+                        <i class="bi bi-arrows-angle-expand" aria-hidden="true"></i>
                       </button>
                       <button class="close" title="전체화면 닫기">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="bi bi-x-lg" aria-hidden="true"></i>
                       </button>
                     </div>
                     
@@ -1650,21 +1690,23 @@
               <li class="project">
                 <button class="row-btn">
                   <span>Pizza Hut Mobile App Re-Design</span>
-                  <i class="fa-solid fa-chevron-down"></i>
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="spread">
                   <div class="spread-inner">
 
                     <iframe 
-                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1" allowfullscreen>
+                    src="https://embed.figma.com/proto/lp3RsVrv342qgcFGBuFqr7/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9?page-id=3%3A5&node-id=257-198&viewport=322%2C199%2C0.32&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=257%3A198&hotspot-hints=0&embed-host=share&hide-ui=1"
+                    title="Figma 프레젠테이션 뷰어"
+                    allowfullscreen>
                     </iframe>
 
                     <div class="fullscreen-btn">
                       <button class="expand" title="전체화면 보기">
-                        <i class="bi bi-arrows-angle-expand"></i>
+                        <i class="bi bi-arrows-angle-expand" aria-hidden="true"></i>
                       </button>
                       <button class="close" title="전체화면 닫기">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="bi bi-x-lg" aria-hidden="true"></i>
                       </button>
                     </div>
                     
