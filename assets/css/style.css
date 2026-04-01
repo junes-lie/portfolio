@@ -50,7 +50,6 @@ html body {
   word-break: keep-all;
   font-variant-numeric: tabular-nums;
   color: var(--text-color);
-  user-select: none;
 }
 html body article, html body aside, html body details, html body figcaption, html body figure, html body footer, html body hgroup, html body menu, html body nav, html body svg {
   display: block;
