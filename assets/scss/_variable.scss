@@ -44,8 +44,12 @@ $pc: 1400px;
 $tablet: 768px;
 $mobile: 360px;
 
-$z-float: 1000;
-$z-s1: 900;
+$z-float:   1000; // nav, quick-btns
+$z-s1:       900; // intro loader
+$z-overlay:  100; // headline, hgroup
+$z-above:     20; // active card, scroll-guard
+$z-base:      10; // 일반 요소
+$z-behind:    -1; // progress bar
 
 $trans-du: 0.3s;
 $ani-du: 1s;
