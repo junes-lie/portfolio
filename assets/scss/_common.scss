@@ -27,7 +27,7 @@ h3.headline{
   // font-family: 'YUniverse-B';
   text-transform: capitalize;
   margin-bottom: $space-xs;
-  z-index: 100;
+  z-index: $z-overlay;
 
   @include portrait{
     margin-top: $space-xs;

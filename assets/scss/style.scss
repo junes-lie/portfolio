@@ -406,7 +406,7 @@
       // z-index: 2;
 
       .headline{
-        z-index: 10;
+        z-index: $z-base;
         // color: #888;
         // mix-blend-mode: difference;
         @include difference;
@@ -807,7 +807,7 @@
         }
 
         hgroup{
-          z-index: 100;
+          z-index: $z-overlay;
           background: var(--text-color);
           // background: yellow;
           
@@ -837,7 +837,7 @@
 
         .projects{
           border-top: 0.2em solid rgba(var(--white-rgb), 1);
-          z-index: 10;
+          z-index: $z-base;
 
           @include portrait{
             border: none;
@@ -870,7 +870,7 @@
 
             &>*{
               position: relative;
-              z-index: 10;
+              z-index: $z-base;
             }
 
             .row-btn{
@@ -945,8 +945,8 @@
                       0 1px 3px 0 rgba(0, 0, 0, 0.149), 
                       0 0 .5px 0 rgba(0, 0, 0, 0.302);
                     @include flex-center;
-                    z-index: 10;
-                    
+                    z-index: $z-base;
+
                     i{
                       font-size: $font-body;
                     }
@@ -968,7 +968,7 @@
                   inset: 0;
                   background: rgba(var(--text-color-rgb), 0.7);
                   @include flex-center;
-                  z-index: 20;
+                  z-index: $z-above;
                   transition: all $trans-du ease;
 
                   .guard-btn{
