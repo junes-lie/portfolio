@@ -35,8 +35,8 @@ const fold = (project, onDone) => {
   gsap.set([guard, btn], { opacity: 1, pointerEvents: 'auto' });
   gsap.to(spread, {
     height: 0,
+    // duration: 0.2,
     onComplete: () => {
-      ScrollTrigger.refresh();
       if (onDone) onDone();
     }
   });
@@ -46,7 +46,6 @@ rows.forEach((btn) => {
   btn.addEventListener('click', function () {
     const project = this.parentElement;
     const spread = this.nextElementSibling;
-    const header = this.closest('.process').querySelector('hgroup');
     const isActive = project.classList.contains('is-active');
 
     isManualMove = true;
@@ -63,31 +62,9 @@ rows.forEach((btn) => {
       gsap.set(hint, { opacity: 0 });
       gsap.to(spread, {
         height: 'auto',
+        // duration: 0.2,
         onComplete: () => {
-          ScrollTrigger.refresh();
-
-          const isPortrait = window.matchMedia('(orientation: portrait)').matches;
-          if (isPortrait) {
-            const viewTop = this.getBoundingClientRect().top;
-            const totalOffset = vh10 + header.offsetHeight;
-
-            const isAlreadyInGoodView = viewTop > totalOffset && viewTop < window.innerHeight * 0.4;
-            if (!isAlreadyInGoodView) {
-              smoother.paused(true);
-              const targetScroll = smoother.offset(this, `top ${totalOffset}px`);
-              gsap.to(smoother, {
-                scrollTop: targetScroll,
-                onComplete: () => {
-                  isManualMove = false;
-                  smoother.paused(false);
-                },
-              });
-            } else {
-              isManualMove = false;
-            }
-          } else {
-            isManualMove = false;
-          }
+          requestAnimationFrame(() => { isManualMove = false; });
         }
       });
     } else {
