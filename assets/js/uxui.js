@@ -1,8 +1,6 @@
 const gallery = document.querySelector('#uxui .gallery');
 const items = gallery.querySelectorAll('.gallery-item');
 let currentIndex = 0;
-let playTimer = null;
-const AUTO_DELAY = 5000;
 
 function activateItem(index) {
   items.forEach((item, i) => {
@@ -15,32 +13,24 @@ function activateItem(index) {
   currentIndex = index;
 }
 
-function startAutoPlay() {
-  stopAutoPlay();
-  playTimer = setInterval(() => {
-    let next = (currentIndex + 1) % items.length;
-    activateItem(next);
-  }, AUTO_DELAY);
-}
-
-function stopAutoPlay() {
-  if (playTimer) clearInterval(playTimer);
-}
+const galleryAutoPlay = createAutoPlay(() => {
+  activateItem((currentIndex + 1) % items.length);
+});
 
 items.forEach((item, index) => {
   item.addEventListener('mouseenter', () => {
     activateItem(index);
-    stopAutoPlay();
+    galleryAutoPlay.stop();
   });
-  
+
   item.addEventListener('click', () => {
     activateItem(index);
-    startAutoPlay();
+    galleryAutoPlay.start();
   });
 });
 
 gallery.addEventListener('mouseleave', () => {
-  startAutoPlay();
+  galleryAutoPlay.start();
 });
 
-startAutoPlay();
+galleryAutoPlay.start();

@@ -1,34 +1,33 @@
-
-
 const navTriggers = (isLandscape) => {
   const sections = gsap.utils.toArray('#layout section');
-  // const nav = gsap.utils.toArray('.navigation');
   const nav = document.querySelector('.navigation');
-  const navLis = gsap.utils.toArray('.navigation li');
-  
+  const navLis = gsap.utils.toArray('.navigation li:not(.progress)');
+  const progressEl = document.querySelector('.progress');
+
   const xValue = remap(30, 50);
   const yValue = remap(-30, -50);
 
-  const spanTween = isLandscape 
-    ? { x: xValue, opacity: 1 } 
-    : { y: yValue, opacity: 1 }; // color: index === 1 ? 'white' : 'black'
+  const spanTween = isLandscape
+    ? { x: xValue, opacity: 1 }
+    : { y: yValue, opacity: 1 };
 
-  const progressTween = isLandscape 
-    ? { scaleY: 0, transformOrigin: 'center top', ease: 'none' } 
-    : { scaleX: 0, transformOrigin: 'left center', ease: 'none' };
+  const scaleProp = isLandscape ? 'scaleY' : 'scaleX';
+  const origin = isLandscape ? 'center top' : 'left center';
+  gsap.set(progressEl, { transformOrigin: origin, [scaleProp]: 0 });
 
+  const n = sections.length;
+  const sectionTriggers = [];
 
-  sections.forEach((section, index)=>{
-
+  sections.forEach((section, index) => {
     const li = navLis[index];
     const dot = li.querySelector('.dot');
     const span = li.querySelector('span');
-    
+
     const navAnimation = gsap.timeline()
       .to(dot, { scale: 1.5 })
-      .to(span, spanTween, "<");
+      .to(span, spanTween, '<');
 
-    ScrollTrigger.create({
+    const st = ScrollTrigger.create({
       trigger: section,
       start: 'top center',
       end: 'bottom center',
@@ -36,62 +35,57 @@ const navTriggers = (isLandscape) => {
       toggleActions: 'restart reverse restart reverse'
     });
 
-    li.addEventListener('click',()=>{
+    sectionTriggers.push(st);
+
+    li.addEventListener('click', () => {
       isManualMove = true;
-      // smoother.scrollTo(section, true, "top top");
-      sectionMove(section, "top top");
+      sectionMove(section, 'top top');
     });
-    
   });
 
   ScrollTrigger.create({
     trigger: '#layout',
     start: 'top top',
-    end: 'bottom bottom',
-    animation: gsap.from('.progress', progressTween),
-    scrub: true,
+    end: 'max',
+    onUpdate: (self) => {
+      const scroll = self.scroll();
+      let visual = 0;
+
+      for (let i = n - 1; i >= 0; i--) {
+        if (scroll >= sectionTriggers[i].start) {
+          if (i === n - 1) {
+            visual = 1;
+          } else {
+            const range = sectionTriggers[i + 1].start - sectionTriggers[i].start;
+            const local = (scroll - sectionTriggers[i].start) / range;
+            visual = (i + Math.min(local, 1)) / (n - 1);
+          }
+          break;
+        }
+      }
+
+      gsap.set(progressEl, { [scaleProp]: gsap.utils.clamp(0, 1, visual) });
+    }
   });
 
-  const pubStart = isLandscape ? "top center" : "top 0%";
-  const pubEnd = isLandscape ? "bottom center" : "bottom 0%";
-  const triggerSections = ["#planning", "#publishing"];
+  const pubStart = isLandscape ? 'top center' : 'top 0%';
+  const pubEnd = isLandscape ? 'bottom center' : 'bottom 0%';
+  const triggerSections = ['#planning', '#publishing'];
 
   triggerSections.forEach((selector) => {
     ScrollTrigger.create({
       trigger: selector,
       start: pubStart,
       end: pubEnd,
-      toggleClass: { targets: nav, className: "is-diff" },
-      // markers: true,
+      toggleClass: { targets: nav, className: 'is-diff' },
     });
   });
-}
+};
 
-
-
-gsap.matchMedia().add("(orientation: landscape)", () => {
-  navTriggers(true); 
+gsap.matchMedia().add('(orientation: landscape)', () => {
+  navTriggers(true);
 });
 
-gsap.matchMedia().add("(orientation: portrait)", () => {
+gsap.matchMedia().add('(orientation: portrait)', () => {
   navTriggers(false);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
