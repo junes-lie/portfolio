@@ -800,6 +800,7 @@
         @include portrait{
           grid-template-columns: 1fr;
           gap: 0;
+          margin-bottom: $p-section-y-p;
 
           .projects{
             flex: 1;

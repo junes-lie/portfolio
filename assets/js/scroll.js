@@ -2,7 +2,7 @@ let smoother = ScrollSmoother.create({
   content: '#layout',
   smooth: 2,
   effects: true,
-  smoothTouch: 0.1,
+  smoothTouch: 0.2,
 });
 
 const fullMoveSections = gsap.utils.toArray('[data-full-move="true"]');
