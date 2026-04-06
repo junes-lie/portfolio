@@ -3,25 +3,20 @@
 @use './variable' as *;
 @use './mixin' as *;
 @use './common' as *;
-@use './component' as *; /* 재활용가능한 것들 */
+@use './component' as *;
 @use './animation' as *;
-// @use './header' as *;
-
 
 #layout{
   overflow-x: hidden;
 
   .bg{
     position: fixed;
-    // @include fill-parent;
     inset: 0;
-    // margin-top: 100vh;
     background: var(--bg-grad2);
 
     &::before{
       content: '';
       position: fixed;
-      // @include fill-parent;
       inset: 0;
       background: rgba(255, 255, 255, 0.5);
     }
@@ -29,18 +24,9 @@
 
   #intro{
     position: relative;
-    // background: #F0EEE9;
-    // overflow: hidden;
-
-    // .container{
-    //   position: absolute;
-    //   height: 80vh;
-    // }
 
     .bg-grad{
-      // z-index: $z-s1;
       position: absolute;
-      // @include fill-parent;
       inset: 0;
       background: var(--bg-grad);
       filter: blur(0rem);
@@ -81,13 +67,11 @@
 
 
         .possessive-wrap{
-          // border: 1px solid #000;
           width: 60vw;
           height: 50vmin;
           @include flex-center;
 
           .logo{
-            // border: 1px solid red;
             height: 100%;
             aspect-ratio: 270/225; 
 
@@ -105,13 +89,11 @@
               transform-style: preserve-3d;
               transition: 0.5s;
 
-            
               &>div{
                 position: absolute;
-                @include fill-parent;
+                inset: 0;
                 @include flex-center;
                 backface-visibility: hidden;
-
               }
             
               
@@ -128,15 +110,14 @@
 
 
           .possessive{
-            // border: 1px solid #000;
+
             @include flex-center;
             height: 100%;
 
             .star{
-              // border: 1px solid #000;
+  
               height: 110%;
               font-family: 'YUniverse-B';
-              // color: var(--opacity);
               color: #fff;
               opacity: 0.7;
               font-size: $font-h3;
@@ -145,7 +126,6 @@
             }
             
             h2{
-              // color: var(--opacity);
               color: #fff;
               opacity: 0.7;
             }
@@ -154,45 +134,9 @@
       }
     }
 
-    // .mouse-wrap{
-    //   position: absolute;
-    //   top: calc(100vh - $p-section-y-p);
-    //   @include flex(column, $space-sm);
-      
-    //   .mouse{
-    //     position: relative;
-    //     border: 0.2em solid #fff;
-    //     width: 3.2em;
-    //     height: 4.5em;
-    //     border-radius: 3em;
-    //     margin: 0 auto;
-        
-    //     &::before{
-    //       content: '';
-    //       position: absolute;
-    //       top: 40%;
-    //       left: 50%;
-    //       transform: translate(-50%, -50%);
-    //       width: 0.4em;
-    //       height: 1em;
-    //       background-color: #fff;
-    //       border-radius: 0.5em;
-    //       animation: mouse-wheel-ani 1s linear infinite alternate;
-    //     }
-    //   }
-      
-    //   span{
-    //     color: #fff;
-    //     font-size: $font-caption;
-    //     text-transform: capitalize;
-    //   }
-
-    // }      
   }
 
   #profile{
-
-    // padding: 8vh 0;
 
     @include portrait{
       height: fit-content;
@@ -202,28 +146,22 @@
       overflow: visible;
 
       .content-wrap{
-        // @include fill-parent;
-        // @include flex-center;
 
         .content{
           @include flex-center;
           width: 100%;
           align-items: stretch;
           gap: $space-xl;
-          // display: grid;
-          // grid-template-columns: 2fr 1fr;
 
           @include portrait{
             flex-direction: column-reverse;
           }
 
           .box{
-            // font-size: clamp-calc(1, 10);
             flex: 2;
             @include glass;
             border-radius: $radius-md;
             padding: $p-xl;
-            // padding: $p-lg;
             @include flex(column, $space-lg);
 
             @include portrait{
@@ -247,9 +185,7 @@
               }
 
               .row{
-                // border: 1px solid #000;
                 display: flex;
-                // align-items: baseline;
                 align-items: flex-start;
                 gap: $space-lg;
 
@@ -259,7 +195,6 @@
 
                 h4{
                   flex: 1;
-                  // text-transform: capitalize;
                   text-transform: uppercase;
                   display: flex;
                   align-items: flex-start;
@@ -294,9 +229,7 @@
 
                 &.r5 .details{
                   flex-direction: row;
-                  flex-wrap: wrap; 
-                  // gap: 2rem; 
-                  // align-items: flex-start;
+                  flex-wrap: wrap;
                   @include portrait{
                     align-self: stretch;
                   }
@@ -364,11 +297,6 @@
             flex: 1;
             position: relative;
             @include flex-center;
-
-            // svg{
-            //   @include fill-parent;
-            // }
-
           }
         }
       }
@@ -377,11 +305,8 @@
     
     
   #publishing{
-    // border: 1px solid #000;
-    // background: var(--bg-s3);
     .section-bg{
       position: absolute;
-      // @include fill-parent;
       inset: 0;
       background-size: cover;
       background-position: top;
@@ -390,31 +315,21 @@
       &::before{
         content: '';
         position: absolute;
-        // @include fill-parent;
         inset: 0;
         background: rgba(0, 0, 0, 0.3);
         backdrop-filter: blur(0.5rem);
-        // z-index: 1;
       }
-      // .card-img{
-      //   // z-index: 0;
-      // }
     }
 
     .container{
       overflow: visible;
-      // z-index: 2;
 
       .headline{
         z-index: $z-base;
-        // color: #888;
-        // mix-blend-mode: difference;
         @include difference;
       }
 
       .content-wrap{
-        // @include fill-parent;
-        // @include flex-center;
         @include flex(column, $space-lg);
         perspective: 100rem;
         transition: all $trans-du ease;
@@ -425,11 +340,10 @@
           position: relative;
 
           .card{
-            @include glass;
+            @include glass($glow: false);
 
             position: absolute;
-            // position: relative;
-            
+
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -445,10 +359,6 @@
             overflow: hidden;
             background: rgba(255, 255, 255, 0.3);
             backdrop-filter: blur(1.5rem) saturate(180%);
-            
-            &::after{
-              content: none;
-            }
 
             .card-num{
               display: inline-flex;
@@ -543,27 +453,22 @@
 
       .gallery-item{
         position: relative;
-        // flex: 1;
         flex: 1 1 0;
         border-radius: $radius-md;
         padding: $space-lg;
         overflow: hidden;
-        // cursor: pointer;
         filter: grayscale(1);
         transition: all $trans-du ease;
 
         img{
           position: absolute;
-          // @include fill-parent;
-          // left: 0;
-          // top: 0;
           inset: 0;
           object-fit: cover;
           object-position: center;
         }
 
         .gallery-desc{
-          @include glass;
+          @include glass($glow: false);
           position: absolute;
           width: 100%;
           left: 0;
@@ -584,10 +489,6 @@
             align-items: center;
           }
 
-          &::after{
-            content: none;
-          }
-
           .tags{
             flex-wrap: wrap;
             margin-bottom: $space-sm;
@@ -596,9 +497,7 @@
           .btn-view{
             width: fit-content;
             height: fit-content;
-            // align-self: flex-start;
             text-transform: capitalize;
-            // margin-top: $space-sm;
             
             i{
               margin-right: $space-xs;
@@ -620,14 +519,6 @@
   }
 
   #graphic{
-
-    // background: var(--bg-s5);
-    // border: 1px solid #000;
-    // height: 200vh;
-
-    @include portrait{
-      // height: 400vh; 
-    }
 
     .container{
       overflow: visible;
@@ -660,11 +551,9 @@
       } 
       
       .grid{
-        // border: 1px solid #000;
         width: 100%;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        // gap: $space-xl;
         gap: $p-xl;
 
         @include portrait{
@@ -683,26 +572,21 @@
           }
           
           .thumb-inner{
-            // border: 1px solid #000;
+
             @include fill-parent;
             @include flex-center;
             position: relative;
             border-radius: calc($radius-md) + $border-th;
             transform-style: preserve-3d;
             transition: all $trans-du ease;
-            // transition: all 4s ease;
 
             .clip{
-              @include fill-parent;
               @include flex-center;
               position: absolute;
+              inset: 0;
               border-radius: calc($radius-md) + $border-th;
               overflow: hidden;
               padding: $border-th;
-              // -webkit-mask: 
-              //   linear-gradient(#fff 0 0) content-box, 
-              //   linear-gradient(#fff 0 0);
-              // -webkit-mask-composite: xor;
               mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
               mask-composite: exclude;
 
@@ -724,7 +608,6 @@
 
             &>div:not(.clip) {
               position: absolute;
-              // @include fill-parent;
               inset: $border-th;
               @include flex-center;
               border-radius: calc($radius-md);
@@ -773,11 +656,9 @@
   }
 
   #planning{
-    // background: var(--bg-s6);
     background: var(--text-color);
     color: var(--white);
     height: auto;
-    // height: 300vh;
 
     .headline{
       @include portrait{
@@ -810,10 +691,8 @@
         hgroup{
           z-index: $z-overlay;
           background: var(--text-color);
-          // background: yellow;
-          
+
           @include portrait{
-            // padding-bottom: $p-xl;
             padding: $p-xl 0;
             border-bottom: 0.2em solid rgba(var(--white-rgb), 1);
           }
@@ -908,7 +787,6 @@
 
             .spread{
               width: 100%;
-              // height: auto;
               height: 0;
               overflow: hidden;
 
@@ -925,7 +803,7 @@
                 }
 
                 iframe{
-                  @include fill-parent;
+                  inset: 0;
                   border: none;
                   z-index: 0;
                 }
@@ -939,7 +817,7 @@
 
                   &>*{
                     position: absolute;
-                    @include fill-parent;
+                    inset: 0;
                     background: var(--white);
                     border-radius: $radius-xs;
                     box-shadow: 
@@ -1000,9 +878,6 @@
               transform: rotateX(180deg);
             }
 
-            // &.is-active .spread{
-            //   height: auto;
-            // }
           }
         }
       }
@@ -1010,32 +885,3 @@
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// tablet 1400px 반응형
-// @include pc{
-
-// }
-// tablet 768px 반응형
-// @include tablet{
-
-// }
-
-// mobile 360px 반응형
-// @include mobile{
-  
-// }
