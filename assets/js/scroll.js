@@ -1,10 +1,8 @@
-
 let smoother = ScrollSmoother.create({
-  content: "#layout",
+  content: '#layout',
   smooth: 2,
   effects: true,
   smoothTouch: 0.1,
-  // markers: true,
 });
 
 const fullMoveSections = gsap.utils.toArray('[data-full-move="true"]');
@@ -17,7 +15,7 @@ function sectionMove(section, position) {
 
   gsap.to(smoother, {
     scrollTop: sectionPos,
-    ease: "power1.inOut",
+    ease: 'power1.inOut',
     overwrite: true,
     onComplete: () => {
       isManualMove = false;
@@ -26,40 +24,36 @@ function sectionMove(section, position) {
   });
 }
 
-fullMoveSections.forEach(section => {
-  const prevSection = section.previousElementSibling;
+fullMoveSections.forEach((section) => {
   const nextSection = section.nextElementSibling;
-  
+
   ScrollTrigger.create({
     trigger: section,
     id: `${section.id}-entry`,
-    start: "top 80%",
-    end: "bottom 20%",
-    // markers: true,
-    onEnter:() => {
+    start: 'top 80%',
+    end: 'bottom 20%',
+    onEnter: () => {
       if (isManualMove) return;
-      sectionMove(section, "top top");
+      sectionMove(section, 'top top');
     },
-    onEnterBack:() => {
+    onEnterBack: () => {
       if (isManualMove) return;
-      sectionMove(section, "bottom bottom");
+      sectionMove(section, 'bottom bottom');
     }
   });
 
   ScrollTrigger.create({
     trigger: section,
     id: `${section.id}-exit`,
-    start: "top 20%",
-    end: "bottom 80%",
-    // markers: true,
-    onLeave:() => {
+    start: 'top 20%',
+    end: 'bottom 80%',
+    onLeave: () => {
       if (isManualMove) return;
-      sectionMove(nextSection, "top top");
+      sectionMove(nextSection, 'top top');
     },
-    onLeaveBack:() => {
+    onLeaveBack: () => {
       if (isManualMove) return;
-      sectionMove(prevSection, "bottom bottom");
+      sectionMove(section.previousElementSibling, 'bottom bottom');
     }
   });
-
 });
