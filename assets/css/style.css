@@ -371,6 +371,7 @@ button {
   color: var(--opacity);
 }
 .quick-btns a {
+  font-size: inherit;
   width: 3.5em;
   height: 3.5em;
   margin: 0.8em 0;
@@ -633,6 +634,11 @@ button {
     gap: 1em;
   }
 }
+@media (max-height: 500px) and (orientation: landscape) {
+  #layout #intro .content-wrap {
+    gap: 1em;
+  }
+}
 #layout #intro .content-wrap .hero {
   color: #888;
   mix-blend-mode: color-burn;
@@ -662,6 +668,11 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  #layout #intro .content-wrap .loader-wrap .possessive-wrap {
+    height: 35vmin;
+  }
 }
 #layout #intro .content-wrap .loader-wrap .possessive-wrap .logo {
   height: 100%;
@@ -715,6 +726,11 @@ button {
   opacity: 0.7;
 }
 @media (orientation: portrait) {
+  #layout #profile {
+    height: fit-content;
+  }
+}
+@media (max-height: 500px) and (orientation: landscape) {
   #layout #profile {
     height: fit-content;
   }
@@ -937,12 +953,11 @@ button {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
-  width: 100%;
   height: 100%;
-  margin: 0 auto;
   aspect-ratio: 2/3;
   max-width: 40em;
   max-height: 60em;
+  margin: 0 auto;
   border-radius: 2em;
   padding: 3em;
   transition: all 0.3s ease;
@@ -1269,6 +1284,11 @@ button {
   }
   #layout #planning .content-wrap .process .projects {
     flex: 1;
+  }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  #layout #planning .content-wrap .process {
+    margin-bottom: 8vh;
   }
 }
 #layout #planning .content-wrap .process hgroup {

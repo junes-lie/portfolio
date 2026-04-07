@@ -42,6 +42,10 @@
         gap: $space-sm;
       }
 
+      @include landscape-mobile{
+        gap: $space-sm;
+      }
+
       .hero{
         color: #888;
         mix-blend-mode: color-burn;
@@ -70,6 +74,10 @@
           width: 60vw;
           height: 50vmin;
           @include flex-center;
+
+          @include landscape-mobile{
+            height: 35vmin;
+          }
 
           .logo{
             height: 100%;
@@ -139,6 +147,10 @@
   #profile{
 
     @include portrait{
+      height: fit-content;
+    }
+
+    @include landscape-mobile{
       height: fit-content;
     }
 
@@ -349,10 +361,11 @@
             align-items: flex-start;
             justify-content: space-around;
 
-            @include fill-parent;
+            height: 100%;
             aspect-ratio: 2/3;
             max-width: 40em;
             max-height: 60em;
+            margin: 0 auto;
             border-radius: $radius-md;
             padding: $space-lg;
             transition: all $trans-du ease;
@@ -686,6 +699,10 @@
           .projects{
             flex: 1;
           }
+        }
+
+        @include landscape-mobile{
+          margin-bottom: $p-section-y-l;
         }
 
         hgroup{
