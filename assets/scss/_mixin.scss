@@ -23,6 +23,12 @@
   }
 }
 
+@mixin landscape-mobile {
+  @media (max-height: 500px) and (orientation: landscape) {
+    @content;
+  }
+}
+
 
 @mixin absolute-center {
   position: absolute;
