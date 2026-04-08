@@ -54,6 +54,7 @@ $border-th: 0.3em;
 $p-section-y-l: 8vh;
 $p-section-y-p: 10vh;
 $p-float: clamp-calc(16, 115.2, $tablet, 1920px); /* 네비, 퀵 */
+$p-nav-span: clamp-calc(30, 50);
 $p-section-x-l: 12vw; /* 가로 */
 $p-section-x-p: 5vw; /* 세로 */
 
