@@ -36,7 +36,6 @@
   .top-btn{
     margin-top: 1em;
     color: var(--opacity);
-    // color: var(--sub-text-color);
   }
 
   a{
@@ -147,14 +146,39 @@
 
       span{
         position: absolute;
-        // white-space: nowrap;
         font-size: $font-caption;
         opacity: 0;
         pointer-events: none;
         transition: all $trans-du ease;
+        transform: translateX(0);
 
         @include portrait{
           text-align: center;
+          transform: translateY(0);
+        }
+      }
+
+      &.is-active{
+        .dot{ transform: scale(1.5); }
+        span{
+          opacity: 1;
+          transform: translateX($p-nav-span);
+
+          @include portrait{
+            transform: translateY(calc(-1 * $p-nav-span));
+          }
+        }
+      }
+
+      @include hover-effect{
+        .dot{ transform: scale(1.5); }
+        span{
+          opacity: 1;
+          transform: translateX($p-nav-span);
+
+          @include portrait{
+            transform: translateY(calc(-1 * $p-nav-span));
+          }
         }
       }
     }
