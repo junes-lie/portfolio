@@ -4,13 +4,6 @@ const navTriggers = (isLandscape) => {
   const navLis = gsap.utils.toArray('.navigation li:not(.progress)');
   const progressEl = document.querySelector('.progress');
 
-  const xValue = remap(30, 50);
-  const yValue = remap(-30, -50);
-
-  const spanTween = isLandscape
-    ? { x: xValue, opacity: 1 }
-    : { y: yValue, opacity: 1 };
-
   const scaleProp = isLandscape ? 'scaleY' : 'scaleX';
   const origin = isLandscape ? 'center top' : 'left center';
   gsap.set(progressEl, { transformOrigin: origin, [scaleProp]: 0 });
@@ -20,19 +13,12 @@ const navTriggers = (isLandscape) => {
 
   sections.forEach((section, index) => {
     const li = navLis[index];
-    const dot = li.querySelector('.dot');
-    const span = li.querySelector('span');
-
-    const navAnimation = gsap.timeline()
-      .to(dot, { scale: 1.5 })
-      .to(span, spanTween, '<');
 
     const st = ScrollTrigger.create({
       trigger: section,
       start: 'top center',
       end: 'bottom center',
-      animation: navAnimation,
-      toggleActions: 'restart reverse restart reverse'
+      toggleClass: { targets: li, className: 'is-active' }
     });
 
     sectionTriggers.push(st);
@@ -78,6 +64,7 @@ const navTriggers = (isLandscape) => {
       start: pubStart,
       end: pubEnd,
       toggleClass: { targets: nav, className: 'is-diff' },
+      // markers: true,
     });
   });
 };

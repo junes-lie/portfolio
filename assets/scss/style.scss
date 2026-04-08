@@ -145,6 +145,13 @@
   }
 
   #profile{
+    // background: linear-gradient(160deg, rgba(242, 186, 82, 0.08) 0%, rgba(122, 159, 191, 0.08) 100%);
+
+    // background: linear-gradient(175deg,
+    //   rgba(242, 186, 82, 0.06) 0%,
+    //   rgba(255, 255, 255, 0.4) 40%,
+    //   rgba(242, 167, 102, 0.05) 100%
+    // );
 
     @include portrait{
       height: fit-content;
@@ -453,6 +460,13 @@
   
   #uxui{
 
+    // background: rgba(242, 167, 102, 0.1);
+
+    // background: linear-gradient(180deg,
+    //   rgba(242, 120, 75, 0.04) 0%,
+    //   rgba(242, 167, 102, 0.08) 100%
+    // );
+
     .gallery{
       @include fill-parent;
       display: flex;
@@ -532,6 +546,12 @@
   }
 
   #graphic{
+
+    // background: linear-gradient(180deg, rgba(51, 51, 51, 0.03) 0%, rgba(122, 159, 191, 0.12) 100%);
+    // background: linear-gradient(180deg,
+    //   rgba(122, 159, 191, 0.05) 0%,
+    //   rgba(51, 51, 51, 0.08) 100%
+    // );
 
     .container{
       overflow: visible;
@@ -899,6 +919,16 @@
         }
       }
     }
+  }
+
+  .copyright{
+    position: relative;
+    text-align: center;
+    padding: $space-lg 0;
+    font-size: $font-caption;
+    color: var(--white);
+    background: var(--text-color);
+    border-top: 0.1em solid rgba(var(--white-rgb), 0.7);
   }
 
 }

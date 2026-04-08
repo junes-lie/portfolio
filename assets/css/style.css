@@ -479,10 +479,52 @@ button {
   opacity: 0;
   pointer-events: none;
   transition: all 0.3s ease;
+  transform: translateX(0);
 }
 @media (orientation: portrait) {
   .navigation ul li span {
     text-align: center;
+    transform: translateY(0);
+  }
+}
+.navigation ul li.is-active .dot {
+  transform: scale(1.5);
+}
+.navigation ul li.is-active span {
+  opacity: 1;
+  transform: translateX(clamp(3rem, 2.308rem + 1.923vw, 5rem));
+}
+@media (orientation: portrait) {
+  .navigation ul li.is-active span {
+    transform: translateY(calc(-1 * clamp(3rem, 2.308rem + 1.923vw, 5rem)));
+  }
+}
+@media (hover: hover) {
+  .navigation ul li:hover .dot {
+    transform: scale(1.5);
+  }
+  .navigation ul li:hover span {
+    opacity: 1;
+    transform: translateX(clamp(3rem, 2.308rem + 1.923vw, 5rem));
+  }
+}
+@media (hover: hover) and (orientation: portrait) {
+  .navigation ul li:hover span {
+    transform: translateY(calc(-1 * clamp(3rem, 2.308rem + 1.923vw, 5rem)));
+  }
+}
+@media (hover: none) {
+  .navigation ul li:active .dot {
+    transform: scale(1.5);
+  }
+  .navigation ul li:active span {
+    opacity: 1;
+    transform: translateX(clamp(3rem, 2.308rem + 1.923vw, 5rem));
+  }
+}
+@media (hover: none) and (orientation: portrait) {
+  .navigation ul li:active span {
+    transform: translateY(calc(-1 * clamp(3rem, 2.308rem + 1.923vw, 5rem)));
   }
 }
 
@@ -1466,5 +1508,12 @@ button {
 #layout #planning .content-wrap .process .projects .project.is-active .row-btn i {
   transform: rotateX(180deg);
 }
-
-/*# sourceMappingURL=style.css.map */
+#layout .copyright {
+  position: relative;
+  text-align: center;
+  padding: 3em 0;
+  font-size: clamp(1rem, 0.931rem + 0.192vw, 1.2rem);
+  color: var(--white);
+  background: var(--text-color);
+  border-top: 0.1em solid rgba(var(--white-rgb), 0.7);
+}
