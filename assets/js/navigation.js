@@ -8,6 +8,9 @@ const navTriggers = (isLandscape) => {
   const origin = isLandscape ? 'center top' : 'left center';
   gsap.set(progressEl, { transformOrigin: origin, [scaleProp]: 0 });
 
+  const diffIds = isLandscape
+    ? ['planning', 'publishing']
+    : ['planning', 'publishing', 'graphic'];
   const n = sections.length;
   const sectionTriggers = [];
 
@@ -17,8 +20,6 @@ const navTriggers = (isLandscape) => {
     const st = ScrollTrigger.create({
       trigger: section,
       start: 'top center',
-      end: 'bottom center',
-      toggleClass: { targets: li, className: 'is-active' }
     });
 
     sectionTriggers.push(st);
@@ -36,9 +37,11 @@ const navTriggers = (isLandscape) => {
     onUpdate: (self) => {
       const scroll = self.scroll();
       let visual = 0;
+      let activeIndex = 0;
 
       for (let i = n - 1; i >= 0; i--) {
         if (scroll >= sectionTriggers[i].start) {
+          activeIndex = i;
           if (i === n - 1) {
             visual = 1;
           } else {
@@ -50,23 +53,13 @@ const navTriggers = (isLandscape) => {
         }
       }
 
+      navLis.forEach((li, i) => li.classList.toggle('is-active', i === activeIndex));
+      const activeId = sections[activeIndex]?.id;
+      nav.classList.toggle('is-diff', diffIds.includes(activeId));
       gsap.set(progressEl, { [scaleProp]: gsap.utils.clamp(0, 1, visual) });
     }
   });
 
-  const pubStart = isLandscape ? 'top center' : 'top 0%';
-  const pubEnd = isLandscape ? 'bottom center' : 'bottom 0%';
-  const triggerSections = ['#planning', '#publishing'];
-
-  triggerSections.forEach((selector) => {
-    ScrollTrigger.create({
-      trigger: selector,
-      start: pubStart,
-      end: pubEnd,
-      toggleClass: { targets: nav, className: 'is-diff' },
-      // markers: true,
-    });
-  });
 };
 
 gsap.matchMedia().add('(orientation: landscape)', () => {
