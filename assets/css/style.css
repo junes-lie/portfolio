@@ -1315,7 +1315,7 @@ button {
 }
 @media (orientation: portrait) {
   #layout #planning .headline {
-    margin-bottom: unset;
+    margin-bottom: clamp(2.4rem, -1.003rem + 4.43vw, 5.2rem);
   }
 }
 #layout #planning .content-wrap {
@@ -1351,7 +1351,7 @@ button {
 }
 @media (orientation: portrait) {
   #layout #planning .content-wrap .process hgroup {
-    padding: clamp(2.4rem, -1.003rem + 4.43vw, 5.2rem) 0;
+    padding-bottom: clamp(2.4rem, -1.003rem + 4.43vw, 5.2rem);
     border-bottom: 0.2em solid rgba(var(--white-rgb), 1);
   }
 }

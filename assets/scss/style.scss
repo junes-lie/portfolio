@@ -695,7 +695,8 @@
 
     .headline{
       @include portrait{
-        margin-bottom: unset;
+        // margin-bottom: unset;
+        margin-bottom: $p-xl;
       }
     }
 
@@ -726,11 +727,13 @@
         }
 
         hgroup{
+          // border: 1px solid red;
           z-index: $z-overlay;
           background: var(--text-color);
 
           @include portrait{
-            padding: $p-xl 0;
+            // padding: $p-xl 0;
+            padding-bottom: $p-xl;
             border-bottom: 0.2em solid rgba(var(--white-rgb), 1);
           }
 
