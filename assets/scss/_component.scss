@@ -120,7 +120,7 @@
       top: 1.5em;
       bottom: 1.5em;
       left: 50%;
-      margin: 0 0 0 -0.05rem;
+      margin-left: -0.05rem;
       width: 0.1rem;
       background: #fff;
       z-index: $z-behind;
@@ -137,7 +137,7 @@
       }
     }
 
-    li{
+    li:not(.progress){
       position: relative;
       cursor: pointer;
       margin-bottom: 3rem;
