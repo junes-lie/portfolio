@@ -34,6 +34,7 @@ const navTriggers = (isLandscape) => {
     trigger: '#layout',
     start: 'top top',
     end: 'max',
+    // markers: true,
     onUpdate: (self) => {
       const scroll = self.scroll();
       let visual = 0;
@@ -56,6 +57,9 @@ const navTriggers = (isLandscape) => {
       navLis.forEach((li, i) => li.classList.toggle('is-active', i === activeIndex));
       const activeId = sections[activeIndex]?.id;
       nav.classList.toggle('is-diff', diffIds.includes(activeId));
+      const planIdx = n - 1;
+      const planTop = sectionTriggers[planIdx].start + window.innerHeight / 2;
+      nav.classList.toggle('is-in-planning', scroll >= planTop);
       gsap.set(progressEl, { [scaleProp]: gsap.utils.clamp(0, 1, visual) });
     }
   });
