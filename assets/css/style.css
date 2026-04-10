@@ -417,6 +417,18 @@ button {
 .navigation.is-diff span {
   color: #fff;
 }
+@media (orientation: portrait) {
+  .navigation.is-in-planning::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 10vh;
+    background: var(--text-color);
+    z-index: -1;
+  }
+}
 .navigation ul {
   display: flex;
   flex-direction: column;
@@ -435,7 +447,7 @@ button {
   top: 1.5em;
   bottom: 1.5em;
   left: 50%;
-  margin-left: -0.05rem;
+  margin: 0 0 0 -0.05rem;
   width: 0.1rem;
   background: #fff;
   z-index: -1;
@@ -1303,7 +1315,7 @@ button {
 }
 @media (orientation: portrait) {
   #layout #planning .headline {
-    margin-bottom: unset;
+    margin-bottom: clamp(2.4rem, -1.003rem + 4.43vw, 5.2rem);
   }
 }
 #layout #planning .content-wrap {
@@ -1339,7 +1351,7 @@ button {
 }
 @media (orientation: portrait) {
   #layout #planning .content-wrap .process hgroup {
-    padding: clamp(2.4rem, -1.003rem + 4.43vw, 5.2rem) 0;
+    padding-bottom: clamp(2.4rem, -1.003rem + 4.43vw, 5.2rem);
     border-bottom: 0.2em solid rgba(var(--white-rgb), 1);
   }
 }
