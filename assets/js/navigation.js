@@ -5,36 +5,33 @@ const navTriggers = (isLandscape) => {
   const progressEl = document.querySelector('.progress');
 
   const scaleProp = isLandscape ? 'scaleY' : 'scaleX';
-  const origin = isLandscape ? 'center top' : 'left center';
-  gsap.set(progressEl, { transformOrigin: origin, [scaleProp]: 0 });
+  gsap.set(progressEl, {
+    transformOrigin: isLandscape ? 'center top' : 'left center',
+    [scaleProp]: 0,
+  });
 
-  const diffIds = isLandscape
-    ? ['planning', 'publishing']
-    : ['planning', 'publishing', 'graphic'];
+  const diffIds = new Set(
+    isLandscape
+      ? ['planning', 'publishing']
+      : ['planning', 'publishing', 'graphic']
+  );
   const n = sections.length;
-  const sectionTriggers = [];
+  const vh = window.innerHeight;
 
-  sections.forEach((section, index) => {
-    const li = navLis[index];
-
-    const st = ScrollTrigger.create({
-      trigger: section,
-      start: 'top center',
-    });
-
-    sectionTriggers.push(st);
-
-    li.addEventListener('click', () => {
+  const sectionTriggers = sections.map((section, i) => {
+    navLis[i].addEventListener('click', () => {
       isManualMove = true;
       sectionMove(section, 'top top');
     });
+    return ScrollTrigger.create({ trigger: section, start: 'top center' });
   });
+
+  let prevIndex = -1;
 
   ScrollTrigger.create({
     trigger: '#layout',
     start: 'top top',
     end: 'max',
-    // markers: true,
     onUpdate: (self) => {
       const scroll = self.scroll();
       let visual = 0;
@@ -47,23 +44,25 @@ const navTriggers = (isLandscape) => {
             visual = 1;
           } else {
             const range = sectionTriggers[i + 1].start - sectionTriggers[i].start;
-            const local = (scroll - sectionTriggers[i].start) / range;
-            visual = (i + Math.min(local, 1)) / (n - 1);
+            visual = (i + Math.min((scroll - sectionTriggers[i].start) / range, 1)) / (n - 1);
           }
           break;
         }
       }
 
-      navLis.forEach((li, i) => li.classList.toggle('is-active', i === activeIndex));
-      const activeId = sections[activeIndex]?.id;
-      nav.classList.toggle('is-diff', diffIds.includes(activeId));
-      const planIdx = n - 1;
-      const planTop = sectionTriggers[planIdx].start + window.innerHeight / 2;
-      nav.classList.toggle('is-in-planning', scroll >= planTop);
-      gsap.set(progressEl, { [scaleProp]: gsap.utils.clamp(0, 1, visual) });
-    }
-  });
+      if (activeIndex !== prevIndex) {
+        if (prevIndex >= 0) navLis[prevIndex].classList.remove('is-active');
+        navLis[activeIndex].classList.add('is-active');
+        prevIndex = activeIndex;
 
+        const id = sections[activeIndex].id;
+        nav.classList.toggle('is-diff', diffIds.has(id));
+      }
+
+      nav.classList.toggle('is-in-planning', scroll >= sectionTriggers[n - 1].start + vh / 2);
+      gsap.set(progressEl, { [scaleProp]: gsap.utils.clamp(0, 1, visual) });
+    },
+  });
 };
 
 gsap.matchMedia().add('(orientation: landscape)', () => {
