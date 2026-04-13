@@ -204,6 +204,12 @@
   position: absolute;
   top: calc(100vh - $p-section-y-p);
   @include flex(column, $space-sm);
+
+  @include landscape-mobile{
+    top: unset;
+    bottom: $space-xs;
+    gap: $space-xs;
+  }
   
   .mouse{
     position: relative;

@@ -107,6 +107,7 @@
               
               .logo-back{
                 transform: rotateY(180deg);
+                justify-content: flex-end;
                 
                 h2{
                   color: #fff;
@@ -248,7 +249,7 @@
 
                 &.r5 .details{
                   flex-direction: row;
-                  flex-wrap: wrap;
+                  // flex-wrap: wrap;
                   @include portrait{
                     align-self: stretch;
                   }
@@ -689,7 +690,7 @@
   }
 
   #planning{
-    background: var(--text-color);
+    // background: var(--text-color);
     color: var(--white);
     height: auto;
 
@@ -729,7 +730,7 @@
         hgroup{
           // border: 1px solid red;
           z-index: $z-overlay;
-          background: var(--text-color);
+          // background: var(--text-color);
 
           @include portrait{
             // padding: $p-xl 0;
@@ -795,7 +796,8 @@
 
             .row-btn{
               width: 100%;
-              padding: $space-lg $space-md $space-lg 0;
+              // padding: $space-lg $space-md $space-lg 0;
+              padding: $space-lg $space-md;
               background: none;
               color: #fff;
               display: flex;
@@ -803,20 +805,23 @@
               align-items: center;
               cursor: pointer;
 
+              &::before{
+                content: '';
+                position: absolute;
+                left: 0;
+                // display: inline-block;
+                width: $space-sm;
+                height: $space-sm;
+                border-radius: 100%;
+                background-color: var(--point-color);
+                // margin-right: $space-xs;
+                opacity: 0;
+                transition: all $trans-du ease;
+              }
+
               span{
                 font-size: $font-h5;
-                
-                &::before{
-                  content: '';
-                  display: inline-block;
-                  width: $space-xs;
-                  height: $space-xs;
-                  border-radius: 100%;
-                  background-color: var(--point-color);
-                  margin-right: $space-xs;
-                  opacity: 0;
-                  transition: all $trans-du ease;
-                }
+                text-align: left;
               }
               
               i{
@@ -909,8 +914,8 @@
               opacity: 1;
             }
 
-            &:hover .row-btn span::before,
-            &.is-active .row-btn span::before{
+            &:hover .row-btn::before,
+            &.is-active .row-btn::before{
               opacity: 1;
             }
 
@@ -930,7 +935,7 @@
     padding: $space-lg 0;
     font-size: $font-caption;
     color: var(--white);
-    background: var(--text-color);
+    // background: var(--text-color);
     border-top: 0.1em solid rgba(var(--white-rgb), 0.7);
   }
 
