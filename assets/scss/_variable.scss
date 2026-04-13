@@ -77,8 +77,12 @@ $space-lg: 3em;
 $space-xl: 5.2em;
 $space-xxl: 15em;
 
-$p-lg: clamp-calc(24, 30, $mobile, $tablet);
-$p-xl: clamp-calc(24, 52, $tablet, $pc);
+
+$p-lg: clamp-calc(24, 30, $mobile, $tablet); //grid 모바일 - 탭
+$p-xl: clamp-calc(24, 52, $tablet, $pc); // 그리드 탭- PC
+$p-lm: clamp-calc(8, 52); // 그리드 탭- PC
+
+
 
 $radius-xs: 0.5em;
 $radius-sm: 1em;

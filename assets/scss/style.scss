@@ -146,13 +146,6 @@
   }
 
   #profile{
-    // background: linear-gradient(160deg, rgba(242, 186, 82, 0.08) 0%, rgba(122, 159, 191, 0.08) 100%);
-
-    // background: linear-gradient(175deg,
-    //   rgba(242, 186, 82, 0.06) 0%,
-    //   rgba(255, 255, 255, 0.4) 40%,
-    //   rgba(242, 167, 102, 0.05) 100%
-    // );
 
     @include portrait{
       height: fit-content;
@@ -188,6 +181,10 @@
               width: 100%;
               gap: $space-xl;
               padding: $p-lg;
+            }
+            
+            @include landscape-mobile{
+              padding: $p-lm;
             }
 
             &::after{
@@ -234,6 +231,11 @@
                     span{
                       margin-right: $space-sm;
                     }
+
+                    // @include landscape-mobile{
+                    //   display: flex;
+                    //   flex-direction: column;
+                    // }
                   }
                   
                   .sub{
@@ -244,6 +246,12 @@
                 &.r1 .details{
                   p:first-of-type{
                     font-size: $font-h5;
+                  }
+                }
+
+                &.r2 .details{
+                  p{
+                    margin-bottom: 0.2em;
                   }
                 }
 
@@ -343,6 +351,7 @@
 
     .container{
       overflow: visible;
+      position: relative;
 
       .headline{
         z-index: $z-base;
@@ -353,6 +362,10 @@
         @include flex(column, $space-lg);
         perspective: 100rem;
         transition: all $trans-du ease;
+
+        @include landscape-mobile{
+          @include absolute-center;
+        }
 
         .cards{
           @include fill-parent;
@@ -461,13 +474,6 @@
   
   #uxui{
 
-    // background: rgba(242, 167, 102, 0.1);
-
-    // background: linear-gradient(180deg,
-    //   rgba(242, 120, 75, 0.04) 0%,
-    //   rgba(242, 167, 102, 0.08) 100%
-    // );
-
     .gallery{
       @include fill-parent;
       display: flex;
@@ -547,12 +553,6 @@
   }
 
   #graphic{
-
-    // background: linear-gradient(180deg, rgba(51, 51, 51, 0.03) 0%, rgba(122, 159, 191, 0.12) 100%);
-    // background: linear-gradient(180deg,
-    //   rgba(122, 159, 191, 0.05) 0%,
-    //   rgba(51, 51, 51, 0.08) 100%
-    // );
 
     .container{
       overflow: visible;

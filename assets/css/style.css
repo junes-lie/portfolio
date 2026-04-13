@@ -547,7 +547,7 @@ button {
   flex-direction: column;
   gap: 1em;
 }
-@media (max-height: 500px) and (orientation: landscape) {
+@media (max-height: 700px) and (orientation: landscape) {
   .mouse-wrap {
     top: unset;
     bottom: 0.5em;
@@ -695,7 +695,7 @@ button {
     gap: 1em;
   }
 }
-@media (max-height: 500px) and (orientation: landscape) {
+@media (max-height: 700px) and (orientation: landscape) {
   #layout #intro .content-wrap {
     gap: 1em;
   }
@@ -730,7 +730,7 @@ button {
   justify-content: center;
   align-items: center;
 }
-@media (max-height: 500px) and (orientation: landscape) {
+@media (max-height: 700px) and (orientation: landscape) {
   #layout #intro .content-wrap .loader-wrap .possessive-wrap {
     height: 35vmin;
   }
@@ -792,7 +792,7 @@ button {
     height: fit-content;
   }
 }
-@media (max-height: 500px) and (orientation: landscape) {
+@media (max-height: 700px) and (orientation: landscape) {
   #layout #profile {
     height: fit-content;
   }
@@ -850,6 +850,11 @@ button {
     padding: clamp(2.4rem, 1.871rem + 1.471vw, 3rem);
   }
 }
+@media (max-height: 700px) and (orientation: landscape) {
+  #layout #profile .container .content-wrap .content .box {
+    padding: clamp(0.8rem, -0.723rem + 4.231vw, 5.2rem);
+  }
+}
 #layout #profile .container .content-wrap .content .box::after {
   filter: blur(4rem);
 }
@@ -900,6 +905,9 @@ button {
 }
 #layout #profile .container .content-wrap .content .box .desc .row.r1 .details p:first-of-type {
   font-size: clamp(1.4rem, 1.054rem + 0.962vw, 2.4rem);
+}
+#layout #profile .container .content-wrap .content .box .desc .row.r2 .details p {
+  margin-bottom: 0.2em;
 }
 #layout #profile .container .content-wrap .content .box .desc .row.r5 .details {
   flex-direction: row;
@@ -979,6 +987,7 @@ button {
 }
 #layout #publishing .container {
   overflow: visible;
+  position: relative;
 }
 #layout #publishing .container .headline {
   z-index: 10;
@@ -991,6 +1000,14 @@ button {
   gap: 3em;
   perspective: 100rem;
   transition: all 0.3s ease;
+}
+@media (max-height: 700px) and (orientation: landscape) {
+  #layout #publishing .container .content-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 #layout #publishing .container .content-wrap .cards {
   width: 100%;
@@ -1346,7 +1363,7 @@ button {
     flex: 1;
   }
 }
-@media (max-height: 500px) and (orientation: landscape) {
+@media (max-height: 700px) and (orientation: landscape) {
   #layout #planning .content-wrap .process {
     margin-bottom: 8vh;
   }
