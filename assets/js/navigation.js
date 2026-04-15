@@ -2,7 +2,7 @@ const navTriggers = (isLandscape) => {
   const sections = gsap.utils.toArray('#layout section');
   const nav = document.querySelector('.navigation');
   const navLis = gsap.utils.toArray('.navigation li:not(.progress)');
-  const progressEl = document.querySelector('.progress');
+  const progressEl = nav.querySelector('.progress');
 
   const scaleProp = isLandscape ? 'scaleY' : 'scaleX';
   gsap.set(progressEl, {

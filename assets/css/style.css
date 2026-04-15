@@ -547,7 +547,7 @@ button {
   flex-direction: column;
   gap: 1em;
 }
-@media (max-height: 700px) and (orientation: landscape) {
+@media (max-height: 500px) and (orientation: landscape) {
   .mouse-wrap {
     top: unset;
     bottom: 0.5em;
@@ -695,7 +695,7 @@ button {
     gap: 1em;
   }
 }
-@media (max-height: 700px) and (orientation: landscape) {
+@media (max-height: 500px) and (orientation: landscape) {
   #layout #intro .content-wrap {
     gap: 1em;
   }
@@ -730,7 +730,7 @@ button {
   justify-content: center;
   align-items: center;
 }
-@media (max-height: 700px) and (orientation: landscape) {
+@media (max-height: 500px) and (orientation: landscape) {
   #layout #intro .content-wrap .loader-wrap .possessive-wrap {
     height: 35vmin;
   }
@@ -787,15 +787,9 @@ button {
   color: #fff;
   opacity: 0.7;
 }
-@media (orientation: portrait) {
-  #layout #profile {
-    height: fit-content;
-  }
-}
-@media (max-height: 700px) and (orientation: landscape) {
-  #layout #profile {
-    height: fit-content;
-  }
+#layout #profile {
+  min-height: 100vh;
+  height: fit-content;
 }
 #layout #profile .container {
   overflow: visible;
@@ -850,7 +844,7 @@ button {
     padding: clamp(2.4rem, 1.871rem + 1.471vw, 3rem);
   }
 }
-@media (max-height: 700px) and (orientation: landscape) {
+@media (max-height: 500px) and (orientation: landscape) {
   #layout #profile .container .content-wrap .content .box {
     padding: clamp(0.8rem, -0.723rem + 4.231vw, 5.2rem);
   }
@@ -1001,7 +995,7 @@ button {
   perspective: 100rem;
   transition: all 0.3s ease;
 }
-@media (max-height: 700px) and (orientation: landscape) {
+@media (max-height: 500px) and (orientation: landscape) {
   #layout #publishing .container .content-wrap {
     position: absolute;
     top: 50%;
@@ -1363,7 +1357,7 @@ button {
     flex: 1;
   }
 }
-@media (max-height: 700px) and (orientation: landscape) {
+@media (max-height: 500px) and (orientation: landscape) {
   #layout #planning .content-wrap .process {
     margin-bottom: 8vh;
   }

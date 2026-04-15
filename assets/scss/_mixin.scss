@@ -24,7 +24,7 @@
 }
 
 @mixin landscape-mobile {
-  @media (max-height: 700px) and (orientation: landscape) {
+  @media (max-height: 500px) and (orientation: landscape) {
     @content;
   }
 }

@@ -146,14 +146,17 @@
   }
 
   #profile{
+    min-height: 100vh;
+    height: fit-content;
 
-    @include portrait{
-      height: fit-content;
-    }
+    // @include portrait{
+    //   height: fit-content;
+    // }
 
-    @include landscape-mobile{
-      height: fit-content;
-    }
+    // @include landscape-mobile{
+    //   height: fit-content;
+    //   min-height: 100vh;
+    // }
 
     .container{
       overflow: visible;
