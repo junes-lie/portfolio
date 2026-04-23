@@ -342,6 +342,7 @@ button {
 
 .quick-btns {
   position: fixed;
+  visibility: hidden;
   right: clamp(1.6rem, -5.013rem + 8.611vw, 11.52rem);
   bottom: 8vh;
   z-index: 1000;
@@ -399,6 +400,7 @@ button {
 
 .navigation {
   position: fixed;
+  visibility: hidden;
   left: clamp(1.6rem, -5.013rem + 8.611vw, 11.52rem);
   height: 100vh;
   display: flex;
@@ -542,6 +544,7 @@ button {
 
 .mouse-wrap {
   position: absolute;
+  visibility: hidden;
   top: 90vh;
   display: flex;
   flex-direction: column;
@@ -675,7 +678,12 @@ button {
 }
 #layout #intro .bg-grad {
   position: absolute;
-  inset: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
   background: var(--bg-grad);
   filter: blur(0rem);
 }
@@ -689,6 +697,9 @@ button {
   display: flex;
   flex-direction: column;
   gap: 5.2em;
+}
+#layout #intro .content-wrap.is-loading {
+  visibility: hidden;
 }
 @media (orientation: portrait) {
   #layout #intro .content-wrap {
@@ -713,10 +724,19 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  display: flex;
   flex-direction: column;
   gap: 3em;
   z-index: 900;
+}
+#layout #intro .content-wrap .loader-wrap .loader-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  min-height: 0;
+  text-align: center;
 }
 #layout #intro .content-wrap .loader-wrap .loader-text {
   font-family: "SUITE", sans-serif;
@@ -786,6 +806,27 @@ button {
 #layout #intro .content-wrap .loader-wrap .possessive-wrap .possessive h2 {
   color: #fff;
   opacity: 0.7;
+}
+#layout #intro .content-wrap .loader-wrap .loader-tagline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  opacity: 0.85;
+  font-size: clamp(1.4rem, 1.054rem + 0.962vw, 2.4rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  pointer-events: none;
+}
+@media (orientation: portrait) {
+  #layout #intro .content-wrap .loader-wrap .loader-tagline {
+    font-size: clamp(1.2rem, 1.062rem + 0.385vw, 1.6rem);
+  }
+}
+#layout #intro .content-wrap .loader-wrap .loader-tagline .line {
+  display: block;
 }
 #layout #profile {
   min-height: 100vh;
