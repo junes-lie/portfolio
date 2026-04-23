@@ -112,19 +112,6 @@ Loading()                                   ← 파일 마지막에서 호출
 
 **The Architect of Clear Interfaces** — "기준을 세우고 구조를 뜯어보는 사람"을 말 없이 증명.
 
-### 히어로에만 노출되는 정체성 4줄
-
-```
-붓으로 그린 다채로운 디자인 감성과
-돋보기로 찾아낸 구조의 인사이트로
-사용자의 마음에 태양처럼 가닿는
-UX 디자이너 이지선입니다
-```
-
-로딩 페이즈에만 노출. `init()` 전환 시 fade out, 이후 `welcome to Portfolio` SplitText 등장.
-
----
-
 ## 함정 (실측으로 확인된 것)
 
 ### CSS Grid `grid-template-rows` 보간 불안정
