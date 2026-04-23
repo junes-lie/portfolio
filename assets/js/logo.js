@@ -16,6 +16,14 @@ const LogoDraw = () => {
 
   const tl = gsap.timeline();
 
+  tl.to('.loader-tagline .line', {
+    autoAlpha: 1,
+    y: 0,
+    // duration: 0.6,
+    stagger: 0.4,
+    // ease: 'power2.out',
+  }, 0);
+
   tl.to('#logo-white .half-circle', {
     strokeDashoffset: 0,
     duration: 2,
@@ -41,6 +49,9 @@ const LogoDraw = () => {
     duration: 1,
     ease: 'elastic.out(1,0.1)'
   }, '<');
+
+  // 태그라인 독해 시간 확보 — 로고·라인 등장 완료 후 1.2초 hold
+  tl.to({}, { duration: 1.2 });
 
   return tl;
 };
@@ -83,21 +94,24 @@ function init() {
       smoother.paused(false);
     }
   });
+  // tl.timeScale(0.2);
 
   const splitH1 = new SplitText('h1.hero', { type: 'chars' });
   const splitH2 = new SplitText('h2.hero', { type: 'chars' });
 
   tl
     .set('#intro .logo', { pointerEvents: 'auto' })
-    .set('.hero', { height: 'auto', autoAlpha: 1 })
-    .to('.loader-text', { height: 0, autoAlpha: 0 }, '<')
-    .to('.loader-wrap', { gap: 0 }, '<')
-    .to('.possessive-wrap', { height: '25vmin' }, '<')
+    // 1단계: loader-content 접힘 (공간 먼저 비움)
+    .to('.loader-content', { height: 0, autoAlpha: 0/* , duration: 0.6 */ })
+    .to('.loader-wrap', { gap: 0/* , duration: 0.6 */ }, '<')
+    // 2단계: possessive-wrap 축소 + possessive 등장 + hero 펼침 (동시 진행, 공간 합계 유지)
+    .to('.possessive-wrap', { height: '25vmin'/* , duration: 0.6 */ })
     .to('.possessive', { width: 'auto', autoAlpha: 1 }, '<')
-    .to('.bg-grad', { width: '80vmax', height: '80vmax', borderRadius: '50%', filter: `blur(${blurValue}rem)` }, '<')
-    .to('#intro .logo .half-circle, #intro .logo .wave', { stroke: dimColor }, '<')
-    .to('#intro .logo .brush-head, #intro .logo .brush-body', { fill: dimColor, stroke: 'none' }, '<')
-    .to('#intro .logo .search', { fill: dimColor }, '<')
+    .to('.hero', { height: 'auto', autoAlpha: 1/* , duration: 0.6 */ }, '<')
+    .to('.bg-grad', { width: '80vmax', height: '80vmax', borderRadius: '50%', filter: `blur(${blurValue}rem)` }, 0)
+    .to('#intro .logo .half-circle, #intro .logo .wave', { stroke: dimColor }, 0)
+    .to('#intro .logo .brush-head, #intro .logo .brush-body', { fill: dimColor, stroke: 'none' }, 0)
+    .to('#intro .logo .search', { fill: dimColor }, 0)
     .call(logoFlip)
 
     .to('.navigation, .quick-btns', { autoAlpha: 1, duration: 1 }, '<')
@@ -122,7 +136,9 @@ function Loading() {
     .set('.possessive', { width: 0, autoAlpha: 0 })
     .set('.hero', { height: 0, autoAlpha: 0 })
     .set('.mouse-wrap', { autoAlpha: 0 })
-    .set('#intro .logo', { pointerEvents: 'none' });
+    .set('#intro .logo', { pointerEvents: 'none' })
+    .set('.loader-tagline .line', { autoAlpha: 0, y: 10 })
+    .call(() => document.querySelector('#intro .content-wrap').classList.remove('is-loading'));
   smoother.scrollTo(0, false);
   smoother.paused(true);
 

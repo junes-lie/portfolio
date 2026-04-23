@@ -26,8 +26,8 @@
     position: relative;
 
     .bg-grad{
-      position: absolute;
-      inset: 0;
+      @include absolute-center;
+      @include fill-parent;
       background: var(--bg-grad);
       filter: blur(0rem);
 
@@ -38,6 +38,10 @@
       @include flex-center;
       @include flex(column, $space-xl);
 
+      &.is-loading{
+        visibility: hidden;
+      }
+
       @include portrait{
         gap: $space-sm;
       }
@@ -47,6 +51,7 @@
       }
 
       .hero{
+        // border: 1px solid #000;
         color: #888;
         mix-blend-mode: color-burn;
         line-height: 0.9em;
@@ -59,14 +64,24 @@
 
       .loader-wrap{
         @include flex-center;
-        @include flex(column, $space-lg);
+        flex-direction: column;
+        gap: $space-lg;
         z-index: $z-s1;
+
+        .loader-content{
+          // border: 1px solid #000;
+          @include flex(column, $space-lg);
+          justify-content: flex-start;
+          align-items: center;
+          overflow: hidden;
+          min-height: 0;
+          text-align: center;
+        }
 
         .loader-text{
           font-family: 'SUITE', sans-serif;
           font-weight: 800;
           color: #fff;
-          
         }
 
 
@@ -122,6 +137,7 @@
 
             @include flex-center;
             height: 100%;
+            // visibility: hidden;
 
             .star{
   
@@ -138,6 +154,26 @@
               color: #fff;
               opacity: 0.7;
             }
+          }
+        }
+
+        .loader-tagline{
+          @include flex(column, $space-xs);
+          align-items: center;
+          text-align: center;
+          color: #fff;
+          opacity: 0.85;
+          font-size: $font-h5;
+          line-height: 1.2;
+          letter-spacing: -0.01em;
+          pointer-events: none;
+
+          @include portrait{
+            font-size: $font-body;
+          }
+
+          .line{
+            display: block;
           }
         }
       }

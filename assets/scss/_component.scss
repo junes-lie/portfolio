@@ -6,6 +6,7 @@
 
 .quick-btns{
   position: fixed;
+  visibility: hidden;
   right: $p-float;
   bottom: $p-section-y-l;
   z-index: $z-float;
@@ -68,6 +69,7 @@
 
 .navigation{
   position: fixed;
+  visibility: hidden;
   left: $p-float;
   height: 100vh;
   display: flex;
@@ -202,6 +204,7 @@
 
 .mouse-wrap{
   position: absolute;
+  visibility: hidden;
   top: calc(100vh - $p-section-y-p);
   @include flex(column, $space-sm);
 
