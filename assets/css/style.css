@@ -1518,7 +1518,9 @@ button {
   position: absolute;
 }
 #layout #planning .content-wrap .process .projects .project .spread .spread-inner iframe {
-  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
   border: none;
   z-index: 0;
 }
